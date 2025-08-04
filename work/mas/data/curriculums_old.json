@@ -1,0 +1,1663 @@
+{
+	"description": "Explore the fundamentals of AI technology while building practical skills to leverage AI tools effectively in everyday tasks, evaluate outputs critically, and apply responsible implementation strategies.",
+	"duration": "15 hours",
+	"level": "Beginner",
+	"children": [
+		{
+			"description": "Develop solutions to everyday personal and professional tasks by responsibly using AI tools and prompting strategies.",
+			"duration": "15 hours",
+			"level": "Foundational",
+			"children": [
+				{
+					"description": "Explain how AI systems function and are used effectively in everyday contexts.",
+					"duration": "",
+					"level": "Foundational",
+					"objective": [
+						{
+							"description": "Explain how AI systems function and are used effectively in everyday contexts.",
+							"name": "OBJ-BB0D5440-85D2-402A-B188-1DAC9437DB89"
+						}
+					],
+					"title": "Working with AI",
+					"name": "MOD-A6FC0048-B828-4AEC-A5F3-C98ACA6F3B3B",
+					"children": [
+						{
+							"description": "Describe current forms and uses of artificial intelligence.",
+							"duration": "",
+							"level": "Foundational",
+							"objective": [
+								{
+									"description": "Describe current forms and uses of artificial intelligence.",
+									"name": "OBJ-75CA4A69-DC13-4DDD-BAA3-8DAEEB11D48C"
+								}
+							],
+							"title": "Defining AI Today",
+							"children": [
+								{
+									"description": "Describe the main types and characteristics of artifiical intelligence.",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Describe the main types and characteristics of artifiical intelligence.",
+											"name": "OBJ-4C948072-228E-4280-AF0D-7EF65381D072"
+										},
+										{
+											"description": "Define artificial intelligence.",
+											"name": "OBJ-FEE1ED1B-000E-4918-97A1-E2065789479E"
+										},
+										{
+											"description": "Describe the main types of AI.",
+											"name": "OBJ-8F614B1D-E12A-42AB-AF95-0DE4761A0BCB"
+										},
+										{
+											"description": "Describe key characteristics of AI.",
+											"name": "OBJ-3BAE9A44-B270-4F4B-9BBF-2A7E8CAFD743"
+										}
+									],
+									"title": "What is AI?",
+									"name": "TOP-184CC413-8590-4A89-A347-5E9EC7F6093A"
+								},
+								{
+									"description": "Describe key milestones that contributed to the development of current AI capabilities.",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Describe key milestones that contributed to the development of current AI capabilities.",
+											"name": "OBJ-C914DB47-027C-4FCE-BE6E-9D50BEB0A70E"
+										},
+										{
+											"description": "Describe the significance of the Turing Test in advancing AI capabilities.",
+											"name": "OBJ-9834A84B-AF68-48F3-BEEE-0978E9CF517B"
+										},
+										{
+											"description": "Describe the evolution of AI capabilities from rule-based systems to machine learning and deep learning models.",
+											"name": "OBJ-16B377AE-20D6-48A8-9A5F-7C002F01DCD7"
+										},
+										{
+											"description": "Identify recent advancements in AI capabilities.",
+											"name": "OBJ-77BF6DF8-82AD-4544-A121-4AD8E729CD42"
+										}
+									],
+									"title": "The Evolution of AI",
+									"name": "TOP-C3C9BDDC-1CF6-4699-B0A7-AA937389FBA4"
+								},
+								{
+									"description": "Explain how AI is used in everyday life.",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Explain how AI is used in everyday life.",
+											"name": "OBJ-66443881-98D9-47C3-8EBE-48837C3EBC0D"
+										},
+										{
+											"description": "Identify common applications of AI in everyday life.",
+											"name": "OBJ-8AB8A8AC-DEFB-4090-AC7D-0E68AE9F8123"
+										},
+										{
+											"description": "Explain how AI improves convenience and efficiency in daily activities.",
+											"name": "OBJ-D08099D4-03F7-4950-AD1B-82F22BCFF305"
+										},
+										{
+											"description": "Describe how AI enhances services across different industries.",
+											"name": "OBJ-81F9D418-3FD4-4F77-9D5D-6B9858E34C5E"
+										}
+									],
+									"title": "Applications in Life",
+									"name": "TOP-80F7FDA5-13D0-487D-ACDE-1D3F0CF0B9C5"
+								}
+							],
+							"name": "UNT-0BF4D4DC-5541-40A6-951F-F12078B167B5",
+							"wellness_checkpoint": [
+								{
+									"content_location": "S3",
+									"content_type": "Video",
+									"content_url": "PRG-0768BF20-5A57-457A-9F8F-4A8F9FAAD417/videos/Neuroplasticity_How_the_Brain_Learns.mp4",
+									"duration": "",
+									"description": "Explain how to leverage neuroplasticity to optimize your learning and practice.",
+									"level": "Foundational",
+									"transcript": "What if I told you your brain is like a muscle. It changes and grows every time you learn something new. This is called neuroplasticity. The way you engage with new information shapes the strength and efficiency of your neuro connections. By leveraging neuroplasticity, you can learn faster and master new skills. Here''s how one. Make it active. Passive learning doesn''t engage your brain deeply enough. Activities like testing yourself, summarizing key concepts or teaching someone else, tell your brain this is important, and strengthen neural connections. Improving retention, combining active learning and mindfulness can also increase gray matter density in the hippocampus and prefrontal cortex. Which are linked to attention learning and memory. Two, mix it up. Varying your practice or switching between topics known as interleaving, improves long-term learning by forcing your brain to create new pathways. Challenge your brain with different formats, such as quizzes, real world applications, and hands-on activities when combined with mindfulness. Varied practice promotes synaptic plasticity, helping neural connections remain adaptable, making it easier to think about things in different ways. Three, rest and reflect breaks and sleep are critical for memory consolidation. The process of stabilizing new information into long-term storage. During sleep, your brain strengthens neural pathways and integrates learning. Meanwhile, reflective breaks help reinforce learning by encouraging deeper processing and greater awareness. Mindfulness can also lower cortisol, the stress hormone, which can otherwise impair memory, retention better. Sleep and mindful reflection can enhance your ability to retain and recall information making intentional breaks well worth it. The bottom line, your brain is built to grow. By combining neuroplasticity with a growth mindset, you can unlock your full learning potential. Every time you challenge yourself, you''re shaping it for the better. So what''s one skill you''ll start training your brain for today?",
+									"objective": [
+										{
+											"description": "Explain how to leverage neuroplasticity to optimize your learning and practice.",
+											"name": "OBJ-AB842618-D4A1-4269-B953-75D65BDE3AA2"
+										}
+									],
+									"title": "Neuroplasticity & How the Brain Learns",
+									"name": "WEL-CHK-FFD08DD9-EB8D-4F1A-AF30-35C8FAA6F208"
+								}
+							]
+						},
+						{
+							"description": "Explain the process by which an AI system transforms inputs into outputs.",
+							"duration": "",
+							"level": "Foundational",
+							"objective": [
+								{
+									"description": "Explain the process by which an AI system transforms inputs into outputs.",
+									"name": "OBJ-00B4254E-7380-4B2E-8DBA-565A80E238E0"
+								}
+							],
+							"title": "How AI Works",
+							"children": [
+								{
+									"description": "Explain how AI systems use different types of data to make predictions or decisions.",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Explain how AI systems use different types of data to make predictions or decisions.",
+											"name": "OBJ-1A27BDA7-3A67-4051-9970-D53260E7D29B"
+										},
+										{
+											"description": "Define structured, unstructured, and semi-structured data types.",
+											"name": "OBJ-B775C0FD-A09F-4ECC-9B6C-CAC1ABA813D7"
+										},
+										{
+											"description": "Describe how AI processes categorical and numeric data.",
+											"name": "OBJ-4D057D38-BF25-4B3C-8E05-9E12E99FF410"
+										},
+										{
+											"description": "Describe how different data types support AI predictions and decision-making.",
+											"name": "OBJ-3897FFE2-769C-414D-B571-F18A8A4E029E"
+										}
+									],
+									"title": "Data Impact",
+									"name": "TOP-CDABAEA5-7C65-4B3F-ACE8-FDE08BB14C3A"
+								},
+								{
+									"description": "Explain how AI algorithms transform data inputs into outputs.",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Explain how AI algorithms transform data inputs into outputs.",
+											"name": "OBJ-4CC80275-6CFF-4724-8646-6C76504CB685"
+										},
+										{
+											"description": "Define algorithm-related terms used in AI data processing.",
+											"name": "OBJ-84337004-E40D-49C8-8FD3-488DB5464543"
+										},
+										{
+											"description": "Describe types of AI algorithms and their typical applications.",
+											"name": "OBJ-9795DF89-8F3B-4EA4-9FDA-78FC4BB150B6"
+										},
+										{
+											"description": "Explain how AI algorithms process data using trained models to generate outputs.",
+											"name": "OBJ-DF9B3D8B-57A3-4B41-8007-05B0D4C3087E"
+										}
+									],
+									"title": "Algorithm Terms In Action",
+									"name": "TOP-41A30EDA-E66B-49EC-BD4F-ECC467CC4924"
+								},
+								{
+									"description": "Describe how AI systems generate outputs for use after processing input data.",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Describe how AI systems generate outputs for use after processing input data.",
+											"name": "OBJ-9DEB2041-2563-4478-B1B3-07D5E71E0069"
+										},
+										{
+											"description": "Describe how AI systems generate structured outputs from processed input data.",
+											"name": "OBJ-F9BA4AAF-503F-4EE9-8CA7-5C6D1AE76D27"
+										},
+										{
+											"description": "Describe how AI systems communicate prediction results to users.",
+											"name": "OBJ-66D38478-F74B-46C9-B140-A2DE7FDD97DF"
+										},
+										{
+											"description": "Identify examples of how AI decision outputs are used in real-world applications.",
+											"name": "OBJ-D950C2BD-6E99-45F2-BC34-D82ACC729C5E"
+										}
+									],
+									"title": "AI Process Outputs",
+									"name": "TOP-C570BF81-5DF9-46D3-B503-C73DC9460620"
+								}
+							],
+							"name": "UNT-701AED39-ABE9-44F5-A875-17AED95B7687",
+							"wellness_checkpoint": [
+								{
+									"content_location": "Youtube",
+									"content_type": "Youtube",
+									"content_url": "https://www.youtube.com/watch?v=n0zV2ytrd7w",
+									"duration": "",
+									"description": "Describe how thoughts and emotions can influence behavior, learning and decision-making.",
+									"level": "Foundational",
+									"transcript": "many people think that keeping emotions out of decision-making is the key to making good decisions however contrary to popular belief and decades of scientific misunderstanding it turns out that the exact opposite is true keeping emotions out of it is actually a disaster for decision-making according to recently published studies latest research adds to a growing body of evidence that the role emotions play in the brain is different than what most scientists have supposed for decades even the most mundane rational decisions rely on emotional data for many decades scientists of thought of cognition and emotion as two largely separate systems in the brain and even as researchers began to find evidence of the interdependence of the two this interaction was often seen in the light of emotions interfering with higher cognitive processes it''s traditionally been like two players cognition the rational human and emotions like a chimp running amok this is where our cultural mindset about being rational and keeping emotions out of making decisions comes from the roots of understanding this deep interconnection of cognition and emotion like many breakthroughs in neuroscience were found by studying patients with brain damage the brain lesions these patients had suffered to a particular section of the frontal lobe had not impacted their knowledge base or logical reasoning abilities they understood what made a good business investment they understood and could describe the social rules and conventions that should guide their actions with any decision they could go through the pros and the cons yet these previously upstanding men and women struggled to make even simple decisions and began to make dis advantageous decisions in many different aspects of their lives it was found that what they could not do was to use past emotional knowledge to guide their reasoning process even though they knew logically that a specific business deal was risky or that a certain decision could endanger their relationship with someone close to them they couldn''t access the past emotional knowledge and use that to guide the reasoning process emotions seem to provide an essential link between what is known to be true and the motivation to act accordingly emotions provide neurohormones that the body releases in response to our perceptions of the world they provide a primary filter that focuses attention and provides motivation towards a specific course of action and this is their importance in decision-making even if we know that a tiger is dangerous or that a walk in the woods makes us feel good it''s the emotional response of fear and joy that really motivates us to hide from a tiger or go for a walk in the woods not knowing logically that we should emotions are the motivator the push they provide the impetus around a decision to know that a decision is risky is one thing but feel the anxiety and appropriate fear associated with risk-taking is quite another and it''s this difference that makes the difference when it comes to making decisions the more we learn to recognize and respond appropriately to our emotions fear to protect us joy to do more of what we want to the more effective we are personally and professionally so without emotions the higher level of cognitive processes can''t function properly instead of keeping emotions out of decision-making the new advice should be to make sure emotion and cognition are working together without the guidance of emotional learning and social feedback rational thoughts and logical reasoning abilities are of little use it''s the blending of thinking and feeling that leads to optimal decisions so contrary to decades of scientific and cultural understanding emotions are now considered to play a fundamental role in rational thought or at least in the ability to do something about those thoughts without the guidance of emotional learning and social feedback rational thoughts and logical reasoning abilities are of little use this is process called practicing emotional intelligence and is through this process of cognition and emotion working together the optimal decisions are made",
+									"objective": [
+										{
+											"description": "Describe how thoughts and emotions can influence behavior, learning and decision-making.",
+											"name": "OBJ-2D5A68EC-07EC-45F4-90C4-1D4C152164FC"
+										}
+									],
+									"title": "Foundations of Self-Awareness",
+									"name": "WEL-CHK-9AA2B55B-5750-4920-AC2B-50EEE50E6D4B"
+								}
+							]
+						},
+						{
+							"description": "Apply best practices for selecting and using AI tools for individual use.",
+							"duration": "",
+							"level": "Foundational",
+							"objective": [
+								{
+									"description": "Apply best practices for selecting and using AI tools for individual use.",
+									"name": "OBJ-26788028-0FB0-45EE-9246-29F489CCD112"
+								}
+							],
+							"title": "Identifying AI Tools",
+							"children": [
+								{
+									"description": "Identify resources for finding and learning about AI tools and solutions.",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Identify resources for finding and learning about AI tools and solutions.",
+											"name": "OBJ-401DBEC5-81E0-4AE5-8098-117A847CDAA9"
+										},
+										{
+											"description": "Identify reliable news sites for learning about AI tools and solutions.",
+											"name": "OBJ-D4EB663C-4A54-4822-9F0A-F2146B9085B5"
+										},
+										{
+											"description": "Identify online communities and forums for AI discussions and recommendations.",
+											"name": "OBJ-E429E88B-5D50-4133-AD7E-0BC08279EAAE"
+										},
+										{
+											"description": "Identify AI tool directories and repositories for finding solutions.",
+											"name": "OBJ-3A4E004A-9866-4FCA-836B-FD0ECE0DE01C"
+										}
+									],
+									"title": "Learning Resources",
+									"name": "TOP-BA797655-6C1F-41DF-9B80-83F52340145A"
+								},
+								{
+									"description": "Describe key criteria for selecting AI tools for individual users.",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Describe key criteria for selecting AI tools for individual users.",
+											"name": "OBJ-12871E5B-DD21-44B1-B8D0-697A16625D6E"
+										},
+										{
+											"description": "Describe usability as a selection criterion for AI tools for individual users.",
+											"name": "OBJ-2EA1DBDC-A687-44B0-8A5D-349B5ABD9677"
+										},
+										{
+											"description": "Describe ease of integration as a selection criterion for AI tools for individual users.",
+											"name": "OBJ-EEEC24C6-146A-4DA6-8260-F4AE17FD516A"
+										},
+										{
+											"description": "Describe cost-effectiveness as a selection criterion for AI tools for individual users.",
+											"name": "OBJ-3FF5DE5C-552F-49F2-885F-ECB763CEB32B"
+										}
+									],
+									"title": "Evaluating AI Tools",
+									"name": "TOP-97530A6B-FFA3-44C2-B022-2654458C1CD1"
+								},
+								{
+									"description": "Describe best practices for using a new AI tool.",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Describe best practices for using a new AI tool.",
+											"name": "OBJ-358124B5-8767-41BA-BECA-4D629A87451F"
+										},
+										{
+											"description": "Describe best practices for sharing personal information with an AI tool as an individual user.",
+											"name": "OBJ-125D32CA-B1D6-417D-9019-9BBA3C6A0B88"
+										},
+										{
+											"description": "Identify organizational considerations when using a new AI tool in professional work.",
+											"name": "OBJ-A489BA7A-4D25-4986-AE0A-D4D431BE9A96"
+										},
+										{
+											"description": "Identify resources for troubleshooting issues with new AI tools or systems.",
+											"name": "OBJ-6E7D336F-F9FB-46CB-A918-57D23D66FB16"
+										}
+									],
+									"title": "Using Your System",
+									"name": "TOP-EF5B73DC-ED20-4D0C-829B-5A1B5438FBE2"
+								}
+							],
+							"name": "UNT-7D47B146-1AB4-4020-97D5-06DD28E1D3B0",
+							"wellness_checkpoint": [
+								{
+									"content_location": "Youtube",
+									"content_type": "Youtube",
+									"content_url": "https://www.youtube.com/watch?v=elZFL4FLVLE",
+									"duration": "",
+									"description": "Explain how metacognition is a tool to enhance learning, problem-solving, and overall cognitive efficiency.",
+									"level": "Foundational",
+									"transcript": "for whatever reason we are more likely to spend time planning for a road trip a big party or a date than we are for learning many students don''t approach learning the same way they do other important aspects of their lives one of the biggest differentiators between successful learners experts and students who struggle is something called meta cognition cognition is the process of thinking about thinking one that is used to make decisions that maximize learning outcomes and help students meet their goals metacognition is thinking not just about the what of learning but the how ultimately metacognition is all about creating the best possible opportunity to learn what you are trying to learn so when you''re learning something you stop to consider what you''re trying to learn what you know how you''re trying to learn it how effective your strategies are and what you can do differently to improve your understanding most people don''t move beyond cognitive strategies when learning cognitive strategies are things tests ask you to do recall analyze interpret and apply information metacognition helps us see which cognitive strategies need to occur so we''re best prepared for a test while also showing us what we need to do differently in order to be successful when we start looking at what we need to do our learning goal and how we''re going to do it our plan for learning we are distinguishing between metacognitive knowledge and metacognitive regulation there are three basic stages of the metacognition process plan monitor and evaluate first plan your approach to learning a topic specifically how you will digest the information then monitor your comprehension of the topic as you study with actions such as practice tests finally evaluate the results of your learning when you''re finished and modify your approach as needed these may sound like extra steps but there are actually essential parts of the learning process these steps help learners see that they''ve used their time to recall analyze interpret and apply information in other words metacognition helps students know that they really learned something so what does it look like in action as a learner you have to contend with their personal strengths and weaknesses the nature of the task and the strategies you have available to you to accomplish the task and overcome any challenges the process will look different for every student let''s have a look at Marcus and his a CT study plan there are two ways he can approach his preparation process Marcus feels confident with most of the material although he''s a bit iffy on the math and science sections his plan could involve reviewing an a CT study guide and a few practice tests leading up to test date the day will come he''ll live with the grade and repeat the same process again the next time he takes the exam perhaps faring better or worse on the other hand Marcus could take time to consider which AC t-sections he already feels confident about which sections he needs more time to prepare for as well as exactly how he will monitor his progress during preparation he could regularly pause to ask is what I''m doing working if so how do I know after the test he can evaluate his overall process if there was anything he could have done differently and how he will prepare differently next time it''s not hard to see which preparation method best sets Marcus up for success let''s step back and consider the basic questions you can ask yourself before during and after studying to attend to the decisions that can make the difference in your performance before learning take time to plan what am I supposed to learn what strategies should I use how much time do I have while learning pause to monitor how am i doing am i on track with my plan do I understand where I''m learning should I adjust my pace after learning reflect and evaluate your process what did I learn did I achieve my goals what could I have done differently is there anything I still don''t understand the answers to these questions may not come quickly but they create an opportunity for you to change how you approach your goals when things just aren''t working out the way you want them to learning and practicing metacognition means that you''ll be your own best indicator for whether you are prepared for a test or not the same time you''re helping prepare yourself for more effective learning in the future because you will be able to make the best choices for yourself when your materials and teachers don''t deliver what you need",
+									"objective": [
+										{
+											"description": "Explain how metacognition is a tool to enhance learning, problem-solving, and overall cognitive efficiency.",
+											"name": "OBJ-88796316-CD98-4187-970B-E0BBBC444CCB"
+										}
+									],
+									"title": "Metacognition for Better Learning",
+									"name": "WEL-CHK-46CF4C8B-6DEB-4929-B243-60B4E643A001"
+								},
+								{
+									"content_location": "Youtube",
+									"content_type": "Youtube",
+									"content_url": "https://www.youtube.com/watch?v=Aw71zanwMnY",
+									"duration": "",
+									"description": "Describe how mindfulness practices (such as simple meditation) can support attention, emotional balance, and mental clarity in your life.",
+									"level": "Foundational",
+									"transcript": "For thousands of years people have practiced meditation for spiritual, emotional, and physical well being. But from a scientific perspective, how exactly does meditating affect your body? Does it really do anything? It all starts in the brain! During meditation, brain-scans see increased activity in regions directly correlated with decreased anxiety and depression, along with increased pain tolerance. The Default Mode Network, in particular, is activated when one\\u2019s mind is at rest and not focusing on the outside world, and has been found to improve memory, self awareness and goal setting. Want to be more caring to your friends and family? When scientists compared the brains of Buddhist monks to new meditators, they found the region of the brain associated with empathy to be much more pronounced in the monks. It also literally changes your brain waves - and we can measure these frequencies. Meditators have higher levels of Alpha waves, which have been shown to reduce feelings of negative mood, tension, sadness and anger. And if that wasn\\u2019t enough, it also physically changes our brain shape and size. Studies found that after 8 weeks of a meditation program, gray matter was more dense in areas associated with learning, memory processing, and emotion regulation. And yet the amygdala, which deals with stress, blood pressure and fear, had decreased gray matter! When we look at the entire body, not only do we see decreased blood pressure, but it can also increase the variability of your heart rate. While this may sound harmful, it actually plays a critical role in properly transporting Oxygen and Carbon Dioxide throughout your body. Think your getting sick? In a study where both meditators and non-mediators were given the flu virus, meditators were able to produce a greater number of antibodies and had increased immune function. If we go a little deeper, we can even see changes on a cellular level. Your chromosomes have protective protein complexes called telomeres, which help reduce damage to your DNA and lower cell death. And a shortened telomere length has been linked to several disease such as cardiovascular disease, diabetes, Alzheimer\\u2019s and cancer. Amazingly, when cancer survivors completed a meditation program, their bodies showed significant increases in telomere length. It\\u2019s believed that psychological intervention, particularly decreasing stress, has a direct effect on the enzyme telomerase, which has been shown to counteract shortening by adding DNA to the shrinking telomeres. Of course, meditation is not a substitute for other medical advice or a healthy lifestyle - we don\\u2019t want you leaving this video thinking it will cure cancer. But much like hitting the gym can grow your muscles and increase your overall health, it seems that meditation may be a way of \\u2018working out\\u2019 your brain with extra health benefits. And since your brain controls, well...all of you, why not relax and say \\u2018om\\u2019 every once in a while. And if you like working out your brain, be sure to get our AsapSCIENCE book which is now available for pre-sale at asapscience.com/book! We\\u2019ve got answers to your most asked burning questions, persistent rumours, and unexplained phenomenon! Whether you\\u2019re a huge science fan, or just a curious mind, the book has something for everyone, and we\\u2019re so excited for you to read it and show off to your new found knowledge to all your friends! Thanks again for all the support through the years, helping us share a love of science with the world! And subscribe for more weekly science videos",
+									"objective": [
+										{
+											"description": "Describe how mindfulness practices (such as simple meditation) can support attention, emotional balance, and mental clarity in your life.",
+											"name": "OBJ-7BD933D6-5289-4BF9-AC39-2B6287BDECFD"
+										}
+									],
+									"title": "Mindfulness + Meditation",
+									"name": "WEL-CHK-415A1EB1-FD3C-442C-9FAF-A33B5670BA81"
+								}
+							]
+						}
+					]
+				},
+				{
+					"description": "Apply ethical decision-making principles when using AI tools and systems.",
+					"duration": "",
+					"level": "Foundational",
+					"objective": [
+						{
+							"description": "Apply ethical decision-making principles when using AI tools and systems.",
+							"name": "OBJ-BC18271F-2D1C-4ACF-9C2C-B86611D81CBD"
+						}
+					],
+					"rubric": {
+						"criteria": [
+							{
+								"competency": [
+									{
+										"description": "Learner has not started or attempted this component.",
+										"level": "Not Started",
+										"score": 0,
+										"name": "RUB-COM-81A37A7C-0B34-42E8-8C68-43F7ACEA12AF"
+									},
+									{
+										"description": "No mention of ethical implications or responsible AI usage; artifact may exhibit reckless or unsafe AI practices (e.g., posting sensitive data, blindly trusting AI output).",
+										"level": "Developing/Emerging",
+										"score": 1,
+										"name": "RUB-COM-2384E722-C63D-4DE2-BD7F-DEE50FB1CFDC"
+									},
+									{
+										"description": "No mention of ethical implications or responsible AI usage; artifact may exhibit reckless or unsafe AI practices (e.g., posting sensitive data, blindly trusting AI output).",
+										"level": "Foundational",
+										"score": 2,
+										"name": "RUB-COM-E191C0DF-1F6A-4AE4-B4F4-2ACDF1AAC642"
+									},
+									{
+										"description": "Demonstrates general awareness of responsible AI use; avoids sharing sensitive info, includes mild disclaimers. Some validation of AI outputs is shown, but less depth in discussing ethical trade-offs.",
+										"level": "Skilled",
+										"score": 3,
+										"name": "RUB-COM-7CA2077F-D84B-4E96-A246-A817894B9D8E"
+									},
+									{
+										"description": "Proactively addresses ethical considerations (privacy, bias, data sensitivity), showing explicit steps or disclaimers to manage AI limitations. The student validates AI outputs and uses them responsibly.",
+										"level": "Expert",
+										"score": 4,
+										"name": "RUB-COM-B735F9CB-381A-4C9F-832A-613D75FA955C"
+									}
+								],
+								"description": "Does the artifact demonstrate responsible, privacy-conscious, and reflective use of AI?",
+								"maxPoints": 4,
+								"name": "Ethical & Responsible AI Use",
+								"name": "RUB-CRT-805B9750-B3F2-457E-887E-42E23DF0D7EC"
+							}
+						],
+						"title": "Working with AI Rubric",
+						"name": "RUB-7F9C3456-F5D1-4A05-B025-B9EA0A60A229"
+					},
+					"title": "Ethics and Responsible Use",
+					"name": "MOD-67BD456C-036E-41E8-9E5B-A3989DF07BD0",
+					"children": [
+						{
+							"description": "Explain key ethical principles that address concerns faced by individual users when interacting with AI tools.",
+							"duration": "",
+							"level": "Foundational",
+							"objective": [
+								{
+									"description": "Explain key ethical principles that address concerns faced by individual users when interacting with AI tools.",
+									"name": "OBJ-B7EBBEC1-5225-46C4-A042-C803CBAC0D9D"
+								}
+							],
+							"title": "Ethics 101",
+							"children": [
+								{
+									"description": "Explain the concept of Ethical AI and its key components for individual users interacting with AI tools.",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Explain the concept of Ethical AI and its key components for individual users interacting with AI tools.",
+											"name": "OBJ-B6CC4C02-78E6-4988-9D54-5F81D83D70A5"
+										},
+										{
+											"description": "Define Ethical AI as it applies to individual users interacting with AI tools.",
+											"name": "OBJ-1F7E55A6-4BD5-44CF-99AE-8B3C755F0A4A"
+										},
+										{
+											"description": "Identify the key components of Ethical AI.",
+											"name": "OBJ-2289E31A-0EFE-4B37-A161-53050639A755"
+										},
+										{
+											"description": "Describe the concept of AI for Social Good as it relates to individual users of AI tools.",
+											"name": "OBJ-12FA4989-F6A5-4D6F-9C45-04AB76A2891B"
+										}
+									],
+									"title": "Ethical AI Overview",
+									"name": "TOP-D2678025-31E8-48D3-957E-800289C914BD"
+								},
+								{
+									"description": "Explain the ethical significance of transparency in AI outputs for individual users.",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Explain the ethical significance of transparency in AI outputs for individual users.",
+											"name": "OBJ-BCED8F8D-3329-4F85-98A7-CF63285E7244"
+										},
+										{
+											"description": "Define AI transparency  as ethical considerations for individual users.",
+											"name": "OBJ-235CDF52-8933-47C1-84A5-27C66E12210C"
+										},
+										{
+											"description": "Identify ethical challenges individual users face when AI outputs lack transparency.",
+											"name": "OBJ-1DF684FE-EC3F-48B4-BD5D-E837204D4339"
+										},
+										{
+											"description": "Describe how transparency-enhancing techniques in AI systems support ethical use for individual users.",
+											"name": "OBJ-DF38B9B5-B35E-49BA-9AA7-78E00C657A1F"
+										}
+									],
+									"title": "Transparency",
+									"name": "TOP-542AC14A-2BD0-4A59-A706-DB11E03D044E"
+								},
+								{
+									"description": "Explain ethical concerns related to privacy and security when individual users interact with AI tools.",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Explain ethical concerns related to privacy and security when individual users interact with AI tools.",
+											"name": "OBJ-10E8826F-4080-4838-B3BC-3CF64E9C9AD6"
+										},
+										{
+											"description": "Identify ethical concerns related to privacy when individual users interact with AI tools.",
+											"name": "OBJ-5AAE142D-C5BF-4DD0-8E4E-CB45A56B5C0C"
+										},
+										{
+											"description": "Identify ethical concerns related to security when individual users interact with AI tools.",
+											"name": "OBJ-85AFBE88-8EBA-4096-A9FB-7AF3CBF72646"
+										},
+										{
+											"description": "Describe the ethical impact of privacy and security risks on individual users.",
+											"name": "OBJ-D12B8C3B-EA2F-45FA-A7B1-253E70DB5B57"
+										}
+									],
+									"title": "Privacy and Security",
+									"name": "TOP-067E673E-AD1E-4919-86C7-28193B25F9DF"
+								}
+							],
+							"name": "UNT-46704534-2B33-4716-90B3-FD8234AA954A",
+							"wellness_checkpoint": [
+								{
+									"content_location": "Youtube",
+									"content_type": "Youtube",
+									"content_url": "https://www.youtube.com/watch?v=TjPFZaMe2yw",
+									"duration": "",
+									"description": "Identify methods to enhance memory retention and recall, including spaced repetition and chunking information.",
+									"level": "Foundational",
+									"transcript": "During their training, medical residents learn countless techniques, surgeries, and procedures which they''ll later use to save lives. Being able to remember these skills can quite literally be a matter of life and death. With this in mind, a 2006 research study took a class of surgical residents learning to suture arteries and split them into two groups. Each received the same study materials, but one group implemented a small change in how they studied them. And when tested one month later, this group performed the surgeries significantly better than the other residents. We''ll discuss the secret to that group''s success, along with two other highly effective study techniques which can be applied both in and out of the classroom. But to understand why these methods work, let''s first unpack how the brain learns and stores information. Say you''re trying to memorize the anatomy of the heart. When you''re introduced to a new concept, the memory is temporarily encoded in groups of neurons in a brain area called the hippocampus. As you continue to learn about workings of the heart in class or study its chambers for an exam, you reactivate these same neurons. This repeated firing strengthens the connections between the cells, stabilizing the memory. Gradually, the knowledge of heart anatomy is stored long-term, which involves another brain area known as the neocortex. How information is transferred from short-term to long-term storage is still not completely understood, but it''s thought to happen in between study sessions and perhaps most crucially during sleep. Here the new knowledge is integrated with other related concepts you already know, such as how to measure heart rate, or the anatomy of other organs. And the process doesn''t end there. Each time you recall heart anatomy, you reactivate the long-term memory, which makes it susceptible to change. The knowledge can be updated, strengthened, and reintegrated with other pieces of information. This is where our first study technique comes in. Testing yourself with flashcards and quizzes forces you to actively retrieve knowledge, which updates and strengthens the memory. Students often prefer other study methods, like rereading textbooks and highlighting notes. But these practices can generate a false sense of competence, since the information is right in front of you. Testing yourself, however, allows you to more accurately gauge what you actually know. But what if, while doing this, you can''t remember the answers? Not to worry\\u2014 making mistakes can actually improve learning in the long term. It''s theorized that as you rack your brain for the answer, you activate relevant pieces of knowledge. Then, when the correct answer is later revealed, the brain can better integrate this information with what you already know. Our second technique builds on the first. When using flashcards to study, it''s best to mix the deck with multiple subjects. Interleaving, or mixing the concepts you focus on in a single session, can lead to better retention than practicing a single skill or topic at a time. One hypothesis of why this works is that, similar to testing, cycling through different subjects forces your brain to temporarily forget, then retrieve information, further strengthening the memory. You may also find connections across the topics, and better understand their differences. Now that you know how and what to study, our final technique concerns when. Spacing your review across multiple days allows for rest and sleep between sessions. While ''offline,'' the brain is actively at work, storing and integrating knowledge in the neocortex. So while cramming the night before the exam may seem logical\\u2014 after all, won''t the material be fresh in your mind?\\u2014 the information won''t stick around for the long term. This brings us back to our medical residents. Both groups studied the surgery for the same amount of time. Yet one group''s training was crammed in a single day, while the other more successful group''s training was spread over four weeks. The reason all three of these study techniques work is because they''re designed with the brain in mind. They complement and reinforce the incredible way the brain works, sorting through and storing the abundance of information it''s fed day after day",
+									"objective": [
+										{
+											"description": "Identify methods to enhance memory retention and recall, including spaced repetition and chunking information.",
+											"name": "OBJ-EC4D1CA0-CCAA-48B3-9D62-FFF740998B8B"
+										}
+									],
+									"title": "Memory & Study Strategies",
+									"name": "WEL-CHK-BAC92D31-D4EA-4598-9F81-4E2C2B311EA3"
+								}
+							]
+						},
+						{
+							"description": "Explain strategies for responsible use of AI tools by individual users.",
+							"duration": "",
+							"level": "Foundational",
+							"objective": [
+								{
+									"description": "Explain strategies for responsible use of AI tools by individual users.",
+									"name": "OBJ-FE0609A8-E342-4EB9-9C93-ACEE499F1039"
+								}
+							],
+							"title": "Using AI Responsibly",
+							"children": [
+								{
+									"description": "Explain the concept of fairness and its importance for responsible individual use of AI tools.",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Explain the concept of fairness and its importance for responsible individual use of AI tools.",
+											"name": "OBJ-B4DFF070-9CCF-4521-A5A8-E8CE09931CDB"
+										},
+										{
+											"description": "Define fairness as it relates to responsible use of AI tools by individual users.",
+											"name": "OBJ-A4A3A28A-ADA0-4D8C-96AE-1DB19391F19B"
+										},
+										{
+											"description": "Describe ethical concerns individual users should recognize related to AI fairness.",
+											"name": "OBJ-DFF8A578-343D-4098-A40E-F23546BD710D"
+										},
+										{
+											"description": "Identify fairness issues in real-world AI use cases relevant to individual users.",
+											"name": "OBJ-4B03516A-3C6A-4C3F-BA26-96EBEC707B05"
+										}
+									],
+									"title": "Fairness Overview",
+									"name": "TOP-AC9B8D9F-7A5D-4602-A937-85380D72F9F2"
+								},
+								{
+									"description": "Describe strategies individual users can use to promote fairness when interacting with AI tools.",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Describe strategies individual users can use to promote fairness when interacting with AI tools.",
+											"name": "OBJ-E2C09062-66AB-478A-95B3-073442F1437C"
+										},
+										{
+											"description": "Describe how providing diverse and representative input can support fairness when using AI tools.",
+											"name": "OBJ-142FD4EB-E8BC-419F-A936-47DF6F5276A1"
+										},
+										{
+											"description": "Describe how selecting AI tools with built-in fairness features supports responsible AI use by individual users.",
+											"name": "OBJ-AE721AA2-A3B4-4D9D-9FF3-77D40635C347"
+										},
+										{
+											"description": "Describe how providing feedback on AI tools can help individual users advocate for fairness.",
+											"name": "OBJ-EE013531-F317-40FA-88E8-2217B87202D3"
+										}
+									],
+									"title": "Increasing Fairness",
+									"name": "TOP-0E689AE7-6C83-4502-99F0-6E1ACF7BD78C"
+								},
+								{
+									"description": "Explain how maintaining human oversight supports responsible use of AI by individual users.",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Explain how maintaining human oversight supports responsible use of AI by individual users.",
+											"name": "OBJ-A09185FB-FED6-40D2-9295-40999F1F8741"
+										},
+										{
+											"description": "Define the concept of ''Human in the Loop'' as it applies to responsible individual use of AI tools.",
+											"name": "OBJ-D5DF3D46-AA31-49D3-ACA1-1D04A58A0BDA"
+										},
+										{
+											"description": "Explain how maintaining human oversight can enhance trust and responsibility when using AI tools.",
+											"name": "OBJ-FE23FFED-595E-4B92-B854-6142FEAFF770"
+										},
+										{
+											"description": "Identify strategies individual users can use to maintain oversight of AI tools.",
+											"name": "OBJ-099FECFE-1F21-44F9-B67C-BEB28FA9FD69"
+										}
+									],
+									"title": "HITL",
+									"name": "TOP-30F43234-1DB4-4711-A46C-2D6EF8666008"
+								}
+							],
+							"name": "UNT-98D6AF7C-E26C-4BAD-8A6B-D305D808240F",
+							"wellness_checkpoint": [
+								{
+									"content_location": "Youtube",
+									"content_type": "Youtube",
+									"content_url": "https://www.youtube.com/watch?v=ZgVKcent3G8",
+									"duration": "",
+									"description": "Define habits and their role in your learning and productivity.",
+									"level": "Foundational",
+									"transcript": "link wants to get top grades in school so he commits to building a habit of studying and boy is he motivated and ready to go hard he starts grinding eight nine sometimes 10 hours a day but a few days in Link''s motivation starts to slip so he tries using a reward system an episode of anime after every successful study session or squatting up with boys for every completed assignment but no matter how many tricks and hacks he tries he still can''t build the habit of studying consistently and before you know it he''s gone a whole week without opening a single book habit Quest failed so where did link go wrong it wasn''t that he lost motivation it wasn''t that he didn''t try hard enough the problem was his goal link was focused on getting top grades he was chasing an outcome outcomes are usually not under our control it could be doing all the right things but if the weather was off or if your friends persuade you to play one more game then you''re finished a better approach would be to dig deeper and figure out what kind of person is able to get top grades what does this character do what decisions does this character make these Halls identity based habits these are habits not based on reaching an outcome but instead around building a character the goal is not to get top grades the goal is to be become a person who studies every day if we look at any story or video game there''s always an overarching quest in Star Wars Rey''s Quest is to save the Galaxy from the evil Sith Harry Potter''s Quest is to save the world from this guy sure they each have a quest but that Quest doesn''t decide whether or not they''ll succeed what''s important is their transformation their identity changes Rey becomes a Jedi Harry becomes a wizard and this new identity is the key to success think about it like this our motivation lies on a spectrum one end of the spectrum depends on external factors getting rewards like good grades or avoiding punishments like disappointing your Asian parents the other end of the spectrum depends on internal factors like your values you do it because it''s who you are it''s your identity we want to move away from outcomes and towards identity on this spectrum but all of this is still considered extrinsic motivation the motivation comes from outside the Habit itself remove that motivation and you no longer want to do the Habit the old ultimate form is intrinsic motivation where you''re driven by the pure joy or love for the Habit itself if you actually love to study you''re able to tap into Limitless motivation and you''ll become Unstoppable but let''s be real if you''re struggling to build a habit of studying every day then chances are you probably don''t love studying all that much most people don''t but that doesn''t mean that you can''t be open to the idea when we build identity based habits those habits become part of our self-image so if I pride myself on being a good student even if I''m not a good student yet then I''m more likely to choose the behaviors that align with being a good student every time I choose to act like a good student like I go to class instead of sleeping in or I put my phone away when I study or exercise to keep my brain sharp those decisions reinforce my identity that I''m a good student and over time all these small wins start to add up I start to study more regularly get better grades I start to build up all this evidence that says hey maybe I am a good student after all and this transformation moves me up the Spectrum to the point where I actually start to enjoy the habit of studying it becomes fun and you know what they always say you can''t out compete someone who''s just having fun but your character transformation can also happen in the reverse when you keep telling yourself things like I''m not a morning person or I''m bad at math when you constantly repeat this story to yourself you start to believe it even if it''s not true and over time you''ll subconsciously do things to avoid becoming a morning person or avoid studying math so I had a high school teacher repeatedly tell me that I was a failure and that I would amount to nothing for a long time I internalized that it affected how I saw myself and I subconsciously acted in ways that would reinforce that identity it took me years to reverse the cycle and climb out of that hole of self-defeat now I know that if I someday become a parent how important it is to watch the narratives that I feed my kids so the first step in building habits that last is not choosing an outcome get but choosing a character to become the goal is not to get a million subscribers on YouTube the goal is to become a character who consistently makes awesome videos that people want to watch the goal is not to make a million dollars the goal is to become a character who constantly builds products that solves people''s problems the goal is not to get straight A''s the goal is to become a character who studies a little bit every day don''t even worry about the outcomes focus on the transformation because frankly you''re not going to see outcomes right away like if you''ve never gotten Straight A''s in your entire life then you''re not all of a sudden going to get straight A''s tomorrow but don''t even worry about it okay focus on what you can control make the right decisions every day and over time your habits will compound and transform your identity now if you don''t know what character you''re trying to become here''s an exercise we can do to figure that out if you''ve been following this channel for a while you might be familiar with the Feynman technique you can check out this video here for a detailed walkthrough on how to use Define men technique to improve your grades we can also use it to build our habits the Feynman technique will help you discover the character you wish to become based on the habits you''re currently thinking about the way it works is by asking the most important question why why do you want to build a habit of studying because I want to get top grades why do you want to get top grades because I want a strong resume why do you want a strong resume because I want to get into medical school and become a doctor why do you want to become a doctor now when you start getting into these more broad life questions you start to see extrinsic motivation creeping into your story if you want to become a doctor because your parents told you to or because you want to be rich or have the prestige then that''s chasing an outcome on the other hand if you want to become a doctor because you''re genuinely curious about how the body works or you enjoy learning researching and teaching about health then you''re more likely to build habits around it that stick so now I want you to take out a piece of paper or open a Notes app on your phone and write down your own answers we''ll also build a free habit Quest template eventually and put it in the description when it''s ready but take some time to try the exercise because once you''ve found your deepest why you can extrapolate better habits for your character and begin to build your habit systems take your time with this one I''ve had a lot of students tell me that this single exercise has changed their life or at least revealed to them what has been missing after you''re done put your answers in the comments below I''d love to read them and get to know you a little bit better",
+									"objective": [
+										{
+											"description": "Define habits and their role in your learning and productivity.",
+											"name": "OBJ-8AB09A9B-4F6E-4A52-80E5-D73F9E5B0DBF"
+										}
+									],
+									"title": "Habit Formation",
+									"name": "WEL-CHK-17BC220A-C98E-48BB-9056-9BBD9361CDA6"
+								}
+							]
+						},
+						{
+							"description": "Analyze AI-related scenarios involving individual use through an ethical and responsible use lens.",
+							"duration": "",
+							"level": "Foundational",
+							"objective": [
+								{
+									"description": "Analyze AI-related scenarios involving individual use through an ethical and responsible use lens.",
+									"name": "OBJ-A0AB4C4C-5225-411F-8579-A72D993625DE"
+								}
+							],
+							"title": "Decision Making",
+							"children": [
+								{
+									"description": "Identify ethical and responsible use challenges in AI-related scenarios involving individual users.",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Identify ethical and responsible use challenges in AI-related scenarios involving individual users.",
+											"name": "OBJ-70F72D4D-0E58-4CA6-B615-8CA818DBEB8D"
+										},
+										{
+											"description": "Identify key stakeholders involved in AI-related ethical scenarios involving individual users.",
+											"name": "OBJ-1F3E8C1F-98FA-4351-BDA0-CDF76AB048E0"
+										},
+										{
+											"description": "Identify ethical issues in AI-related scenarios involving individual users.",
+											"name": "OBJ-B7A601DD-6571-42B3-883D-1D9B952189AA"
+										},
+										{
+											"description": "Identify ethical principles in a given AI-related scenarios.",
+											"name": "OBJ-07020067-7230-4398-B71B-4D602A9E11A2"
+										}
+									],
+									"title": "Ethical Examples",
+									"name": "TOP-B2F6BEA8-C8F6-44B3-A9A5-8975F0D7A4D1"
+								},
+								{
+									"description": "Describe the impacts of unethical AI use on individuals and society.",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Describe the impacts of unethical AI use on individuals and society.",
+											"name": "OBJ-ED07C041-B3C8-4105-8A99-0967A0D51BBC"
+										},
+										{
+											"description": "Describe the impacts of unethical AI use on individuals.",
+											"name": "OBJ-9DE200D6-3A9C-4C3F-9A53-528381DA48AC"
+										},
+										{
+											"description": "Describe the impacts of unethical AI use on society.",
+											"name": "OBJ-7F1CDB8F-C743-4E64-A509-583430D8B74B"
+										},
+										{
+											"description": "Identify potential long-term impacts of poor ethical judgment and responsible use failures.",
+											"name": "OBJ-1BFE3BAA-9C53-49EF-80DD-D9C866A8ABD4"
+										}
+									],
+									"title": "Ethical Impacts",
+									"name": "TOP-91729CF6-FEB2-4BFA-937F-C09FD95873E2"
+								},
+								{
+									"description": "Explain responsible AI use strategies for addressing ethical challenges in AI-related scenarios involving individual users.",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Explain responsible AI use strategies for addressing ethical challenges in AI-related scenarios involving individual users.",
+											"name": "OBJ-6188C237-F96D-42FE-B5F0-631F77228048"
+										},
+										{
+											"description": "Identify responsible AI use strategies appropriate for addressing a given ethical challenge.",
+											"name": "OBJ-A1C41D6A-ADFE-47E5-80AB-5453CD307287"
+										},
+										{
+											"description": "Describe common ethical trade-offs individual users should recognize when applying responsible AI use strategies.",
+											"name": "OBJ-47AD3AFA-9E99-4EEC-8986-C5AB6B34D7CE"
+										},
+										{
+											"description": "Explain how specific responsible AI use strategies address different ethical challenges involving individual users.",
+											"name": "OBJ-0A29370B-10F9-4195-9206-DE6968E75A0D"
+										}
+									],
+									"title": "Fixing Ethical Mistakes",
+									"name": "TOP-911BFF2B-4AFC-4018-9A15-06000B7FB5F1"
+								}
+							],
+							"name": "UNT-408E3093-6209-491D-B9BA-16E1EC199E32",
+							"wellness_checkpoint": [
+								{
+									"content_location": "Youtube",
+									"content_type": "Youtube",
+									"content_url": "https://www.youtube.com/watch?v=0rIjFCNay2Q",
+									"duration": "",
+									"description": "Explain how to set up tasks aligned with the psychological conditions for flow (clear goals, feedback, manageable challenge).",
+									"level": "Foundational",
+									"transcript": "A tennis player wins her second straight set, feeling like she can predict her opponent''s next move. A musician works to master a chord progression, unfazed by mistakes as he repeatedly plays the same four bars. A scientist fails to notice her morning alarm blare from the next room, having analyzed data through the night. While each of these people is immersed in a different activity, requiring specific skills and knowledge sets, all three are experiencing what is known as flow\\u2014a unique mental state of effortless engagement. And while you may not be a scientist or professional athlete, anyone can find flow. This is a good thing, as those who more frequently experience flow report higher levels of positive emotions, creativity, and feelings of accomplishment. Further, research has linked it to increased productivity, enhanced learning, and academic achievement. But what exactly is flow? And how can we find it in our daily lives? Flow is more than just concentrating or paying attention. Psychologists go so far as to define flow as an altered state of consciousness with several defining features. First, those in flow tend to feel so effortlessly engaged in a task that time seems to fly by. They are not easily distracted. In contrast with cycles of procrastination, when it can feel impossible to start an activity, during flow it can feel difficult to stop. Flow also tends to diminish feelings of worry or self-judgment, in turn fostering creativity. And people report experiencing a sense of oneness with what they''re doing, allowing for peak performance. Further, brain imaging studies have shown that flow is accompanied by changes in neural activity, notably in regions that play a role in attention, self-awareness, and self-consciousness. Despite decades of research, many questions still remain. How do the brains of those in flow compare to those in other states of consciousness, like meditation? Does flow arising from physical activities like sports recruit the same brain areas as more mental tasks like writing or math? And scientists are still working to understand why certain activities are more likely to elicit flow than others. While we don''t know for sure, there are several theories. For example, people more often report finding flow when doing things they find intrinsically motivating, meaning activities they find purpose, meaning, or enjoyment in. This may include participating in a favorite hobby, but also tackling gratifying assignments at work, studying topics you find interesting, or even completing satisfying chores. Likewise, it may be more difficult to find flow in tasks you do only because you have to, not because you want to. Other research suggests balancing personal skill level with the activity''s challenge is key for finding flow. In other words, if a task is too easy, you may get distracted or feel bored. If it''s too challenging, you may become discouraged. The classically mesmerizing game of Tetris, for example, keeps skill-challenge levels in balance by increasing the fall speed of blocks as players get better at the game. Still, other studies suggest that it''s most important that activities have clear goals and allow you to assess your progress along the way. For example, practicing a song allows you to gauge your performance with each note. This also may be why people find flow when playing games of chance, even though those games don''t require skill. Moment-to-moment feedback may be enough to motivate deep engagement. While no single protocol can guarantee flow, there are steps you can take to increase your chances. Find a quiet environment free from distracting noises or devices. Break your tasks into small, specific segments that are easy to track and learn from. Set clear end goals that are challenging but not frustratingly so. If you find the task to be tedious, set additional parameters to up the stakes. For example, when cleaning your dishes, attempt to finish them all in a certain amount of time. When running, try to keep pace with the beat of a song. Most importantly, and perhaps most frustratingly, don''t focus too much on reaching flow. That sort of distraction might just prevent you from finding it",
+									"objective": [
+										{
+											"description": "Explain how to set up tasks aligned with the psychological conditions for flow (clear goals, feedback, manageable challenge).",
+											"name": "OBJ-871374FE-DC85-4993-B702-A53858AC4D85"
+										}
+									],
+									"title": "Flow State",
+									"name": "WEL-CHK-86992911-1EA1-4253-89B7-8E3D7FD69B1A"
+								},
+								{
+									"content_location": "S3",
+									"content_type": "Video",
+									"content_url": "PRG-0768BF20-5A57-457A-9F8F-4A8F9FAAD417/videos/Growth_Mindset.mp4",
+									"duration": "",
+									"description": "Apply a growth mindset to your own goals and challenges.",
+									"level": "Foundational",
+									"transcript": "What if setbacks weren''t failures, but signs of progress? That''s the power of a growth mindset, or the belief that your abilities aren''t fixed. They improve with effort, learning, and adaptation. Research shows that people with a growth mindset don''t avoid challenges. They embrace them, knowing that struggle is part of getting better. So, how do you apply this to your own goals? Step one, reframe setbacks. as learning moments. Instead of, ''I''m bad at this,'' try, ''I''m still learning this.'' The way you talk to yourself shapes how your brain responds to challenges. See mistakes as data, clues on what to improve next. Step two, seek feedback, not just results. People with a growth mindset focus on learning, not just winning. Ask yourself, What can I take from this experience? What''s one thing I can do differently next time? Step three, track progress, not perfection. Growth isn''t instant. It''s built over time. Keep a simple record of small wins and lessons learned. Progress, no matter how small, rewires your brain for resilience. Every challenge is a chance to grow. Shift your mindset, embrace learning, and take one small step today",
+									"objective": [
+										{
+											"description": "Apply a growth mindset to your own goals and challenges.",
+											"name": "OBJ-124BABBD-F1F6-474D-9A85-6475247F97DC"
+										}
+									],
+									"title": "Growth Mindset",
+									"name": "WEL-CHK-4DA91386-1278-42D0-BBC2-7F4415983345"
+								}
+							]
+						}
+					]
+				},
+				{
+					"description": "Prompt large language models (LLMs) for everyday tasks to generate desired responses.",
+					"duration": "",
+					"level": "Foundational",
+					"objective": [
+						{
+							"description": "Prompt large language models (LLMs) for everyday tasks to generate desired responses.",
+							"name": "OBJ-62468DD9-F4ED-4B78-924F-6A5246622124"
+						}
+					],
+					"title": "Talking to AI",
+					"name": "MOD-EA4DDCA6-5E7E-47B2-AC7F-AD58458B24C2",
+					"children": [
+						{
+							"description": "Explain strategies for writing effective prompts for large language models (LLMs).",
+							"duration": "",
+							"level": "Foundational",
+							"objective": [
+								{
+									"description": "Explain strategies for writing effective prompts for large language models (LLMs).",
+									"name": "OBJ-7CA3AF89-1B6E-439F-9409-32CE7742307A"
+								}
+							],
+							"title": "Prompting AI Tools",
+							"children": [
+								{
+									"description": "Define prompt engineering as it applies to large language models (LLMs).",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Define prompt engineering as it applies to large language models (LLMs).",
+											"name": "OBJ-7273A594-9948-4686-B3FC-F713051EBF5E"
+										},
+										{
+											"description": "Define large language models (LLMs).",
+											"name": "OBJ-AF2F517C-DAF4-43B2-8235-E06312CEC3E6"
+										},
+										{
+											"description": "Define ''prompt'' as it relates to large language models (LLMs).",
+											"name": "OBJ-BA12DCCC-9DBC-4548-AC19-E19F6DD83CF1"
+										},
+										{
+											"description": "Compare prompts for large language models (LLMs) to traditional computer code in terms of structure and purpose. ",
+											"name": "OBJ-69C91424-E3F1-4FA4-90AD-D5EEBEFD41A7"
+										}
+									],
+									"title": "What is prompt engineering?",
+									"name": "TOP-61626557-C2F4-4CA0-9B19-D889071FDABC"
+								},
+								{
+									"description": "Describe the components of a successful prompt for large language models (LLMs).",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Describe the components of a successful prompt for large language models (LLMs).",
+											"name": "OBJ-C0731977-F165-4E6E-A648-2118122E9B0D"
+										},
+										{
+											"description": "Identify essential components of a successful prompt for LLMs.",
+											"name": "OBJ-1FF7AC86-2844-40CD-9927-DE956683F887"
+										},
+										{
+											"description": "Explain the role of context in framing prompts and guiding responses from large language models (LLMs). ",
+											"name": "OBJ-9F66A875-B701-430C-9723-98D4A85897AE"
+										},
+										{
+											"description": "Explain how specificity in a prompt helps large language models (LLMs) produce targeted and relevant responses.",
+											"name": "OBJ-2978977C-FA5C-401B-925D-F2270D6B667A"
+										}
+									],
+									"title": "Successful Prompts",
+									"name": "TOP-2A144CE6-0FD1-4193-AC0E-D73F77F94B19"
+								},
+								{
+									"description": "Explain how large language models (LLMs) interpret and respond to prompts. ",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Explain how large language models (LLMs) interpret and respond to prompts. ",
+											"name": "OBJ-55C2ADCC-09B7-475A-980E-11DE9ABBEE8D"
+										},
+										{
+											"description": "Explain how large language models (LLMs) process prompt components such as keywords, context, and instructions.",
+											"name": "OBJ-028E370B-4475-4904-8E8E-9834496709B9"
+										},
+										{
+											"description": "Explain how large language models (LLMs) use prior data patterns to generate responses.",
+											"name": "OBJ-8537CF5E-F6FC-4465-801B-55B8EBBAB2E0"
+										},
+										{
+											"description": "Explain how large language models (LLMs) prioritize elements of a prompt, such as context and specificity, when generating a response.",
+											"name": "OBJ-511FF097-1A58-4009-8D8B-271DEC1BFEC9"
+										}
+									],
+									"title": "Explaining Prompts",
+									"name": "TOP-B7DB841E-6E42-455D-9405-B73AB804BE42"
+								}
+							],
+							"name": "UNT-8AE763FD-37BF-4117-9D95-B9D81F264690",
+							"wellness_checkpoint": [
+								{
+									"content_location": "S3",
+									"content_type": "Video",
+									"content_url": "PRG-0768BF20-5A57-457A-9F8F-4A8F9FAAD417/videos/Digital_Mindfulness_Reducing_Digital_Overload.mp4",
+									"duration": "",
+									"description": "Identify strategies to reduce digital distractions (e.g., time-blocking) and limit the cognitive impact of constant connectivity.",
+									"level": "Foundational",
+									"transcript": "Your phone is a powerful tool for learning, but it''s also engineered to capture and hold your attention. Each notification triggers a small burst of dopamine, reinforcing the habit of checking your phone. Dopamine, or the feel-good chemical, reinforces behaviors the brain finds rewarding. Notifications fuel a reward loop, making distractions harder to resist. This loop trains your brain to seek out distractions, weakening your ability to focus. Here are some tips for you to break that cycle. One, set your phone to learning mode. Every time you check a message, your brain can take up to 20 minutes to refocus. This is called attention residue. Instead, put your phone on do not disturb to limit distractions and stay on track. Two, use time blocks to stay engaged. Your brain doesn''t do well with multitasking. Instead, try focused learning bursts. Then, a short break. Three, reorganize your digital space for focus. If social media is one tap away, your brain anticipates distractions. Move learning apps to your home screen and put others into a folder or switch your screen to grayscale to reduce the temptation to scroll. Four, take breaks away from screens. Constant screen exposure can make it harder to retain what you''ve learned. Step outside, stretch, or let your thoughts settle to improve co nitive well-being. Constant connectivity makes focus harder. But with these digital mindfulness strategies, you can train your brain to stay on track",
+									"objective": [
+										{
+											"description": "Identify strategies to reduce digital distractions (e.g., time-blocking) and limit the cognitive impact of constant connectivity.",
+											"name": "OBJ-D85F78B7-C1A5-418F-9B50-831091BA66A5"
+										}
+									],
+									"title": "Digital Mindfulness + Reducing Digital Overload",
+									"name": "WEL-CHK-25943552-C83A-48DA-A79C-781CD670AD5C"
+								}
+							]
+						},
+						{
+							"description": "Prompt large language models (LLMs) to complete routine tasks including planning tasks, note-taking and to-do list creation.",
+							"duration": "",
+							"level": "Foundational",
+							"objective": [
+								{
+									"description": "Prompt large language models (LLMs) to complete routine tasks including planning tasks, note-taking and to-do list creation.",
+									"name": "OBJ-6BFB718B-592A-4921-B806-FE1B87E603CA"
+								}
+							],
+							"title": "Setting Up A System",
+							"children": [
+								{
+									"description": "Write effective prompts for large language models (LLMs) to assist in planning tasks.",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Write effective prompts for large language models (LLMs) to assist in planning tasks.",
+											"name": "OBJ-63D4620F-4269-4B5F-A414-E8E4201887B1"
+										},
+										{
+											"description": "Explain how large language models (LLMs) assist in planning tasks by organizing information, suggesting ideas, and generating actionable steps.",
+											"name": "OBJ-C40C8E01-BFAE-45DB-9975-B63D7B50D1CF"
+										},
+										{
+											"description": "Identify planning tasks that can be streamlined with large language models (LLMs).",
+											"name": "OBJ-375B13BC-1DCD-4BD7-9783-11BFC2D301B7"
+										},
+										{
+											"description": "Describe the components of a successful prompt for planning tasks using large language models (LLMs).",
+											"name": "OBJ-723DFB72-F0BD-45F2-A0F8-7270EDC2F8B6"
+										}
+									],
+									"title": "Plan an Event or Task",
+									"name": "TOP-766DBFA0-ECE6-4833-9E67-CBF0199AFE6A"
+								},
+								{
+									"description": "Write effective prompts for large language models (LLMs) to assist with note-taking tasks.",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Write effective prompts for large language models (LLMs) to assist with note-taking tasks.",
+											"name": "OBJ-C5925BC9-ED40-4CB5-A0CF-A005748BF8C3"
+										},
+										{
+											"description": "Explain how large language models (LLMs) can assist in note-taking by transcribing speech, identifying key points, and summarizing discussions.",
+											"name": "OBJ-5CF64F73-E46C-43E6-B38E-2848C5B2CF8E"
+										},
+										{
+											"description": "Identify note-taking tasks that large language models (LLMs) can support.",
+											"name": "OBJ-FCF39500-4524-4AB0-80BD-8D52E849C372"
+										},
+										{
+											"description": "Describe the components of a successful prompt for note-taking using large language models (LLMs).",
+											"name": "OBJ-1F63CEF9-4526-462D-A351-926148A6CC84"
+										}
+									],
+									"title": "Communication and Note Taking",
+									"name": "TOP-36FD1B0D-8326-4885-82E2-54A2C752F0AF"
+								},
+								{
+									"description": "Write effective prompts for large language models (LLMs) to create to-do lists with deadlines.",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Write effective prompts for large language models (LLMs) to create to-do lists with deadlines.",
+											"name": "OBJ-0EE62DC7-4F96-4076-B6D5-9CA9807E40B5"
+										},
+										{
+											"description": "Explain how large language models (LLMs) assist in creating to-do lists and reminders by organizing tasks and setting deadlines.",
+											"name": "OBJ-048A666F-C921-47AB-B121-155F96B91B5A"
+										},
+										{
+											"description": "Explain how large language models (LLMs) categorize and prioritize tasks in a to-do list.",
+											"name": "OBJ-124AE2B7-6E4E-4E97-BD8B-E4E1203655E8"
+										},
+										{
+											"description": "Describe the components of a successful prompt for creating to-do lists with deadlines using large language models (LLMs).",
+											"name": "OBJ-BC4D07E8-B021-4295-9FB0-D9CD014740B9"
+										}
+									],
+									"title": "To-Do Lists",
+									"name": "TOP-017F58D0-70B0-42AA-8FD6-054729865FEB"
+								}
+							],
+							"name": "UNT-92848C0A-C522-4ED9-A02F-9C8BCED46F7E",
+							"wellness_checkpoint": [
+								{
+									"content_location": "Youtube",
+									"content_type": "Youtube",
+									"content_url": "https://www.youtube.com/watch?v=FWTNMzK9vG4",
+									"duration": "",
+									"description": "Describe strategies to overcome the emotional & mental impacts of procrastination.",
+									"level": "Foundational",
+									"transcript": "It''s 5 p.m. and you''ve just realized that report you''ve been putting off is due tomorrow. It''s time to buckle down, open your computer... and check your phone. Maybe catch up on your favorite YouTube channel? Actually, you should probably make dinner first. You usually like cooking, though it''s hard to enjoy with this work hanging over your head, and oh\\u2014 it''s actually pretty late! Maybe you should just try again in the morning? This is the cycle of procrastination, and I promise you, we have all been there. But why do we keep procrastinating even when we know it''s bad for us? To be clear, putting something off isn''t always procrastinating. Responsible time management requires deciding which tasks are important and which ones can wait. Procrastination is when we avoid a task we said we would do, for no good reason, despite expecting our behavior to bring negative consequences. Obviously, it''s irrational to do something you expect to harm you. But ironically, procrastination is the result of our bodies trying to protect us, specifically by avoiding a task we see as threatening. When you realize you need to write that report, your brain responds like it would to any incoming threat. Your amygdala, a set of neurons involved in emotional processing and threat identification, releases hormones including adrenaline that kick off a fear response. This stress-induced panic can overpower the impulses from your prefrontal cortex, which typically help you think long term and regulate your emotions. And it''s in the midst of this fight, flight, or freeze response that you decide to handle the threat by avoiding it in favor of some less stressful task. This response might seem extreme\\u2014 after all, it''s just a deadline, not a bear attack. But we''re most likely to procrastinate tasks that evoke negative feelings, such as dread, incompetence, and insecurity. Studies of procrastinating university students have found participants were more likely to put off tasks they perceived as stressful or challenging. And the perception of how difficult the task is increases while you''re putting it off. In one experiment, students were given reminders to study throughout the day. While they were studying, most reported that it wasn''t so bad. But when they were procrastinating, they consistently rated the idea of studying as very stressful, making it difficult to get started. Because procrastination is motivated by our negative feelings, some individuals are more susceptible to it than others. People who have difficulty regulating their emotions and those who struggle with low self-esteem are much more likely to procrastinate, regardless of how good they are at time management. However, it''s a common misconception that all procrastinators are lazy. In the body and brain, laziness is marked by no energy and general apathy. When you''re feeling lazy, you''re more likely to sit around doing nothing than distract yourself with unimportant tasks. In fact, many people procrastinate because they care too much. Procrastinators often report a high fear of failure, putting things off because they''re afraid their work won''t live up to their high standards. Whatever the reason for procrastination, the results are often the same. Frequent procrastinators are likely to suffer from anxiety and depression, ongoing feelings of shame, higher stress levels and physical ailments associated with high stress. Worst of all, while procrastination hurts us in the long run, it does temporarily reduce our stress level, reinforcing it as a bodily response for coping with stressful tasks. So, how can we break the cycle of procrastination? Traditionally, people thought procrastinators needed to cultivate discipline and practice strict time management. But today, many researchers feel the exact opposite. Being too hard on yourself can layer additional bad emotions onto a task, making the threat even more intense. To short-circuit this stress response, we need to address and reduce these negative emotions. Some simple strategies include breaking a task into smaller elements or journaling about why it''s stressing you out and addressing those underlying concerns. Try removing nearby distractions that make it easy to impulsively procrastinate. And more than anything, it helps to cultivate an attitude of self-compassion, forgiving yourself, and making a plan to do better next time. Because a culture that perpetuates this cycle of stress and procrastination hurts all of us in the long term",
+									"objective": [
+										{
+											"description": "Describe strategies to overcome the emotional & mental impacts of procrastination.",
+											"name": "OBJ-0408EB67-BC8C-411E-B4B6-E10533EA849E"
+										}
+									],
+									"title": "Procrastination",
+									"name": "WEL-CHK-620FC4F0-2B27-4258-91F1-53318802D893"
+								}
+							]
+						},
+						{
+							"description": "Prompt large language models (LLMs) to generate effective text-based output for brainstorming, drafting, and summarizing.",
+							"duration": "",
+							"level": "Foundational",
+							"objective": [
+								{
+									"description": "Prompt large language models (LLMs) to generate effective text-based output for brainstorming, drafting, and summarizing.",
+									"name": "OBJ-8F3ADB07-A32F-4AF9-A3F9-6E6EE524447B"
+								}
+							],
+							"title": "AI for Brainstorming, Drafting and Summarizing",
+							"children": [
+								{
+									"description": "Write effective prompts for large language models (LLMs) to generate text-based summaries.",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Write effective prompts for large language models (LLMs) to generate text-based summaries.",
+											"name": "OBJ-16096E9F-4F45-4153-8D8E-FE2B14A43131"
+										},
+										{
+											"description": "Explain how large language models (LLMs) assist in summarizing by identifying key themes and main points.",
+											"name": "OBJ-3BB36573-572D-4E18-BE0E-6563B4D65A53"
+										},
+										{
+											"description": "Identify components of an effective summary.",
+											"name": "OBJ-2DC0C6A8-278C-44F0-ADA0-38E523F6FF4E"
+										},
+										{
+											"description": "Describe the components of a successful prompt for summarizing content using large language models (LLMs).",
+											"name": "OBJ-D921739D-B544-4AAF-91D2-A115708FA4F7"
+										}
+									],
+									"title": "Prompting for Summarizing",
+									"name": "TOP-F2C15944-3773-4AF4-81F5-C1F830739F04"
+								},
+								{
+									"description": "Write effective prompts for large language models (LLMs) to support brainstorming tasks.",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Write effective prompts for large language models (LLMs) to support brainstorming tasks.",
+											"name": "OBJ-84344C05-09DA-4F36-AA2A-85EAF70316B5"
+										},
+										{
+											"description": "Explain how large language models (LLMs) assist with brainstorming tasks.",
+											"name": "OBJ-444E84E4-81E5-43BA-9157-55ACF02ADB78"
+										},
+										{
+											"description": "Identify types of brainstorming tasks where large language models (LLMs) act as a co-pilot.",
+											"name": "OBJ-171792A1-EDE1-41E1-8565-6F114F8FA542"
+										},
+										{
+											"description": "Describe the components of a successful prompt for brainstorming tasks using large language models (LLMs).",
+											"name": "OBJ-239AF197-394F-4A9D-9A48-960B7B7BFA64"
+										}
+									],
+									"title": "Prompting for Brainstorming",
+									"name": "TOP-723574C4-EE21-4E88-8E60-360EB9C3A9EA"
+								},
+								{
+									"description": "Write effective prompts for large language models (LLMs) to generate drafts of content. ",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Write effective prompts for large language models (LLMs) to generate drafts of content. ",
+											"name": "OBJ-CF5634DB-EC38-4267-B532-13EFCDC2B463"
+										},
+										{
+											"description": "Explain how large language models (LLMs) assist in drafting content by generating text, refining ideas, and suggesting improvements.",
+											"name": "OBJ-DF720F63-1260-4C45-A9CE-B87F28D7A755"
+										},
+										{
+											"description": "Identify types of content that large language models (LLMs) can assist with.",
+											"name": "OBJ-A12B2374-C7C0-4C66-9C60-7D344DF5177E"
+										},
+										{
+											"description": "Describe the components of a successful prompt for drafting content using large language models (LLMs).",
+											"name": "OBJ-B6BDB20E-1EFA-46E1-B84E-F742605CA3A6"
+										}
+									],
+									"title": "Prompting for Drafting",
+									"name": "TOP-906C0E36-00A1-4ED3-BDEE-1AA4FB400AAF"
+								}
+							],
+							"name": "UNT-C8D9216F-D714-4B71-8751-C23EDE76C157",
+							"wellness_checkpoint": [
+								{
+									"content_location": "Youtube",
+									"content_type": "Youtube",
+									"content_url": "https://www.youtube.com/watch?v=xgp6eELYY1M",
+									"duration": "",
+									"description": "Describe the neuroscience-backed time management techniques that will make the largest impact on your life.",
+									"level": "Foundational",
+									"transcript": "Do you always feel short of time? Are you constantly pressured to meet deadlines, whether it''s at work or at home? If so, you''re in need of some essential time management tips. During this video, we will uncover 10 top tips to help you get on top of your tasks and more in charge of your time. Here''s how to work smarter, not harder. 1. Declutter Your Workspace The first step to time management success is having an organised workspace; if you work in a frantic way, you''re bound to waste time searching for papers or files. So, to boost productivity, start by decluttering your workspace and only keep any vital items around you. 2. Create a To-Do List A good to-do list will help you stay on track, rather than swaying to and from tasks, and it will also give you a great sense of achievement when you''ve managed to tick off a large chunk at the end of the day. The best way to create your list is to analyse your tasks towards the end of your shift and prepare for the following day. That way, you won''t waste time in the morning when you''re most productive on something minor like a list. 3. Prioritise Now you have your list of duties; you''ll need to rank them in order of priority. The way you do this is up to you \\u2013 you could use a numerical ranking system, highlights or mental notes. What''s important here is to understand which is the most urgent job and get that out of the way first. 4. Set Achievable Goals A great way to stay motivated is to set achievable goals. If you have 20 difficult tasks, it''s apparent that you won''t achieve them all in one day. Therefore, be realistic when prioritising and creating your list, so that you don''t get disappointed when 5pm rolls around! 5. Use Organisation Apps If you''re tech-friendly, an organisation app is what you need in your life! You could use a project management tool like Trello to keep your tasks visible and your workflow clear. On the other hand, if you want a simple checklist, Todoist is your perfect match! 6. Don''t Multitask Many people assume that multitasking is a great skill to have, but if you''re not able to work fluidly, you''ll end up bouncing from tasks and wasting time in between. This can also lead to careless mistakes and forgetfulness. 7. Reward Yourself When you''ve finished a big task, why not reward yourself with a treat? This could vary depending on your interests \\u2013 you might want to order a coffee, a cake or have a catch up with your favourite coworker. Just don''t overdo it and have 10 cups of coffee a day \\u2013 that won''t help anyone! 8. Stay Off Social Media Unless you work in marketing, limit your time on social platforms when you''re trying to get jobs done. If you really can''t resist looking at every notification, put your phone on flight-mode or download a social media blocking app. 9. Audit Your Time Once you''ve spent a week following your new plan, audit your time and see how productive you''ve been. You may see that you can spend less time on certain tasks and adjust your plan accordingly. 10. Take Frequent Breaks Taking frequent breaks is crucial when trying to keep productivity levels up; otherwise, your energy levels will drop, and you will end up swaying from your work. Many competing theories suggest specific timeframes; however, you should figure out how long you can stay focused for and then take a 15-30-minute break in between. Developing these skills won''t happen overnight, but by following these tips, you''ll enjoy a much more efficient work life",
+									"objective": [
+										{
+											"description": "Describe the neuroscience-backed time management techniques that will make the largest impact on your life.",
+											"name": "OBJ-5D21FB77-E8F0-4AC6-A5B7-5C6EBADACBE7"
+										}
+									],
+									"title": "Time Management",
+									"name": "WEL-CHK-3B8045C6-DB20-4DF8-8B51-B1526A33801E"
+								},
+								{
+									"content_location": "S3",
+									"content_type": "Video",
+									"content_url": "PRG-0768BF20-5A57-457A-9F8F-4A8F9FAAD417/videos/Self_Monitoring_for_Success.mp4",
+									"duration": "",
+									"description": "Apply self-monitoring techniques and strategies to track and adjust your progress towards goals.",
+									"level": "Foundational",
+									"transcript": "Want to hit your goals faster? Stop guessing. Start tracking. It''s called self monitoring. A researchbacked strategy where tracking your actions increases awareness and naturally shifts behavior. Studies show that simply tracking your actions can lead to positive change. Like a 2019 study that found people who consistently logged what they ate lost more weight than those who didn''t, even without major diet changes. Just the act of paying attention helped. them make better choices and stick with healthier habits over time. It''s about noticing progress, not perfection. Here''s how you can use self monitoring effectively. Write it down. Your brain loves proof of progress. Use a journal, an app, or a checklist, whatever keeps you accountable. Set checkpoints. Successful people don''t just push forward, they pause. Ask yourself, what''s working? What''s not? What''s one small tweak I can Make adjust. Don''t abandon. Setbacks aren''t failures, they''re feedback. If something isn''t working, tweak the strategy, not the goal. Try incorporating these strategies today and see how much more in control you feel",
+									"objective": [
+										{
+											"description": "Apply self-monitoring techniques and strategies to track and adjust your progress towards goals.",
+											"name": "OBJ-CBA84550-19FA-4939-AA4B-19E6C684F85B"
+										}
+									],
+									"title": "Self Monitoring for Success",
+									"name": "WEL-CHK-5679B8E6-87F8-4032-B446-C0A4E340A557"
+								}
+							]
+						}
+					]
+				},
+				{
+					"description": "Adjust AI-generated outputs based on evaluation for prompt alignment, accuracy, and bias.",
+					"duration": "",
+					"level": "Foundational",
+					"objective": [
+						{
+							"description": "Adjust AI-generated outputs based on evaluation for prompt alignment, accuracy, and bias.",
+							"name": "OBJ-5DC0E36F-4CA9-42DE-A5B4-C03B0F5DD6FD"
+						}
+					],
+					"title": "Reviewing AI Output",
+					"name": "MOD-55ACEC80-5B84-4BDF-8765-2C9087BD2D62",
+					"children": [
+						{
+							"description": "Adjust AI-generated outputs by refining prompts or editing content to align with original prompt goals and standards.",
+							"duration": "",
+							"level": "Foundational",
+							"objective": [
+								{
+									"description": "Adjust AI-generated outputs by refining prompts or editing content to align with original prompt goals and standards.",
+									"name": "OBJ-DE11CB39-D136-49E4-967C-1B5DF286C445"
+								}
+							],
+							"title": "Evaluating Your Co-Pilot",
+							"children": [
+								{
+									"description": "Adjust AI-generated outputs to align with original prompt instructions.",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Adjust AI-generated outputs to align with original prompt instructions.",
+											"name": "OBJ-E63536AC-E8D8-4FD1-8DED-3C432652A524"
+										},
+										{
+											"description": "Identify misalignments between AI-generated outputs and original prompt instructions.",
+											"name": "OBJ-2D0F1B9A-68BB-419C-85C0-C013980F9B0E"
+										},
+										{
+											"description": "Identify missing or incomplete elements needed for task alignment.",
+											"name": "OBJ-098137DC-5367-4656-ACEA-415EEBF99221"
+										},
+										{
+											"description": "Adjust AI-generated outputs by refining prompts to improve task alignment.",
+											"name": "OBJ-FE08C379-7072-4163-A01F-BF215124B640"
+										}
+									],
+									"title": "Against Your Prompt",
+									"name": "TOP-5BEE0BE6-83A2-4885-8A75-5EBC164894A6"
+								},
+								{
+									"description": "Adjust the output of AI generated material to align with your intended tone.",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Adjust the output of AI generated material to align with your intended tone.",
+											"name": "OBJ-1E15268B-E0BE-4107-904F-EB686776D686"
+										},
+										{
+											"description": "Describe the appropriate level of formality for text-based outputs in a given scenario.",
+											"name": "OBJ-2F1A0D90-E9D7-4A64-8B12-5C0AE36946C9"
+										},
+										{
+											"description": "Identify the importance of considering audience in generating content or analysis.",
+											"name": "OBJ-668DEEEE-2BA5-452E-AA00-328665C05B3A"
+										},
+										{
+											"description": "Describe potential prompt enhancements or follow-ups to adjust tone.",
+											"name": "OBJ-C95EF4A9-1E3B-4F8A-A1AB-5C467110D977"
+										}
+									],
+									"title": "Tone",
+									"name": "TOP-A8044949-03DE-4B19-972A-08B482287081"
+								},
+								{
+									"description": "Explain how critical thinking, editing, and attribution support aligning AI-generated content with personal goals.",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Explain how critical thinking, editing, and attribution support aligning AI-generated content with personal goals.",
+											"name": "OBJ-B994DFEC-DEBE-4135-A835-14146AD9BE5C"
+										},
+										{
+											"description": "Explain the importance of editing AI-generated content to maintain quality and alignment.",
+											"name": "OBJ-BA46A9EC-E16B-414F-811C-38D1A4D668EA"
+										},
+										{
+											"description": "Explain the importance of applying critical thinking when reviewing AI-generated outputs.",
+											"name": "OBJ-1DD36399-3384-4A9D-95F8-4DCD0E4F5072"
+										},
+										{
+											"description": "Explain the importance of proper attribution when incorporating AI-generated content.",
+											"name": "OBJ-186188CD-48B9-401E-A5B9-ED83DA737E83"
+										}
+									],
+									"title": "Integrating Your Voice",
+									"name": "TOP-6478B248-3E87-48E1-9396-7E615246E09E"
+								}
+							],
+							"name": "UNT-C772FB52-61E2-44F3-AE8F-1BA51317767D",
+							"wellness_checkpoint": [
+								{
+									"content_location": "Youtube",
+									"content_type": "Youtube",
+									"content_url": "https://www.youtube.com/watch?v=1DmphC3Wozo",
+									"duration": "",
+									"description": "Use simple techniques (e.g., breathing, labeling) to manage intense emotions that impact the brain and learning.",
+									"level": "Foundational",
+									"transcript": "you know it''s a shame schools don''t teach us how to handle our emotions imagine if we learned how to manage stress or cope with sadness alongside Math and Science Life might be a lot smoother right but it''s never too late to learn mastering emotional regulation can transform our daily lives and relationships here are some simple yet powerful strategies for regulating your emotions let''s give ourselves the emotional education we never got number one recognize your emotions you''d be surprised how many people have no idea what they''re actually feeling some folks only know they feel good or bad but struggle to identify and label their emotions more specifically did you know we have over 27 distinct emotions being able to identify whether you''re feeling anxious excited frustrated or hopeful is the first step in regul a in those emotions start by paying attention to your body''s signals and your thoughts keep an emotional journal or use an app to track your feelings throughout the day this awareness is key to understanding and eventually managing your emotional responses Embrace awareness healthy emotional regulation begins with self-awareness it involves acknowledging and accepting one''s emotions without judgment now that we''ve identified and labeled what we''re feeling instead instead of suppressing and denying feelings or trying to get rid of them individuals recognize their emotional state and allow themselves to experience it fully research suggests that practicing mindfulness and meditation can enhance awareness of emotions promote acceptance and reduce emotional reactivity take a moment to check in with yourself from time to time recognize and accept your emotions without judgment awareness is the first step towards healthy emotional regulation flip the script one powerful strategy for regulating emotions is cognitive reappraisal which involves reframing the way we perceive a situation by consciously altering our interpretation of events we can change our emotional response for example viewing a setback as an opportunity for growth rather than a failure this can mitigate feelings of disappointment and frustration Studies have shown that cognitive re appraisal can lead to decreased levels of Stress and Anxiety fostering greater emotional resilience reframe negative thoughts look at challenges as opportunities for growth rather than obstacles changing your perspective can change your emotional response express yourself healthy emotional regulation involves finding constructive outlets for expressing emotions whether through ART writing or talking to a trusted friend expressing feelings can alleviate emotional distress and facilitate itate processing bottling up emotions can have detrimental effects on Mental Health whereas expressive writing in particular has been linked to improvements in mood and well-being find healthy outlets for your emotions whether it''s journaling talking to a friend or engaging in creative activities expressing yourself can help release pent up feelings and promote healing lean on others human connections play a crucial role in emotional regulation cultivating supportive relationships provides a buff against stress and enhances emotional resilience sharing experiences with empathetic individuals can offer perspective and validation helping to regulate emotions more effectively Studies have shown that strong social support networks are associated with lower rates of depression and anxiety don''t go It Alone seek support from friends family or a therapist sharing your feelings with others can provide comfort and perspective if you don''t have anyone around you or don''t feel comfortable sharing your emotions with someone look at those creative Outlets that allow you to express yourself journaling dancing or painting are great ways to express what you''re feeling some people might find online communities or forums helpful as they provide a sense of anomid nourish your body physical well-being and emotional health are intertwined and adopting healthy lifestyle habits can bolster emotional regulation regular exercise adequate sleep and a balanced diet contribute to overall emotional resilience exercise in particular stimulates the release of endorphins neurotransmitters known as Feelgood chemicals which can improve mood and reduce stress likewise prioritizing sleep and nutrition supports optimal brain function enabling better emotional regulation remember physical health and emotional well-being go hand inand prioritize exercise sleep and nutrition to support your body and mind stress less stress is an inevitable part of life but how we respond mentally or emotionally to it determines its impact on our well-being feeding negative selft talk or catastrophizing just causes more stress probably more than the actual stressful event effective stress management techniques such as deep breathing progressive muscle relaxation and mindfulness-based stress reduction can help regulate the body''s physiological response to stressors try activating your body''s relaxation response through relaxation techniques like deep breathing or meditation to calm your mind and body in times of stress taking care of yourself helps you better handle life''s challenges seek help when needed despite One''s best efforts there may be times when managing emotions feels too overwhelming in such instances seeking support from a mental health professional can be invaluable therapists can provide personalized strategies and interventions to help individuals navigate complex emotions and develop healthy coping mechanisms whether through cognitive behavioral therapy dialectical behavioral therapy or other modalities professional guidance can Empower individuals to enhance their emotional regulation skills there is no shame in asking for help if you''re struggling to manage your emotions consider reaching out to a professional who can provide guidance and support by incorporating these strategies into your daily life you can take control of your emotions and create a more joyful and fulfilling existence remember it''s okay to feel and it''s okay to seek help when you need it you deserve to live a life filled with peace happiness and emotional resilience",
+									"objective": [
+										{
+											"description": "Use simple techniques (e.g., breathing, labeling) to manage intense emotions that impact the brain and learning.",
+											"name": "OBJ-6B054778-5C94-43C6-9691-31718FFFB7AD"
+										}
+									],
+									"title": "Emotional Regulation",
+									"name": "WEL-CHK-4A522784-F28B-447F-904F-5E7FAD9F11FD"
+								}
+							]
+						},
+						{
+							"description": "Adjust AI-generated outputs by correcting factual inaccuracies.",
+							"duration": "",
+							"level": "Foundational",
+							"objective": [
+								{
+									"description": "Adjust AI-generated outputs by correcting factual inaccuracies.",
+									"name": "OBJ-421EB3A8-F173-45C8-A307-79BEDABC7EBD"
+								}
+							],
+							"title": "Evaluating for Accuracy",
+							"children": [
+								{
+									"description": "Explain why factual inaccuracies and hallucinations occur in AI-generated outputs.",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Explain why factual inaccuracies and hallucinations occur in AI-generated outputs.",
+											"name": "OBJ-83557C3A-6BF7-4EEB-8F4D-0D5F2C58FCCD"
+										},
+										{
+											"description": "Describe reasons why AI outputs may be inaccurate.",
+											"name": "OBJ-18A57530-8B99-4527-9BFE-4B410E108D4F"
+										},
+										{
+											"description": "Identify common types of factual inaccuracies in AI-generated content.",
+											"name": "OBJ-A25772C7-24CA-4213-8238-0181AEC92AC3"
+										},
+										{
+											"description": "Define ''AI hallucination'' and its characteristics.",
+											"name": "OBJ-CD111A0D-68C1-42C7-B54B-13AC5D00D798"
+										}
+									],
+									"title": "Accuracy Errors",
+									"name": "TOP-B3838F68-483B-4878-A27A-094760EDBB1C"
+								},
+								{
+									"description": "Apply mitigation techniques to limit hallucinations and accuracy errors in AI-generated outputs as an individual user.",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Apply mitigation techniques to limit hallucinations and accuracy errors in AI-generated outputs as an individual user.",
+											"name": "OBJ-D4BB2661-74A0-4A96-B81D-2F4B04CF2844"
+										},
+										{
+											"description": "Identify signs of hallucinations and factual inaccuracies in AI-generated outputs.",
+											"name": "OBJ-98E61152-B1A5-4966-B080-704A82C8FF71"
+										},
+										{
+											"description": "Identify prompt refinements that can reduce hallucinations and accuracy errors.",
+											"name": "OBJ-8907BF6B-FFF3-424B-B56C-E0E1A6FC4085"
+										},
+										{
+											"description": "Identify iteration techniques to improve factual accuracy in AI-generated outputs.",
+											"name": "OBJ-0E652713-D26F-4747-89B7-067AC267FD38"
+										}
+									],
+									"title": "Mitigating Accuracy Errors",
+									"name": "TOP-BB815D5A-DDAC-4F1F-9A70-EACD43ED1D17"
+								},
+								{
+									"description": "Explain how to verify AI-generated claims using reliable sources.",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Explain how to verify AI-generated claims using reliable sources.",
+											"name": "OBJ-0FCFCC71-4312-4322-8315-A878C7F3F409"
+										},
+										{
+											"description": "Identify the need for verifying AI-generated claims to ensure accuracy and credibility.",
+											"name": "OBJ-17B54FDE-5BE4-4854-BAA3-3AAB1E245CC5"
+										},
+										{
+											"description": "Identify types of reliable sources for fact-checking AI-generated claims.",
+											"name": "OBJ-931BEC33-A877-4F7B-BFA6-F4E2FB6C73EC"
+										},
+										{
+											"description": "Describe the process of cross-referencing AI-generated claims using multiple reliable sources.",
+											"name": "OBJ-14B0860E-F3E5-4210-9CD9-3AA3A2DA8524"
+										}
+									],
+									"title": "Fact Checking",
+									"name": "TOP-DD1688E2-93C0-405A-8341-7DE28E130F43"
+								}
+							],
+							"name": "UNT-68B2D710-6339-4675-B1DA-5C0B4A75ADB1",
+							"wellness_checkpoint": [
+								{
+									"content_location": "S3",
+									"content_type": "Video",
+									"content_url": "PRG-0768BF20-5A57-457A-9F8F-4A8F9FAAD417/videos/Identifying_Emotional_Triggers.mp4",
+									"duration": "",
+									"description": "Detect patterns behind recurring emotional responses and tailor strategies to handle them.",
+									"level": "Foundational",
+									"transcript": "Let''s talk about recurring emotional responses. Patterns and automatic thoughts shape your emotions and behaviors. If the same emotions and self talk like stress, frustration, and self-doubt keep showing up, it''s because your brain has learned to react automatically. But here''s how to notice the patterns and change your response. First, pause and notice. If you feel a strong emotional reaction, stop and ask, ''What just happened?'' What automatic thought popped into my head? Did someone''s tone set me off? Did a deadline make my stomach tighten? Naming the trigger and thought shifts it from unconscious reaction to conscious awareness, giving you more control. Next, look for the pattern. Maybe criticism always makes you defensive or uncertainty always brings anxiety. Emotional responses aren''t random or your brain trying to sabotage you. They come from deeply ingrained thought patterns and survival strategies shaped by past experiences. Last, rewrite the script. Here''s how. If stress makes you freeze, try box breathing to calm your nervous system. Inhale for 4 seconds, hold for four, exhale for four. If frustration makes you react too quickly, pause for 10 seconds before responding to let logic catch up to emotion. For self-doubt, reframe, I can''t do this to I am learning how to do this and rewire your brain toward growth and confidence. Your emotions aren''t the problem. The automatic thought patterns driving them are. With these new strategies, you''ll take back control, one reaction at a time",
+									"objective": [
+										{
+											"description": "Detect patterns behind recurring emotional responses and tailor strategies to handle them.",
+											"name": "OBJ-B165E77B-AB60-42B1-88E1-2A02E2A7DF19"
+										}
+									],
+									"title": "Identifying Emotional Triggers",
+									"name": "WEL-CHK-E928105A-34D6-4812-8734-38806F310045"
+								}
+							]
+						},
+						{
+							"description": "Adjust AI-generated outputs by refining prompts to mitigate bias and misinformation.",
+							"duration": "",
+							"level": "Foundational",
+							"objective": [
+								{
+									"description": "Adjust AI-generated outputs by refining prompts to mitigate bias and misinformation.",
+									"name": "OBJ-48E77CDD-967B-4865-8D5E-DE81C8C65279"
+								}
+							],
+							"title": "Evaluating for Bias and Misinformation",
+							"children": [
+								{
+									"description": "Explain the appearance of bias in AI-generated outputs.",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Explain the appearance of bias in AI-generated outputs.",
+											"name": "OBJ-800F6C29-F47A-4FFB-BD31-EE2BB147EE98"
+										},
+										{
+											"description": "Define bias in AI-generated content.",
+											"name": "OBJ-BB36E9A8-6947-494A-8597-421317A4D5A1"
+										},
+										{
+											"description": "Explain the impact of biased AI-generated content",
+											"name": "OBJ-DB8A08A8-9C6F-4AB8-8472-06B573B82601"
+										},
+										{
+											"description": "Describe factors that contribute to bias in AI-generated content,",
+											"name": "OBJ-3EFB9100-2C3B-4C11-B5BD-CE1068BEB826"
+										}
+									],
+									"title": "Bias in Outputs",
+									"name": "TOP-0BCE6396-5BAB-41FB-9EB1-3EA0200830EE"
+								},
+								{
+									"description": "Identify bias in AI-generated outputs.",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Identify bias in AI-generated outputs.",
+											"name": "OBJ-CF8E3F35-1327-4E1E-B181-A64556E06089"
+										},
+										{
+											"description": "Describe common indicators of bias in AI-generated outputs.",
+											"name": "OBJ-1F78B738-E1A4-49CF-BDB3-73425E7E7EA7"
+										},
+										{
+											"description": "Identify examples of biased language or content in AI-generated outputs.",
+											"name": "OBJ-D4981431-CC34-4918-A6E4-8EBA08FF6BC6"
+										},
+										{
+											"description": "Differentiate biased outputs from neutral or balanced outputs.",
+											"name": "OBJ-B0F97213-012E-4CDD-9205-2BD972249E96"
+										}
+									],
+									"title": "Identifying Bias",
+									"name": "TOP-D83C3D39-50D2-4667-A8E7-56DC81C838D7"
+								},
+								{
+									"description": "Adjust prompts to minimize bias in AI-generated content.",
+									"duration": "",
+									"level": "Foundational",
+									"objective": [
+										{
+											"description": "Adjust prompts to minimize bias in AI-generated content.",
+											"name": "OBJ-5D2B6E89-D1E2-48FA-9717-5CAC5B8A2CA5"
+										},
+										{
+											"description": "Identify prompt phrasing techniques that reduce bias in AI-generated outputs.",
+											"name": "OBJ-AC7E0094-B316-4F6A-9BA6-498E81599BBA"
+										},
+										{
+											"description": "Describe the importance of providing balanced context when prompting to minimize bias.",
+											"name": "OBJ-C10B2D21-CB3B-402D-843F-1DED0CD95255"
+										},
+										{
+											"description": "Describe iterative prompting techniques to refine AI-generated outputs and reduce bias.",
+											"name": "OBJ-5C7DDFB6-0374-4758-B853-34F41FC4CA6C"
+										}
+									],
+									"title": "Bias Remedies",
+									"name": "TOP-79433FE4-B7B9-4D51-AD36-3EAFED77E79E"
+								}
+							],
+							"name": "UNT-CE61FCFC-33F9-4B80-9E98-B14520FD8226",
+							"wellness_checkpoint": [
+								{
+									"content_location": "Youtube",
+									"content_type": "Youtube",
+									"content_url": "https://www.youtube.com/watch?v=9Hto1HeMrYQ",
+									"duration": "",
+									"description": "Employ rapid, in-the-moment methods (e.g., grounding, mental breaks) for diffusing stress before it escalates, maintaining mental balance.",
+									"level": "Foundational",
+									"transcript": "stress is a normal physical response to events that make you feel threatened or upset in some way be a real physical danger such as the fire are a daily upset of life like job stress or financial worry our body''s reaction to stress can take a toll on our health if not managed in response to stress your nervous system releases a flood of stress hormones including too called adrenaline and cortisol your heart pounds faster muscles tighten blood pressure rises breath quickens and senses become sharper if you have a lot of responsibilities and worries your stress may be on most of the time the more your body stress system is activated the harder it is to shut off chronic stress can have devastating effects on your health did you know that 90% of all diseases are caused or complicated by stress chronic stress can also have physical symptoms such as aches and pains trouble sleeping and chest pains check out these tips that are easy to incorporate into your daily routine to help manage stress movement can greatly slow your body''s response to stress regular aerobic exercise reduces levels of stress hormones in the body as well as stimulates production of endorphins which act as the body''s natural mood elevators take a walk and do some simple stretches another way of reducing stress quickly is by using your senses what you see hear smell taste and touch look through your favorite photo album smell a specific scent you love listen to music hug a pet all these simple activities can immediately help your stress levels decrease besides sensory here are some more tips to help cope with stress in your life manage your time prioritize important tasks and those that can wait manage commitments and reduce procrastination take time for pleasurable activities such as gardening or sharing time with friends get enough rest or sleep most adults need 7 to 9 hours of sleep not getting enough sleep can increase feelings of stress through less patience and increased agitation while we cannot get rid of stress entirely following these easy tips can help you manage health Texas also provides a patient education course on stress management talk with your doctor today on how to take advantage of this free resource",
+									"objective": [
+										{
+											"description": "Employ rapid, in-the-moment methods (e.g., grounding, mental breaks) for diffusing stress before it escalates, maintaining mental balance.",
+											"name": "OBJ-16C4E48E-050F-46B7-8B2D-EEF8401D7ADC"
+										}
+									],
+									"title": "Stress Management",
+									"name": "WEL-CHK-CF89292C-7AC4-46D3-A47D-84F4D92B085C"
+								},
+								{
+									"content_location": "S3",
+									"content_type": "Video",
+									"content_url": "PRG-0768BF20-5A57-457A-9F8F-4A8F9FAAD417/videos/Integrating_Reflection_into_Daily_Life.mp4",
+									"duration": "",
+									"description": "Describe how to make reflection a natural part of one\\u2019s routine, promoting consistent, incremental growth.",
+									"level": "Foundational",
+									"transcript": "Want to improve faster? Reflection is the key. It''s not just about working hard. It''s about learning from your own experience. Let''s talk about how to integrate reflection into your life. In just one minute a day, you can turn small moments into real progress. Here''s how. Imagine this. At the end of each day, you take a moment triggered by another action. Maybe while closing your laptop or making your evening tea. This is your reflection time. No pressure, just a quick check-in brought about by habit stacking. You engage in self-reflection by asking yourself simple questions like, ''What went well today?'' causing you to start noticing small wins you used to overlook or what could have gone better. Instead of feeling stuck, you spot patterns holding you back. And finally, what''s one small thing I''ll try tomorrow? You''re no longer just working. You''re improving. At first, it''s small, but within weeks, something shifts. You''re tracking your progress, adjusting your approach, and actually seeing growth. Reflection isn''t extra work. It''s how you make your work count. Start small. Tie it to a daily habit. Ask yourself those three questions, and keep it simple. One minute of reflection a day is all it takes to improve. Ready to add it to your routine?",
+									"objective": [
+										{
+											"description": "Describe how to make reflection a natural part of one\\u2019s routine, promoting consistent, incremental growth.",
+											"name": "OBJ-74E0D3C8-7D38-4B12-91BB-38D1C48CD936"
+										}
+									],
+									"title": "Integrating Reflection into Daily Life",
+									"name": "WEL-CHK-C9A9AC7E-252E-49C1-BCBA-B93F9A4E668D"
+								}
+							]
+						}
+					]
+				}
+			],
+			"objective": [
+				{
+					"description": "Develop solutions to everyday personal and professional tasks by responsibly using AI tools and prompting strategies.",
+					"name": "OBJ-F6B6CA8A-BA8B-434A-B5B9-D3929D913FF9"
+				}
+			],
+			"rubric": {
+				"criteria": [
+					{
+						"competency": [
+							{
+								"description": "Learner has not started or attempted this component.",
+								"level": "Not Started",
+								"score": 0,
+								"name": "RUB-COM-FD672E95-D6C0-4909-84DE-A65DDECCA50C"
+							},
+							{
+								"description": "No clear alignment with the stated purpose; the artifact is generic or irrelevant to the problem context.",
+								"level": "Developing/Emerging",
+								"score": 1,
+								"name": "RUB-COM-E20E5F13-13F2-4DEE-860F-02736EEF7708"
+							},
+							{
+								"description": "Partially meets the objectives; connection between the artifact and the stated goals is incomplete or unclear.",
+								"level": "Foundational",
+								"score": 2,
+								"name": "RUB-COM-CF1DF0A7-4E00-4EFC-A4D2-980FF380622C"
+							},
+							{
+								"description": "Generally aligned with the objectives; covers core requirements but may lack some specificity or depth in addressing certain constraints.",
+								"level": "Skilled",
+								"score": 3,
+								"name": "RUB-COM-19E06CFF-2E23-44B6-9C84-E83C160AAD2A"
+							},
+							{
+								"description": "Fully tailored to the student''s stated goals, constraints, or use case; thoroughly addresses all relevant details (e.g., budget, time, audience needs). Demonstrates a deep understanding of the problem context.",
+								"level": "Expert",
+								"score": 4,
+								"name": "RUB-COM-6FFFA629-6030-4FF3-8F64-FFC8114B18A6"
+							}
+						],
+						"description": "Does the artifact effectively address the stated objectives or problem context?",
+						"maxPoints": 4,
+						"name": "Alignment with Purpose & Goals",
+						"name": "RUB-CRT-89B1114E-E10E-4DFE-BA18-B78699C88EB0"
+					},
+					{
+						"competency": [
+							{
+								"description": "Learner has not started or attempted this component.",
+								"level": "Not Started",
+								"score": 0,
+								"name": "RUB-COM-A95E181C-C4A8-4B6D-9E92-0F7420B07EAB"
+							},
+							{
+								"description": "Significant factual errors or inconsistencies make the artifact unreliable or hard to follow; minimal or no effort to verify correctness.",
+								"level": "Developing/Emerging",
+								"score": 1,
+								"name": "RUB-COM-9963EB4E-C2AF-498A-8BC1-D816AD0B73D6"
+							},
+							{
+								"description": "Contains noticeable inaccuracies, outdated information, or significant gaps. There may be incomplete or unverified details that weaken reliability.",
+								"level": "Foundational",
+								"score": 2,
+								"name": "RUB-COM-60FB623D-B86A-4DE5-B138-A3E333523710"
+							},
+							{
+								"description": "Content is mostly accurate and coherent, with a few minor oversights or gaps in detail. Shows solid understanding but may lack some supporting evidence or depth.",
+								"level": "Skilled",
+								"score": 3,
+								"name": "RUB-COM-9FD3F1B5-1790-49EB-941F-965E091A626C"
+							},
+							{
+								"description": "Exhibits highly accurate, well-researched information with clear evidence or references (where applicable). The content is comprehensive, logically structured, and free of major errors or omissions.",
+								"level": "Expert",
+								"score": 4,
+								"name": "RUB-COM-45F42620-9C55-4F13-A553-9C4959C921FE"
+							}
+						],
+						"description": "Is the artifact factually correct, coherent, and logically sound?",
+						"maxPoints": 4,
+						"name": "Quality & Accuracy of Content",
+						"name": "RUB-CRT-8BF5D39C-15AD-4D87-90F3-54CC5CC3625C"
+					},
+					{
+						"competency": [
+							{
+								"description": "Learner has not started or attempted this component.",
+								"level": "Not Started",
+								"score": 0,
+								"name": "RUB-COM-41E29E60-2F73-47C2-8659-0337551865FD"
+							},
+							{
+								"description": "Not usable as-is: lacks essential details, structure, or clarity. Real-world implementation would be extremely difficult without a complete overhaul.",
+								"level": "Developing/Emerging",
+								"score": 1,
+								"name": "RUB-COM-724C1C37-8DB2-4D67-990D-C3AC623A63F2"
+							},
+							{
+								"description": "Partially usable, but significant information is missing (e.g., unclear instructions, incomplete data) or poorly organized, necessitating major further work.",
+								"level": "Foundational",
+								"score": 2,
+								"name": "RUB-COM-8F84590F-126D-441D-9AC4-49595770E097"
+							},
+							{
+								"description": "Mostly usable and clear. Some refinements (e.g., more detailed cost breakdown, final formatting) might be needed, but it substantially meets practical needs.",
+								"level": "Skilled",
+								"score": 3,
+								"name": "RUB-COM-A0BC129F-4E03-456C-8207-684C459B0BEA"
+							},
+							{
+								"description": "Highly actionable and user-friendly, with clear structure (e.g., schedules, instructions, tables) or logical roadmaps. Requires minimal additional work to implement.",
+								"level": "Expert",
+								"score": 4,
+								"name": "RUB-COM-22BEECA3-00BA-4E2C-B5A8-F0ED62E443EF"
+							}
+						],
+						"description": "How ready is the artifact for real-world application or next steps?",
+						"maxPoints": 4,
+						"name": "Practicality & Usability",
+						"name": "RUB-CRT-72ACC406-ED29-4CE6-B1E8-02319F3AF8DD"
+					},
+					{
+						"competency": [
+							{
+								"description": "Learner has not started or attempted this component.",
+								"level": "Not Started",
+								"score": 0,
+								"name": "RUB-COM-6240078B-F9EB-4F5B-86EF-87E445C18A74"
+							},
+							{
+								"description": "Severely lacking in organization, clarity, or correctness, making the artifact difficult to interpret or follow. The tone/style may be inappropriate or incoherent for the intended audience.",
+								"level": "Developing/Emerging",
+								"score": 1,
+								"name": "RUB-COM-A7C18E87-6326-4C4C-8C76-72DBE77D5F66"
+							},
+							{
+								"description": "Somewhat confusing or disjointed structure; clarity issues, grammar lapses, or inconsistent tone make it less accessible or less professional.",
+								"level": "Foundational",
+								"score": 2,
+								"name": "RUB-COM-B3EDE7E2-70E7-412F-91ED-1BC20EFAAF18"
+							},
+							{
+								"description": "Generally clear and coherent; minor organizational or stylistic issues do not significantly hinder comprehension. Tone is largely appropriate for the context.",
+								"level": "Skilled",
+								"score": 3,
+								"name": "RUB-COM-3D076CBB-093E-43F8-9AC6-DDA46A530172"
+							},
+							{
+								"description": "Exceptionally clear and well-structured; uses headings, bullet points, or other aids to promote readability. Tone and style are appropriate for the intended audience, with minimal grammatical or formatting errors.",
+								"level": "Expert",
+								"score": 4,
+								"name": "RUB-COM-081FA292-4D55-4442-8A29-BB2BA4EB1E1B"
+							}
+						],
+						"description": "Is the artifact well-organized, clearly written, and easy to understand?",
+						"maxPoints": 4,
+						"name": "Clarity & Communication",
+						"name": "RUB-CRT-1F9C4E93-473C-41C7-8708-1C2E4F958062"
+					}
+				],
+				"title": "AI Fundamentals Rubric",
+				"name": "RUB-E2E30657-6F4D-406B-9CE9-3C05E864D175"
+			},
+			"title": "Adopting AI",
+			"name": "SKL-BBF4A1E3-7D66-4D4D-9B53-C4EB77E7E8CE"
+		}
+	],
+	"status": "published",
+	"title": "AI Foundations",
+	"name": "PRG-0768BF20-5A57-457A-9F8F-4A8F9FAAD417"
+}
