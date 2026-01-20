@@ -109,7 +109,7 @@
 <table><thead><tr><th>组件</th><th>作用</th><th>说明</th></tr></thead><tbody><tr><td>Docker Client</td><td>客户端</td><td>用户与Docker交互的主要方式，发送命令给Docker Daemon</td></tr><tr><td>Docker Daemon</td><td>守护进程</td><td>Docker的核心服务，处理Docker API请求，管理镜像、容器等</td></tr><tr><td>Docker Images</td><td>镜像</td><td>只读模板，用于创建Docker容器</td></tr><tr><td>Docker Container</td><td>容器</td><td>镜像的运行实例，可启动、停止、移动或删除</td></tr><tr><td>Docker Registry</td><td>镜像仓库</td><td>存储Docker镜像的地方，如Docker Hub</td></tr></tbody></table>
 <h3 id="容器-vs-虚拟机">容器 vs 虚拟机</h3>
 <p>传统虚拟机架构：</p>
-<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IFRCCiAgICBzdWJncmFwaCBIV1tIYXJkd2FyZV0KICAgIGVuZAoKICAgIHN1YmdyYXBoIEhPU1RbSG9zdCBPU10KICAgIGVuZAoKICAgIHN1YmdyYXBoIEhZUFtIeXBlcnZpc29yXQogICAgZW5kCgogICAgc3ViZ3JhcGggVk0xW1ZpcnR1YWwgTWFjaGluZSBBXQogICAgICAgIEExW0FwcGxpY2F0aW9uIEFdCiAgICAgICAgR09TMVtHdWVzdCBPU10KICAgICAgICBBMSAtLT4gR09TMQogICAgZW5kCgogICAgc3ViZ3JhcGggVk0yW1ZpcnR1YWwgTWFjaGluZSBCXQogICAgICAgIEEyW0FwcGxpY2F0aW9uIEJdCiAgICAgICAgR09TMltHdWVzdCBPU10KICAgICAgICBBMiAtLT4gR09TMgogICAgZW5kCgogICAgR09TMSAtLT4gSFlQCiAgICBHT1MyIC0tPiBIWVAKICAgIEhZUCAtLT4gSE9TVAogICAgSE9TVCAtLT4gSFc=" data-id="mermaid-xo7ymassm">
+<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IFRCCiAgICBzdWJncmFwaCBIV1tIYXJkd2FyZV0KICAgIGVuZAoKICAgIHN1YmdyYXBoIEhPU1RbSG9zdCBPU10KICAgIGVuZAoKICAgIHN1YmdyYXBoIEhZUFtIeXBlcnZpc29yXQogICAgZW5kCgogICAgc3ViZ3JhcGggVk0xW1ZpcnR1YWwgTWFjaGluZSBBXQogICAgICAgIEExW0FwcGxpY2F0aW9uIEFdCiAgICAgICAgR09TMVtHdWVzdCBPU10KICAgICAgICBBMSAtLT4gR09TMQogICAgZW5kCgogICAgc3ViZ3JhcGggVk0yW1ZpcnR1YWwgTWFjaGluZSBCXQogICAgICAgIEEyW0FwcGxpY2F0aW9uIEJdCiAgICAgICAgR09TMltHdWVzdCBPU10KICAgICAgICBBMiAtLT4gR09TMgogICAgZW5kCgogICAgR09TMSAtLT4gSFlQCiAgICBHT1MyIC0tPiBIWVAKICAgIEhZUCAtLT4gSE9TVAogICAgSE9TVCAtLT4gSFc=" data-id="mermaid-21cftliv8">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">flowchart TB
     subgraph HW[Hardware]
@@ -139,7 +139,7 @@
     HOST --> HW</code></pre>
 </div>
 <p>Docker容器架构：</p>
-<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IFRCCiAgICBzdWJncmFwaCBIV1tIYXJkd2FyZV0KICAgIGVuZAoKICAgIHN1YmdyYXBoIEhPU1RbSG9zdCBPU10KICAgIGVuZAoKICAgIHN1YmdyYXBoIERPQ0tFUltEb2NrZXIgRW5naW5lXQogICAgZW5kCgogICAgc3ViZ3JhcGggQzFbQ29udGFpbmVyIEFdCiAgICAgICAgQTFbQXBwbGljYXRpb24gQV0KICAgIGVuZAoKICAgIHN1YmdyYXBoIEMyW0NvbnRhaW5lciBCXQogICAgICAgIEEyW0FwcGxpY2F0aW9uIEJdCiAgICBlbmQKCiAgICBBMSAtLT4gRE9DS0VSCiAgICBBMiAtLT4gRE9DS0VSCiAgICBET0NLRVIgLS0+IEhPU1QKICAgIEhPU1QgLS0+IEhX" data-id="mermaid-jx6ki8zq5">
+<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IFRCCiAgICBzdWJncmFwaCBIV1tIYXJkd2FyZV0KICAgIGVuZAoKICAgIHN1YmdyYXBoIEhPU1RbSG9zdCBPU10KICAgIGVuZAoKICAgIHN1YmdyYXBoIERPQ0tFUltEb2NrZXIgRW5naW5lXQogICAgZW5kCgogICAgc3ViZ3JhcGggQzFbQ29udGFpbmVyIEFdCiAgICAgICAgQTFbQXBwbGljYXRpb24gQV0KICAgIGVuZAoKICAgIHN1YmdyYXBoIEMyW0NvbnRhaW5lciBCXQogICAgICAgIEEyW0FwcGxpY2F0aW9uIEJdCiAgICBlbmQKCiAgICBBMSAtLT4gRE9DS0VSCiAgICBBMiAtLT4gRE9DS0VSCiAgICBET0NLRVIgLS0+IEhPU1QKICAgIEhPU1QgLS0+IEhX" data-id="mermaid-kxhqrxilc">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">flowchart TB
     subgraph HW[Hardware]
