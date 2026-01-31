@@ -1,0 +1,664 @@
+<!DOCTYPE html><html lang="en" dir="ltr" class="scroll-smooth"> <head><meta charset="UTF-8"><meta name="description" content><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/jpeg" href="/images/avatar.svg"><meta name="generator" content="Astro v5.16.15"><!-- SEO --><title>Chapter 4 Advanced Modeling Techniques | My Astro Blog</title><link rel="canonical" href="https://example.com/posts/blog_docs_en/tools/blender/blender-004/"><!-- Alternate language links (hreflang) --><link rel="alternate" hreflang="en" href="https://example.com/posts/blog_docs_en/tools/blender/blender-004/"><link rel="alternate" hreflang="zh-CN" href="https://example.com/zh-CN/posts/blog_docs_en/tools/blender/blender-004/"><link rel="alternate" hreflang="x-default" href="https://example.com/posts/blog_docs_en/tools/blender/blender-004/"><!-- Open Graph --><meta property="og:type" content="website"><meta property="og:title" content="Chapter 4 Advanced Modeling Techniques | My Astro Blog"><meta property="og:description" content><meta property="og:url" content="https://example.com/posts/blog_docs_en/tools/blender/blender-004/"><meta property="og:image" content="https://example.com/images/og-image.jpg"><meta property="og:site_name" content="My Astro Blog"><meta property="og:locale" content="en"><!-- Twitter --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Chapter 4 Advanced Modeling Techniques | My Astro Blog"><meta name="twitter:description" content><meta name="twitter:image" content="https://example.com/images/og-image.jpg"><!-- RSS --><link rel="alternate" type="application/rss+xml" title="My Astro Blog" href="/rss.xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><!-- Font Awesome --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous"><!-- Material Icons --><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round"><!-- Bootstrap Icons --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"><!-- Remix Icon --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"><!-- KaTeX for LaTeX math rendering --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous"><!-- Ionicons --><script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script><script>
+      const theme = (() => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+          return 'light';
+        }
+        return 'dark';
+      })();
+
+      if (theme === 'light') {
+        document.documentElement.classList.remove('dark');
+      } else {
+        document.documentElement.classList.add('dark');
+      }
+      window.__theme = theme;
+    </script><link rel="stylesheet" href="/assets/_slug_.FoKD82eu.css">
+<style>.slides-back-btn{position:fixed;top:20px;left:20px;z-index:100;display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:#00000080;border-radius:50%;color:#fff;text-decoration:none;opacity:.6;transition:opacity .3s,transform .3s}.slides-back-btn:hover{opacity:1;transform:scale(1.1)}.reveal{font-family:Source Sans Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif}.reveal pre{width:100%;max-width:100%;box-shadow:0 4px 6px #0000004d}.reveal pre code{max-height:500px;padding:1em;font-size:.9em;line-height:1.5}.reveal table{margin:1em auto;border-collapse:collapse}.reveal table th,.reveal table td{padding:.5em 1em;border:1px solid rgba(255,255,255,.3)}.reveal table th{background:#ffffff1a;font-weight:700}.reveal ul,.reveal ol{text-align:left;display:inline-block}.reveal li{margin:.5em 0}.reveal a{text-decoration:underline;text-decoration-style:dotted}.reveal a:hover{text-decoration-style:solid}.reveal blockquote{width:90%;padding:1em;font-style:italic;background:#ffffff0d;border-left:4px solid currentColor;text-align:left}.reveal .columns{display:flex;gap:2em}.reveal .columns>*{flex:1}.reveal .slides section{transition:all .4s ease}.reveal.overview .slides section.present{outline:4px solid #42affa!important;outline-offset:4px;box-shadow:0 0 30px #42affa99,0 0 60px #42affa4d!important}.reveal.overview .slides section:not(.present){opacity:.6}.reveal.overview .slides section:not(.present):hover{opacity:.9}.reveal .progress{height:4px}.reveal .controls{bottom:30px}.reveal .speaker-notes-link{position:fixed;bottom:20px;right:20px;z-index:100;padding:8px 16px;background:#0009;color:#fff;border-radius:4px;font-size:12px;opacity:.4;transition:opacity .3s}.reveal .speaker-notes-link:hover{opacity:1}.reveal .mermaid{background:#fffffff2;padding:1em;border-radius:8px}.reveal .katex{font-size:1.1em}.reveal .katex-display{margin:1em 0}.reveal .fragment.fade-in-then-out{opacity:0;visibility:hidden}.reveal .fragment.fade-in-then-out.visible,.reveal .fragment.fade-in-then-out.current-fragment{opacity:1;visibility:visible}.reveal .highlight{background:linear-gradient(120deg,#ffff004d 0% 100%);padding:.1em .3em;border-radius:3px}@media(max-width:768px){.slides-back-btn{width:36px;height:36px;top:10px;left:10px}.reveal pre code{font-size:.7em}.reveal h1{font-size:1.8em}.reveal h2{font-size:1.4em}}@media print{.slides-back-btn{display:none}}.reveal[data-astro-cid-4ckbqlo5] .mermaid[data-astro-cid-4ckbqlo5]{background:#fffffff2;padding:1em;border-radius:8px}.reveal[data-astro-cid-4ckbqlo5] .echarts-container[data-astro-cid-4ckbqlo5]{width:100%;height:400px;margin:0 auto}.reveal[data-astro-cid-4ckbqlo5] pre[data-astro-cid-4ckbqlo5] code[data-astro-cid-4ckbqlo5].language-mermaid,.reveal[data-astro-cid-4ckbqlo5] pre[data-astro-cid-4ckbqlo5] code[data-astro-cid-4ckbqlo5].language-echarts{display:none}
+.line-clamp-2[data-v-86db9372]{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.line-clamp-1[data-v-e198c78d]{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.fade-enter-active[data-v-79f513eb],.fade-leave-active[data-v-79f513eb]{transition:opacity .2s ease}.fade-enter-from[data-v-79f513eb],.fade-leave-to[data-v-79f513eb]{opacity:0}.line-clamp-2[data-v-79f513eb]{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.fade-enter-active[data-v-ff2820af],.fade-leave-active[data-v-ff2820af]{transition:opacity .2s ease}.fade-enter-from[data-v-ff2820af],.fade-leave-to[data-v-ff2820af]{opacity:0}.rotate-enter-active[data-v-5f49d689],.rotate-leave-active[data-v-5f49d689]{transition:transform .2s ease}.rotate-enter-from[data-v-5f49d689],.rotate-leave-to[data-v-5f49d689]{transform:rotate(90deg)}.mobile-menu-overlay{position:fixed;inset:0;background-color:#00000080;z-index:99998}.mobile-menu-panel{position:fixed;top:0;right:0;height:100%;width:20rem;max-width:80vw;background-color:#fff;box-shadow:-4px 0 20px #00000026;z-index:99999;overflow-y:auto}.dark .mobile-menu-panel{background-color:#0f172a}.fade-enter-active,.fade-leave-active{transition:opacity .3s ease}.fade-enter-from,.fade-leave-to{opacity:0}.slide-enter-active,.slide-leave-active{transition:transform .3s ease}.slide-enter-from,.slide-leave-to{transform:translate(100%)}
+</style></head> <body class="min-h-screen w-full overflow-x-hidden"> <div id="app" class="flex flex-col min-h-screen w-full min-w-0">  <header class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border-b border-slate-200 dark:border-slate-700"> <div class="container mx-auto px-4"> <nav class="flex items-center justify-between h-16"> <div class="flex items-center space-x-4"> <a href="/" class="flex items-center space-x-3 hover:opacity-80 transition-opacity"> <img src="/images/avatar.svg" alt="My Astro Blog" class="w-8 h-8 rounded-full"> <div class="hidden sm:block"> <h1 class="text-xl font-bold text-slate-900 dark:text-slate-100"> My Astro Blog </h1>  </div> </a> </div> <div class="hidden md:flex items-center space-x-8"> <a href="/" class="text-sm font-medium transition-colors hover:text-primary-500 text-slate-700 dark:text-slate-300"> Home </a><a href="/posts/blog_docs_en/math" class="text-sm font-medium transition-colors hover:text-primary-500 text-slate-700 dark:text-slate-300"> Math </a><a href="/posts/blog_docs_en/tools" class="text-sm font-medium transition-colors hover:text-primary-500 text-primary-500"> Tools </a><a href="/posts/blog_docs_en/qt-model" class="text-sm font-medium transition-colors hover:text-primary-500 text-slate-700 dark:text-slate-300"> QT Model </a><a href="/posts/blog_docs_en/techniques" class="text-sm font-medium transition-colors hover:text-primary-500 text-slate-700 dark:text-slate-300"> Technology </a><a href="https://jet-w.github.io/jet-w.astro-blog/" class="text-sm font-medium transition-colors hover:text-primary-500 text-slate-700 dark:text-slate-300"> Jet-w Astro Blog </a><a href="/about" class="text-sm font-medium transition-colors hover:text-primary-500 text-slate-700 dark:text-slate-300"> About </a> </div> <div class="flex items-center"> <div class="hidden sm:block mr-2"> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();</script><script>(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="ZQMAIL" prefix="s2" component-url="/assets/SearchBox.DjHiC6Tu.js" component-export="default" renderer-url="/assets/client.Dd1xdfK6.js" props="{&quot;placeholder&quot;:[0,&quot;Search posts, tags, content...&quot;],&quot;searchLabel&quot;:[0,&quot;Search&quot;],&quot;noResultsText&quot;:[0,&quot;No results found&quot;]}" ssr client="load" opts="{&quot;name&quot;:&quot;SearchBox&quot;,&quot;value&quot;:true}" await-children><div class="relative" data-v-79f513eb><div class="relative" data-v-79f513eb><input value="" type="text" placeholder="Search posts, tags, content..." class="w-64 pl-10 pr-4 py-2 text-sm bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors" data-v-79f513eb><div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none" data-v-79f513eb><svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-v-79f513eb><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" data-v-79f513eb></path></svg></div></div><!----></div><!--astro:end--></astro-island> </div> <div class="hidden sm:block mr-2"> <astro-island uid="Z1dFM1v" prefix="s3" component-url="/assets/LanguageSwitcher.D85ccgBj.js" component-export="default" renderer-url="/assets/client.Dd1xdfK6.js" props="{&quot;locales&quot;:[1,[[0,{&quot;code&quot;:[0,&quot;en&quot;],&quot;name&quot;:[0,&quot;English&quot;]}],[0,{&quot;code&quot;:[0,&quot;zh-CN&quot;],&quot;name&quot;:[0,&quot;中文&quot;]}]]],&quot;currentLocale&quot;:[0,&quot;en&quot;],&quot;currentPath&quot;:[0,&quot;/posts/blog_docs_en/tools/blender/blender-004/&quot;],&quot;defaultLocale&quot;:[0,&quot;en&quot;],&quot;prefixDefaultLocale&quot;:[0,false],&quot;base&quot;:[0,&quot;/&quot;]}" ssr client="load" opts="{&quot;name&quot;:&quot;LanguageSwitcher&quot;,&quot;value&quot;:true}" await-children><div class="relative"><button class="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg transition-colors" aria-expanded="false" aria-haspopup="listbox" aria-label="Select language, current: English"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path></svg><span>English</span><svg class="w-3 h-3 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><!----></div><!--astro:end--></astro-island> </div> <div class="hidden sm:block mr-2"> <astro-island uid="Z2wdsuJ" prefix="s4" component-url="/assets/ThemeToggle.DkS-mWmH.js" component-export="default" renderer-url="/assets/client.Dd1xdfK6.js" props="{}" ssr client="load" opts="{&quot;name&quot;:&quot;ThemeToggle&quot;,&quot;value&quot;:true}" await-children><button class="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition-colors" aria-label="切换到深色模式" data-v-ff2820af><svg class="w-5 h-5 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-v-ff2820af><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" data-v-ff2820af></path></svg></button><!--astro:end--></astro-island> </div> <div class="md:hidden"> <astro-island uid="1pGpUL" prefix="s5" component-url="/assets/MobileMenu.neuVqFF7.js" component-export="default" renderer-url="/assets/client.Dd1xdfK6.js" props="{&quot;navigation&quot;:[1,[[0,{&quot;name&quot;:[0,&quot;Home&quot;],&quot;href&quot;:[0,&quot;/&quot;],&quot;icon&quot;:[0,&quot;home&quot;]}],[0,{&quot;name&quot;:[0,&quot;Math&quot;],&quot;href&quot;:[0,&quot;/posts/blog_docs_en/math&quot;],&quot;icon&quot;:[0,&quot;posts&quot;]}],[0,{&quot;name&quot;:[0,&quot;Tools&quot;],&quot;href&quot;:[0,&quot;/posts/blog_docs_en/tools&quot;],&quot;icon&quot;:[0,&quot;categories&quot;]}],[0,{&quot;name&quot;:[0,&quot;QT Model&quot;],&quot;href&quot;:[0,&quot;/posts/blog_docs_en/qt-model&quot;],&quot;icon&quot;:[0,&quot;archives&quot;]}],[0,{&quot;name&quot;:[0,&quot;Technology&quot;],&quot;href&quot;:[0,&quot;/posts/blog_docs_en/techniques&quot;],&quot;icon&quot;:[0,&quot;archives&quot;]}],[0,{&quot;name&quot;:[0,&quot;Jet-w Astro Blog&quot;],&quot;href&quot;:[0,&quot;https://jet-w.github.io/jet-w.astro-blog/&quot;],&quot;icon&quot;:[0,&quot;archives&quot;]}],[0,{&quot;name&quot;:[0,&quot;About&quot;],&quot;href&quot;:[0,&quot;/about&quot;],&quot;icon&quot;:[0,&quot;about&quot;]}]]],&quot;base&quot;:[0,&quot;/&quot;]}" ssr client="load" opts="{&quot;name&quot;:&quot;MobileMenu&quot;,&quot;value&quot;:true}" await-children><div data-v-5f49d689><button class="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition-colors" aria-label="菜单" data-v-5f49d689><svg class="w-5 h-5 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-v-5f49d689><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" data-v-5f49d689></path></svg></button><!----></div><!--astro:end--></astro-island> </div> </div> </nav> </div> </header> <main class="flex-1 flex w-full min-w-0" data-astro-cid-itptdd6o> <aside class="hidden lg:block shrink-0 transition-all duration-300 relative" data-sidebar style="width: var(--sidebar-width, 256px);" data-astro-cid-itptdd6o> <div class="sticky top-20 h-[calc(100vh-5rem)] overflow-y-auto" data-astro-cid-itptdd6o> <div class="space-y-8 p-6" data-astro-cid-mkqzmhch>    <section data-astro-cid-mkqzmhch> <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4 border-b border-slate-200 dark:border-slate-700 pb-2" data-astro-cid-mkqzmhch> Recent Posts </h3> <div class="space-y-3" data-astro-cid-mkqzmhch> <article class="group" data-astro-cid-mkqzmhch> <a href="/posts/blog_docs_en/tools/argo/readme" class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" data-astro-cid-mkqzmhch> <h4 class="text-sm font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-500 line-clamp-2 mb-1" data-astro-cid-mkqzmhch> Argo Tutorial Series </h4> <time class="text-xs text-slate-500 dark:text-slate-400" data-astro-cid-mkqzmhch> January 11, 2026 </time> </a> </article><article class="group" data-astro-cid-mkqzmhch> <a href="/posts/blog_docs_en/tools/argo/argo-001" class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" data-astro-cid-mkqzmhch> <h4 class="text-sm font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-500 line-clamp-2 mb-1" data-astro-cid-mkqzmhch> Chapter 1: Argo Introduction and Environment Setup </h4> <time class="text-xs text-slate-500 dark:text-slate-400" data-astro-cid-mkqzmhch> January 11, 2026 </time> </a> </article><article class="group" data-astro-cid-mkqzmhch> <a href="/posts/blog_docs_en/tools/argo/argo-002" class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" data-astro-cid-mkqzmhch> <h4 class="text-sm font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-500 line-clamp-2 mb-1" data-astro-cid-mkqzmhch> Chapter 2: Argo CD Getting Started </h4> <time class="text-xs text-slate-500 dark:text-slate-400" data-astro-cid-mkqzmhch> January 11, 2026 </time> </a> </article><article class="group" data-astro-cid-mkqzmhch> <a href="/posts/blog_docs_en/tools/argo/argo-003" class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" data-astro-cid-mkqzmhch> <h4 class="text-sm font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-500 line-clamp-2 mb-1" data-astro-cid-mkqzmhch> Chapter 3: Argo CD Advanced Configuration </h4> <time class="text-xs text-slate-500 dark:text-slate-400" data-astro-cid-mkqzmhch> January 11, 2026 </time> </a> </article><article class="group" data-astro-cid-mkqzmhch> <a href="/posts/blog_docs_en/tools/argo/argo-004" class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" data-astro-cid-mkqzmhch> <h4 class="text-sm font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-500 line-clamp-2 mb-1" data-astro-cid-mkqzmhch> Chapter 4: Argo Workflows Fundamentals </h4> <time class="text-xs text-slate-500 dark:text-slate-400" data-astro-cid-mkqzmhch> January 11, 2026 </time> </a> </article> </div> </section>  <section data-astro-cid-mkqzmhch> <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4 border-b border-slate-200 dark:border-slate-700 pb-2" data-astro-cid-mkqzmhch> Popular Tags </h3> <div class="flex flex-wrap gap-2" data-astro-cid-mkqzmhch> <a href="/tags/argo" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 13px" data-astro-cid-mkqzmhch> Argo <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(6)</span> </a><a href="/tags/kubernetes" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 13px" data-astro-cid-mkqzmhch> Kubernetes <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(6)</span> </a><a href="/tags/best-practices" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 12px" data-astro-cid-mkqzmhch> Best Practices <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(4)</span> </a><a href="/tags/media" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 11.5px" data-astro-cid-mkqzmhch> media <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(3)</span> </a><a href="/tags/astro" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 11.5px" data-astro-cid-mkqzmhch> Astro <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(3)</span> </a><a href="/tags/blog" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 11.5px" data-astro-cid-mkqzmhch> Blog <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(3)</span> </a><a href="/tags/cicd" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 11.5px" data-astro-cid-mkqzmhch> CICD <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(3)</span> </a><a href="/tags/blog" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 11px" data-astro-cid-mkqzmhch> blog <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(2)</span> </a> </div> </section>  <section data-astro-cid-mkqzmhch> <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4 border-b border-slate-200 dark:border-slate-700 pb-2" data-astro-cid-mkqzmhch> Archives </h3> <div class="space-y-2" data-astro-cid-mkqzmhch> <a href="/archives/2026/01" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> January 2026 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 15 </span> </a><a href="/archives/2025/09" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> September 2025 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 142 </span> </a><a href="/archives/2025/12" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> December 2025 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 31 </span> </a><a href="/archives/2025/10" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> October 2025 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 96 </span> </a><a href="/archives/2025/01" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> January 2025 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 7 </span> </a><a href="/archives/2024/12" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> December 2024 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 14 </span> </a> </div> </section>  <section data-astro-cid-mkqzmhch> <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4 border-b border-slate-200 dark:border-slate-700 pb-2" data-astro-cid-mkqzmhch> Friend Links </h3> <div class="space-y-2" data-astro-cid-mkqzmhch> <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch>  <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> Astro 官网 </span> </a><a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch>  <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> Tailwind CSS </span> </a><a href="https://vuejs.org" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch>  <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> Vue.js </span> </a> </div> </section> </div>  <script type="module">function c(){document.querySelectorAll(".tree-folder-toggle").forEach(e=>{e.addEventListener("click",()=>{const s=e.nextElementSibling,l=e.classList.toggle("expanded");s&&s.classList.contains("tree-children")&&s.classList.toggle("show",l)})});const o=window.location.pathname.replace(/\/$/,"");document.querySelectorAll(".tree-file").forEach(e=>{const s=e.getAttribute("href")?.replace(/\/$/,"");if(s&&o===s){e.classList.add("active");let l=e.closest(".tree-children");for(;l;){l.classList.add("show");const t=l.previousElementSibling;t&&t.classList.contains("tree-folder-toggle")&&t.classList.add("expanded"),l=l.parentElement?.closest(".tree-children")||null}}}),document.querySelectorAll(".doc-tree").forEach(e=>{const s=e.getAttribute("data-collapsed")==="true";e.querySelectorAll(".tree-folder-toggle").forEach(t=>{const r=t.getAttribute("data-default-collapsed")==="true",a=t.closest(".tree-children")===null||t.closest("ul")?.parentElement?.classList.contains("doc-tree");if(!t.classList.contains("expanded")&&!(s||r)&&a){const n=t.nextElementSibling;n&&n.classList.contains("tree-children")&&(n.classList.add("show"),t.classList.add("expanded"))}})})}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",c):c();document.addEventListener("astro:page-load",c);</script> </div> <div class="absolute top-0 right-0 w-1 h-full cursor-col-resize group z-10" data-sidebar-resizer data-astro-cid-itptdd6o> <div class="absolute top-0 right-0 w-4 h-full -mr-2 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity" data-astro-cid-itptdd6o> <div class="w-1 h-16 bg-primary-400 dark:bg-primary-500 rounded-full" data-astro-cid-itptdd6o></div> </div> </div> </aside> <div class="lg:hidden fixed inset-0 bg-black/50 z-40 hidden" data-sidebar-overlay onclick="this.classList.add('hidden'); document.querySelector('[data-mobile-sidebar]').classList.add('-translate-x-full');" data-astro-cid-itptdd6o></div> <aside class="lg:hidden fixed top-16 left-0 w-72 h-[calc(100vh-4rem)] bg-white dark:bg-slate-900 z-50 transform -translate-x-full transition-transform duration-300 shadow-xl overflow-y-auto" data-mobile-sidebar data-astro-cid-itptdd6o> <div class="p-4" data-astro-cid-itptdd6o> <div class="space-y-8 p-6" data-astro-cid-mkqzmhch>    <section data-astro-cid-mkqzmhch> <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4 border-b border-slate-200 dark:border-slate-700 pb-2" data-astro-cid-mkqzmhch> Recent Posts </h3> <div class="space-y-3" data-astro-cid-mkqzmhch> <article class="group" data-astro-cid-mkqzmhch> <a href="/posts/blog_docs_en/tools/argo/readme" class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" data-astro-cid-mkqzmhch> <h4 class="text-sm font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-500 line-clamp-2 mb-1" data-astro-cid-mkqzmhch> Argo Tutorial Series </h4> <time class="text-xs text-slate-500 dark:text-slate-400" data-astro-cid-mkqzmhch> January 11, 2026 </time> </a> </article><article class="group" data-astro-cid-mkqzmhch> <a href="/posts/blog_docs_en/tools/argo/argo-001" class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" data-astro-cid-mkqzmhch> <h4 class="text-sm font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-500 line-clamp-2 mb-1" data-astro-cid-mkqzmhch> Chapter 1: Argo Introduction and Environment Setup </h4> <time class="text-xs text-slate-500 dark:text-slate-400" data-astro-cid-mkqzmhch> January 11, 2026 </time> </a> </article><article class="group" data-astro-cid-mkqzmhch> <a href="/posts/blog_docs_en/tools/argo/argo-002" class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" data-astro-cid-mkqzmhch> <h4 class="text-sm font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-500 line-clamp-2 mb-1" data-astro-cid-mkqzmhch> Chapter 2: Argo CD Getting Started </h4> <time class="text-xs text-slate-500 dark:text-slate-400" data-astro-cid-mkqzmhch> January 11, 2026 </time> </a> </article><article class="group" data-astro-cid-mkqzmhch> <a href="/posts/blog_docs_en/tools/argo/argo-003" class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" data-astro-cid-mkqzmhch> <h4 class="text-sm font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-500 line-clamp-2 mb-1" data-astro-cid-mkqzmhch> Chapter 3: Argo CD Advanced Configuration </h4> <time class="text-xs text-slate-500 dark:text-slate-400" data-astro-cid-mkqzmhch> January 11, 2026 </time> </a> </article><article class="group" data-astro-cid-mkqzmhch> <a href="/posts/blog_docs_en/tools/argo/argo-004" class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" data-astro-cid-mkqzmhch> <h4 class="text-sm font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-500 line-clamp-2 mb-1" data-astro-cid-mkqzmhch> Chapter 4: Argo Workflows Fundamentals </h4> <time class="text-xs text-slate-500 dark:text-slate-400" data-astro-cid-mkqzmhch> January 11, 2026 </time> </a> </article> </div> </section>  <section data-astro-cid-mkqzmhch> <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4 border-b border-slate-200 dark:border-slate-700 pb-2" data-astro-cid-mkqzmhch> Popular Tags </h3> <div class="flex flex-wrap gap-2" data-astro-cid-mkqzmhch> <a href="/tags/argo" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 13px" data-astro-cid-mkqzmhch> Argo <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(6)</span> </a><a href="/tags/kubernetes" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 13px" data-astro-cid-mkqzmhch> Kubernetes <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(6)</span> </a><a href="/tags/best-practices" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 12px" data-astro-cid-mkqzmhch> Best Practices <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(4)</span> </a><a href="/tags/media" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 11.5px" data-astro-cid-mkqzmhch> media <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(3)</span> </a><a href="/tags/astro" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 11.5px" data-astro-cid-mkqzmhch> Astro <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(3)</span> </a><a href="/tags/blog" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 11.5px" data-astro-cid-mkqzmhch> Blog <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(3)</span> </a><a href="/tags/cicd" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 11.5px" data-astro-cid-mkqzmhch> CICD <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(3)</span> </a><a href="/tags/blog" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 11px" data-astro-cid-mkqzmhch> blog <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(2)</span> </a> </div> </section>  <section data-astro-cid-mkqzmhch> <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4 border-b border-slate-200 dark:border-slate-700 pb-2" data-astro-cid-mkqzmhch> Archives </h3> <div class="space-y-2" data-astro-cid-mkqzmhch> <a href="/archives/2026/01" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> January 2026 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 15 </span> </a><a href="/archives/2025/09" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> September 2025 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 142 </span> </a><a href="/archives/2025/12" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> December 2025 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 31 </span> </a><a href="/archives/2025/10" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> October 2025 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 96 </span> </a><a href="/archives/2025/01" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> January 2025 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 7 </span> </a><a href="/archives/2024/12" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> December 2024 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 14 </span> </a> </div> </section>  <section data-astro-cid-mkqzmhch> <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4 border-b border-slate-200 dark:border-slate-700 pb-2" data-astro-cid-mkqzmhch> Friend Links </h3> <div class="space-y-2" data-astro-cid-mkqzmhch> <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch>  <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> Astro 官网 </span> </a><a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch>  <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> Tailwind CSS </span> </a><a href="https://vuejs.org" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch>  <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> Vue.js </span> </a> </div> </section> </div>   </div> </aside> <div class="flex-1 transition-all duration-300 lg:px-8  relative" data-main-content data-astro-cid-itptdd6o> <div class="hidden lg:block fixed top-20 left-1 z-40 transition-all duration-300" data-sidebar-toggle data-astro-cid-itptdd6o> <astro-island uid="QK3WN" prefix="s1" component-url="/assets/SidebarToggle.CI_vXnEy.js" component-export="default" renderer-url="/assets/client.Dd1xdfK6.js" props="{&quot;data-astro-cid-itptdd6o&quot;:[0,true]}" ssr client="load" opts="{&quot;name&quot;:&quot;SidebarToggle&quot;,&quot;value&quot;:true}" await-children><button title="隐藏侧边栏" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-600 hover:text-primary-500 dark:text-slate-400 dark:hover:text-primary-400" data-astro-cid-itptdd6o="true"><svg class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7"></path></svg></button><!--astro:end--></astro-island> </div> <button class="lg:hidden fixed bottom-20 left-4 z-40 p-3 bg-primary-500 hover:bg-primary-600 text-white rounded-full shadow-lg transition-colors" data-mobile-sidebar-toggle aria-label="Document Tree" onclick="document.querySelector('[data-sidebar-overlay]').classList.remove('hidden'); document.querySelector('[data-mobile-sidebar]').classList.remove('-translate-x-full');" data-astro-cid-itptdd6o> <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-itptdd6o> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" data-astro-cid-itptdd6o></path> </svg> </button> <div class="container mx-auto px-4 py-8 max-w-4xl" data-astro-cid-itptdd6o> <nav class="flex items-center flex-wrap gap-y-1 text-sm text-slate-600 dark:text-slate-400 mb-8"><a href="/" class="hover:text-primary-500 transition-colors">Home</a><svg class="w-4 h-4 mx-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg><a href="/posts/blog_docs_en" class="hover:text-primary-500 transition-colors">English</a><svg class="w-4 h-4 mx-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg><a href="/posts/blog_docs_en/tools" class="hover:text-primary-500 transition-colors">Tools</a><svg class="w-4 h-4 mx-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg><a href="/posts/blog_docs_en/tools/blender" class="hover:text-primary-500 transition-colors">Blender</a><svg class="w-4 h-4 mx-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg><span class="text-slate-900 dark:text-slate-100 truncate max-w-xs">Chapter 4 Advanced Modeling Techniques</span></nav><astro-island uid="Z1AYjUS" prefix="s0" component-url="/assets/FloatingToc.BMxSzaMf.js" component-export="default" renderer-url="/assets/client.Dd1xdfK6.js" props="{&quot;tocTitle&quot;:[0,&quot;Table of Contents&quot;],&quot;progressTitle&quot;:[0,&quot;Reading Progress&quot;]}" ssr client="load" opts="{&quot;name&quot;:&quot;FloatingToc&quot;,&quot;value&quot;:true}" await-children><div class="fixed top-24 right-4 z-40" data-v-86db9372><div class="relative" data-v-86db9372><button class="p-3 bg-white dark:bg-slate-800 rounded-full shadow-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors" aria-label="Table of Contents" data-v-86db9372><svg class="w-5 h-5 text-slate-600 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-v-86db9372><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" data-v-86db9372></path></svg></button><!----></div></div><!--astro:end--></astro-island><article class="prose prose-slate dark:prose-invert max-w-none"><!-- 标题区域 --><header class="not-prose mb-12"><div class="text-center"><h1 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-6 leading-tight">Chapter 4 Advanced Modeling Techniques</h1><p class="text-xl text-slate-600 dark:text-slate-400 mb-8 max-w-3xl mx-auto"></p><!-- 文章元信息 --><div class="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-500 dark:text-slate-400"><div class="flex items-center space-x-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span>作者</span></div><div class="flex items-center space-x-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg><time datetime="2024-01-04T00:00:00.000Z">2024年1月4日</time></div><div class="flex items-center space-x-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>15min</span></div></div><!-- 标签 --><div class="flex flex-wrap justify-center gap-2 mt-6"><a href="/tags/subdivision-surface" class="px-3 py-1 text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors">
+#Subdivision Surface</a><a href="/tags/sculpt-modeling" class="px-3 py-1 text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors">
+#Sculpt Modeling</a><a href="/tags/retopology" class="px-3 py-1 text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors">
+#Retopology</a><a href="/tags/boolean-operations" class="px-3 py-1 text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors">
+#Boolean Operations</a></div></div><!-- 封面图片 --></header><!-- 文章内容 --><div class="prose prose-slate dark:prose-invert max-w-none prose-lg" data-prose-content data-locale-prefix data-base-url="/"><h1 id="chapter-4-advanced-modeling-techniques">Chapter 4 Advanced Modeling Techniques</h1>
+<div class="container-tip custom-container" data-container-type="tip">
+<div class="container-title">Learning Objectives</div>
+<div class="container-content">
+<ul>
+<li>Master subdivision surface modeling</li>
+<li>Learn to use sculpt mode</li>
+<li>Understand retopology techniques</li>
+<li>Master Boolean operations and procedural modeling</li>
+<li>Learn hard surface and organic modeling methods</li>
+</ul>
+</div>
+</div>
+<h2 id="detailed-knowledge-points">Detailed Knowledge Points</h2>
+<h3 id="41-subdivision-surface-modeling">4.1 Subdivision Surface Modeling</h3>
+<h4 id="411-subdivision-surface-principles">4.1.1 Subdivision Surface Principles</h4>
+<p>Subdivision Surface is a technique that uses mathematical algorithms to subdivide low-polygon meshes into smooth surfaces:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Low-poly Mesh → Subdivision Algorithm → High-poly Surface</span></span></code></pre>
+<p><strong>Catmull-Clark Subdivision Algorithm:</strong></p>
+<ul>
+<li>Each face is divided into 4 sub-faces</li>
+<li>New vertex positions based on average of surrounding vertices</li>
+<li>Increases smoothness while maintaining original shape</li>
+</ul>
+<h4 id="412-subdivision-surface-modifier">4.1.2 Subdivision Surface Modifier</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Add Subdivision Surface modifier</span></span>
+<span class="line"><span style="color:#E1E4E8">Properties Panel → Modifier Properties → Add Modifier → Subdivision Surface</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">Important Parameters:</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Levels Viewport: Viewport display level (</span><span style="color:#79B8FF">0</span><span style="color:#F97583">-</span><span style="color:#79B8FF">6</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Render: Render level (</span><span style="color:#79B8FF">0</span><span style="color:#F97583">-</span><span style="color:#79B8FF">6</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Type: Catmull</span><span style="color:#F97583">-</span><span style="color:#E1E4E8">Clark (smooth) </span><span style="color:#F97583">or</span><span style="color:#E1E4E8"> Simple (non</span><span style="color:#F97583">-</span><span style="color:#E1E4E8">smooth)</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Use Limit Surface: Use limit surface</span></span></code></pre>
+<p><strong>Subdivision Level Comparison:</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Level</th><th>Face Increase</th><th>Use Case</th></tr></thead><tbody><tr><td>0</td><td>1x</td><td>Original mesh</td></tr><tr><td>1</td><td>4x</td><td>Basic subdivision</td></tr><tr><td>2</td><td>16x</td><td>General purpose</td></tr><tr><td>3</td><td>64x</td><td>Fine modeling</td></tr><tr><td>4+</td><td>256x+</td><td>Special needs</td></tr></tbody></table>
+<h4 id="413-edge-control-techniques">4.1.3 Edge Control Techniques</h4>
+<p><strong>Edge Loops:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#E1E4E8">Ctrl </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> R  </span><span style="color:#6A737D"># Add edge loop</span></span>
+<span class="line"><span style="color:#6A737D"># Closer edge loops create sharper edges after subdivision</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Creating sharp edges</span></span>
+<span class="line"><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">. Add tight edge loops where sharpness </span><span style="color:#F97583">is</span><span style="color:#E1E4E8"> needed</span></span>
+<span class="line"><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">. Adjust edge loop spacing to control sharpness</span></span>
+<span class="line"><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">. Use Ctrl </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> B bevel to create transitions</span></span></code></pre>
+<p><strong>Creasing:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Set crease</span></span>
+<span class="line"><span style="color:#E1E4E8">Shift </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> E  </span><span style="color:#6A737D"># Crease tool</span></span>
+<span class="line"><span style="color:#E1E4E8">Input value: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8"> (no crease) to </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8"> (full crease)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Application scenarios</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Maintain hard edges without adding geometry</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Partially sharpen edges</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Control subdivision behavior</span></span></code></pre>
+<h3 id="42-sculpt-mode">4.2 Sculpt Mode</h3>
+<h4 id="421-sculpting-basics">4.2.1 Sculpting Basics</h4>
+<p>Sculpt mode allows shaping models like working with digital clay:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Enter Sculpt mode</span></span>
+<span class="line"><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">. Select </span><span style="color:#79B8FF">object</span></span>
+<span class="line"><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">. Switch to Sculpting workspace</span></span>
+<span class="line"><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">. Or select Sculpting Mode </span><span style="color:#F97583">from</span><span style="color:#E1E4E8"> mode menu</span></span></code></pre>
+<p><strong>Sculpt Brush Types:</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Brush</th><th>Function</th><th>Shortcut</th></tr></thead><tbody><tr><td>Sculpt</td><td>Basic sculpting</td><td>X</td></tr><tr><td>Smooth</td><td>Smooth</td><td>S</td></tr><tr><td>Grab</td><td>Grab and move</td><td>G</td></tr><tr><td>Snake Hook</td><td>Hook drag</td><td>K</td></tr><tr><td>Inflate</td><td>Inflate</td><td>I</td></tr><tr><td>Flatten</td><td>Flatten</td><td>Shift + T</td></tr><tr><td>Scrape</td><td>Scrape</td><td>Shift + T</td></tr><tr><td>Clay Strips</td><td>Clay strips</td><td>C</td></tr></tbody></table>
+<h4 id="422-dynamic-topology-dyntopo">4.2.2 Dynamic Topology (Dyntopo)</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Enable dynamic topology</span></span>
+<span class="line"><span style="color:#E1E4E8">Ctrl </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> D  </span><span style="color:#6A737D"># Toggle dynamic topology</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">Dynamic topology settings:</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Detail Size: Detail size (pixels)</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Relative Detail: Relative detail</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Detailing: Detail </span><span style="color:#79B8FF">type</span></span>
+<span class="line"><span style="color:#F97583">  -</span><span style="color:#E1E4E8"> Subdivide Edges: Subdivide edges</span></span>
+<span class="line"><span style="color:#F97583">  -</span><span style="color:#E1E4E8"> Collapse Edges: Collapse edges</span></span>
+<span class="line"><span style="color:#F97583">  -</span><span style="color:#E1E4E8"> Subdivide Collapse: Combined mode</span></span></code></pre>
+<p><strong>Dynamic Topology Workflow:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># 1. Start with simple mesh</span></span>
+<span class="line"><span style="color:#E1E4E8">Add </span><span style="color:#79B8FF">UV</span><span style="color:#E1E4E8"> Sphere </span><span style="color:#F97583">or</span><span style="color:#E1E4E8"> Cube</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 2. Enable dynamic topology</span></span>
+<span class="line"><span style="color:#E1E4E8">Ctrl </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> D</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 3. Use sculpt brushes to shape</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Push </span><span style="color:#F97583">and</span><span style="color:#E1E4E8"> pull basic shapes</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Add large form changes</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Gradually refine details</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 4. Adjust detail density</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> High detail areas: Lower Detail Size</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Low detail areas: Increase Detail Size</span></span></code></pre>
+<h4 id="423-multiresolution-sculpting">4.2.3 Multiresolution Sculpting</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Multiresolution modifier workflow</span></span>
+<span class="line"><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">. Add Multiresolution modifier</span></span>
+<span class="line"><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">. Subdivide to create subdivision levels</span></span>
+<span class="line"><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">. Sculpt at different levels</span></span>
+<span class="line"><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">. Higher Levels: Detail sculpting</span></span>
+<span class="line"><span style="color:#79B8FF">5</span><span style="color:#E1E4E8">. Lower Levels: Overall shape adjustment</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">Multiresolution advantages:</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Maintain low poly </span><span style="color:#F97583">for</span><span style="color:#E1E4E8"> animation</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> High poly </span><span style="color:#F97583">for</span><span style="color:#E1E4E8"> detail sculpting</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Can bake normal maps</span></span></code></pre>
+<h3 id="43-retopology-techniques">4.3 Retopology Techniques</h3>
+<h4 id="431-importance-of-retopology">4.3.1 Importance of Retopology</h4>
+<p><strong>Why retopology is needed:</strong></p>
+<ul>
+<li>Sculpted meshes have chaotic topology</li>
+<li>Animation requires clean quad mesh</li>
+<li>Reduce polygon count to optimize performance</li>
+<li>Create clear edge flow structure</li>
+</ul>
+<h4 id="432-manual-retopology">4.3.2 Manual Retopology</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Manual retopology tools</span></span>
+<span class="line"><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">. Enable Snap to face</span></span>
+<span class="line"><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">. Create new plane </span><span style="color:#F97583">or</span><span style="color:#E1E4E8"> use existing mesh</span></span>
+<span class="line"><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">. Recreate topology over original model</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">Retopology tools:</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> PolyBuild: Interactive polygon building</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Knife: Knife tool</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> F: Fill face</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> J: Connect vertices</span></span></code></pre>
+<p><strong>Retopology Best Practices:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Edge flow direction guidance</span></span>
+<span class="line"><span style="color:#E1E4E8">Muscle flow → Edge flow follows muscle texture</span></span>
+<span class="line"><span style="color:#E1E4E8">Joint areas → Circular edge flow </span><span style="color:#F97583">for</span><span style="color:#E1E4E8"> deformation</span></span>
+<span class="line"><span style="color:#E1E4E8">Eye area → Radial edge flow</span></span>
+<span class="line"><span style="color:#E1E4E8">Mouth area → Circular edge flow around lips</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Polygon count control</span></span>
+<span class="line"><span style="color:#E1E4E8">Game character: </span><span style="color:#79B8FF">5</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">000</span><span style="color:#F97583">-</span><span style="color:#79B8FF">20</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">000</span><span style="color:#E1E4E8"> faces</span></span>
+<span class="line"><span style="color:#E1E4E8">Film character: </span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">000</span><span style="color:#F97583">-</span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">000</span><span style="color:#E1E4E8"> faces</span></span>
+<span class="line"><span style="color:#E1E4E8">Real</span><span style="color:#F97583">-</span><span style="color:#E1E4E8">time application: As low polygon </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> possible</span></span></code></pre>
+<h4 id="433-automatic-retopology">4.3.3 Automatic Retopology</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Quad Remesh</span></span>
+<span class="line"><span style="color:#E1E4E8">Mesh → Remesh → Quad Remesh</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">Parameters:</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Octree Depth: Detail level</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Scale: Scale factor</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Sharpness: Sharpness</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Dual Mesh: Dual mesh</span></span></code></pre>
+<h3 id="44-boolean-operations">4.4 Boolean Operations</h3>
+<h4 id="441-boolean-operation-types">4.4.1 Boolean Operation Types</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Three Boolean operation types</span></span>
+<span class="line"><span style="color:#E1E4E8">Union: A ∪ B </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Merge two objects</span></span>
+<span class="line"><span style="color:#E1E4E8">Difference: A </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> B </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Subtract B </span><span style="color:#F97583">from</span><span style="color:#E1E4E8"> A</span></span>
+<span class="line"><span style="color:#E1E4E8">Intersect: A ∩ B </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Keep overlapping part</span></span></code></pre>
+<h4 id="442-boolean-modifier">4.4.2 Boolean Modifier</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Add Boolean modifier</span></span>
+<span class="line"><span style="color:#E1E4E8">Properties → Modifier Properties → Boolean</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">Parameter settings:</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Operation: Operation </span><span style="color:#79B8FF">type</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Object: Target </span><span style="color:#79B8FF">object</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Solver: Solver</span></span>
+<span class="line"><span style="color:#F97583">  -</span><span style="color:#E1E4E8"> Fast: Fast (may have accuracy issues)</span></span>
+<span class="line"><span style="color:#F97583">  -</span><span style="color:#E1E4E8"> Exact: Exact (slower but accurate)</span></span></code></pre>
+<p><strong>Boolean Operation Example:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Creating screw head slot</span></span>
+<span class="line"><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">. Create cylinder </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> screw</span></span>
+<span class="line"><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">. Create cube </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> slot</span></span>
+<span class="line"><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">. Rotate cube </span><span style="color:#79B8FF">45</span><span style="color:#E1E4E8"> degrees </span><span style="color:#F97583">and</span><span style="color:#E1E4E8"> adjust size</span></span>
+<span class="line"><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">. Add Boolean modifier to screw</span></span>
+<span class="line"><span style="color:#79B8FF">5</span><span style="color:#E1E4E8">. Operation: Difference</span></span>
+<span class="line"><span style="color:#79B8FF">6</span><span style="color:#E1E4E8">. Object: Cube</span></span>
+<span class="line"><span style="color:#79B8FF">7</span><span style="color:#E1E4E8">. Apply modifier</span></span></code></pre>
+<h4 id="443-boolean-operation-best-practices">4.4.3 Boolean Operation Best Practices</h4>
+<div class="container-warning custom-container" data-container-type="warning">
+<div class="container-title">Boolean Operation Notes</div>
+<div class="container-content">
+<ul>
+<li>Ensure mesh is closed (Manifold)</li>
+<li>Avoid overlapping edges and faces</li>
+<li>Use Exact solver for better results</li>
+<li>Check and repair mesh after Boolean operation</li>
+</ul>
+</div>
+</div>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Preparation before Boolean operations</span></span>
+<span class="line"><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">. Check mesh integrity</span></span>
+<span class="line"><span style="color:#F97583">   -</span><span style="color:#E1E4E8"> Mesh → Clean up → Fill Holes</span></span>
+<span class="line"><span style="color:#F97583">   -</span><span style="color:#E1E4E8"> Mesh → Normals → Recalculate Outside</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">. Ensure appropriate mesh density</span></span>
+<span class="line"><span style="color:#F97583">   -</span><span style="color:#E1E4E8"> Too dense: Slow operation</span></span>
+<span class="line"><span style="color:#F97583">   -</span><span style="color:#E1E4E8"> Too sparse: Detail loss</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">. Use modifiers instead of direct application</span></span>
+<span class="line"><span style="color:#F97583">   -</span><span style="color:#E1E4E8"> Maintain non</span><span style="color:#F97583">-</span><span style="color:#E1E4E8">destructive workflow</span></span>
+<span class="line"><span style="color:#F97583">   -</span><span style="color:#E1E4E8"> Can adjust parameters anytime</span></span></code></pre>
+<h3 id="45-hard-surface-modeling">4.5 Hard Surface Modeling</h3>
+<h4 id="451-hard-surface-modeling-principles">4.5.1 Hard Surface Modeling Principles</h4>
+<p>Hard surface modeling is used for creating mechanical, architectural, product items with clear boundaries:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Hard surface modeling characteristics</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Clear edges </span><span style="color:#F97583">and</span><span style="color:#E1E4E8"> corners</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Flat surfaces</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Regular geometric shapes</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Precise dimensional control</span></span></code></pre>
+<h4 id="452-hard-surface-modeling-techniques">4.5.2 Hard Surface Modeling Techniques</h4>
+<p><strong>Modifier Stack Combination:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Typical hard surface modifier stack</span></span>
+<span class="line"><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">. Mirror </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Symmetrical modeling</span></span>
+<span class="line"><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">. Array </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Repeated elements</span></span>
+<span class="line"><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">. Solidify </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Add thickness</span></span>
+<span class="line"><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">. Bevel </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Round edges</span></span>
+<span class="line"><span style="color:#79B8FF">5</span><span style="color:#E1E4E8">. Subdivision Surface </span><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Final smoothing</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Modifier order is important!</span></span></code></pre>
+<p><strong>Modeling Techniques:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># 1. Start from silhouette</span></span>
+<span class="line"><span style="color:#E1E4E8">Add basic shape → Extrude silhouette → Add details</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 2. Use precise measurements</span></span>
+<span class="line"><span style="color:#E1E4E8">Tab to </span><span style="color:#79B8FF">input</span><span style="color:#E1E4E8"> exact values</span></span>
+<span class="line"><span style="color:#E1E4E8">Enable snapping </span><span style="color:#F97583">and</span><span style="color:#E1E4E8"> increments</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 3. Keep clean topology</span></span>
+<span class="line"><span style="color:#E1E4E8">Primarily use quads</span></span>
+<span class="line"><span style="color:#E1E4E8">Avoid n</span><span style="color:#F97583">-</span><span style="color:#E1E4E8">gons </span><span style="color:#F97583">and</span><span style="color:#E1E4E8"> triangles</span></span></code></pre>
+<h4 id="453-mechanical-part-modeling-example">4.5.3 Mechanical Part Modeling Example</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Creating a gear</span></span>
+<span class="line"><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">. Add circle (</span><span style="color:#79B8FF">24</span><span style="color:#E1E4E8"> vertices)</span></span>
+<span class="line"><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">. Enter Edit Mode, select </span><span style="color:#79B8FF">all</span></span>
+<span class="line"><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">. Alt </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> E → Extrude Individual Faces</span></span>
+<span class="line"><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">. S → </span><span style="color:#79B8FF">0.8</span><span style="color:#E1E4E8"> (scale inward)</span></span>
+<span class="line"><span style="color:#79B8FF">5</span><span style="color:#E1E4E8">. E → extrude outward </span><span style="color:#F97583">for</span><span style="color:#E1E4E8"> teeth</span></span>
+<span class="line"><span style="color:#79B8FF">6</span><span style="color:#E1E4E8">. Ctrl </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> R add edge loops </span><span style="color:#F97583">for</span><span style="color:#E1E4E8"> center hole</span></span>
+<span class="line"><span style="color:#79B8FF">7</span><span style="color:#E1E4E8">. I → inset to create inner ring</span></span>
+<span class="line"><span style="color:#79B8FF">8</span><span style="color:#E1E4E8">. Delete Faces → delete center</span></span>
+<span class="line"><span style="color:#79B8FF">9</span><span style="color:#E1E4E8">. Add subdivision </span><span style="color:#F97583">and</span><span style="color:#E1E4E8"> bevel modifiers</span></span></code></pre>
+<h3 id="46-organic-modeling">4.6 Organic Modeling</h3>
+<h4 id="461-box-modeling-method">4.6.1 Box Modeling Method</h4>
+<p>Start from simple cube to create complex organic forms:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Box modeling steps</span></span>
+<span class="line"><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">. Start </span><span style="color:#F97583">with</span><span style="color:#E1E4E8"> cube</span></span>
+<span class="line"><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">. Use loop cuts to divide main structure</span></span>
+<span class="line"><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">. Extrude to create limbs </span><span style="color:#F97583">and</span><span style="color:#E1E4E8"> appendages</span></span>
+<span class="line"><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">. Gradually refine shape</span></span>
+<span class="line"><span style="color:#79B8FF">5</span><span style="color:#E1E4E8">. Use proportional editing to smooth transitions</span></span>
+<span class="line"><span style="color:#79B8FF">6</span><span style="color:#E1E4E8">. Add Subdivision Surface modifier</span></span></code></pre>
+<h4 id="462-organic-modeling-techniques">4.6.2 Organic Modeling Techniques</h4>
+<p><strong>Form Control:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Proportional Editing</span></span>
+<span class="line"><span style="color:#E1E4E8">O  </span><span style="color:#6A737D"># Enable proportional editing</span></span>
+<span class="line"><span style="color:#E1E4E8">Scroll wheel </span><span style="color:#6A737D"># Adjust influence range</span></span>
+<span class="line"><span style="color:#E1E4E8">Alt </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> O </span><span style="color:#6A737D"># Toggle connected mode</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Smooth tools</span></span>
+<span class="line"><span style="color:#E1E4E8">Alt </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> S </span><span style="color:#6A737D"># Scale along normals (inflate/deflate)</span></span>
+<span class="line"><span style="color:#E1E4E8">Shift </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> Alt </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> S </span><span style="color:#6A737D"># Smooth scale along normals</span></span></code></pre>
+<p><strong>Muscle Flow Modeling:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Follow anatomical structure</span></span>
+<span class="line"><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">. Study real anatomical references</span></span>
+<span class="line"><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">. Edge flow follows muscle texture</span></span>
+<span class="line"><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">. Focus on joints </span><span style="color:#F97583">and</span><span style="color:#E1E4E8"> deformation areas</span></span>
+<span class="line"><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">. Maintain symmetry (use Mirror modifier)</span></span></code></pre>
+<h3 id="47-practical-exercises">4.7 Practical Exercises</h3>
+<h4 id="exercise-1-coffee-cup-modeling-subdivision-surface">Exercise 1: Coffee Cup Modeling (Subdivision Surface)</h4>
+<div class="container-note custom-container" data-container-type="note">
+<div class="container-title">Exercise Objective</div>
+<div class="container-content">
+<p>Master basic subdivision surface modeling workflow and edge control</p>
+</div>
+</div>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Creating coffee cup using subdivision surface</span></span>
+<span class="line"><span style="color:#6A737D"># Step 1: Create cup body outline</span></span>
+<span class="line"><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">. Delete default cube</span></span>
+<span class="line"><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">. Shift </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> A → Mesh → Cylinder (Vertices: </span><span style="color:#79B8FF">12</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">. Tab to enter Edit Mode</span></span>
+<span class="line"><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">. Select top face, Delete → Faces (create opening)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Step 2: Shape cup body</span></span>
+<span class="line"><span style="color:#79B8FF">5</span><span style="color:#E1E4E8">. 2 → Switch to edge select mode</span></span>
+<span class="line"><span style="color:#79B8FF">6</span><span style="color:#E1E4E8">. Alt </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> left</span><span style="color:#F97583">-</span><span style="color:#E1E4E8">click to select edge loops at different heights</span></span>
+<span class="line"><span style="color:#79B8FF">7</span><span style="color:#E1E4E8">. S → Scale different loops to create cup profile</span></span>
+<span class="line"><span style="color:#79B8FF">8</span><span style="color:#E1E4E8">. Select opening edge loop, E → extrude inward to create cup rim thickness</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Step 3: Add subdivision</span></span>
+<span class="line"><span style="color:#79B8FF">9</span><span style="color:#E1E4E8">. Add Subdivision Surface modifier (Level: </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">. Add edge loops where sharpness </span><span style="color:#F97583">is</span><span style="color:#E1E4E8"> needed (Ctrl </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> R)</span></span>
+<span class="line"><span style="color:#79B8FF">11</span><span style="color:#E1E4E8">. Adjust loop positions to control curvature</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Step 4: Create handle</span></span>
+<span class="line"><span style="color:#79B8FF">12</span><span style="color:#E1E4E8">. Select two faces on cup side</span></span>
+<span class="line"><span style="color:#79B8FF">13</span><span style="color:#E1E4E8">. E → Extrude, S → </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8"> to merge</span></span>
+<span class="line"><span style="color:#79B8FF">14</span><span style="color:#E1E4E8">. E → Continue extruding to form handle shape</span></span>
+<span class="line"><span style="color:#79B8FF">15</span><span style="color:#E1E4E8">. Use G </span><span style="color:#F97583">and</span><span style="color:#E1E4E8"> R to adjust handle arc</span></span></code></pre>
+<h4 id="exercise-2-simple-character-head-sculpting">Exercise 2: Simple Character Head (Sculpting)</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Creating character head using sculpt mode</span></span>
+<span class="line"><span style="color:#6A737D"># Step 1: Prepare base model</span></span>
+<span class="line"><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">. Add </span><span style="color:#79B8FF">UV</span><span style="color:#E1E4E8"> Sphere</span></span>
+<span class="line"><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">. Switch to Sculpting workspace</span></span>
+<span class="line"><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">. Ctrl </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> D to enable dynamic topology</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Step 2: Shape basic head form</span></span>
+<span class="line"><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">. Use Grab brush (G) to adjust head proportions</span></span>
+<span class="line"><span style="color:#79B8FF">5</span><span style="color:#E1E4E8">. Use Snake Hook (K) to pull out nose</span></span>
+<span class="line"><span style="color:#79B8FF">6</span><span style="color:#E1E4E8">. Inflate (I) to thicken lip area</span></span>
+<span class="line"><span style="color:#79B8FF">7</span><span style="color:#E1E4E8">. Use Grab brush to adjust eye socket depth</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Step 3: Add details</span></span>
+<span class="line"><span style="color:#79B8FF">8</span><span style="color:#E1E4E8">. Lower Detail Size to increase detail density</span></span>
+<span class="line"><span style="color:#79B8FF">9</span><span style="color:#E1E4E8">. Use Clay Strips to add muscle texture</span></span>
+<span class="line"><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">. Smooth brush (S) to smooth transition areas</span></span>
+<span class="line"><span style="color:#79B8FF">11</span><span style="color:#E1E4E8">. Use standard sculpt brush to add wrinkles </span><span style="color:#F97583">and</span><span style="color:#E1E4E8"> other details</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Step 4: Refine and optimize</span></span>
+<span class="line"><span style="color:#79B8FF">12</span><span style="color:#E1E4E8">. Use Quad Remesh to retopologize</span></span>
+<span class="line"><span style="color:#79B8FF">13</span><span style="color:#E1E4E8">. Manually adjust key edge flows</span></span>
+<span class="line"><span style="color:#79B8FF">14</span><span style="color:#E1E4E8">. Add Subdivision Surface modifier</span></span></code></pre>
+<h4 id="exercise-3-mechanical-part-hard-surface--boolean">Exercise 3: Mechanical Part (Hard Surface + Boolean)</h4>
+<div class="container-warning custom-container" data-container-type="warning">
+<div class="container-title">Notes</div>
+<div class="container-content">
+<ul>
+<li>Hard surface modeling requires precise measurements and symmetry</li>
+<li>Boolean operations require mesh integrity</li>
+<li>Use proper modifier stack order</li>
+</ul>
+</div>
+</div>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Creating bolt and nut combination</span></span>
+<span class="line"><span style="color:#6A737D"># Bolt creation:</span></span>
+<span class="line"><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">. Add cylinder (</span><span style="color:#79B8FF">12</span><span style="color:#E1E4E8"> vertices)</span></span>
+<span class="line"><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">. S → X</span><span style="color:#F97583">/</span><span style="color:#E1E4E8">Y → </span><span style="color:#79B8FF">0.5</span><span style="color:#E1E4E8"> to </span><span style="color:#FFAB70">reduce</span><span style="color:#E1E4E8"> diameter</span></span>
+<span class="line"><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">. S → Z → </span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8"> to elongate</span></span>
+<span class="line"><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">. Select top face, E → extrude bolt head</span></span>
+<span class="line"><span style="color:#79B8FF">5</span><span style="color:#E1E4E8">. S → </span><span style="color:#79B8FF">1.5</span><span style="color:#E1E4E8"> to enlarge bolt head</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Thread creation:</span></span>
+<span class="line"><span style="color:#79B8FF">6</span><span style="color:#E1E4E8">. Add another cylinder </span><span style="color:#F97583">for</span><span style="color:#E1E4E8"> threads</span></span>
+<span class="line"><span style="color:#79B8FF">7</span><span style="color:#E1E4E8">. Add Screw modifier</span></span>
+<span class="line"><span style="color:#79B8FF">8</span><span style="color:#E1E4E8">. Adjust parameters to create thread effect</span></span>
+<span class="line"><span style="color:#79B8FF">9</span><span style="color:#E1E4E8">. Use Boolean modifier to merge </span><span style="color:#F97583">with</span><span style="color:#E1E4E8"> bolt</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Nut creation:</span></span>
+<span class="line"><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">. Add cylinder</span></span>
+<span class="line"><span style="color:#79B8FF">11</span><span style="color:#E1E4E8">. In Edit Mode select </span><span style="color:#79B8FF">6</span><span style="color:#E1E4E8"> faces to create hexagon</span></span>
+<span class="line"><span style="color:#79B8FF">12</span><span style="color:#E1E4E8">. I → inset to create inner hole</span></span>
+<span class="line"><span style="color:#79B8FF">13</span><span style="color:#E1E4E8">. Delete Faces to remove center</span></span>
+<span class="line"><span style="color:#79B8FF">14</span><span style="color:#E1E4E8">. Use Boolean modifier to cut thread hole</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Assembly and rendering:</span></span>
+<span class="line"><span style="color:#79B8FF">15</span><span style="color:#E1E4E8">. Insert bolt into nut</span></span>
+<span class="line"><span style="color:#79B8FF">16</span><span style="color:#E1E4E8">. Add metal materials</span></span>
+<span class="line"><span style="color:#79B8FF">17</span><span style="color:#E1E4E8">. Set appropriate lighting</span></span>
+<span class="line"><span style="color:#79B8FF">18</span><span style="color:#E1E4E8">. Render final result</span></span></code></pre>
+<h3 id="48-advanced-modeling-tools">4.8 Advanced Modeling Tools</h3>
+<h4 id="481-extra-objects-add-on">4.8.1 Extra Objects Add-on</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Enable Extra Objects add-on</span></span>
+<span class="line"><span style="color:#E1E4E8">Edit → Preferences → Add</span><span style="color:#F97583">-</span><span style="color:#E1E4E8">ons → Extra Objects</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">New </span><span style="color:#79B8FF">object</span><span style="color:#E1E4E8"> types:</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Extra Meshes: More basic meshes</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> BoltFactory: Bolt generator</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#79B8FF"> ANT</span><span style="color:#E1E4E8"> Landscape: Terrain generator</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Discombobulator: Random detail generator</span></span></code></pre>
+<h4 id="482-loop-tools-add-on">4.8.2 Loop Tools Add-on</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Loop Tools features</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Bridge: Bridge edge loops</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Loft: Loft connection</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Relax: Relax vertices</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Space: Even distribution</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Curve: Curve edge loop</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Circle: Circularize selection</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Flatten: Flatten</span></span></code></pre>
+<h4 id="483-f2-add-on">4.8.3 F2 Add-on</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># F2 quick fill</span></span>
+<span class="line"><span style="color:#E1E4E8">F  </span><span style="color:#6A737D"># Smart fill face</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Auto</span><span style="color:#F97583">-</span><span style="color:#E1E4E8">detect best fill method</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Supports quads </span><span style="color:#F97583">and</span><span style="color:#E1E4E8"> triangles</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Improves modeling efficiency</span></span></code></pre>
+<h2 id="advanced-modeling-shortcuts-summary">Advanced Modeling Shortcuts Summary</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Tool</th><th>Shortcut</th><th>Description</th></tr></thead><tbody><tr><td>Subdivision toggle</td><td>Ctrl + 1-6</td><td>Quick set subdivision level</td></tr><tr><td>Sculpt mode</td><td>Ctrl + Tab</td><td>Switch to sculpt mode</td></tr><tr><td>Dynamic topology</td><td>Ctrl + D</td><td>Toggle dynamic topology</td></tr><tr><td>Crease</td><td>Shift + E</td><td>Set edge crease</td></tr><tr><td>Mark sharp</td><td>Shift + Ctrl + E</td><td>Mark sharp edge</td></tr><tr><td>Sculpt brush size</td><td>F</td><td>Adjust brush size</td></tr><tr><td>Sculpt brush strength</td><td>Shift + F</td><td>Adjust brush strength</td></tr><tr><td>Smooth sculpt</td><td>Shift + Mouse</td><td>Temporarily switch to smooth brush</td></tr><tr><td>Subtract sculpt</td><td>Ctrl + Mouse</td><td>Reverse sculpt effect</td></tr></tbody></table>
+<h3 id="49-modeling-workflow-optimization">4.9 Modeling Workflow Optimization</h3>
+<h4 id="491-non-destructive-modeling">4.9.1 Non-Destructive Modeling</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Modeling workflow recommendations</span></span>
+<span class="line"><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">. Use modifiers instead of direct operations</span></span>
+<span class="line"><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">. Keep original mesh simple</span></span>
+<span class="line"><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">. Apply modifiers </span><span style="color:#F97583">in</span><span style="color:#E1E4E8"> stages</span></span>
+<span class="line"><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">. Backup important milestones</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Modifier stack management</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Mirror at bottom (affects </span><span style="color:#79B8FF">all</span><span style="color:#E1E4E8"> subsequent modifiers)</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Subdivision at top (apply smoothing last)</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Boolean </span><span style="color:#F97583">in</span><span style="color:#E1E4E8"> middle at appropriate position</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Can adjust order </span><span style="color:#F97583">and</span><span style="color:#E1E4E8"> parameters anytime</span></span></code></pre>
+<h4 id="492-performance-optimization">4.9.2 Performance Optimization</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Improve modeling performance</span></span>
+<span class="line"><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">. Set subdivision levels appropriately</span></span>
+<span class="line"><span style="color:#F97583">   -</span><span style="color:#E1E4E8"> Use low level when editing</span></span>
+<span class="line"><span style="color:#F97583">   -</span><span style="color:#E1E4E8"> Use high level when rendering</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">. Use simplified display</span></span>
+<span class="line"><span style="color:#F97583">   -</span><span style="color:#E1E4E8"> Wireframe mode editing</span></span>
+<span class="line"><span style="color:#F97583">   -</span><span style="color:#E1E4E8"> Hide unnecessary objects</span></span>
+<span class="line"><span style="color:#F97583">   -</span><span style="color:#E1E4E8"> Use hierarchical management</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">. Clean scene regularly</span></span>
+<span class="line"><span style="color:#F97583">   -</span><span style="color:#E1E4E8"> Delete unused meshes</span></span>
+<span class="line"><span style="color:#F97583">   -</span><span style="color:#E1E4E8"> Merge similar objects</span></span>
+<span class="line"><span style="color:#F97583">   -</span><span style="color:#E1E4E8"> Apply modifiers no longer needed</span></span></code></pre>
+<div class="container-tip custom-container" data-container-type="tip">
+<div class="container-title">Learning Suggestions</div>
+<div class="container-content">
+<ol>
+<li><strong>Progressive Learning</strong>: Start with simple shapes, gradually increase complexity</li>
+<li><strong>Practice-Oriented</strong>: Do more practice projects, combine theory with practice</li>
+<li><strong>Reference Learning</strong>: Observe forms and structures of real objects</li>
+<li><strong>Tool Proficiency</strong>: Master shortcuts for various modeling tools</li>
+<li><strong>Be Patient</strong>: Complex modeling requires time and experience accumulation</li>
+</ol>
+</div>
+</div>
+<p>Through this chapter, you should be able to:</p>
+<ul>
+<li>Proficiently use subdivision surface for organic modeling</li>
+<li>Master sculpting tools to create complex details</li>
+<li>Understand and apply retopology techniques</li>
+<li>Use Boolean operations for complex modeling</li>
+<li>Possess hard surface and organic modeling capabilities</li>
+</ul>
+<p>These advanced modeling techniques are key skills for creating professional-grade 3D models and require extensive practice to master.</p></div><!-- 修复文章内容中的链接，添加当前语言前缀 --><script>
+      (function() {
+        function fixProseLinks() {
+          const proseContent = document.querySelector('[data-prose-content]');
+          if (!proseContent) return;
+
+          const localePrefix = proseContent.getAttribute('data-locale-prefix') || '';
+          const baseUrl = proseContent.getAttribute('data-base-url') || '';
+
+          // 如果没有 locale prefix 或 locale prefix 等于 base url，则不需要修复
+          // 这意味着当前是默认语言
+          if (!localePrefix || localePrefix === baseUrl) return;
+
+          // 获取 locale 部分 (从 localePrefix 中提取，例如 /base/zh-CN -> zh-CN)
+          const localePart = localePrefix.replace(baseUrl, '').replace(/^\//, '');
+          if (!localePart) return;
+
+          // 修复所有内部链接
+          proseContent.querySelectorAll('a[href]').forEach(function(link) {
+            const href = link.getAttribute('href');
+            if (!href) return;
+
+            // 跳过外部链接、锚点链接、mailto、tel 等
+            if (href.startsWith('http://') ||
+                href.startsWith('https://') ||
+                href.startsWith('//') ||
+                href.startsWith('#') ||
+                href.startsWith('mailto:') ||
+                href.startsWith('tel:') ||
+                href.startsWith('data:')) {
+              return;
+            }
+
+            // 跳过已经包含 locale 前缀的链接
+            if (href.startsWith(localePrefix + '/') || href === localePrefix) {
+              return;
+            }
+
+            // 对于以 baseUrl 开头但没有 locale 的链接，添加 locale
+            if (baseUrl && href.startsWith(baseUrl + '/')) {
+              const pathAfterBase = href.slice(baseUrl.length);
+              // 检查是否已经有 locale 前缀
+              if (!pathAfterBase.startsWith('/' + localePart + '/') && pathAfterBase !== '/' + localePart) {
+                link.setAttribute('href', baseUrl + '/' + localePart + pathAfterBase);
+              }
+              return;
+            }
+
+            // 对于绝对路径链接 (以 / 开头)，添加 locale prefix
+            if (href.startsWith('/')) {
+              // 检查是否已经有 locale 前缀
+              if (!href.startsWith('/' + localePart + '/') && href !== '/' + localePart) {
+                link.setAttribute('href', localePrefix + href);
+              }
+            }
+          });
+        }
+
+        // 页面加载后执行
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', fixProseLinks);
+        } else {
+          fixProseLinks();
+        }
+
+        // 支持 Astro 视图过渡
+        document.addEventListener('astro:page-load', fixProseLinks);
+      })();
+    </script><!-- 文章底部 --><footer class="not-prose mt-16 pt-8 border-t border-slate-200 dark:border-slate-700"><!-- 分类信息 --><div class="mb-8"><h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4">Categories</h3><div class="flex flex-wrap gap-2"><a href="/categories/blender" class="px-4 py-2 text-sm font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">Blender</a><a href="/categories/advanced-modeling" class="px-4 py-2 text-sm font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">Advanced Modeling</a></div></div><!-- 更新时间 --></footer></article><nav class="mt-16 pt-8 border-t border-slate-200 dark:border-slate-700"><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><!-- 上一篇 --><div class="text-center md:text-left"><div class="text-sm text-slate-500 dark:text-slate-400 mb-2">Previous</div><a href="/posts/blog_docs_en/tools/blender/blender-003" class="group inline-flex items-center text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors"><svg class="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg><span class="line-clamp-1">Chapter 3 Basic Modeling Techniques</span></a></div><!-- 下一篇 --><div class="text-center md:text-right"><div class="text-sm text-slate-500 dark:text-slate-400 mb-2">Next</div><a href="/posts/blog_docs_en/tools/blender/blender-005" class="group inline-flex items-center justify-end text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors"><span class="line-clamp-1">Chapter 5 Material Systems and Shaders</span><svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></a></div></div></nav> </div> </div>  </main> <footer class="bg-slate-50 dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 mt-auto w-full min-w-0"> <div class="container mx-auto px-4 py-6"> <div class="grid grid-cols-1 md:grid-cols-3 gap-6"> <div> <div class="flex items-center space-x-3 mb-3"> <img src="/images/avatar.svg" alt="My Astro Blog" class="w-8 h-8 rounded-full"> <div> <h3 class="text-base font-semibold text-slate-900 dark:text-slate-100"> My Astro Blog </h3> <p class="text-xs text-slate-600 dark:text-slate-400">  </p> </div> </div> </div> <div> <h4 class="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-3"> Quick Links </h4> <div class="flex flex-wrap gap-x-4 gap-y-1"> <a href="/" class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary-500 transition-colors"> Home </a><a href="/posts" class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary-500 transition-colors"> Posts </a><a href="/tags" class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary-500 transition-colors"> Tags </a><a href="/archives" class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary-500 transition-colors"> Archives </a><a href="/about" class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary-500 transition-colors"> About </a> </div> </div> <div> <h4 class="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-3"> Contact </h4> <div class="flex space-x-4">  <a href="/rss.xml" class="text-slate-600 dark:text-slate-400 hover:text-primary-500 transition-colors" aria-label="RSS Feed"> <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"> <path d="M3.429 2.486c9.36 0 16.943 7.583 16.943 16.943h-3.257c0-7.563-6.123-13.686-13.686-13.686V2.486zM3.429 9.114c5.647 0 10.229 4.581 10.229 10.229h-3.257c0-3.844-3.128-6.972-6.972-6.972V9.114zM6.686 16.486c0 1.8-1.457 3.257-3.257 3.257S0.172 18.286 0.172 16.486s1.457-3.257 3.257-3.257 3.257 1.457 3.257 3.257z"></path> </svg> </a> </div> </div> </div> <div class="border-t border-slate-200 dark:border-slate-700 pt-4 mt-6"> <div class="flex flex-col sm:flex-row justify-between items-center text-sm text-slate-600 dark:text-slate-400"> <p>© 2026 Author. All rights reserved.</p> <p class="mt-2 sm:mt-0">
+Powered by <a href="https://astro.build" class="link" target="_blank" rel="noopener noreferrer">Astro</a> </p> </div> </div> </div> </footer> <button class="back-to-top" aria-label="Back to Top" data-astro-cid-itptdd6o> <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-itptdd6o> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" data-astro-cid-itptdd6o></path> </svg> </button>  </div> <!-- Mermaid --> <script src="/js/mermaid-container.js"></script> <!-- Tabs --> <script src="/js/tabs-init.js"></script> <!-- Store i18n data for client-side scripts --> <script>(function(){const locale = "en";
+const uiTranslations = {"home":"Home","blog":"Blog","about":"About","search":"Search","posts":"Posts","postList":"All Posts","noPostsFound":"No posts found","readMore":"Read more","readingTime":"Reading time","minuteRead":"min","tags":"Tags","categories":"Categories","allTags":"All Tags","allCategories":"All Categories","taggedWith":"Tagged with","inCategory":"In category","archives":"Archives","postsInArchive":"posts","recentPosts":"Recent Posts","popularTags":"Popular Tags","friendLinks":"Friend Links","documentTree":"Document Tree","quickLinks":"Quick Links","contact":"Contact","searchPlaceholder":"Search posts, tags, content...","searchResults":"Search Results","noResults":"No results found","searching":"Searching...","searchArticles":"Search Articles","searchInAllArticles":"Find content that interests you in all articles","searchTips":"Search Tips","basicSearch":"Basic Search","advancedFeatures":"Advanced Features","searchTipKeyword":"Enter keywords to search titles and content","searchTipMixedLang":"Supports mixed language search","searchTipCaseInsensitive":"Case insensitive","searchTipRealtime":"Real-time search suggestions","searchTipFilter":"Filter by tags and categories","searchTipFuzzy":"Supports fuzzy matching","browsePosts":"Browse Posts","aboutMe":"About Me","previousPage":"Previous","nextPage":"Next","page":"Page","of":"of","publishedOn":"Published on","updatedOn":"Updated on","author":"Author","tableOfContents":"Table of Contents","readingProgress":"Reading Progress","relatedPosts":"Related Posts","sharePost":"Share","previousPost":"Previous","nextPost":"Next","backToTop":"Back to Top","copyCode":"Copy","copied":"Copied","expand":"Expand","collapse":"Collapse","expandCode":"Expand code","collapseCode":"Collapse code","lines":"lines","viewMode":"View Mode","cardView":"Card View","listView":"List View","sortBy":"Sort by","sortByDate":"Date","sortByTitle":"Title","filterByTag":"Filter by tag","filterByCategory":"Filter by category","clearFilter":"Clear filter","allPosts":"All Posts","draft":"Draft","slides":"Slides","slidesList":"All Slides","rssFeed":"RSS Feed","quickNavigation":"Quick Navigation","timeline":"Timeline","viewAllTimeline":"View all timeline","postsCount":"posts"};
+
+      window.__i18n = {
+        locale: locale,
+        ui: uiTranslations
+      };
+    })();</script> <script type="module" src="/assets/BaseLayout.astro_astro_type_script_index_0_lang.DBRPz_YQ.js"></script> </body> </html> <script type="module">function c(){const e=document.querySelector("[data-sidebar]"),o=document.querySelector("[data-sidebar-resizer]");if(!e||!o)return;const n=localStorage.getItem("sidebar-width");n&&e.style.setProperty("--sidebar-width",n);let s=!1,r=0,d=0;const u=t=>{s=!0,r=t.clientX,d=e.offsetWidth,e.style.transition="none",document.body.style.cursor="col-resize",document.body.style.userSelect="none",document.addEventListener("mousemove",i),document.addEventListener("mouseup",a)},i=t=>{if(!s)return;const l=t.clientX-r,m=Math.min(Math.max(d+l,200),500);e.style.setProperty("--sidebar-width",`${m}px`)},a=()=>{if(!s)return;s=!1,e.style.transition="",document.body.style.cursor="",document.body.style.userSelect="";const t=getComputedStyle(e).getPropertyValue("--sidebar-width");t&&localStorage.setItem("sidebar-width",t.trim()),document.removeEventListener("mousemove",i),document.removeEventListener("mouseup",a)};o.addEventListener("mousedown",u)}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",c):c();</script> 

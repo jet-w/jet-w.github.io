@@ -1,0 +1,1070 @@
+<!DOCTYPE html><html lang="en" dir="ltr" class="scroll-smooth"> <head><meta charset="UTF-8"><meta name="description" content><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/jpeg" href="/images/avatar.svg"><meta name="generator" content="Astro v5.16.15"><!-- SEO --><title>Chapter 7: Monitoring and Logging | My Astro Blog</title><link rel="canonical" href="https://example.com/posts/blog_docs_en/tools/kubernetes/k8s-007/"><!-- Alternate language links (hreflang) --><link rel="alternate" hreflang="en" href="https://example.com/posts/blog_docs_en/tools/kubernetes/k8s-007/"><link rel="alternate" hreflang="zh-CN" href="https://example.com/zh-CN/posts/blog_docs_en/tools/kubernetes/k8s-007/"><link rel="alternate" hreflang="x-default" href="https://example.com/posts/blog_docs_en/tools/kubernetes/k8s-007/"><!-- Open Graph --><meta property="og:type" content="website"><meta property="og:title" content="Chapter 7: Monitoring and Logging | My Astro Blog"><meta property="og:description" content><meta property="og:url" content="https://example.com/posts/blog_docs_en/tools/kubernetes/k8s-007/"><meta property="og:image" content="https://example.com/images/og-image.jpg"><meta property="og:site_name" content="My Astro Blog"><meta property="og:locale" content="en"><!-- Twitter --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Chapter 7: Monitoring and Logging | My Astro Blog"><meta name="twitter:description" content><meta name="twitter:image" content="https://example.com/images/og-image.jpg"><!-- RSS --><link rel="alternate" type="application/rss+xml" title="My Astro Blog" href="/rss.xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><!-- Font Awesome --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous"><!-- Material Icons --><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round"><!-- Bootstrap Icons --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"><!-- Remix Icon --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"><!-- KaTeX for LaTeX math rendering --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous"><!-- Ionicons --><script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script><script>
+      const theme = (() => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+          return 'light';
+        }
+        return 'dark';
+      })();
+
+      if (theme === 'light') {
+        document.documentElement.classList.remove('dark');
+      } else {
+        document.documentElement.classList.add('dark');
+      }
+      window.__theme = theme;
+    </script><link rel="stylesheet" href="/assets/_slug_.FoKD82eu.css">
+<style>.slides-back-btn{position:fixed;top:20px;left:20px;z-index:100;display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:#00000080;border-radius:50%;color:#fff;text-decoration:none;opacity:.6;transition:opacity .3s,transform .3s}.slides-back-btn:hover{opacity:1;transform:scale(1.1)}.reveal{font-family:Source Sans Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif}.reveal pre{width:100%;max-width:100%;box-shadow:0 4px 6px #0000004d}.reveal pre code{max-height:500px;padding:1em;font-size:.9em;line-height:1.5}.reveal table{margin:1em auto;border-collapse:collapse}.reveal table th,.reveal table td{padding:.5em 1em;border:1px solid rgba(255,255,255,.3)}.reveal table th{background:#ffffff1a;font-weight:700}.reveal ul,.reveal ol{text-align:left;display:inline-block}.reveal li{margin:.5em 0}.reveal a{text-decoration:underline;text-decoration-style:dotted}.reveal a:hover{text-decoration-style:solid}.reveal blockquote{width:90%;padding:1em;font-style:italic;background:#ffffff0d;border-left:4px solid currentColor;text-align:left}.reveal .columns{display:flex;gap:2em}.reveal .columns>*{flex:1}.reveal .slides section{transition:all .4s ease}.reveal.overview .slides section.present{outline:4px solid #42affa!important;outline-offset:4px;box-shadow:0 0 30px #42affa99,0 0 60px #42affa4d!important}.reveal.overview .slides section:not(.present){opacity:.6}.reveal.overview .slides section:not(.present):hover{opacity:.9}.reveal .progress{height:4px}.reveal .controls{bottom:30px}.reveal .speaker-notes-link{position:fixed;bottom:20px;right:20px;z-index:100;padding:8px 16px;background:#0009;color:#fff;border-radius:4px;font-size:12px;opacity:.4;transition:opacity .3s}.reveal .speaker-notes-link:hover{opacity:1}.reveal .mermaid{background:#fffffff2;padding:1em;border-radius:8px}.reveal .katex{font-size:1.1em}.reveal .katex-display{margin:1em 0}.reveal .fragment.fade-in-then-out{opacity:0;visibility:hidden}.reveal .fragment.fade-in-then-out.visible,.reveal .fragment.fade-in-then-out.current-fragment{opacity:1;visibility:visible}.reveal .highlight{background:linear-gradient(120deg,#ffff004d 0% 100%);padding:.1em .3em;border-radius:3px}@media(max-width:768px){.slides-back-btn{width:36px;height:36px;top:10px;left:10px}.reveal pre code{font-size:.7em}.reveal h1{font-size:1.8em}.reveal h2{font-size:1.4em}}@media print{.slides-back-btn{display:none}}.reveal[data-astro-cid-4ckbqlo5] .mermaid[data-astro-cid-4ckbqlo5]{background:#fffffff2;padding:1em;border-radius:8px}.reveal[data-astro-cid-4ckbqlo5] .echarts-container[data-astro-cid-4ckbqlo5]{width:100%;height:400px;margin:0 auto}.reveal[data-astro-cid-4ckbqlo5] pre[data-astro-cid-4ckbqlo5] code[data-astro-cid-4ckbqlo5].language-mermaid,.reveal[data-astro-cid-4ckbqlo5] pre[data-astro-cid-4ckbqlo5] code[data-astro-cid-4ckbqlo5].language-echarts{display:none}
+.line-clamp-2[data-v-86db9372]{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.line-clamp-1[data-v-e198c78d]{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.fade-enter-active[data-v-79f513eb],.fade-leave-active[data-v-79f513eb]{transition:opacity .2s ease}.fade-enter-from[data-v-79f513eb],.fade-leave-to[data-v-79f513eb]{opacity:0}.line-clamp-2[data-v-79f513eb]{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.fade-enter-active[data-v-ff2820af],.fade-leave-active[data-v-ff2820af]{transition:opacity .2s ease}.fade-enter-from[data-v-ff2820af],.fade-leave-to[data-v-ff2820af]{opacity:0}.rotate-enter-active[data-v-5f49d689],.rotate-leave-active[data-v-5f49d689]{transition:transform .2s ease}.rotate-enter-from[data-v-5f49d689],.rotate-leave-to[data-v-5f49d689]{transform:rotate(90deg)}.mobile-menu-overlay{position:fixed;inset:0;background-color:#00000080;z-index:99998}.mobile-menu-panel{position:fixed;top:0;right:0;height:100%;width:20rem;max-width:80vw;background-color:#fff;box-shadow:-4px 0 20px #00000026;z-index:99999;overflow-y:auto}.dark .mobile-menu-panel{background-color:#0f172a}.fade-enter-active,.fade-leave-active{transition:opacity .3s ease}.fade-enter-from,.fade-leave-to{opacity:0}.slide-enter-active,.slide-leave-active{transition:transform .3s ease}.slide-enter-from,.slide-leave-to{transform:translate(100%)}
+</style></head> <body class="min-h-screen w-full overflow-x-hidden"> <div id="app" class="flex flex-col min-h-screen w-full min-w-0">  <header class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border-b border-slate-200 dark:border-slate-700"> <div class="container mx-auto px-4"> <nav class="flex items-center justify-between h-16"> <div class="flex items-center space-x-4"> <a href="/" class="flex items-center space-x-3 hover:opacity-80 transition-opacity"> <img src="/images/avatar.svg" alt="My Astro Blog" class="w-8 h-8 rounded-full"> <div class="hidden sm:block"> <h1 class="text-xl font-bold text-slate-900 dark:text-slate-100"> My Astro Blog </h1>  </div> </a> </div> <div class="hidden md:flex items-center space-x-8"> <a href="/" class="text-sm font-medium transition-colors hover:text-primary-500 text-slate-700 dark:text-slate-300"> Home </a><a href="/posts/blog_docs_en/math" class="text-sm font-medium transition-colors hover:text-primary-500 text-slate-700 dark:text-slate-300"> Math </a><a href="/posts/blog_docs_en/tools" class="text-sm font-medium transition-colors hover:text-primary-500 text-primary-500"> Tools </a><a href="/posts/blog_docs_en/qt-model" class="text-sm font-medium transition-colors hover:text-primary-500 text-slate-700 dark:text-slate-300"> QT Model </a><a href="/posts/blog_docs_en/techniques" class="text-sm font-medium transition-colors hover:text-primary-500 text-slate-700 dark:text-slate-300"> Technology </a><a href="https://jet-w.github.io/jet-w.astro-blog/" class="text-sm font-medium transition-colors hover:text-primary-500 text-slate-700 dark:text-slate-300"> Jet-w Astro Blog </a><a href="/about" class="text-sm font-medium transition-colors hover:text-primary-500 text-slate-700 dark:text-slate-300"> About </a> </div> <div class="flex items-center"> <div class="hidden sm:block mr-2"> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();</script><script>(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="ZQMAIL" prefix="s2" component-url="/assets/SearchBox.DjHiC6Tu.js" component-export="default" renderer-url="/assets/client.Dd1xdfK6.js" props="{&quot;placeholder&quot;:[0,&quot;Search posts, tags, content...&quot;],&quot;searchLabel&quot;:[0,&quot;Search&quot;],&quot;noResultsText&quot;:[0,&quot;No results found&quot;]}" ssr client="load" opts="{&quot;name&quot;:&quot;SearchBox&quot;,&quot;value&quot;:true}" await-children><div class="relative" data-v-79f513eb><div class="relative" data-v-79f513eb><input value="" type="text" placeholder="Search posts, tags, content..." class="w-64 pl-10 pr-4 py-2 text-sm bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors" data-v-79f513eb><div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none" data-v-79f513eb><svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-v-79f513eb><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" data-v-79f513eb></path></svg></div></div><!----></div><!--astro:end--></astro-island> </div> <div class="hidden sm:block mr-2"> <astro-island uid="Z1Vqmig" prefix="s3" component-url="/assets/LanguageSwitcher.D85ccgBj.js" component-export="default" renderer-url="/assets/client.Dd1xdfK6.js" props="{&quot;locales&quot;:[1,[[0,{&quot;code&quot;:[0,&quot;en&quot;],&quot;name&quot;:[0,&quot;English&quot;]}],[0,{&quot;code&quot;:[0,&quot;zh-CN&quot;],&quot;name&quot;:[0,&quot;中文&quot;]}]]],&quot;currentLocale&quot;:[0,&quot;en&quot;],&quot;currentPath&quot;:[0,&quot;/posts/blog_docs_en/tools/kubernetes/k8s-007/&quot;],&quot;defaultLocale&quot;:[0,&quot;en&quot;],&quot;prefixDefaultLocale&quot;:[0,false],&quot;base&quot;:[0,&quot;/&quot;]}" ssr client="load" opts="{&quot;name&quot;:&quot;LanguageSwitcher&quot;,&quot;value&quot;:true}" await-children><div class="relative"><button class="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg transition-colors" aria-expanded="false" aria-haspopup="listbox" aria-label="Select language, current: English"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path></svg><span>English</span><svg class="w-3 h-3 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><!----></div><!--astro:end--></astro-island> </div> <div class="hidden sm:block mr-2"> <astro-island uid="Z2wdsuJ" prefix="s4" component-url="/assets/ThemeToggle.DkS-mWmH.js" component-export="default" renderer-url="/assets/client.Dd1xdfK6.js" props="{}" ssr client="load" opts="{&quot;name&quot;:&quot;ThemeToggle&quot;,&quot;value&quot;:true}" await-children><button class="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition-colors" aria-label="切换到深色模式" data-v-ff2820af><svg class="w-5 h-5 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-v-ff2820af><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" data-v-ff2820af></path></svg></button><!--astro:end--></astro-island> </div> <div class="md:hidden"> <astro-island uid="1pGpUL" prefix="s5" component-url="/assets/MobileMenu.neuVqFF7.js" component-export="default" renderer-url="/assets/client.Dd1xdfK6.js" props="{&quot;navigation&quot;:[1,[[0,{&quot;name&quot;:[0,&quot;Home&quot;],&quot;href&quot;:[0,&quot;/&quot;],&quot;icon&quot;:[0,&quot;home&quot;]}],[0,{&quot;name&quot;:[0,&quot;Math&quot;],&quot;href&quot;:[0,&quot;/posts/blog_docs_en/math&quot;],&quot;icon&quot;:[0,&quot;posts&quot;]}],[0,{&quot;name&quot;:[0,&quot;Tools&quot;],&quot;href&quot;:[0,&quot;/posts/blog_docs_en/tools&quot;],&quot;icon&quot;:[0,&quot;categories&quot;]}],[0,{&quot;name&quot;:[0,&quot;QT Model&quot;],&quot;href&quot;:[0,&quot;/posts/blog_docs_en/qt-model&quot;],&quot;icon&quot;:[0,&quot;archives&quot;]}],[0,{&quot;name&quot;:[0,&quot;Technology&quot;],&quot;href&quot;:[0,&quot;/posts/blog_docs_en/techniques&quot;],&quot;icon&quot;:[0,&quot;archives&quot;]}],[0,{&quot;name&quot;:[0,&quot;Jet-w Astro Blog&quot;],&quot;href&quot;:[0,&quot;https://jet-w.github.io/jet-w.astro-blog/&quot;],&quot;icon&quot;:[0,&quot;archives&quot;]}],[0,{&quot;name&quot;:[0,&quot;About&quot;],&quot;href&quot;:[0,&quot;/about&quot;],&quot;icon&quot;:[0,&quot;about&quot;]}]]],&quot;base&quot;:[0,&quot;/&quot;]}" ssr client="load" opts="{&quot;name&quot;:&quot;MobileMenu&quot;,&quot;value&quot;:true}" await-children><div data-v-5f49d689><button class="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition-colors" aria-label="菜单" data-v-5f49d689><svg class="w-5 h-5 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-v-5f49d689><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" data-v-5f49d689></path></svg></button><!----></div><!--astro:end--></astro-island> </div> </div> </nav> </div> </header> <main class="flex-1 flex w-full min-w-0" data-astro-cid-itptdd6o> <aside class="hidden lg:block shrink-0 transition-all duration-300 relative" data-sidebar style="width: var(--sidebar-width, 256px);" data-astro-cid-itptdd6o> <div class="sticky top-20 h-[calc(100vh-5rem)] overflow-y-auto" data-astro-cid-itptdd6o> <div class="space-y-8 p-6" data-astro-cid-mkqzmhch>    <section data-astro-cid-mkqzmhch> <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4 border-b border-slate-200 dark:border-slate-700 pb-2" data-astro-cid-mkqzmhch> Recent Posts </h3> <div class="space-y-3" data-astro-cid-mkqzmhch> <article class="group" data-astro-cid-mkqzmhch> <a href="/posts/blog_docs_en/tools/argo/readme" class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" data-astro-cid-mkqzmhch> <h4 class="text-sm font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-500 line-clamp-2 mb-1" data-astro-cid-mkqzmhch> Argo Tutorial Series </h4> <time class="text-xs text-slate-500 dark:text-slate-400" data-astro-cid-mkqzmhch> January 11, 2026 </time> </a> </article><article class="group" data-astro-cid-mkqzmhch> <a href="/posts/blog_docs_en/tools/argo/argo-001" class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" data-astro-cid-mkqzmhch> <h4 class="text-sm font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-500 line-clamp-2 mb-1" data-astro-cid-mkqzmhch> Chapter 1: Argo Introduction and Environment Setup </h4> <time class="text-xs text-slate-500 dark:text-slate-400" data-astro-cid-mkqzmhch> January 11, 2026 </time> </a> </article><article class="group" data-astro-cid-mkqzmhch> <a href="/posts/blog_docs_en/tools/argo/argo-002" class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" data-astro-cid-mkqzmhch> <h4 class="text-sm font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-500 line-clamp-2 mb-1" data-astro-cid-mkqzmhch> Chapter 2: Argo CD Getting Started </h4> <time class="text-xs text-slate-500 dark:text-slate-400" data-astro-cid-mkqzmhch> January 11, 2026 </time> </a> </article><article class="group" data-astro-cid-mkqzmhch> <a href="/posts/blog_docs_en/tools/argo/argo-003" class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" data-astro-cid-mkqzmhch> <h4 class="text-sm font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-500 line-clamp-2 mb-1" data-astro-cid-mkqzmhch> Chapter 3: Argo CD Advanced Configuration </h4> <time class="text-xs text-slate-500 dark:text-slate-400" data-astro-cid-mkqzmhch> January 11, 2026 </time> </a> </article><article class="group" data-astro-cid-mkqzmhch> <a href="/posts/blog_docs_en/tools/argo/argo-004" class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" data-astro-cid-mkqzmhch> <h4 class="text-sm font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-500 line-clamp-2 mb-1" data-astro-cid-mkqzmhch> Chapter 4: Argo Workflows Fundamentals </h4> <time class="text-xs text-slate-500 dark:text-slate-400" data-astro-cid-mkqzmhch> January 11, 2026 </time> </a> </article> </div> </section>  <section data-astro-cid-mkqzmhch> <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4 border-b border-slate-200 dark:border-slate-700 pb-2" data-astro-cid-mkqzmhch> Popular Tags </h3> <div class="flex flex-wrap gap-2" data-astro-cid-mkqzmhch> <a href="/tags/argo" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 13px" data-astro-cid-mkqzmhch> Argo <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(6)</span> </a><a href="/tags/kubernetes" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 13px" data-astro-cid-mkqzmhch> Kubernetes <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(6)</span> </a><a href="/tags/best-practices" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 12px" data-astro-cid-mkqzmhch> Best Practices <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(4)</span> </a><a href="/tags/media" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 11.5px" data-astro-cid-mkqzmhch> media <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(3)</span> </a><a href="/tags/astro" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 11.5px" data-astro-cid-mkqzmhch> Astro <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(3)</span> </a><a href="/tags/blog" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 11.5px" data-astro-cid-mkqzmhch> Blog <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(3)</span> </a><a href="/tags/cicd" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 11.5px" data-astro-cid-mkqzmhch> CICD <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(3)</span> </a><a href="/tags/blog" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 11px" data-astro-cid-mkqzmhch> blog <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(2)</span> </a> </div> </section>  <section data-astro-cid-mkqzmhch> <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4 border-b border-slate-200 dark:border-slate-700 pb-2" data-astro-cid-mkqzmhch> Archives </h3> <div class="space-y-2" data-astro-cid-mkqzmhch> <a href="/archives/2026/01" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> January 2026 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 15 </span> </a><a href="/archives/2025/09" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> September 2025 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 142 </span> </a><a href="/archives/2025/12" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> December 2025 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 31 </span> </a><a href="/archives/2025/10" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> October 2025 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 96 </span> </a><a href="/archives/2025/01" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> January 2025 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 7 </span> </a><a href="/archives/2024/12" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> December 2024 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 14 </span> </a> </div> </section>  <section data-astro-cid-mkqzmhch> <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4 border-b border-slate-200 dark:border-slate-700 pb-2" data-astro-cid-mkqzmhch> Friend Links </h3> <div class="space-y-2" data-astro-cid-mkqzmhch> <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch>  <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> Astro 官网 </span> </a><a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch>  <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> Tailwind CSS </span> </a><a href="https://vuejs.org" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch>  <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> Vue.js </span> </a> </div> </section> </div>  <script type="module">function c(){document.querySelectorAll(".tree-folder-toggle").forEach(e=>{e.addEventListener("click",()=>{const s=e.nextElementSibling,l=e.classList.toggle("expanded");s&&s.classList.contains("tree-children")&&s.classList.toggle("show",l)})});const o=window.location.pathname.replace(/\/$/,"");document.querySelectorAll(".tree-file").forEach(e=>{const s=e.getAttribute("href")?.replace(/\/$/,"");if(s&&o===s){e.classList.add("active");let l=e.closest(".tree-children");for(;l;){l.classList.add("show");const t=l.previousElementSibling;t&&t.classList.contains("tree-folder-toggle")&&t.classList.add("expanded"),l=l.parentElement?.closest(".tree-children")||null}}}),document.querySelectorAll(".doc-tree").forEach(e=>{const s=e.getAttribute("data-collapsed")==="true";e.querySelectorAll(".tree-folder-toggle").forEach(t=>{const r=t.getAttribute("data-default-collapsed")==="true",a=t.closest(".tree-children")===null||t.closest("ul")?.parentElement?.classList.contains("doc-tree");if(!t.classList.contains("expanded")&&!(s||r)&&a){const n=t.nextElementSibling;n&&n.classList.contains("tree-children")&&(n.classList.add("show"),t.classList.add("expanded"))}})})}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",c):c();document.addEventListener("astro:page-load",c);</script> </div> <div class="absolute top-0 right-0 w-1 h-full cursor-col-resize group z-10" data-sidebar-resizer data-astro-cid-itptdd6o> <div class="absolute top-0 right-0 w-4 h-full -mr-2 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity" data-astro-cid-itptdd6o> <div class="w-1 h-16 bg-primary-400 dark:bg-primary-500 rounded-full" data-astro-cid-itptdd6o></div> </div> </div> </aside> <div class="lg:hidden fixed inset-0 bg-black/50 z-40 hidden" data-sidebar-overlay onclick="this.classList.add('hidden'); document.querySelector('[data-mobile-sidebar]').classList.add('-translate-x-full');" data-astro-cid-itptdd6o></div> <aside class="lg:hidden fixed top-16 left-0 w-72 h-[calc(100vh-4rem)] bg-white dark:bg-slate-900 z-50 transform -translate-x-full transition-transform duration-300 shadow-xl overflow-y-auto" data-mobile-sidebar data-astro-cid-itptdd6o> <div class="p-4" data-astro-cid-itptdd6o> <div class="space-y-8 p-6" data-astro-cid-mkqzmhch>    <section data-astro-cid-mkqzmhch> <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4 border-b border-slate-200 dark:border-slate-700 pb-2" data-astro-cid-mkqzmhch> Recent Posts </h3> <div class="space-y-3" data-astro-cid-mkqzmhch> <article class="group" data-astro-cid-mkqzmhch> <a href="/posts/blog_docs_en/tools/argo/readme" class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" data-astro-cid-mkqzmhch> <h4 class="text-sm font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-500 line-clamp-2 mb-1" data-astro-cid-mkqzmhch> Argo Tutorial Series </h4> <time class="text-xs text-slate-500 dark:text-slate-400" data-astro-cid-mkqzmhch> January 11, 2026 </time> </a> </article><article class="group" data-astro-cid-mkqzmhch> <a href="/posts/blog_docs_en/tools/argo/argo-001" class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" data-astro-cid-mkqzmhch> <h4 class="text-sm font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-500 line-clamp-2 mb-1" data-astro-cid-mkqzmhch> Chapter 1: Argo Introduction and Environment Setup </h4> <time class="text-xs text-slate-500 dark:text-slate-400" data-astro-cid-mkqzmhch> January 11, 2026 </time> </a> </article><article class="group" data-astro-cid-mkqzmhch> <a href="/posts/blog_docs_en/tools/argo/argo-002" class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" data-astro-cid-mkqzmhch> <h4 class="text-sm font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-500 line-clamp-2 mb-1" data-astro-cid-mkqzmhch> Chapter 2: Argo CD Getting Started </h4> <time class="text-xs text-slate-500 dark:text-slate-400" data-astro-cid-mkqzmhch> January 11, 2026 </time> </a> </article><article class="group" data-astro-cid-mkqzmhch> <a href="/posts/blog_docs_en/tools/argo/argo-003" class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" data-astro-cid-mkqzmhch> <h4 class="text-sm font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-500 line-clamp-2 mb-1" data-astro-cid-mkqzmhch> Chapter 3: Argo CD Advanced Configuration </h4> <time class="text-xs text-slate-500 dark:text-slate-400" data-astro-cid-mkqzmhch> January 11, 2026 </time> </a> </article><article class="group" data-astro-cid-mkqzmhch> <a href="/posts/blog_docs_en/tools/argo/argo-004" class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" data-astro-cid-mkqzmhch> <h4 class="text-sm font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-500 line-clamp-2 mb-1" data-astro-cid-mkqzmhch> Chapter 4: Argo Workflows Fundamentals </h4> <time class="text-xs text-slate-500 dark:text-slate-400" data-astro-cid-mkqzmhch> January 11, 2026 </time> </a> </article> </div> </section>  <section data-astro-cid-mkqzmhch> <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4 border-b border-slate-200 dark:border-slate-700 pb-2" data-astro-cid-mkqzmhch> Popular Tags </h3> <div class="flex flex-wrap gap-2" data-astro-cid-mkqzmhch> <a href="/tags/argo" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 13px" data-astro-cid-mkqzmhch> Argo <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(6)</span> </a><a href="/tags/kubernetes" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 13px" data-astro-cid-mkqzmhch> Kubernetes <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(6)</span> </a><a href="/tags/best-practices" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 12px" data-astro-cid-mkqzmhch> Best Practices <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(4)</span> </a><a href="/tags/media" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 11.5px" data-astro-cid-mkqzmhch> media <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(3)</span> </a><a href="/tags/astro" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 11.5px" data-astro-cid-mkqzmhch> Astro <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(3)</span> </a><a href="/tags/blog" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 11.5px" data-astro-cid-mkqzmhch> Blog <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(3)</span> </a><a href="/tags/cicd" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 11.5px" data-astro-cid-mkqzmhch> CICD <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(3)</span> </a><a href="/tags/blog" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 11px" data-astro-cid-mkqzmhch> blog <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(2)</span> </a> </div> </section>  <section data-astro-cid-mkqzmhch> <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4 border-b border-slate-200 dark:border-slate-700 pb-2" data-astro-cid-mkqzmhch> Archives </h3> <div class="space-y-2" data-astro-cid-mkqzmhch> <a href="/archives/2026/01" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> January 2026 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 15 </span> </a><a href="/archives/2025/09" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> September 2025 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 142 </span> </a><a href="/archives/2025/12" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> December 2025 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 31 </span> </a><a href="/archives/2025/10" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> October 2025 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 96 </span> </a><a href="/archives/2025/01" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> January 2025 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 7 </span> </a><a href="/archives/2024/12" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> December 2024 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 14 </span> </a> </div> </section>  <section data-astro-cid-mkqzmhch> <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4 border-b border-slate-200 dark:border-slate-700 pb-2" data-astro-cid-mkqzmhch> Friend Links </h3> <div class="space-y-2" data-astro-cid-mkqzmhch> <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch>  <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> Astro 官网 </span> </a><a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch>  <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> Tailwind CSS </span> </a><a href="https://vuejs.org" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch>  <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> Vue.js </span> </a> </div> </section> </div>   </div> </aside> <div class="flex-1 transition-all duration-300 lg:px-8  relative" data-main-content data-astro-cid-itptdd6o> <div class="hidden lg:block fixed top-20 left-1 z-40 transition-all duration-300" data-sidebar-toggle data-astro-cid-itptdd6o> <astro-island uid="QK3WN" prefix="s1" component-url="/assets/SidebarToggle.CI_vXnEy.js" component-export="default" renderer-url="/assets/client.Dd1xdfK6.js" props="{&quot;data-astro-cid-itptdd6o&quot;:[0,true]}" ssr client="load" opts="{&quot;name&quot;:&quot;SidebarToggle&quot;,&quot;value&quot;:true}" await-children><button title="隐藏侧边栏" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-600 hover:text-primary-500 dark:text-slate-400 dark:hover:text-primary-400" data-astro-cid-itptdd6o="true"><svg class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7"></path></svg></button><!--astro:end--></astro-island> </div> <button class="lg:hidden fixed bottom-20 left-4 z-40 p-3 bg-primary-500 hover:bg-primary-600 text-white rounded-full shadow-lg transition-colors" data-mobile-sidebar-toggle aria-label="Document Tree" onclick="document.querySelector('[data-sidebar-overlay]').classList.remove('hidden'); document.querySelector('[data-mobile-sidebar]').classList.remove('-translate-x-full');" data-astro-cid-itptdd6o> <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-itptdd6o> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" data-astro-cid-itptdd6o></path> </svg> </button> <div class="container mx-auto px-4 py-8 max-w-4xl" data-astro-cid-itptdd6o> <nav class="flex items-center flex-wrap gap-y-1 text-sm text-slate-600 dark:text-slate-400 mb-8"><a href="/" class="hover:text-primary-500 transition-colors">Home</a><svg class="w-4 h-4 mx-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg><a href="/posts/blog_docs_en" class="hover:text-primary-500 transition-colors">English</a><svg class="w-4 h-4 mx-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg><a href="/posts/blog_docs_en/tools" class="hover:text-primary-500 transition-colors">Tools</a><svg class="w-4 h-4 mx-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg><a href="/posts/blog_docs_en/tools/kubernetes" class="hover:text-primary-500 transition-colors">Kubernetes</a><svg class="w-4 h-4 mx-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg><span class="text-slate-900 dark:text-slate-100 truncate max-w-xs">Chapter 7: Monitoring and Logging</span></nav><astro-island uid="Z1AYjUS" prefix="s0" component-url="/assets/FloatingToc.BMxSzaMf.js" component-export="default" renderer-url="/assets/client.Dd1xdfK6.js" props="{&quot;tocTitle&quot;:[0,&quot;Table of Contents&quot;],&quot;progressTitle&quot;:[0,&quot;Reading Progress&quot;]}" ssr client="load" opts="{&quot;name&quot;:&quot;FloatingToc&quot;,&quot;value&quot;:true}" await-children><div class="fixed top-24 right-4 z-40" data-v-86db9372><div class="relative" data-v-86db9372><button class="p-3 bg-white dark:bg-slate-800 rounded-full shadow-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors" aria-label="Table of Contents" data-v-86db9372><svg class="w-5 h-5 text-slate-600 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-v-86db9372><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" data-v-86db9372></path></svg></button><!----></div></div><!--astro:end--></astro-island><article class="prose prose-slate dark:prose-invert max-w-none"><!-- 标题区域 --><header class="not-prose mb-12"><div class="text-center"><h1 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-6 leading-tight">Chapter 7: Monitoring and Logging</h1><p class="text-xl text-slate-600 dark:text-slate-400 mb-8 max-w-3xl mx-auto"></p><!-- 文章元信息 --><div class="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-500 dark:text-slate-400"><div class="flex items-center space-x-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span>Haiyue</span></div><div class="flex items-center space-x-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg><time datetime="2025-09-21T00:00:00.000Z">2025年9月21日</time></div><div class="flex items-center space-x-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>27min</span></div></div><!-- 标签 --></div><!-- 封面图片 --></header><!-- 文章内容 --><div class="prose prose-slate dark:prose-invert max-w-none prose-lg" data-prose-content data-locale-prefix data-base-url="/"><h1 id="chapter-7-monitoring-and-logging">Chapter 7: Monitoring and Logging</h1>
+<div class="container-tip custom-container" data-container-type="tip">
+<div class="container-title">Learning Objectives</div>
+<div class="container-content">
+<ul>
+<li>Master Prometheus + Grafana monitoring solution</li>
+<li>Learn EFK/ELK log collection and analysis</li>
+<li>Understand Kubernetes native monitoring metrics</li>
+<li>Become proficient in alert configuration and troubleshooting</li>
+</ul>
+</div>
+</div>
+<h2 id="key-concepts">Key Concepts</h2>
+<h3 id="three-pillars-of-observability">Three Pillars of Observability</h3>
+<div class="mermaid-container" data-mermaid-source="bWluZG1hcAogIHJvb3QoKE9ic2VydmFiaWxpdHkpKQogICAgTWV0cmljcwogICAgICBOdW1lcmljYWwgZGF0YQogICAgICBUaW1lIHNlcmllcwogICAgICBQcm9tZXRoZXVzCiAgICBMb2dzCiAgICAgIEV2ZW50IHJlY29yZGluZwogICAgICBUZXh0IGRhdGEKICAgICAgRUZLL0VMSwogICAgVHJhY2VzCiAgICAgIFJlcXVlc3QgcGF0aAogICAgICBDcm9zcy1zZXJ2aWNlIGNhbGxzCiAgICAgIEphZWdlci9aaXBraW4=" data-id="mermaid-er4kyr9pj">
+<div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
+<pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">mindmap
+  root((Observability))
+    Metrics
+      Numerical data
+      Time series
+      Prometheus
+    Logs
+      Event recording
+      Text data
+      EFK/ELK
+    Traces
+      Request path
+      Cross-service calls
+      Jaeger/Zipkin</code></pre>
+</div>
+<h3 id="monitoring-architecture-overview">Monitoring Architecture Overview</h3>
+<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IFRCCiAgICBzdWJncmFwaCBDbHVzdGVyWyJLdWJlcm5ldGVzIENsdXN0ZXIiXQogICAgICAgIHN1YmdyYXBoIEFwcHNbIkFwcGxpY2F0aW9uIExheWVyIl0KICAgICAgICAgICAgQXBwMVtBcHAgUG9kXQogICAgICAgICAgICBBcHAyW0FwcCBQb2RdCiAgICAgICAgZW5kCgogICAgICAgIHN1YmdyYXBoIFN5c3RlbVsiU3lzdGVtIExheWVyIl0KICAgICAgICAgICAgS3ViZWxldFtLdWJlbGV0XQogICAgICAgICAgICBDQWR2aXNvcltjQWR2aXNvcl0KICAgICAgICAgICAgTm9kZUV4cG9ydGVyW05vZGUgRXhwb3J0ZXJdCiAgICAgICAgZW5kCgogICAgICAgIHN1YmdyYXBoIE1vbml0b3JpbmdbIk1vbml0b3JpbmcgTGF5ZXIiXQogICAgICAgICAgICBQcm9tZXRoZXVzW1Byb21ldGhldXNdCiAgICAgICAgICAgIEFsZXJ0TWFuYWdlcltBbGVydE1hbmFnZXJdCiAgICAgICAgICAgIEdyYWZhbmFbR3JhZmFuYV0KICAgICAgICBlbmQKCiAgICAgICAgc3ViZ3JhcGggTG9nZ2luZ1siTG9nZ2luZyBMYXllciJdCiAgICAgICAgICAgIEZsdWVudGRbRmx1ZW50ZC9GbHVlbnQgQml0XQogICAgICAgICAgICBFU1tFbGFzdGljc2VhcmNoXQogICAgICAgICAgICBLaWJhbmFbS2liYW5hXQogICAgICAgIGVuZAogICAgZW5kCgogICAgQXBwMSAtLT58bWV0cmljc3wgUHJvbWV0aGV1cwogICAgQXBwMiAtLT58bWV0cmljc3wgUHJvbWV0aGV1cwogICAgS3ViZWxldCAtLT58bWV0cmljc3wgUHJvbWV0aGV1cwogICAgQ0Fkdmlzb3IgLS0+fG1ldHJpY3N8IFByb21ldGhldXMKICAgIE5vZGVFeHBvcnRlciAtLT58bWV0cmljc3wgUHJvbWV0aGV1cwoKICAgIFByb21ldGhldXMgLS0+IEFsZXJ0TWFuYWdlcgogICAgUHJvbWV0aGV1cyAtLT4gR3JhZmFuYQoKICAgIEFwcDEgLS0+fGxvZ3N8IEZsdWVudGQKICAgIEFwcDIgLS0+fGxvZ3N8IEZsdWVudGQKICAgIEZsdWVudGQgLS0+IEVTCiAgICBFUyAtLT4gS2liYW5h" data-id="mermaid-awouvmqp6">
+<div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
+<pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">flowchart TB
+    subgraph Cluster["Kubernetes Cluster"]
+        subgraph Apps["Application Layer"]
+            App1[App Pod]
+            App2[App Pod]
+        end
+
+        subgraph System["System Layer"]
+            Kubelet[Kubelet]
+            CAdvisor[cAdvisor]
+            NodeExporter[Node Exporter]
+        end
+
+        subgraph Monitoring["Monitoring Layer"]
+            Prometheus[Prometheus]
+            AlertManager[AlertManager]
+            Grafana[Grafana]
+        end
+
+        subgraph Logging["Logging Layer"]
+            Fluentd[Fluentd/Fluent Bit]
+            ES[Elasticsearch]
+            Kibana[Kibana]
+        end
+    end
+
+    App1 -->|metrics| Prometheus
+    App2 -->|metrics| Prometheus
+    Kubelet -->|metrics| Prometheus
+    CAdvisor -->|metrics| Prometheus
+    NodeExporter -->|metrics| Prometheus
+
+    Prometheus --> AlertManager
+    Prometheus --> Grafana
+
+    App1 -->|logs| Fluentd
+    App2 -->|logs| Fluentd
+    Fluentd --> ES
+    ES --> Kibana</code></pre>
+</div>
+<h2 id="prometheus-monitoring">Prometheus Monitoring</h2>
+<h3 id="prometheus-architecture">Prometheus Architecture</h3>
+<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IExSCiAgICBzdWJncmFwaCBUYXJnZXRzWyJNb25pdG9yaW5nIFRhcmdldHMiXQogICAgICAgIFQxW05vZGUgRXhwb3J0ZXJdCiAgICAgICAgVDJbUG9kIG1ldHJpY3NdCiAgICAgICAgVDNba3ViZS1zdGF0ZS1tZXRyaWNzXQogICAgICAgIFQ0W0N1c3RvbSBFeHBvcnRlcl0KICAgIGVuZAoKICAgIHN1YmdyYXBoIFByb21ldGhldXNbIlByb21ldGhldXMiXQogICAgICAgIFJldHJpZXZhbFtEYXRhIFNjcmFwaW5nXQogICAgICAgIFRTREJbVGltZSBTZXJpZXMgRGF0YWJhc2VdCiAgICAgICAgSFRUUFtIVFRQIFNlcnZlcl0KICAgICAgICBSdWxlc1tBbGVydCBSdWxlc10KICAgIGVuZAoKICAgIHN1YmdyYXBoIE91dHB1dFsiT3V0cHV0Il0KICAgICAgICBHcmFmYW5hW0dyYWZhbmFdCiAgICAgICAgQWxlcnRNYW5hZ2VyW0FsZXJ0TWFuYWdlcl0KICAgICAgICBBUElbQVBJIFF1ZXJ5XQogICAgZW5kCgogICAgVDEgLS0+fHB1bGx8IFJldHJpZXZhbAogICAgVDIgLS0+fHB1bGx8IFJldHJpZXZhbAogICAgVDMgLS0+fHB1bGx8IFJldHJpZXZhbAogICAgVDQgLS0+fHB1bGx8IFJldHJpZXZhbAoKICAgIFJldHJpZXZhbCAtLT4gVFNEQgogICAgVFNEQiAtLT4gSFRUUAogICAgVFNEQiAtLT4gUnVsZXMKCiAgICBIVFRQIC0tPiBHcmFmYW5hCiAgICBIVFRQIC0tPiBBUEkKICAgIFJ1bGVzIC0tPiBBbGVydE1hbmFnZXI=" data-id="mermaid-qr90xk585">
+<div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
+<pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">flowchart LR
+    subgraph Targets["Monitoring Targets"]
+        T1[Node Exporter]
+        T2[Pod metrics]
+        T3[kube-state-metrics]
+        T4[Custom Exporter]
+    end
+
+    subgraph Prometheus["Prometheus"]
+        Retrieval[Data Scraping]
+        TSDB[Time Series Database]
+        HTTP[HTTP Server]
+        Rules[Alert Rules]
+    end
+
+    subgraph Output["Output"]
+        Grafana[Grafana]
+        AlertManager[AlertManager]
+        API[API Query]
+    end
+
+    T1 -->|pull| Retrieval
+    T2 -->|pull| Retrieval
+    T3 -->|pull| Retrieval
+    T4 -->|pull| Retrieval
+
+    Retrieval --> TSDB
+    TSDB --> HTTP
+    TSDB --> Rules
+
+    HTTP --> Grafana
+    HTTP --> API
+    Rules --> AlertManager</code></pre>
+</div>
+<h3 id="installing-prometheus-stack-with-helm">Installing Prometheus Stack with Helm</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Add Prometheus community repository</span></span>
+<span class="line"><span style="color:#B392F0">helm</span><span style="color:#9ECBFF"> repo</span><span style="color:#9ECBFF"> add</span><span style="color:#9ECBFF"> prometheus-community</span><span style="color:#9ECBFF"> https://prometheus-community.github.io/helm-charts</span></span>
+<span class="line"><span style="color:#B392F0">helm</span><span style="color:#9ECBFF"> repo</span><span style="color:#9ECBFF"> update</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Install kube-prometheus-stack (includes Prometheus, Grafana, AlertManager, etc.)</span></span>
+<span class="line"><span style="color:#B392F0">helm</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> prometheus</span><span style="color:#9ECBFF"> prometheus-community/kube-prometheus-stack</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --namespace</span><span style="color:#9ECBFF"> monitoring</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --create-namespace</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --set</span><span style="color:#9ECBFF"> prometheus.prometheusSpec.retention=15d</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --set</span><span style="color:#9ECBFF"> prometheus.prometheusSpec.storageSpec.volumeClaimTemplate.spec.resources.requests.storage=50Gi</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Check deployment status</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> get</span><span style="color:#9ECBFF"> pods</span><span style="color:#79B8FF"> -n</span><span style="color:#9ECBFF"> monitoring</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># View services</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> get</span><span style="color:#9ECBFF"> svc</span><span style="color:#79B8FF"> -n</span><span style="color:#9ECBFF"> monitoring</span></span></code></pre>
+<h3 id="accessing-prometheus-and-grafana">Accessing Prometheus and Grafana</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Method 1: Port forwarding</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> port-forward</span><span style="color:#9ECBFF"> svc/prometheus-kube-prometheus-prometheus</span><span style="color:#9ECBFF"> 9090:9090</span><span style="color:#79B8FF"> -n</span><span style="color:#9ECBFF"> monitoring</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> port-forward</span><span style="color:#9ECBFF"> svc/prometheus-grafana</span><span style="color:#9ECBFF"> 3000:80</span><span style="color:#79B8FF"> -n</span><span style="color:#9ECBFF"> monitoring</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Method 2: Create Ingress</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">apiVersion</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">networking.k8s.io/v1</span></span>
+<span class="line"><span style="color:#85E89D">kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Ingress</span></span>
+<span class="line"><span style="color:#85E89D">metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">monitoring-ingress</span></span>
+<span class="line"><span style="color:#85E89D">  namespace</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">monitoring</span></span>
+<span class="line"><span style="color:#85E89D">  annotations</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    nginx.ingress.kubernetes.io/rewrite-target</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">/</span></span>
+<span class="line"><span style="color:#85E89D">spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  ingressClassName</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">nginx</span></span>
+<span class="line"><span style="color:#85E89D">  rules</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#85E89D">host</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">prometheus.example.com</span></span>
+<span class="line"><span style="color:#85E89D">    http</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      paths</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#85E89D">path</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">/</span></span>
+<span class="line"><span style="color:#85E89D">        pathType</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Prefix</span></span>
+<span class="line"><span style="color:#85E89D">        backend</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">          service</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">            name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">prometheus-kube-prometheus-prometheus</span></span>
+<span class="line"><span style="color:#85E89D">            port</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">              number</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">9090</span></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#85E89D">host</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">grafana.example.com</span></span>
+<span class="line"><span style="color:#85E89D">    http</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      paths</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#85E89D">path</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">/</span></span>
+<span class="line"><span style="color:#85E89D">        pathType</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Prefix</span></span>
+<span class="line"><span style="color:#85E89D">        backend</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">          service</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">            name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">prometheus-grafana</span></span>
+<span class="line"><span style="color:#85E89D">            port</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">              number</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">80</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Get Grafana default password</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> get</span><span style="color:#9ECBFF"> secret</span><span style="color:#9ECBFF"> prometheus-grafana</span><span style="color:#79B8FF"> -n</span><span style="color:#9ECBFF"> monitoring</span><span style="color:#79B8FF"> -o</span><span style="color:#9ECBFF"> jsonpath="{.data.admin-password}"</span><span style="color:#F97583"> |</span><span style="color:#B392F0"> base64</span><span style="color:#79B8FF"> -d</span></span>
+<span class="line"><span style="color:#6A737D"># Default username: admin</span></span></code></pre>
+<h3 id="promql-query-language">PromQL Query Language</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span># Basic queries</span></span>
+<span class="line"><span># View all available metrics</span></span>
+<span class="line"><span>{__name__=~".+"}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># CPU usage</span></span>
+<span class="line"><span># Node CPU usage</span></span>
+<span class="line"><span>100 - (avg by(instance) (rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Pod CPU usage</span></span>
+<span class="line"><span>sum(rate(container_cpu_usage_seconds_total{container!="POD",container!=""}[5m])) by (namespace, pod)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Memory usage</span></span>
+<span class="line"><span># Node memory usage</span></span>
+<span class="line"><span>(1 - node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes) * 100</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Pod memory usage</span></span>
+<span class="line"><span>sum(container_memory_working_set_bytes{container!="POD",container!=""}) by (namespace, pod)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Network traffic</span></span>
+<span class="line"><span># Receive bytes rate</span></span>
+<span class="line"><span>sum(rate(container_network_receive_bytes_total[5m])) by (namespace, pod)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Transmit bytes rate</span></span>
+<span class="line"><span>sum(rate(container_network_transmit_bytes_total[5m])) by (namespace, pod)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># HTTP requests</span></span>
+<span class="line"><span># Request rate</span></span>
+<span class="line"><span>sum(rate(http_requests_total[5m])) by (service)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Error rate</span></span>
+<span class="line"><span>sum(rate(http_requests_total{status=~"5.."}[5m])) / sum(rate(http_requests_total[5m])) * 100</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Average response time</span></span>
+<span class="line"><span>histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket[5m])) by (le, service))</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Kubernetes-specific metrics</span></span>
+<span class="line"><span># Pod count</span></span>
+<span class="line"><span>count(kube_pod_info) by (namespace)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Unready Pods</span></span>
+<span class="line"><span>sum(kube_pod_status_ready{condition="false"}) by (namespace)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Deployment replica status</span></span>
+<span class="line"><span>kube_deployment_status_replicas_available / kube_deployment_spec_replicas</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># PVC utilization</span></span>
+<span class="line"><span>kubelet_volume_stats_used_bytes / kubelet_volume_stats_capacity_bytes * 100</span></span></code></pre>
+<h3 id="custom-monitoring-metrics">Custom Monitoring Metrics</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#6A737D"># Create ServiceMonitor to monitor custom applications</span></span>
+<span class="line"><span style="color:#85E89D">apiVersion</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">monitoring.coreos.com/v1</span></span>
+<span class="line"><span style="color:#85E89D">kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">ServiceMonitor</span></span>
+<span class="line"><span style="color:#85E89D">metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">myapp-monitor</span></span>
+<span class="line"><span style="color:#85E89D">  namespace</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">monitoring</span></span>
+<span class="line"><span style="color:#85E89D">  labels</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    release</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">prometheus</span><span style="color:#6A737D">  # Must match Prometheus serviceMonitorSelector</span></span>
+<span class="line"><span style="color:#85E89D">spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  selector</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    matchLabels</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      app</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">myapp</span></span>
+<span class="line"><span style="color:#85E89D">  namespaceSelector</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    matchNames</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#9ECBFF">default</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#9ECBFF">production</span></span>
+<span class="line"><span style="color:#85E89D">  endpoints</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#85E89D">port</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">metrics</span></span>
+<span class="line"><span style="color:#85E89D">    interval</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">30s</span></span>
+<span class="line"><span style="color:#85E89D">    path</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">/metrics</span></span>
+<span class="line"><span style="color:#85E89D">    scheme</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">http</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#6A737D"># Application needs to expose metrics port</span></span>
+<span class="line"><span style="color:#85E89D">apiVersion</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">apps/v1</span></span>
+<span class="line"><span style="color:#85E89D">kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Deployment</span></span>
+<span class="line"><span style="color:#85E89D">metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">myapp</span></span>
+<span class="line"><span style="color:#85E89D">spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  replicas</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">3</span></span>
+<span class="line"><span style="color:#85E89D">  selector</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    matchLabels</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      app</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">myapp</span></span>
+<span class="line"><span style="color:#85E89D">  template</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      labels</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        app</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">myapp</span></span>
+<span class="line"><span style="color:#85E89D">      annotations</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        prometheus.io/scrape</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"true"</span></span>
+<span class="line"><span style="color:#85E89D">        prometheus.io/port</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"8080"</span></span>
+<span class="line"><span style="color:#85E89D">        prometheus.io/path</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"/metrics"</span></span>
+<span class="line"><span style="color:#85E89D">    spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      containers</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">myapp</span></span>
+<span class="line"><span style="color:#85E89D">        image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">myapp:latest</span></span>
+<span class="line"><span style="color:#85E89D">        ports</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">http</span></span>
+<span class="line"><span style="color:#85E89D">          containerPort</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">8080</span></span>
+<span class="line"><span style="color:#E1E4E8">        - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">metrics</span></span>
+<span class="line"><span style="color:#85E89D">          containerPort</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">9090</span></span>
+<span class="line"><span style="color:#B392F0">---</span></span>
+<span class="line"><span style="color:#85E89D">apiVersion</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">v1</span></span>
+<span class="line"><span style="color:#85E89D">kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Service</span></span>
+<span class="line"><span style="color:#85E89D">metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">myapp</span></span>
+<span class="line"><span style="color:#85E89D">  labels</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    app</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">myapp</span></span>
+<span class="line"><span style="color:#85E89D">spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  selector</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    app</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">myapp</span></span>
+<span class="line"><span style="color:#85E89D">  ports</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">http</span></span>
+<span class="line"><span style="color:#85E89D">    port</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">8080</span></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">metrics</span></span>
+<span class="line"><span style="color:#85E89D">    port</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">9090</span></span></code></pre>
+<h3 id="alert-rules-configuration">Alert Rules Configuration</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">apiVersion</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">monitoring.coreos.com/v1</span></span>
+<span class="line"><span style="color:#85E89D">kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">PrometheusRule</span></span>
+<span class="line"><span style="color:#85E89D">metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">custom-alerts</span></span>
+<span class="line"><span style="color:#85E89D">  namespace</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">monitoring</span></span>
+<span class="line"><span style="color:#85E89D">  labels</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    release</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">prometheus</span></span>
+<span class="line"><span style="color:#85E89D">spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  groups</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">pod-alerts</span></span>
+<span class="line"><span style="color:#85E89D">    rules</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">    # Pod restarting too much</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#85E89D">alert</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">PodRestartingTooMuch</span></span>
+<span class="line"><span style="color:#85E89D">      expr</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">increase(kube_pod_container_status_restarts_total[1h]) > 5</span></span>
+<span class="line"><span style="color:#85E89D">      for</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">5m</span></span>
+<span class="line"><span style="color:#85E89D">      labels</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        severity</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">warning</span></span>
+<span class="line"><span style="color:#85E89D">      annotations</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        summary</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Pod {{ $labels.namespace }}/{{ $labels.pod }} restarting too much"</span></span>
+<span class="line"><span style="color:#85E89D">        description</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Pod has restarted {{ $value }} times in the past hour"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    # Pod not ready</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#85E89D">alert</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">PodNotReady</span></span>
+<span class="line"><span style="color:#85E89D">      expr</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">kube_pod_status_ready{condition="false"} == 1</span></span>
+<span class="line"><span style="color:#85E89D">      for</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">5m</span></span>
+<span class="line"><span style="color:#85E89D">      labels</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        severity</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">critical</span></span>
+<span class="line"><span style="color:#85E89D">      annotations</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        summary</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Pod {{ $labels.namespace }}/{{ $labels.pod }} not ready"</span></span>
+<span class="line"><span style="color:#85E89D">        description</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Pod has been in non-Ready state for 5 minutes"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">resource-alerts</span></span>
+<span class="line"><span style="color:#85E89D">    rules</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">    # High CPU usage</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#85E89D">alert</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">HighCPUUsage</span></span>
+<span class="line"><span style="color:#85E89D">      expr</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">|</span></span>
+<span class="line"><span style="color:#9ECBFF">        sum(rate(container_cpu_usage_seconds_total{container!="POD",container!=""}[5m])) by (namespace, pod)</span></span>
+<span class="line"><span style="color:#9ECBFF">        / sum(kube_pod_container_resource_limits{resource="cpu"}) by (namespace, pod) * 100 > 80</span></span>
+<span class="line"><span style="color:#85E89D">      for</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">10m</span></span>
+<span class="line"><span style="color:#85E89D">      labels</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        severity</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">warning</span></span>
+<span class="line"><span style="color:#85E89D">      annotations</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        summary</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Pod {{ $labels.namespace }}/{{ $labels.pod }} high CPU usage"</span></span>
+<span class="line"><span style="color:#85E89D">        description</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"CPU usage is at {{ $value | printf </span><span style="color:#79B8FF">\"</span><span style="color:#9ECBFF">%.1f</span><span style="color:#79B8FF">\"</span><span style="color:#9ECBFF"> }}%"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    # High memory usage</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#85E89D">alert</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">HighMemoryUsage</span></span>
+<span class="line"><span style="color:#85E89D">      expr</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">|</span></span>
+<span class="line"><span style="color:#9ECBFF">        sum(container_memory_working_set_bytes{container!="POD",container!=""}) by (namespace, pod)</span></span>
+<span class="line"><span style="color:#9ECBFF">        / sum(kube_pod_container_resource_limits{resource="memory"}) by (namespace, pod) * 100 > 80</span></span>
+<span class="line"><span style="color:#85E89D">      for</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">10m</span></span>
+<span class="line"><span style="color:#85E89D">      labels</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        severity</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">warning</span></span>
+<span class="line"><span style="color:#85E89D">      annotations</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        summary</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Pod {{ $labels.namespace }}/{{ $labels.pod }} high memory usage"</span></span>
+<span class="line"><span style="color:#85E89D">        description</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Memory usage is at {{ $value | printf </span><span style="color:#79B8FF">\"</span><span style="color:#9ECBFF">%.1f</span><span style="color:#79B8FF">\"</span><span style="color:#9ECBFF"> }}%"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    # PVC storage almost full</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#85E89D">alert</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">PVCStorageAlmostFull</span></span>
+<span class="line"><span style="color:#85E89D">      expr</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">kubelet_volume_stats_used_bytes / kubelet_volume_stats_capacity_bytes * 100 > 85</span></span>
+<span class="line"><span style="color:#85E89D">      for</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">5m</span></span>
+<span class="line"><span style="color:#85E89D">      labels</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        severity</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">warning</span></span>
+<span class="line"><span style="color:#85E89D">      annotations</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        summary</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"PVC {{ $labels.persistentvolumeclaim }} storage almost full"</span></span>
+<span class="line"><span style="color:#85E89D">        description</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Storage usage is at {{ $value | printf </span><span style="color:#79B8FF">\"</span><span style="color:#9ECBFF">%.1f</span><span style="color:#79B8FF">\"</span><span style="color:#9ECBFF"> }}%"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">cluster-alerts</span></span>
+<span class="line"><span style="color:#85E89D">    rules</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">    # Node not ready</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#85E89D">alert</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">NodeNotReady</span></span>
+<span class="line"><span style="color:#85E89D">      expr</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">kube_node_status_condition{condition="Ready",status="true"} == 0</span></span>
+<span class="line"><span style="color:#85E89D">      for</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">5m</span></span>
+<span class="line"><span style="color:#85E89D">      labels</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        severity</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">critical</span></span>
+<span class="line"><span style="color:#85E89D">      annotations</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        summary</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Node {{ $labels.node }} not ready"</span></span>
+<span class="line"><span style="color:#85E89D">        description</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Node has been in NotReady state for 5 minutes"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    # Node disk pressure</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#85E89D">alert</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">NodeDiskPressure</span></span>
+<span class="line"><span style="color:#85E89D">      expr</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">kube_node_status_condition{condition="DiskPressure",status="true"} == 1</span></span>
+<span class="line"><span style="color:#85E89D">      for</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">5m</span></span>
+<span class="line"><span style="color:#85E89D">      labels</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        severity</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">warning</span></span>
+<span class="line"><span style="color:#85E89D">      annotations</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        summary</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Node {{ $labels.node }} disk pressure"</span></span>
+<span class="line"><span style="color:#85E89D">        description</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Node has insufficient disk space"</span></span></code></pre>
+<h3 id="alertmanager-configuration">AlertManager Configuration</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#6A737D"># alertmanager-config.yaml</span></span>
+<span class="line"><span style="color:#85E89D">apiVersion</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">v1</span></span>
+<span class="line"><span style="color:#85E89D">kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Secret</span></span>
+<span class="line"><span style="color:#85E89D">metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">alertmanager-prometheus-kube-prometheus-alertmanager</span></span>
+<span class="line"><span style="color:#85E89D">  namespace</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">monitoring</span></span>
+<span class="line"><span style="color:#85E89D">type</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Opaque</span></span>
+<span class="line"><span style="color:#85E89D">stringData</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  alertmanager.yaml</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">|</span></span>
+<span class="line"><span style="color:#9ECBFF">    global:</span></span>
+<span class="line"><span style="color:#9ECBFF">      resolve_timeout: 5m</span></span>
+<span class="line"><span style="color:#9ECBFF">      smtp_smarthost: 'smtp.example.com:587'</span></span>
+<span class="line"><span style="color:#9ECBFF">      smtp_from: 'alertmanager@example.com'</span></span>
+<span class="line"><span style="color:#9ECBFF">      smtp_auth_username: 'alertmanager@example.com'</span></span>
+<span class="line"><span style="color:#9ECBFF">      smtp_auth_password: 'password'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9ECBFF">    route:</span></span>
+<span class="line"><span style="color:#9ECBFF">      group_by: ['alertname', 'namespace']</span></span>
+<span class="line"><span style="color:#9ECBFF">      group_wait: 30s</span></span>
+<span class="line"><span style="color:#9ECBFF">      group_interval: 5m</span></span>
+<span class="line"><span style="color:#9ECBFF">      repeat_interval: 4h</span></span>
+<span class="line"><span style="color:#9ECBFF">      receiver: 'default-receiver'</span></span>
+<span class="line"><span style="color:#9ECBFF">      routes:</span></span>
+<span class="line"><span style="color:#9ECBFF">      - match:</span></span>
+<span class="line"><span style="color:#9ECBFF">          severity: critical</span></span>
+<span class="line"><span style="color:#9ECBFF">        receiver: 'critical-receiver'</span></span>
+<span class="line"><span style="color:#9ECBFF">        continue: true</span></span>
+<span class="line"><span style="color:#9ECBFF">      - match:</span></span>
+<span class="line"><span style="color:#9ECBFF">          severity: warning</span></span>
+<span class="line"><span style="color:#9ECBFF">        receiver: 'warning-receiver'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9ECBFF">    receivers:</span></span>
+<span class="line"><span style="color:#9ECBFF">    - name: 'default-receiver'</span></span>
+<span class="line"><span style="color:#9ECBFF">      email_configs:</span></span>
+<span class="line"><span style="color:#9ECBFF">      - to: 'ops@example.com'</span></span>
+<span class="line"><span style="color:#9ECBFF">        send_resolved: true</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9ECBFF">    - name: 'critical-receiver'</span></span>
+<span class="line"><span style="color:#9ECBFF">      email_configs:</span></span>
+<span class="line"><span style="color:#9ECBFF">      - to: 'oncall@example.com'</span></span>
+<span class="line"><span style="color:#9ECBFF">        send_resolved: true</span></span>
+<span class="line"><span style="color:#9ECBFF">      slack_configs:</span></span>
+<span class="line"><span style="color:#9ECBFF">      - api_url: 'https://hooks.slack.com/services/xxx/yyy/zzz'</span></span>
+<span class="line"><span style="color:#9ECBFF">        channel: '#alerts-critical'</span></span>
+<span class="line"><span style="color:#9ECBFF">        send_resolved: true</span></span>
+<span class="line"><span style="color:#9ECBFF">        title: '{{ .Status | toUpper }}: {{ .CommonLabels.alertname }}'</span></span>
+<span class="line"><span style="color:#9ECBFF">        text: '{{ range .Alerts }}{{ .Annotations.description }}{{ end }}'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9ECBFF">    - name: 'warning-receiver'</span></span>
+<span class="line"><span style="color:#9ECBFF">      slack_configs:</span></span>
+<span class="line"><span style="color:#9ECBFF">      - api_url: 'https://hooks.slack.com/services/xxx/yyy/zzz'</span></span>
+<span class="line"><span style="color:#9ECBFF">        channel: '#alerts-warning'</span></span>
+<span class="line"><span style="color:#9ECBFF">        send_resolved: true</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9ECBFF">    inhibit_rules:</span></span>
+<span class="line"><span style="color:#9ECBFF">    - source_match:</span></span>
+<span class="line"><span style="color:#9ECBFF">        severity: 'critical'</span></span>
+<span class="line"><span style="color:#9ECBFF">      target_match:</span></span>
+<span class="line"><span style="color:#9ECBFF">        severity: 'warning'</span></span>
+<span class="line"><span style="color:#9ECBFF">      equal: ['alertname', 'namespace']</span></span></code></pre>
+<h2 id="grafana-visualization">Grafana Visualization</h2>
+<h3 id="importing-dashboards">Importing Dashboards</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Common Dashboard IDs</span></span>
+<span class="line"><span style="color:#6A737D"># Kubernetes Cluster Monitoring: 315</span></span>
+<span class="line"><span style="color:#6A737D"># Node Exporter: 1860</span></span>
+<span class="line"><span style="color:#6A737D"># Kubernetes Pod Monitoring: 6417</span></span>
+<span class="line"><span style="color:#6A737D"># NGINX Ingress: 9614</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># In Grafana UI:</span></span>
+<span class="line"><span style="color:#6A737D"># 1. Click + -> Import</span></span>
+<span class="line"><span style="color:#6A737D"># 2. Enter Dashboard ID</span></span>
+<span class="line"><span style="color:#6A737D"># 3. Select Prometheus data source</span></span>
+<span class="line"><span style="color:#6A737D"># 4. Click Import</span></span></code></pre>
+<h3 id="custom-dashboard">Custom Dashboard</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "dashboard"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">    "title"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"My Application Dashboard"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "panels"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">      {</span></span>
+<span class="line"><span style="color:#79B8FF">        "title"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Request Rate"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">        "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"graph"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">        "targets"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">          {</span></span>
+<span class="line"><span style="color:#79B8FF">            "expr"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"sum(rate(http_requests_total[5m])) by (service)"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "legendFormat"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"{{ service }}"</span></span>
+<span class="line"><span style="color:#E1E4E8">          }</span></span>
+<span class="line"><span style="color:#E1E4E8">        ]</span></span>
+<span class="line"><span style="color:#E1E4E8">      },</span></span>
+<span class="line"><span style="color:#E1E4E8">      {</span></span>
+<span class="line"><span style="color:#79B8FF">        "title"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Error Rate"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">        "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"gauge"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">        "targets"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">          {</span></span>
+<span class="line"><span style="color:#79B8FF">            "expr"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"sum(rate(http_requests_total{status=~</span><span style="color:#79B8FF">\"</span><span style="color:#9ECBFF">5..</span><span style="color:#79B8FF">\"</span><span style="color:#9ECBFF">}[5m])) / sum(rate(http_requests_total[5m])) * 100"</span></span>
+<span class="line"><span style="color:#E1E4E8">          }</span></span>
+<span class="line"><span style="color:#E1E4E8">        ]</span></span>
+<span class="line"><span style="color:#E1E4E8">      },</span></span>
+<span class="line"><span style="color:#E1E4E8">      {</span></span>
+<span class="line"><span style="color:#79B8FF">        "title"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Response Time P95"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">        "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"graph"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">        "targets"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">          {</span></span>
+<span class="line"><span style="color:#79B8FF">            "expr"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket[5m])) by (le, service))"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "legendFormat"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"{{ service }}"</span></span>
+<span class="line"><span style="color:#E1E4E8">          }</span></span>
+<span class="line"><span style="color:#E1E4E8">        ]</span></span>
+<span class="line"><span style="color:#E1E4E8">      }</span></span>
+<span class="line"><span style="color:#E1E4E8">    ]</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h2 id="efk-logging-system">EFK Logging System</h2>
+<h3 id="efk-architecture">EFK Architecture</h3>
+<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IExSCiAgICBzdWJncmFwaCBOb2Rlc1siS3ViZXJuZXRlcyBOb2RlcyJdCiAgICAgICAgUG9kMVtQb2QgMV0gLS0+fHN0ZG91dC9zdGRlcnJ8IERvY2tlcjFbQ29udGFpbmVyIFJ1bnRpbWVdCiAgICAgICAgUG9kMltQb2QgMl0gLS0+fHN0ZG91dC9zdGRlcnJ8IERvY2tlcjJbQ29udGFpbmVyIFJ1bnRpbWVdCiAgICAgICAgRG9ja2VyMSAtLT4gTG9nMVsvdmFyL2xvZy9jb250YWluZXJzL10KICAgICAgICBEb2NrZXIyIC0tPiBMb2cyWy92YXIvbG9nL2NvbnRhaW5lcnMvXQogICAgZW5kCgogICAgc3ViZ3JhcGggQ29sbGVjdGlvblsiTG9nIENvbGxlY3Rpb24iXQogICAgICAgIExvZzEgLS0+IEZCMVtGbHVlbnQgQml0PGJyLz5EYWVtb25TZXRdCiAgICAgICAgTG9nMiAtLT4gRkIyW0ZsdWVudCBCaXQ8YnIvPkRhZW1vblNldF0KICAgIGVuZAoKICAgIHN1YmdyYXBoIFN0b3JhZ2VbIkxvZyBTdG9yYWdlIl0KICAgICAgICBGQjEgLS0+IEVTW0VsYXN0aWNzZWFyY2g8YnIvPkNsdXN0ZXJdCiAgICAgICAgRkIyIC0tPiBFUwogICAgZW5kCgogICAgc3ViZ3JhcGggVmlzdWFsaXphdGlvblsiVmlzdWFsaXphdGlvbiJdCiAgICAgICAgRVMgLS0+IEtpYmFuYVtLaWJhbmFdCiAgICBlbmQ=" data-id="mermaid-is9helz4z">
+<div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
+<pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">flowchart LR
+    subgraph Nodes["Kubernetes Nodes"]
+        Pod1[Pod 1] -->|stdout/stderr| Docker1[Container Runtime]
+        Pod2[Pod 2] -->|stdout/stderr| Docker2[Container Runtime]
+        Docker1 --> Log1[/var/log/containers/]
+        Docker2 --> Log2[/var/log/containers/]
+    end
+
+    subgraph Collection["Log Collection"]
+        Log1 --> FB1[Fluent Bit&#x3C;br/>DaemonSet]
+        Log2 --> FB2[Fluent Bit&#x3C;br/>DaemonSet]
+    end
+
+    subgraph Storage["Log Storage"]
+        FB1 --> ES[Elasticsearch&#x3C;br/>Cluster]
+        FB2 --> ES
+    end
+
+    subgraph Visualization["Visualization"]
+        ES --> Kibana[Kibana]
+    end</code></pre>
+</div>
+<h3 id="installing-elasticsearch">Installing Elasticsearch</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Add Elastic repository</span></span>
+<span class="line"><span style="color:#B392F0">helm</span><span style="color:#9ECBFF"> repo</span><span style="color:#9ECBFF"> add</span><span style="color:#9ECBFF"> elastic</span><span style="color:#9ECBFF"> https://helm.elastic.co</span></span>
+<span class="line"><span style="color:#B392F0">helm</span><span style="color:#9ECBFF"> repo</span><span style="color:#9ECBFF"> update</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Install Elasticsearch</span></span>
+<span class="line"><span style="color:#B392F0">helm</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> elasticsearch</span><span style="color:#9ECBFF"> elastic/elasticsearch</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --namespace</span><span style="color:#9ECBFF"> logging</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --create-namespace</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --set</span><span style="color:#9ECBFF"> replicas=</span><span style="color:#79B8FF">3</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --set</span><span style="color:#9ECBFF"> minimumMasterNodes=</span><span style="color:#79B8FF">2</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --set</span><span style="color:#9ECBFF"> resources.requests.memory=2Gi</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --set</span><span style="color:#9ECBFF"> resources.limits.memory=4Gi</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --set</span><span style="color:#9ECBFF"> volumeClaimTemplate.resources.requests.storage=50Gi</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Wait for Elasticsearch to be ready</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> get</span><span style="color:#9ECBFF"> pods</span><span style="color:#79B8FF"> -n</span><span style="color:#9ECBFF"> logging</span><span style="color:#79B8FF"> -w</span></span></code></pre>
+<h3 id="installing-kibana">Installing Kibana</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">helm</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> kibana</span><span style="color:#9ECBFF"> elastic/kibana</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --namespace</span><span style="color:#9ECBFF"> logging</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --set</span><span style="color:#9ECBFF"> elasticsearchHosts="http://elasticsearch-master:9200"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Create Ingress to access Kibana</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">apiVersion</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">networking.k8s.io/v1</span></span>
+<span class="line"><span style="color:#85E89D">kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Ingress</span></span>
+<span class="line"><span style="color:#85E89D">metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">kibana-ingress</span></span>
+<span class="line"><span style="color:#85E89D">  namespace</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">logging</span></span>
+<span class="line"><span style="color:#85E89D">spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  ingressClassName</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">nginx</span></span>
+<span class="line"><span style="color:#85E89D">  rules</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#85E89D">host</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">kibana.example.com</span></span>
+<span class="line"><span style="color:#85E89D">    http</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      paths</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#85E89D">path</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">/</span></span>
+<span class="line"><span style="color:#85E89D">        pathType</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Prefix</span></span>
+<span class="line"><span style="color:#85E89D">        backend</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">          service</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">            name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">kibana-kibana</span></span>
+<span class="line"><span style="color:#85E89D">            port</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">              number</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">5601</span></span></code></pre>
+<h3 id="installing-fluent-bit">Installing Fluent Bit</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">helm</span><span style="color:#9ECBFF"> repo</span><span style="color:#9ECBFF"> add</span><span style="color:#9ECBFF"> fluent</span><span style="color:#9ECBFF"> https://fluent.github.io/helm-charts</span></span>
+<span class="line"><span style="color:#B392F0">helm</span><span style="color:#9ECBFF"> repo</span><span style="color:#9ECBFF"> update</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">helm</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> fluent-bit</span><span style="color:#9ECBFF"> fluent/fluent-bit</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --namespace</span><span style="color:#9ECBFF"> logging</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --set</span><span style="color:#9ECBFF"> config.outputs="[OUTPUT]\n    Name es\n    Match *\n    Host elasticsearch-master\n    Port 9200\n    Logstash_Format On\n    Retry_Limit False"</span></span></code></pre>
+<h3 id="fluent-bit-configuration-details">Fluent Bit Configuration Details</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">apiVersion</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">v1</span></span>
+<span class="line"><span style="color:#85E89D">kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">ConfigMap</span></span>
+<span class="line"><span style="color:#85E89D">metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">fluent-bit-config</span></span>
+<span class="line"><span style="color:#85E89D">  namespace</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">logging</span></span>
+<span class="line"><span style="color:#85E89D">data</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  fluent-bit.conf</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">|</span></span>
+<span class="line"><span style="color:#9ECBFF">    [SERVICE]</span></span>
+<span class="line"><span style="color:#9ECBFF">        Flush         5</span></span>
+<span class="line"><span style="color:#9ECBFF">        Log_Level     info</span></span>
+<span class="line"><span style="color:#9ECBFF">        Daemon        off</span></span>
+<span class="line"><span style="color:#9ECBFF">        Parsers_File  parsers.conf</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9ECBFF">    [INPUT]</span></span>
+<span class="line"><span style="color:#9ECBFF">        Name              tail</span></span>
+<span class="line"><span style="color:#9ECBFF">        Tag               kube.*</span></span>
+<span class="line"><span style="color:#9ECBFF">        Path              /var/log/containers/*.log</span></span>
+<span class="line"><span style="color:#9ECBFF">        Parser            docker</span></span>
+<span class="line"><span style="color:#9ECBFF">        DB                /var/log/flb_kube.db</span></span>
+<span class="line"><span style="color:#9ECBFF">        Mem_Buf_Limit     50MB</span></span>
+<span class="line"><span style="color:#9ECBFF">        Skip_Long_Lines   On</span></span>
+<span class="line"><span style="color:#9ECBFF">        Refresh_Interval  10</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9ECBFF">    [FILTER]</span></span>
+<span class="line"><span style="color:#9ECBFF">        Name                kubernetes</span></span>
+<span class="line"><span style="color:#9ECBFF">        Match               kube.*</span></span>
+<span class="line"><span style="color:#9ECBFF">        Kube_URL            https://kubernetes.default.svc:443</span></span>
+<span class="line"><span style="color:#9ECBFF">        Kube_CA_File        /var/run/secrets/kubernetes.io/serviceaccount/ca.crt</span></span>
+<span class="line"><span style="color:#9ECBFF">        Kube_Token_File     /var/run/secrets/kubernetes.io/serviceaccount/token</span></span>
+<span class="line"><span style="color:#9ECBFF">        Kube_Tag_Prefix     kube.var.log.containers.</span></span>
+<span class="line"><span style="color:#9ECBFF">        Merge_Log           On</span></span>
+<span class="line"><span style="color:#9ECBFF">        Merge_Log_Key       log_processed</span></span>
+<span class="line"><span style="color:#9ECBFF">        K8S-Logging.Parser  On</span></span>
+<span class="line"><span style="color:#9ECBFF">        K8S-Logging.Exclude On</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9ECBFF">    [FILTER]</span></span>
+<span class="line"><span style="color:#9ECBFF">        Name          modify</span></span>
+<span class="line"><span style="color:#9ECBFF">        Match         *</span></span>
+<span class="line"><span style="color:#9ECBFF">        Add           cluster production</span></span>
+<span class="line"><span style="color:#9ECBFF">        Add           environment prod</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9ECBFF">    [OUTPUT]</span></span>
+<span class="line"><span style="color:#9ECBFF">        Name            es</span></span>
+<span class="line"><span style="color:#9ECBFF">        Match           *</span></span>
+<span class="line"><span style="color:#9ECBFF">        Host            elasticsearch-master</span></span>
+<span class="line"><span style="color:#9ECBFF">        Port            9200</span></span>
+<span class="line"><span style="color:#9ECBFF">        Logstash_Format On</span></span>
+<span class="line"><span style="color:#9ECBFF">        Logstash_Prefix kubernetes</span></span>
+<span class="line"><span style="color:#9ECBFF">        Retry_Limit     False</span></span>
+<span class="line"><span style="color:#9ECBFF">        Replace_Dots    On</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">  parsers.conf</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">|</span></span>
+<span class="line"><span style="color:#9ECBFF">    [PARSER]</span></span>
+<span class="line"><span style="color:#9ECBFF">        Name        docker</span></span>
+<span class="line"><span style="color:#9ECBFF">        Format      json</span></span>
+<span class="line"><span style="color:#9ECBFF">        Time_Key    time</span></span>
+<span class="line"><span style="color:#9ECBFF">        Time_Format %Y-%m-%dT%H:%M:%S.%L</span></span>
+<span class="line"><span style="color:#9ECBFF">        Time_Keep   On</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#9ECBFF">    [PARSER]</span></span>
+<span class="line"><span style="color:#9ECBFF">        Name        syslog</span></span>
+<span class="line"><span style="color:#9ECBFF">        Format      regex</span></span>
+<span class="line"><span style="color:#9ECBFF">        Regex       ^\&#x3C;(?&#x3C;pri>[0-9]+)\>(?&#x3C;time>[^ ]* {1,2}[^ ]* [^ ]*) (?&#x3C;host>[^ ]*) (?&#x3C;ident>[a-zA-Z0-9_\/\.\-]*)(?:\[(?&#x3C;pid>[0-9]+)\])?(?:[^\:]*\:)? *(?&#x3C;message>.*)$</span></span>
+<span class="line"><span style="color:#9ECBFF">        Time_Key    time</span></span>
+<span class="line"><span style="color:#9ECBFF">        Time_Format %b %d %H:%M:%S</span></span></code></pre>
+<h3 id="application-log-configuration">Application Log Configuration</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#6A737D"># Configure application to output JSON format logs</span></span>
+<span class="line"><span style="color:#85E89D">apiVersion</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">apps/v1</span></span>
+<span class="line"><span style="color:#85E89D">kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Deployment</span></span>
+<span class="line"><span style="color:#85E89D">metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">myapp</span></span>
+<span class="line"><span style="color:#85E89D">spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  template</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      annotations</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">        # Specify log parser</span></span>
+<span class="line"><span style="color:#85E89D">        fluentbit.io/parser</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">json</span></span>
+<span class="line"><span style="color:#6A737D">        # Exclude from log collection</span></span>
+<span class="line"><span style="color:#6A737D">        # fluentbit.io/exclude: "true"</span></span>
+<span class="line"><span style="color:#85E89D">    spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      containers</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">myapp</span></span>
+<span class="line"><span style="color:#85E89D">        image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">myapp:latest</span></span>
+<span class="line"><span style="color:#85E89D">        env</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">LOG_FORMAT</span></span>
+<span class="line"><span style="color:#85E89D">          value</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"json"</span></span>
+<span class="line"><span style="color:#E1E4E8">        - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">LOG_LEVEL</span></span>
+<span class="line"><span style="color:#85E89D">          value</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"info"</span></span></code></pre>
+<h3 id="kibana-log-queries">Kibana Log Queries</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span># Basic query</span></span>
+<span class="line"><span>kubernetes.namespace_name: "production"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Error logs</span></span>
+<span class="line"><span>level: "error" AND kubernetes.namespace_name: "production"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Specific Pod logs</span></span>
+<span class="line"><span>kubernetes.pod_name: "myapp-*"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Time range</span></span>
+<span class="line"><span>@timestamp:[2024-01-01 TO 2024-01-02]</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Combined query</span></span>
+<span class="line"><span>kubernetes.namespace_name: "production" AND level: "error" AND message: *timeout*</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Exclude query</span></span>
+<span class="line"><span>kubernetes.namespace_name: "production" AND NOT kubernetes.container_name: "sidecar"</span></span></code></pre>
+<h2 id="native-monitoring-metrics">Native Monitoring Metrics</h2>
+<h3 id="metrics-server">Metrics Server</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Install Metrics Server</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> apply</span><span style="color:#79B8FF"> -f</span><span style="color:#9ECBFF"> https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Verify installation</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> get</span><span style="color:#9ECBFF"> deployment</span><span style="color:#9ECBFF"> metrics-server</span><span style="color:#79B8FF"> -n</span><span style="color:#9ECBFF"> kube-system</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Use kubectl top</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> top</span><span style="color:#9ECBFF"> nodes</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> top</span><span style="color:#9ECBFF"> pods</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> top</span><span style="color:#9ECBFF"> pods</span><span style="color:#79B8FF"> -n</span><span style="color:#9ECBFF"> kube-system</span><span style="color:#79B8FF"> --sort-by=memory</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> top</span><span style="color:#9ECBFF"> pods</span><span style="color:#79B8FF"> --containers</span><span style="color:#6A737D">  # Show container-level metrics</span></span></code></pre>
+<h3 id="resource-usage-queries">Resource Usage Queries</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Node resources</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> describe</span><span style="color:#9ECBFF"> node</span><span style="color:#F97583"> &#x3C;</span><span style="color:#9ECBFF">node-nam</span><span style="color:#E1E4E8">e</span><span style="color:#F97583">></span><span style="color:#F97583"> |</span><span style="color:#B392F0"> grep</span><span style="color:#79B8FF"> -A</span><span style="color:#79B8FF"> 5</span><span style="color:#9ECBFF"> "Allocated resources"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Pod resource usage</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> get</span><span style="color:#9ECBFF"> pods</span><span style="color:#79B8FF"> -o</span><span style="color:#9ECBFF"> custom-columns=</span><span style="color:#79B8FF">\</span></span>
+<span class="line"><span style="color:#9ECBFF">"NAME:.metadata.name,</span><span style="color:#79B8FF">\</span></span>
+<span class="line"><span style="color:#9ECBFF">CPU_REQ:.spec.containers[*].resources.requests.cpu,</span><span style="color:#79B8FF">\</span></span>
+<span class="line"><span style="color:#9ECBFF">CPU_LIM:.spec.containers[*].resources.limits.cpu,</span><span style="color:#79B8FF">\</span></span>
+<span class="line"><span style="color:#9ECBFF">MEM_REQ:.spec.containers[*].resources.requests.memory,</span><span style="color:#79B8FF">\</span></span>
+<span class="line"><span style="color:#9ECBFF">MEM_LIM:.spec.containers[*].resources.limits.memory"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Resource quota usage</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> describe</span><span style="color:#9ECBFF"> resourcequota</span><span style="color:#79B8FF"> -n</span><span style="color:#F97583"> &#x3C;</span><span style="color:#9ECBFF">namespac</span><span style="color:#E1E4E8">e</span><span style="color:#F97583">></span></span></code></pre>
+<h2 id="practical-exercise">Practical Exercise</h2>
+<h3 id="complete-monitoring-solution-deployment">Complete Monitoring Solution Deployment</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#6A737D"># monitoring-namespace.yaml</span></span>
+<span class="line"><span style="color:#85E89D">apiVersion</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">v1</span></span>
+<span class="line"><span style="color:#85E89D">kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Namespace</span></span>
+<span class="line"><span style="color:#85E89D">metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">monitoring</span></span>
+<span class="line"><span style="color:#B392F0">---</span></span>
+<span class="line"><span style="color:#6A737D"># values-prometheus.yaml for Helm installation</span></span>
+<span class="line"><span style="color:#6A737D"># prometheus-values.yaml</span></span>
+<span class="line"><span style="color:#85E89D">prometheus</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  prometheusSpec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    retention</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">30d</span></span>
+<span class="line"><span style="color:#85E89D">    storageSpec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      volumeClaimTemplate</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">          accessModes</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">"ReadWriteOnce"</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#85E89D">          resources</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">            requests</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">              storage</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">100Gi</span></span>
+<span class="line"><span style="color:#85E89D">    additionalScrapeConfigs</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#85E89D">job_name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'custom-apps'</span></span>
+<span class="line"><span style="color:#85E89D">      kubernetes_sd_configs</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#85E89D">role</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">pod</span></span>
+<span class="line"><span style="color:#85E89D">      relabel_configs</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#85E89D">source_labels</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">__meta_kubernetes_pod_annotation_prometheus_io_scrape</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#85E89D">        action</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">keep</span></span>
+<span class="line"><span style="color:#85E89D">        regex</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#85E89D">source_labels</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">__meta_kubernetes_pod_annotation_prometheus_io_path</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#85E89D">        action</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">replace</span></span>
+<span class="line"><span style="color:#85E89D">        target_label</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">__metrics_path__</span></span>
+<span class="line"><span style="color:#85E89D">        regex</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">(.+)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">alertmanager</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  alertmanagerSpec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    storage</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      volumeClaimTemplate</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">          accessModes</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">"ReadWriteOnce"</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#85E89D">          resources</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">            requests</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">              storage</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">10Gi</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">grafana</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  persistence</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    enabled</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span></span>
+<span class="line"><span style="color:#85E89D">    size</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">10Gi</span></span>
+<span class="line"><span style="color:#85E89D">  adminPassword</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"secure-password"</span></span>
+<span class="line"><span style="color:#85E89D">  dashboardProviders</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    dashboardproviders.yaml</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      apiVersion</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1</span></span>
+<span class="line"><span style="color:#85E89D">      providers</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'default'</span></span>
+<span class="line"><span style="color:#85E89D">        orgId</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1</span></span>
+<span class="line"><span style="color:#85E89D">        folder</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">''</span></span>
+<span class="line"><span style="color:#85E89D">        type</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">file</span></span>
+<span class="line"><span style="color:#85E89D">        disableDeletion</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">false</span></span>
+<span class="line"><span style="color:#85E89D">        editable</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span></span>
+<span class="line"><span style="color:#85E89D">        options</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">          path</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">/var/lib/grafana/dashboards/default</span></span>
+<span class="line"><span style="color:#85E89D">  dashboards</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    default</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      kubernetes-cluster</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        gnetId</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">315</span></span>
+<span class="line"><span style="color:#85E89D">        revision</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">3</span></span>
+<span class="line"><span style="color:#85E89D">        datasource</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Prometheus</span></span>
+<span class="line"><span style="color:#85E89D">      node-exporter</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        gnetId</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1860</span></span>
+<span class="line"><span style="color:#85E89D">        revision</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">27</span></span>
+<span class="line"><span style="color:#85E89D">        datasource</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Prometheus</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Deploy complete monitoring stack</span></span>
+<span class="line"><span style="color:#B392F0">helm</span><span style="color:#9ECBFF"> upgrade</span><span style="color:#79B8FF"> --install</span><span style="color:#9ECBFF"> prometheus</span><span style="color:#9ECBFF"> prometheus-community/kube-prometheus-stack</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -n</span><span style="color:#9ECBFF"> monitoring</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --create-namespace</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -f</span><span style="color:#9ECBFF"> prometheus-values.yaml</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Verify deployment</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> get</span><span style="color:#9ECBFF"> pods</span><span style="color:#79B8FF"> -n</span><span style="color:#9ECBFF"> monitoring</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> get</span><span style="color:#9ECBFF"> svc</span><span style="color:#79B8FF"> -n</span><span style="color:#9ECBFF"> monitoring</span></span></code></pre>
+<h3 id="application-monitoring-example">Application Monitoring Example</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#6A737D"># Example application: Web service with monitoring</span></span>
+<span class="line"><span style="color:#85E89D">apiVersion</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">apps/v1</span></span>
+<span class="line"><span style="color:#85E89D">kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Deployment</span></span>
+<span class="line"><span style="color:#85E89D">metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">web-app</span></span>
+<span class="line"><span style="color:#85E89D">  namespace</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">default</span></span>
+<span class="line"><span style="color:#85E89D">spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  replicas</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">3</span></span>
+<span class="line"><span style="color:#85E89D">  selector</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    matchLabels</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      app</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">web-app</span></span>
+<span class="line"><span style="color:#85E89D">  template</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      labels</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        app</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">web-app</span></span>
+<span class="line"><span style="color:#85E89D">      annotations</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        prometheus.io/scrape</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"true"</span></span>
+<span class="line"><span style="color:#85E89D">        prometheus.io/port</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"9090"</span></span>
+<span class="line"><span style="color:#85E89D">        prometheus.io/path</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"/metrics"</span></span>
+<span class="line"><span style="color:#85E89D">    spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      containers</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">web-app</span></span>
+<span class="line"><span style="color:#85E89D">        image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">nginx:1.20</span></span>
+<span class="line"><span style="color:#85E89D">        ports</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">http</span></span>
+<span class="line"><span style="color:#85E89D">          containerPort</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">80</span></span>
+<span class="line"><span style="color:#E1E4E8">        - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">metrics</span></span>
+<span class="line"><span style="color:#85E89D">          containerPort</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">9090</span></span>
+<span class="line"><span style="color:#85E89D">        resources</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">          requests</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">            cpu</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">100m</span></span>
+<span class="line"><span style="color:#85E89D">            memory</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">128Mi</span></span>
+<span class="line"><span style="color:#85E89D">          limits</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">            cpu</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">200m</span></span>
+<span class="line"><span style="color:#85E89D">            memory</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">256Mi</span></span>
+<span class="line"><span style="color:#85E89D">        livenessProbe</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">          httpGet</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">            path</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">/health</span></span>
+<span class="line"><span style="color:#85E89D">            port</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">http</span></span>
+<span class="line"><span style="color:#85E89D">          initialDelaySeconds</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">10</span></span>
+<span class="line"><span style="color:#85E89D">          periodSeconds</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">10</span></span>
+<span class="line"><span style="color:#85E89D">        readinessProbe</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">          httpGet</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">            path</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">/ready</span></span>
+<span class="line"><span style="color:#85E89D">            port</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">http</span></span>
+<span class="line"><span style="color:#85E89D">          initialDelaySeconds</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">5</span></span>
+<span class="line"><span style="color:#85E89D">          periodSeconds</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">5</span></span>
+<span class="line"><span style="color:#6A737D">      # Prometheus Exporter Sidecar</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">nginx-exporter</span></span>
+<span class="line"><span style="color:#85E89D">        image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">nginx/nginx-prometheus-exporter:0.11</span></span>
+<span class="line"><span style="color:#85E89D">        args</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        - </span><span style="color:#9ECBFF">-nginx.scrape-uri=http://localhost:80/stub_status</span></span>
+<span class="line"><span style="color:#85E89D">        ports</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">metrics</span></span>
+<span class="line"><span style="color:#85E89D">          containerPort</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">9113</span></span>
+<span class="line"><span style="color:#85E89D">        resources</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">          requests</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">            cpu</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">10m</span></span>
+<span class="line"><span style="color:#85E89D">            memory</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">32Mi</span></span>
+<span class="line"><span style="color:#85E89D">          limits</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">            cpu</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">50m</span></span>
+<span class="line"><span style="color:#85E89D">            memory</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">64Mi</span></span>
+<span class="line"><span style="color:#B392F0">---</span></span>
+<span class="line"><span style="color:#85E89D">apiVersion</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">v1</span></span>
+<span class="line"><span style="color:#85E89D">kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Service</span></span>
+<span class="line"><span style="color:#85E89D">metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">web-app</span></span>
+<span class="line"><span style="color:#85E89D">  labels</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    app</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">web-app</span></span>
+<span class="line"><span style="color:#85E89D">spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  selector</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    app</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">web-app</span></span>
+<span class="line"><span style="color:#85E89D">  ports</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">http</span></span>
+<span class="line"><span style="color:#85E89D">    port</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">80</span></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">metrics</span></span>
+<span class="line"><span style="color:#85E89D">    port</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">9090</span></span>
+<span class="line"><span style="color:#B392F0">---</span></span>
+<span class="line"><span style="color:#85E89D">apiVersion</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">monitoring.coreos.com/v1</span></span>
+<span class="line"><span style="color:#85E89D">kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">ServiceMonitor</span></span>
+<span class="line"><span style="color:#85E89D">metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">web-app-monitor</span></span>
+<span class="line"><span style="color:#85E89D">  namespace</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">monitoring</span></span>
+<span class="line"><span style="color:#85E89D">spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  selector</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    matchLabels</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      app</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">web-app</span></span>
+<span class="line"><span style="color:#85E89D">  namespaceSelector</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    matchNames</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#9ECBFF">default</span></span>
+<span class="line"><span style="color:#85E89D">  endpoints</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#85E89D">port</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">metrics</span></span>
+<span class="line"><span style="color:#85E89D">    interval</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">15s</span></span>
+<span class="line"><span style="color:#B392F0">---</span></span>
+<span class="line"><span style="color:#85E89D">apiVersion</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">monitoring.coreos.com/v1</span></span>
+<span class="line"><span style="color:#85E89D">kind</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">PrometheusRule</span></span>
+<span class="line"><span style="color:#85E89D">metadata</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">web-app-alerts</span></span>
+<span class="line"><span style="color:#85E89D">  namespace</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">monitoring</span></span>
+<span class="line"><span style="color:#85E89D">spec</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  groups</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">web-app</span></span>
+<span class="line"><span style="color:#85E89D">    rules</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#85E89D">alert</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">WebAppDown</span></span>
+<span class="line"><span style="color:#85E89D">      expr</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">up{job="web-app"} == 0</span></span>
+<span class="line"><span style="color:#85E89D">      for</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">1m</span></span>
+<span class="line"><span style="color:#85E89D">      labels</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        severity</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">critical</span></span>
+<span class="line"><span style="color:#85E89D">      annotations</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        summary</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Web application unavailable"</span></span>
+<span class="line"><span style="color:#85E89D">        description</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"{{ $labels.instance }} has been unreachable for 1 minute"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#85E89D">alert</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">WebAppHighErrorRate</span></span>
+<span class="line"><span style="color:#85E89D">      expr</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">|</span></span>
+<span class="line"><span style="color:#9ECBFF">        sum(rate(nginx_http_requests_total{status=~"5.."}[5m]))</span></span>
+<span class="line"><span style="color:#9ECBFF">        / sum(rate(nginx_http_requests_total[5m])) * 100 > 5</span></span>
+<span class="line"><span style="color:#85E89D">      for</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">5m</span></span>
+<span class="line"><span style="color:#85E89D">      labels</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        severity</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">warning</span></span>
+<span class="line"><span style="color:#85E89D">      annotations</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">        summary</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Web application error rate too high"</span></span>
+<span class="line"><span style="color:#85E89D">        description</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Error rate is at {{ $value | printf </span><span style="color:#79B8FF">\"</span><span style="color:#9ECBFF">%.1f</span><span style="color:#79B8FF">\"</span><span style="color:#9ECBFF"> }}%"</span></span></code></pre>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="common-troubleshooting-commands">Common Troubleshooting Commands</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># View Pod logs</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> logs</span><span style="color:#F97583"> &#x3C;</span><span style="color:#9ECBFF">pod-nam</span><span style="color:#E1E4E8">e</span><span style="color:#F97583">></span><span style="color:#79B8FF"> -n</span><span style="color:#F97583"> &#x3C;</span><span style="color:#9ECBFF">namespac</span><span style="color:#E1E4E8">e</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> logs</span><span style="color:#F97583"> &#x3C;</span><span style="color:#9ECBFF">pod-nam</span><span style="color:#E1E4E8">e</span><span style="color:#F97583">></span><span style="color:#79B8FF"> -c</span><span style="color:#F97583"> &#x3C;</span><span style="color:#9ECBFF">container-nam</span><span style="color:#E1E4E8">e</span><span style="color:#F97583">></span><span style="color:#6A737D">  # Multiple containers</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> logs</span><span style="color:#F97583"> &#x3C;</span><span style="color:#9ECBFF">pod-nam</span><span style="color:#E1E4E8">e</span><span style="color:#F97583">></span><span style="color:#79B8FF"> --previous</span><span style="color:#6A737D">  # View previous container logs</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> logs</span><span style="color:#79B8FF"> -f</span><span style="color:#F97583"> &#x3C;</span><span style="color:#9ECBFF">pod-nam</span><span style="color:#E1E4E8">e</span><span style="color:#F97583">></span><span style="color:#6A737D">  # Follow logs in real-time</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> logs</span><span style="color:#79B8FF"> --since=1h</span><span style="color:#F97583"> &#x3C;</span><span style="color:#9ECBFF">pod-nam</span><span style="color:#E1E4E8">e</span><span style="color:#F97583">></span><span style="color:#6A737D">  # Last 1 hour</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> logs</span><span style="color:#79B8FF"> --tail=100</span><span style="color:#F97583"> &#x3C;</span><span style="color:#9ECBFF">pod-nam</span><span style="color:#E1E4E8">e</span><span style="color:#F97583">></span><span style="color:#6A737D">  # Last 100 lines</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># View events</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> get</span><span style="color:#9ECBFF"> events</span><span style="color:#79B8FF"> -n</span><span style="color:#F97583"> &#x3C;</span><span style="color:#9ECBFF">namespac</span><span style="color:#E1E4E8">e</span><span style="color:#F97583">></span><span style="color:#79B8FF"> --sort-by=</span><span style="color:#9ECBFF">'.lastTimestamp'</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> get</span><span style="color:#9ECBFF"> events</span><span style="color:#79B8FF"> --field-selector</span><span style="color:#9ECBFF"> type=Warning</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># View Pod details</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> describe</span><span style="color:#9ECBFF"> pod</span><span style="color:#F97583"> &#x3C;</span><span style="color:#9ECBFF">pod-nam</span><span style="color:#E1E4E8">e</span><span style="color:#F97583">></span><span style="color:#79B8FF"> -n</span><span style="color:#F97583"> &#x3C;</span><span style="color:#9ECBFF">namespac</span><span style="color:#E1E4E8">e</span><span style="color:#F97583">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Enter Pod for debugging</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> exec</span><span style="color:#79B8FF"> -it</span><span style="color:#F97583"> &#x3C;</span><span style="color:#9ECBFF">pod-nam</span><span style="color:#E1E4E8">e</span><span style="color:#F97583">></span><span style="color:#79B8FF"> --</span><span style="color:#9ECBFF"> /bin/sh</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> exec</span><span style="color:#79B8FF"> -it</span><span style="color:#F97583"> &#x3C;</span><span style="color:#9ECBFF">pod-nam</span><span style="color:#E1E4E8">e</span><span style="color:#F97583">></span><span style="color:#79B8FF"> -c</span><span style="color:#F97583"> &#x3C;</span><span style="color:#9ECBFF">containe</span><span style="color:#E1E4E8">r</span><span style="color:#F97583">></span><span style="color:#79B8FF"> --</span><span style="color:#9ECBFF"> /bin/bash</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Debug container (requires EphemeralContainers enabled)</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> debug</span><span style="color:#F97583"> &#x3C;</span><span style="color:#9ECBFF">pod-nam</span><span style="color:#E1E4E8">e</span><span style="color:#F97583">></span><span style="color:#79B8FF"> -it</span><span style="color:#79B8FF"> --image=busybox</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Resource usage</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> top</span><span style="color:#9ECBFF"> pods</span><span style="color:#79B8FF"> -n</span><span style="color:#F97583"> &#x3C;</span><span style="color:#9ECBFF">namespac</span><span style="color:#E1E4E8">e</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> top</span><span style="color:#9ECBFF"> nodes</span></span></code></pre>
+<h3 id="monitoring-system-troubleshooting">Monitoring System Troubleshooting</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Prometheus troubleshooting</span></span>
+<span class="line"><span style="color:#6A737D"># Check targets status</span></span>
+<span class="line"><span style="color:#B392F0">curl</span><span style="color:#9ECBFF"> http://prometheus:9090/api/v1/targets</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Check alert status</span></span>
+<span class="line"><span style="color:#B392F0">curl</span><span style="color:#9ECBFF"> http://prometheus:9090/api/v1/alerts</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Check configuration</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> get</span><span style="color:#9ECBFF"> prometheusrules</span><span style="color:#79B8FF"> -A</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> describe</span><span style="color:#9ECBFF"> prometheus</span><span style="color:#9ECBFF"> prometheus-kube-prometheus-prometheus</span><span style="color:#79B8FF"> -n</span><span style="color:#9ECBFF"> monitoring</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># AlertManager troubleshooting</span></span>
+<span class="line"><span style="color:#6A737D"># Check alerts</span></span>
+<span class="line"><span style="color:#B392F0">curl</span><span style="color:#9ECBFF"> http://alertmanager:9093/api/v2/alerts</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Check silence rules</span></span>
+<span class="line"><span style="color:#B392F0">curl</span><span style="color:#9ECBFF"> http://alertmanager:9093/api/v2/silences</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Grafana troubleshooting</span></span>
+<span class="line"><span style="color:#6A737D"># Check data sources</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> logs</span><span style="color:#9ECBFF"> deployment/prometheus-grafana</span><span style="color:#79B8FF"> -n</span><span style="color:#9ECBFF"> monitoring</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Logging system troubleshooting</span></span>
+<span class="line"><span style="color:#6A737D"># Elasticsearch health status</span></span>
+<span class="line"><span style="color:#B392F0">curl</span><span style="color:#9ECBFF"> http://elasticsearch:9200/_cluster/health?pretty</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Index status</span></span>
+<span class="line"><span style="color:#B392F0">curl</span><span style="color:#9ECBFF"> http://elasticsearch:9200/_cat/indices?v</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Fluent Bit status</span></span>
+<span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> logs</span><span style="color:#9ECBFF"> daemonset/fluent-bit</span><span style="color:#79B8FF"> -n</span><span style="color:#9ECBFF"> logging</span></span></code></pre>
+<div class="container-warning custom-container" data-container-type="warning">
+<div class="container-title">Monitoring Best Practices</div>
+<div class="container-content">
+<ol>
+<li><strong>Layered monitoring</strong>: Infrastructure → Platform → Application monitoring layers</li>
+<li><strong>Reasonable alerts</strong>: Avoid alert fatigue, set appropriate thresholds</li>
+<li><strong>Standardized logging</strong>: Unified log format for easy querying and analysis</li>
+<li><strong>Retention policy</strong>: Set appropriate data retention period based on needs</li>
+<li><strong>Resource planning</strong>: Monitoring system itself needs sufficient resources</li>
+<li><strong>Regular drills</strong>: Periodically test if alert notifications work properly</li>
+</ol>
+</div>
+</div>
+<h2 id="summary">Summary</h2>
+<p>Through this chapter, you should have mastered:</p>
+<ul>
+<li><strong>Prometheus monitoring</strong>: Metric collection, PromQL queries, alert configuration</li>
+<li><strong>Grafana visualization</strong>: Dashboard creation and usage</li>
+<li><strong>EFK logging system</strong>: Log collection, storage, and querying</li>
+<li><strong>Native monitoring</strong>: Metrics Server and kubectl top</li>
+<li><strong>Troubleshooting</strong>: Common troubleshooting commands and techniques</li>
+</ul>
+<p>In the next chapter, we will learn about Security and RBAC, mastering Kubernetes permission control and security policy configuration.</p></div><!-- 修复文章内容中的链接，添加当前语言前缀 --><script>
+      (function() {
+        function fixProseLinks() {
+          const proseContent = document.querySelector('[data-prose-content]');
+          if (!proseContent) return;
+
+          const localePrefix = proseContent.getAttribute('data-locale-prefix') || '';
+          const baseUrl = proseContent.getAttribute('data-base-url') || '';
+
+          // 如果没有 locale prefix 或 locale prefix 等于 base url，则不需要修复
+          // 这意味着当前是默认语言
+          if (!localePrefix || localePrefix === baseUrl) return;
+
+          // 获取 locale 部分 (从 localePrefix 中提取，例如 /base/zh-CN -> zh-CN)
+          const localePart = localePrefix.replace(baseUrl, '').replace(/^\//, '');
+          if (!localePart) return;
+
+          // 修复所有内部链接
+          proseContent.querySelectorAll('a[href]').forEach(function(link) {
+            const href = link.getAttribute('href');
+            if (!href) return;
+
+            // 跳过外部链接、锚点链接、mailto、tel 等
+            if (href.startsWith('http://') ||
+                href.startsWith('https://') ||
+                href.startsWith('//') ||
+                href.startsWith('#') ||
+                href.startsWith('mailto:') ||
+                href.startsWith('tel:') ||
+                href.startsWith('data:')) {
+              return;
+            }
+
+            // 跳过已经包含 locale 前缀的链接
+            if (href.startsWith(localePrefix + '/') || href === localePrefix) {
+              return;
+            }
+
+            // 对于以 baseUrl 开头但没有 locale 的链接，添加 locale
+            if (baseUrl && href.startsWith(baseUrl + '/')) {
+              const pathAfterBase = href.slice(baseUrl.length);
+              // 检查是否已经有 locale 前缀
+              if (!pathAfterBase.startsWith('/' + localePart + '/') && pathAfterBase !== '/' + localePart) {
+                link.setAttribute('href', baseUrl + '/' + localePart + pathAfterBase);
+              }
+              return;
+            }
+
+            // 对于绝对路径链接 (以 / 开头)，添加 locale prefix
+            if (href.startsWith('/')) {
+              // 检查是否已经有 locale 前缀
+              if (!href.startsWith('/' + localePart + '/') && href !== '/' + localePart) {
+                link.setAttribute('href', localePrefix + href);
+              }
+            }
+          });
+        }
+
+        // 页面加载后执行
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', fixProseLinks);
+        } else {
+          fixProseLinks();
+        }
+
+        // 支持 Astro 视图过渡
+        document.addEventListener('astro:page-load', fixProseLinks);
+      })();
+    </script><!-- 文章底部 --><footer class="not-prose mt-16 pt-8 border-t border-slate-200 dark:border-slate-700"><!-- 分类信息 --><div class="mb-8"><h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4">Categories</h3><div class="flex flex-wrap gap-2"><a href="/categories/cloud-native" class="px-4 py-2 text-sm font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">Cloud Native</a><a href="/categories/container-orchestration" class="px-4 py-2 text-sm font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">Container Orchestration</a></div></div><!-- 更新时间 --></footer></article><nav class="mt-16 pt-8 border-t border-slate-200 dark:border-slate-700"><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><!-- 上一篇 --><div class="text-center md:text-left"><div class="text-sm text-slate-500 dark:text-slate-400 mb-2">Previous</div><a href="/posts/blog_docs_en/tools/kubernetes/k8s-006" class="group inline-flex items-center text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors"><svg class="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg><span class="line-clamp-1">Chapter 6: Helm Package Management</span></a></div><!-- 下一篇 --><div class="text-center md:text-right"><div class="text-sm text-slate-500 dark:text-slate-400 mb-2">Next</div><a href="/posts/blog_docs_en/tools/kubernetes/k8s-008" class="group inline-flex items-center justify-end text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors"><span class="line-clamp-1">Chapter 8: Security and RBAC</span><svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></a></div></div></nav> </div> </div>  </main> <footer class="bg-slate-50 dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 mt-auto w-full min-w-0"> <div class="container mx-auto px-4 py-6"> <div class="grid grid-cols-1 md:grid-cols-3 gap-6"> <div> <div class="flex items-center space-x-3 mb-3"> <img src="/images/avatar.svg" alt="My Astro Blog" class="w-8 h-8 rounded-full"> <div> <h3 class="text-base font-semibold text-slate-900 dark:text-slate-100"> My Astro Blog </h3> <p class="text-xs text-slate-600 dark:text-slate-400">  </p> </div> </div> </div> <div> <h4 class="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-3"> Quick Links </h4> <div class="flex flex-wrap gap-x-4 gap-y-1"> <a href="/" class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary-500 transition-colors"> Home </a><a href="/posts" class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary-500 transition-colors"> Posts </a><a href="/tags" class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary-500 transition-colors"> Tags </a><a href="/archives" class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary-500 transition-colors"> Archives </a><a href="/about" class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary-500 transition-colors"> About </a> </div> </div> <div> <h4 class="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-3"> Contact </h4> <div class="flex space-x-4">  <a href="/rss.xml" class="text-slate-600 dark:text-slate-400 hover:text-primary-500 transition-colors" aria-label="RSS Feed"> <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"> <path d="M3.429 2.486c9.36 0 16.943 7.583 16.943 16.943h-3.257c0-7.563-6.123-13.686-13.686-13.686V2.486zM3.429 9.114c5.647 0 10.229 4.581 10.229 10.229h-3.257c0-3.844-3.128-6.972-6.972-6.972V9.114zM6.686 16.486c0 1.8-1.457 3.257-3.257 3.257S0.172 18.286 0.172 16.486s1.457-3.257 3.257-3.257 3.257 1.457 3.257 3.257z"></path> </svg> </a> </div> </div> </div> <div class="border-t border-slate-200 dark:border-slate-700 pt-4 mt-6"> <div class="flex flex-col sm:flex-row justify-between items-center text-sm text-slate-600 dark:text-slate-400"> <p>© 2026 Author. All rights reserved.</p> <p class="mt-2 sm:mt-0">
+Powered by <a href="https://astro.build" class="link" target="_blank" rel="noopener noreferrer">Astro</a> </p> </div> </div> </div> </footer> <button class="back-to-top" aria-label="Back to Top" data-astro-cid-itptdd6o> <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-itptdd6o> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" data-astro-cid-itptdd6o></path> </svg> </button>  </div> <!-- Mermaid --> <script src="/js/mermaid-container.js"></script> <!-- Tabs --> <script src="/js/tabs-init.js"></script> <!-- Store i18n data for client-side scripts --> <script>(function(){const locale = "en";
+const uiTranslations = {"home":"Home","blog":"Blog","about":"About","search":"Search","posts":"Posts","postList":"All Posts","noPostsFound":"No posts found","readMore":"Read more","readingTime":"Reading time","minuteRead":"min","tags":"Tags","categories":"Categories","allTags":"All Tags","allCategories":"All Categories","taggedWith":"Tagged with","inCategory":"In category","archives":"Archives","postsInArchive":"posts","recentPosts":"Recent Posts","popularTags":"Popular Tags","friendLinks":"Friend Links","documentTree":"Document Tree","quickLinks":"Quick Links","contact":"Contact","searchPlaceholder":"Search posts, tags, content...","searchResults":"Search Results","noResults":"No results found","searching":"Searching...","searchArticles":"Search Articles","searchInAllArticles":"Find content that interests you in all articles","searchTips":"Search Tips","basicSearch":"Basic Search","advancedFeatures":"Advanced Features","searchTipKeyword":"Enter keywords to search titles and content","searchTipMixedLang":"Supports mixed language search","searchTipCaseInsensitive":"Case insensitive","searchTipRealtime":"Real-time search suggestions","searchTipFilter":"Filter by tags and categories","searchTipFuzzy":"Supports fuzzy matching","browsePosts":"Browse Posts","aboutMe":"About Me","previousPage":"Previous","nextPage":"Next","page":"Page","of":"of","publishedOn":"Published on","updatedOn":"Updated on","author":"Author","tableOfContents":"Table of Contents","readingProgress":"Reading Progress","relatedPosts":"Related Posts","sharePost":"Share","previousPost":"Previous","nextPost":"Next","backToTop":"Back to Top","copyCode":"Copy","copied":"Copied","expand":"Expand","collapse":"Collapse","expandCode":"Expand code","collapseCode":"Collapse code","lines":"lines","viewMode":"View Mode","cardView":"Card View","listView":"List View","sortBy":"Sort by","sortByDate":"Date","sortByTitle":"Title","filterByTag":"Filter by tag","filterByCategory":"Filter by category","clearFilter":"Clear filter","allPosts":"All Posts","draft":"Draft","slides":"Slides","slidesList":"All Slides","rssFeed":"RSS Feed","quickNavigation":"Quick Navigation","timeline":"Timeline","viewAllTimeline":"View all timeline","postsCount":"posts"};
+
+      window.__i18n = {
+        locale: locale,
+        ui: uiTranslations
+      };
+    })();</script> <script type="module" src="/assets/BaseLayout.astro_astro_type_script_index_0_lang.DBRPz_YQ.js"></script> </body> </html> <script type="module">function c(){const e=document.querySelector("[data-sidebar]"),o=document.querySelector("[data-sidebar-resizer]");if(!e||!o)return;const n=localStorage.getItem("sidebar-width");n&&e.style.setProperty("--sidebar-width",n);let s=!1,r=0,d=0;const u=t=>{s=!0,r=t.clientX,d=e.offsetWidth,e.style.transition="none",document.body.style.cursor="col-resize",document.body.style.userSelect="none",document.addEventListener("mousemove",i),document.addEventListener("mouseup",a)},i=t=>{if(!s)return;const l=t.clientX-r,m=Math.min(Math.max(d+l,200),500);e.style.setProperty("--sidebar-width",`${m}px`)},a=()=>{if(!s)return;s=!1,e.style.transition="",document.body.style.cursor="",document.body.style.userSelect="";const t=getComputedStyle(e).getPropertyValue("--sidebar-width");t&&localStorage.setItem("sidebar-width",t.trim()),document.removeEventListener("mousemove",i),document.removeEventListener("mouseup",a)};o.addEventListener("mousedown",u)}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",c):c();</script> 

@@ -1,0 +1,600 @@
+<!DOCTYPE html><html lang="en" dir="ltr" class="scroll-smooth"> <head><meta charset="UTF-8"><meta name="description" content><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/jpeg" href="/images/avatar.svg"><meta name="generator" content="Astro v5.16.15"><!-- SEO --><title>Chapter 2 3D Fundamentals and Coordinate Systems | My Astro Blog</title><link rel="canonical" href="https://example.com/posts/blog_docs_en/tools/blender/blender-002/"><!-- Alternate language links (hreflang) --><link rel="alternate" hreflang="en" href="https://example.com/posts/blog_docs_en/tools/blender/blender-002/"><link rel="alternate" hreflang="zh-CN" href="https://example.com/zh-CN/posts/blog_docs_en/tools/blender/blender-002/"><link rel="alternate" hreflang="x-default" href="https://example.com/posts/blog_docs_en/tools/blender/blender-002/"><!-- Open Graph --><meta property="og:type" content="website"><meta property="og:title" content="Chapter 2 3D Fundamentals and Coordinate Systems | My Astro Blog"><meta property="og:description" content><meta property="og:url" content="https://example.com/posts/blog_docs_en/tools/blender/blender-002/"><meta property="og:image" content="https://example.com/images/og-image.jpg"><meta property="og:site_name" content="My Astro Blog"><meta property="og:locale" content="en"><!-- Twitter --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Chapter 2 3D Fundamentals and Coordinate Systems | My Astro Blog"><meta name="twitter:description" content><meta name="twitter:image" content="https://example.com/images/og-image.jpg"><!-- RSS --><link rel="alternate" type="application/rss+xml" title="My Astro Blog" href="/rss.xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><!-- Font Awesome --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous"><!-- Material Icons --><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round"><!-- Bootstrap Icons --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"><!-- Remix Icon --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"><!-- KaTeX for LaTeX math rendering --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous"><!-- Ionicons --><script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script><script>
+      const theme = (() => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+          return 'light';
+        }
+        return 'dark';
+      })();
+
+      if (theme === 'light') {
+        document.documentElement.classList.remove('dark');
+      } else {
+        document.documentElement.classList.add('dark');
+      }
+      window.__theme = theme;
+    </script><link rel="stylesheet" href="/assets/_slug_.FoKD82eu.css">
+<style>.slides-back-btn{position:fixed;top:20px;left:20px;z-index:100;display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:#00000080;border-radius:50%;color:#fff;text-decoration:none;opacity:.6;transition:opacity .3s,transform .3s}.slides-back-btn:hover{opacity:1;transform:scale(1.1)}.reveal{font-family:Source Sans Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif}.reveal pre{width:100%;max-width:100%;box-shadow:0 4px 6px #0000004d}.reveal pre code{max-height:500px;padding:1em;font-size:.9em;line-height:1.5}.reveal table{margin:1em auto;border-collapse:collapse}.reveal table th,.reveal table td{padding:.5em 1em;border:1px solid rgba(255,255,255,.3)}.reveal table th{background:#ffffff1a;font-weight:700}.reveal ul,.reveal ol{text-align:left;display:inline-block}.reveal li{margin:.5em 0}.reveal a{text-decoration:underline;text-decoration-style:dotted}.reveal a:hover{text-decoration-style:solid}.reveal blockquote{width:90%;padding:1em;font-style:italic;background:#ffffff0d;border-left:4px solid currentColor;text-align:left}.reveal .columns{display:flex;gap:2em}.reveal .columns>*{flex:1}.reveal .slides section{transition:all .4s ease}.reveal.overview .slides section.present{outline:4px solid #42affa!important;outline-offset:4px;box-shadow:0 0 30px #42affa99,0 0 60px #42affa4d!important}.reveal.overview .slides section:not(.present){opacity:.6}.reveal.overview .slides section:not(.present):hover{opacity:.9}.reveal .progress{height:4px}.reveal .controls{bottom:30px}.reveal .speaker-notes-link{position:fixed;bottom:20px;right:20px;z-index:100;padding:8px 16px;background:#0009;color:#fff;border-radius:4px;font-size:12px;opacity:.4;transition:opacity .3s}.reveal .speaker-notes-link:hover{opacity:1}.reveal .mermaid{background:#fffffff2;padding:1em;border-radius:8px}.reveal .katex{font-size:1.1em}.reveal .katex-display{margin:1em 0}.reveal .fragment.fade-in-then-out{opacity:0;visibility:hidden}.reveal .fragment.fade-in-then-out.visible,.reveal .fragment.fade-in-then-out.current-fragment{opacity:1;visibility:visible}.reveal .highlight{background:linear-gradient(120deg,#ffff004d 0% 100%);padding:.1em .3em;border-radius:3px}@media(max-width:768px){.slides-back-btn{width:36px;height:36px;top:10px;left:10px}.reveal pre code{font-size:.7em}.reveal h1{font-size:1.8em}.reveal h2{font-size:1.4em}}@media print{.slides-back-btn{display:none}}.reveal[data-astro-cid-4ckbqlo5] .mermaid[data-astro-cid-4ckbqlo5]{background:#fffffff2;padding:1em;border-radius:8px}.reveal[data-astro-cid-4ckbqlo5] .echarts-container[data-astro-cid-4ckbqlo5]{width:100%;height:400px;margin:0 auto}.reveal[data-astro-cid-4ckbqlo5] pre[data-astro-cid-4ckbqlo5] code[data-astro-cid-4ckbqlo5].language-mermaid,.reveal[data-astro-cid-4ckbqlo5] pre[data-astro-cid-4ckbqlo5] code[data-astro-cid-4ckbqlo5].language-echarts{display:none}
+.line-clamp-2[data-v-86db9372]{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.line-clamp-1[data-v-e198c78d]{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.fade-enter-active[data-v-79f513eb],.fade-leave-active[data-v-79f513eb]{transition:opacity .2s ease}.fade-enter-from[data-v-79f513eb],.fade-leave-to[data-v-79f513eb]{opacity:0}.line-clamp-2[data-v-79f513eb]{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.fade-enter-active[data-v-ff2820af],.fade-leave-active[data-v-ff2820af]{transition:opacity .2s ease}.fade-enter-from[data-v-ff2820af],.fade-leave-to[data-v-ff2820af]{opacity:0}.rotate-enter-active[data-v-5f49d689],.rotate-leave-active[data-v-5f49d689]{transition:transform .2s ease}.rotate-enter-from[data-v-5f49d689],.rotate-leave-to[data-v-5f49d689]{transform:rotate(90deg)}.mobile-menu-overlay{position:fixed;inset:0;background-color:#00000080;z-index:99998}.mobile-menu-panel{position:fixed;top:0;right:0;height:100%;width:20rem;max-width:80vw;background-color:#fff;box-shadow:-4px 0 20px #00000026;z-index:99999;overflow-y:auto}.dark .mobile-menu-panel{background-color:#0f172a}.fade-enter-active,.fade-leave-active{transition:opacity .3s ease}.fade-enter-from,.fade-leave-to{opacity:0}.slide-enter-active,.slide-leave-active{transition:transform .3s ease}.slide-enter-from,.slide-leave-to{transform:translate(100%)}
+</style></head> <body class="min-h-screen w-full overflow-x-hidden"> <div id="app" class="flex flex-col min-h-screen w-full min-w-0">  <header class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border-b border-slate-200 dark:border-slate-700"> <div class="container mx-auto px-4"> <nav class="flex items-center justify-between h-16"> <div class="flex items-center space-x-4"> <a href="/" class="flex items-center space-x-3 hover:opacity-80 transition-opacity"> <img src="/images/avatar.svg" alt="My Astro Blog" class="w-8 h-8 rounded-full"> <div class="hidden sm:block"> <h1 class="text-xl font-bold text-slate-900 dark:text-slate-100"> My Astro Blog </h1>  </div> </a> </div> <div class="hidden md:flex items-center space-x-8"> <a href="/" class="text-sm font-medium transition-colors hover:text-primary-500 text-slate-700 dark:text-slate-300"> Home </a><a href="/posts/blog_docs_en/math" class="text-sm font-medium transition-colors hover:text-primary-500 text-slate-700 dark:text-slate-300"> Math </a><a href="/posts/blog_docs_en/tools" class="text-sm font-medium transition-colors hover:text-primary-500 text-primary-500"> Tools </a><a href="/posts/blog_docs_en/qt-model" class="text-sm font-medium transition-colors hover:text-primary-500 text-slate-700 dark:text-slate-300"> QT Model </a><a href="/posts/blog_docs_en/techniques" class="text-sm font-medium transition-colors hover:text-primary-500 text-slate-700 dark:text-slate-300"> Technology </a><a href="https://jet-w.github.io/jet-w.astro-blog/" class="text-sm font-medium transition-colors hover:text-primary-500 text-slate-700 dark:text-slate-300"> Jet-w Astro Blog </a><a href="/about" class="text-sm font-medium transition-colors hover:text-primary-500 text-slate-700 dark:text-slate-300"> About </a> </div> <div class="flex items-center"> <div class="hidden sm:block mr-2"> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();</script><script>(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="ZQMAIL" prefix="s2" component-url="/assets/SearchBox.DjHiC6Tu.js" component-export="default" renderer-url="/assets/client.Dd1xdfK6.js" props="{&quot;placeholder&quot;:[0,&quot;Search posts, tags, content...&quot;],&quot;searchLabel&quot;:[0,&quot;Search&quot;],&quot;noResultsText&quot;:[0,&quot;No results found&quot;]}" ssr client="load" opts="{&quot;name&quot;:&quot;SearchBox&quot;,&quot;value&quot;:true}" await-children><div class="relative" data-v-79f513eb><div class="relative" data-v-79f513eb><input value="" type="text" placeholder="Search posts, tags, content..." class="w-64 pl-10 pr-4 py-2 text-sm bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors" data-v-79f513eb><div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none" data-v-79f513eb><svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-v-79f513eb><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" data-v-79f513eb></path></svg></div></div><!----></div><!--astro:end--></astro-island> </div> <div class="hidden sm:block mr-2"> <astro-island uid="Z1fD1KT" prefix="s3" component-url="/assets/LanguageSwitcher.D85ccgBj.js" component-export="default" renderer-url="/assets/client.Dd1xdfK6.js" props="{&quot;locales&quot;:[1,[[0,{&quot;code&quot;:[0,&quot;en&quot;],&quot;name&quot;:[0,&quot;English&quot;]}],[0,{&quot;code&quot;:[0,&quot;zh-CN&quot;],&quot;name&quot;:[0,&quot;中文&quot;]}]]],&quot;currentLocale&quot;:[0,&quot;en&quot;],&quot;currentPath&quot;:[0,&quot;/posts/blog_docs_en/tools/blender/blender-002/&quot;],&quot;defaultLocale&quot;:[0,&quot;en&quot;],&quot;prefixDefaultLocale&quot;:[0,false],&quot;base&quot;:[0,&quot;/&quot;]}" ssr client="load" opts="{&quot;name&quot;:&quot;LanguageSwitcher&quot;,&quot;value&quot;:true}" await-children><div class="relative"><button class="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg transition-colors" aria-expanded="false" aria-haspopup="listbox" aria-label="Select language, current: English"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path></svg><span>English</span><svg class="w-3 h-3 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><!----></div><!--astro:end--></astro-island> </div> <div class="hidden sm:block mr-2"> <astro-island uid="Z2wdsuJ" prefix="s4" component-url="/assets/ThemeToggle.DkS-mWmH.js" component-export="default" renderer-url="/assets/client.Dd1xdfK6.js" props="{}" ssr client="load" opts="{&quot;name&quot;:&quot;ThemeToggle&quot;,&quot;value&quot;:true}" await-children><button class="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition-colors" aria-label="切换到深色模式" data-v-ff2820af><svg class="w-5 h-5 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-v-ff2820af><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" data-v-ff2820af></path></svg></button><!--astro:end--></astro-island> </div> <div class="md:hidden"> <astro-island uid="1pGpUL" prefix="s5" component-url="/assets/MobileMenu.neuVqFF7.js" component-export="default" renderer-url="/assets/client.Dd1xdfK6.js" props="{&quot;navigation&quot;:[1,[[0,{&quot;name&quot;:[0,&quot;Home&quot;],&quot;href&quot;:[0,&quot;/&quot;],&quot;icon&quot;:[0,&quot;home&quot;]}],[0,{&quot;name&quot;:[0,&quot;Math&quot;],&quot;href&quot;:[0,&quot;/posts/blog_docs_en/math&quot;],&quot;icon&quot;:[0,&quot;posts&quot;]}],[0,{&quot;name&quot;:[0,&quot;Tools&quot;],&quot;href&quot;:[0,&quot;/posts/blog_docs_en/tools&quot;],&quot;icon&quot;:[0,&quot;categories&quot;]}],[0,{&quot;name&quot;:[0,&quot;QT Model&quot;],&quot;href&quot;:[0,&quot;/posts/blog_docs_en/qt-model&quot;],&quot;icon&quot;:[0,&quot;archives&quot;]}],[0,{&quot;name&quot;:[0,&quot;Technology&quot;],&quot;href&quot;:[0,&quot;/posts/blog_docs_en/techniques&quot;],&quot;icon&quot;:[0,&quot;archives&quot;]}],[0,{&quot;name&quot;:[0,&quot;Jet-w Astro Blog&quot;],&quot;href&quot;:[0,&quot;https://jet-w.github.io/jet-w.astro-blog/&quot;],&quot;icon&quot;:[0,&quot;archives&quot;]}],[0,{&quot;name&quot;:[0,&quot;About&quot;],&quot;href&quot;:[0,&quot;/about&quot;],&quot;icon&quot;:[0,&quot;about&quot;]}]]],&quot;base&quot;:[0,&quot;/&quot;]}" ssr client="load" opts="{&quot;name&quot;:&quot;MobileMenu&quot;,&quot;value&quot;:true}" await-children><div data-v-5f49d689><button class="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition-colors" aria-label="菜单" data-v-5f49d689><svg class="w-5 h-5 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-v-5f49d689><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" data-v-5f49d689></path></svg></button><!----></div><!--astro:end--></astro-island> </div> </div> </nav> </div> </header> <main class="flex-1 flex w-full min-w-0" data-astro-cid-itptdd6o> <aside class="hidden lg:block shrink-0 transition-all duration-300 relative" data-sidebar style="width: var(--sidebar-width, 256px);" data-astro-cid-itptdd6o> <div class="sticky top-20 h-[calc(100vh-5rem)] overflow-y-auto" data-astro-cid-itptdd6o> <div class="space-y-8 p-6" data-astro-cid-mkqzmhch>    <section data-astro-cid-mkqzmhch> <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4 border-b border-slate-200 dark:border-slate-700 pb-2" data-astro-cid-mkqzmhch> Recent Posts </h3> <div class="space-y-3" data-astro-cid-mkqzmhch> <article class="group" data-astro-cid-mkqzmhch> <a href="/posts/blog_docs_en/tools/argo/readme" class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" data-astro-cid-mkqzmhch> <h4 class="text-sm font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-500 line-clamp-2 mb-1" data-astro-cid-mkqzmhch> Argo Tutorial Series </h4> <time class="text-xs text-slate-500 dark:text-slate-400" data-astro-cid-mkqzmhch> January 11, 2026 </time> </a> </article><article class="group" data-astro-cid-mkqzmhch> <a href="/posts/blog_docs_en/tools/argo/argo-001" class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" data-astro-cid-mkqzmhch> <h4 class="text-sm font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-500 line-clamp-2 mb-1" data-astro-cid-mkqzmhch> Chapter 1: Argo Introduction and Environment Setup </h4> <time class="text-xs text-slate-500 dark:text-slate-400" data-astro-cid-mkqzmhch> January 11, 2026 </time> </a> </article><article class="group" data-astro-cid-mkqzmhch> <a href="/posts/blog_docs_en/tools/argo/argo-002" class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" data-astro-cid-mkqzmhch> <h4 class="text-sm font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-500 line-clamp-2 mb-1" data-astro-cid-mkqzmhch> Chapter 2: Argo CD Getting Started </h4> <time class="text-xs text-slate-500 dark:text-slate-400" data-astro-cid-mkqzmhch> January 11, 2026 </time> </a> </article><article class="group" data-astro-cid-mkqzmhch> <a href="/posts/blog_docs_en/tools/argo/argo-003" class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" data-astro-cid-mkqzmhch> <h4 class="text-sm font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-500 line-clamp-2 mb-1" data-astro-cid-mkqzmhch> Chapter 3: Argo CD Advanced Configuration </h4> <time class="text-xs text-slate-500 dark:text-slate-400" data-astro-cid-mkqzmhch> January 11, 2026 </time> </a> </article><article class="group" data-astro-cid-mkqzmhch> <a href="/posts/blog_docs_en/tools/argo/argo-004" class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" data-astro-cid-mkqzmhch> <h4 class="text-sm font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-500 line-clamp-2 mb-1" data-astro-cid-mkqzmhch> Chapter 4: Argo Workflows Fundamentals </h4> <time class="text-xs text-slate-500 dark:text-slate-400" data-astro-cid-mkqzmhch> January 11, 2026 </time> </a> </article> </div> </section>  <section data-astro-cid-mkqzmhch> <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4 border-b border-slate-200 dark:border-slate-700 pb-2" data-astro-cid-mkqzmhch> Popular Tags </h3> <div class="flex flex-wrap gap-2" data-astro-cid-mkqzmhch> <a href="/tags/argo" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 13px" data-astro-cid-mkqzmhch> Argo <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(6)</span> </a><a href="/tags/kubernetes" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 13px" data-astro-cid-mkqzmhch> Kubernetes <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(6)</span> </a><a href="/tags/best-practices" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 12px" data-astro-cid-mkqzmhch> Best Practices <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(4)</span> </a><a href="/tags/media" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 11.5px" data-astro-cid-mkqzmhch> media <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(3)</span> </a><a href="/tags/astro" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 11.5px" data-astro-cid-mkqzmhch> Astro <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(3)</span> </a><a href="/tags/blog" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 11.5px" data-astro-cid-mkqzmhch> Blog <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(3)</span> </a><a href="/tags/cicd" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 11.5px" data-astro-cid-mkqzmhch> CICD <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(3)</span> </a><a href="/tags/blog" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 11px" data-astro-cid-mkqzmhch> blog <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(2)</span> </a> </div> </section>  <section data-astro-cid-mkqzmhch> <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4 border-b border-slate-200 dark:border-slate-700 pb-2" data-astro-cid-mkqzmhch> Archives </h3> <div class="space-y-2" data-astro-cid-mkqzmhch> <a href="/archives/2026/01" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> January 2026 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 15 </span> </a><a href="/archives/2025/09" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> September 2025 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 142 </span> </a><a href="/archives/2025/12" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> December 2025 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 31 </span> </a><a href="/archives/2025/10" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> October 2025 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 96 </span> </a><a href="/archives/2025/01" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> January 2025 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 7 </span> </a><a href="/archives/2024/12" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> December 2024 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 14 </span> </a> </div> </section>  <section data-astro-cid-mkqzmhch> <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4 border-b border-slate-200 dark:border-slate-700 pb-2" data-astro-cid-mkqzmhch> Friend Links </h3> <div class="space-y-2" data-astro-cid-mkqzmhch> <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch>  <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> Astro 官网 </span> </a><a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch>  <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> Tailwind CSS </span> </a><a href="https://vuejs.org" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch>  <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> Vue.js </span> </a> </div> </section> </div>  <script type="module">function c(){document.querySelectorAll(".tree-folder-toggle").forEach(e=>{e.addEventListener("click",()=>{const s=e.nextElementSibling,l=e.classList.toggle("expanded");s&&s.classList.contains("tree-children")&&s.classList.toggle("show",l)})});const o=window.location.pathname.replace(/\/$/,"");document.querySelectorAll(".tree-file").forEach(e=>{const s=e.getAttribute("href")?.replace(/\/$/,"");if(s&&o===s){e.classList.add("active");let l=e.closest(".tree-children");for(;l;){l.classList.add("show");const t=l.previousElementSibling;t&&t.classList.contains("tree-folder-toggle")&&t.classList.add("expanded"),l=l.parentElement?.closest(".tree-children")||null}}}),document.querySelectorAll(".doc-tree").forEach(e=>{const s=e.getAttribute("data-collapsed")==="true";e.querySelectorAll(".tree-folder-toggle").forEach(t=>{const r=t.getAttribute("data-default-collapsed")==="true",a=t.closest(".tree-children")===null||t.closest("ul")?.parentElement?.classList.contains("doc-tree");if(!t.classList.contains("expanded")&&!(s||r)&&a){const n=t.nextElementSibling;n&&n.classList.contains("tree-children")&&(n.classList.add("show"),t.classList.add("expanded"))}})})}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",c):c();document.addEventListener("astro:page-load",c);</script> </div> <div class="absolute top-0 right-0 w-1 h-full cursor-col-resize group z-10" data-sidebar-resizer data-astro-cid-itptdd6o> <div class="absolute top-0 right-0 w-4 h-full -mr-2 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity" data-astro-cid-itptdd6o> <div class="w-1 h-16 bg-primary-400 dark:bg-primary-500 rounded-full" data-astro-cid-itptdd6o></div> </div> </div> </aside> <div class="lg:hidden fixed inset-0 bg-black/50 z-40 hidden" data-sidebar-overlay onclick="this.classList.add('hidden'); document.querySelector('[data-mobile-sidebar]').classList.add('-translate-x-full');" data-astro-cid-itptdd6o></div> <aside class="lg:hidden fixed top-16 left-0 w-72 h-[calc(100vh-4rem)] bg-white dark:bg-slate-900 z-50 transform -translate-x-full transition-transform duration-300 shadow-xl overflow-y-auto" data-mobile-sidebar data-astro-cid-itptdd6o> <div class="p-4" data-astro-cid-itptdd6o> <div class="space-y-8 p-6" data-astro-cid-mkqzmhch>    <section data-astro-cid-mkqzmhch> <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4 border-b border-slate-200 dark:border-slate-700 pb-2" data-astro-cid-mkqzmhch> Recent Posts </h3> <div class="space-y-3" data-astro-cid-mkqzmhch> <article class="group" data-astro-cid-mkqzmhch> <a href="/posts/blog_docs_en/tools/argo/readme" class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" data-astro-cid-mkqzmhch> <h4 class="text-sm font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-500 line-clamp-2 mb-1" data-astro-cid-mkqzmhch> Argo Tutorial Series </h4> <time class="text-xs text-slate-500 dark:text-slate-400" data-astro-cid-mkqzmhch> January 11, 2026 </time> </a> </article><article class="group" data-astro-cid-mkqzmhch> <a href="/posts/blog_docs_en/tools/argo/argo-001" class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" data-astro-cid-mkqzmhch> <h4 class="text-sm font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-500 line-clamp-2 mb-1" data-astro-cid-mkqzmhch> Chapter 1: Argo Introduction and Environment Setup </h4> <time class="text-xs text-slate-500 dark:text-slate-400" data-astro-cid-mkqzmhch> January 11, 2026 </time> </a> </article><article class="group" data-astro-cid-mkqzmhch> <a href="/posts/blog_docs_en/tools/argo/argo-002" class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" data-astro-cid-mkqzmhch> <h4 class="text-sm font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-500 line-clamp-2 mb-1" data-astro-cid-mkqzmhch> Chapter 2: Argo CD Getting Started </h4> <time class="text-xs text-slate-500 dark:text-slate-400" data-astro-cid-mkqzmhch> January 11, 2026 </time> </a> </article><article class="group" data-astro-cid-mkqzmhch> <a href="/posts/blog_docs_en/tools/argo/argo-003" class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" data-astro-cid-mkqzmhch> <h4 class="text-sm font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-500 line-clamp-2 mb-1" data-astro-cid-mkqzmhch> Chapter 3: Argo CD Advanced Configuration </h4> <time class="text-xs text-slate-500 dark:text-slate-400" data-astro-cid-mkqzmhch> January 11, 2026 </time> </a> </article><article class="group" data-astro-cid-mkqzmhch> <a href="/posts/blog_docs_en/tools/argo/argo-004" class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" data-astro-cid-mkqzmhch> <h4 class="text-sm font-medium text-slate-900 dark:text-slate-100 group-hover:text-primary-500 line-clamp-2 mb-1" data-astro-cid-mkqzmhch> Chapter 4: Argo Workflows Fundamentals </h4> <time class="text-xs text-slate-500 dark:text-slate-400" data-astro-cid-mkqzmhch> January 11, 2026 </time> </a> </article> </div> </section>  <section data-astro-cid-mkqzmhch> <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4 border-b border-slate-200 dark:border-slate-700 pb-2" data-astro-cid-mkqzmhch> Popular Tags </h3> <div class="flex flex-wrap gap-2" data-astro-cid-mkqzmhch> <a href="/tags/argo" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 13px" data-astro-cid-mkqzmhch> Argo <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(6)</span> </a><a href="/tags/kubernetes" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 13px" data-astro-cid-mkqzmhch> Kubernetes <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(6)</span> </a><a href="/tags/best-practices" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 12px" data-astro-cid-mkqzmhch> Best Practices <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(4)</span> </a><a href="/tags/media" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 11.5px" data-astro-cid-mkqzmhch> media <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(3)</span> </a><a href="/tags/astro" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 11.5px" data-astro-cid-mkqzmhch> Astro <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(3)</span> </a><a href="/tags/blog" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 11.5px" data-astro-cid-mkqzmhch> Blog <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(3)</span> </a><a href="/tags/cicd" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 11.5px" data-astro-cid-mkqzmhch> CICD <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(3)</span> </a><a href="/tags/blog" class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors" style="font-size: 11px" data-astro-cid-mkqzmhch> blog <span class="ml-1 text-primary-500" data-astro-cid-mkqzmhch>(2)</span> </a> </div> </section>  <section data-astro-cid-mkqzmhch> <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4 border-b border-slate-200 dark:border-slate-700 pb-2" data-astro-cid-mkqzmhch> Archives </h3> <div class="space-y-2" data-astro-cid-mkqzmhch> <a href="/archives/2026/01" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> January 2026 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 15 </span> </a><a href="/archives/2025/09" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> September 2025 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 142 </span> </a><a href="/archives/2025/12" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> December 2025 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 31 </span> </a><a href="/archives/2025/10" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> October 2025 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 96 </span> </a><a href="/archives/2025/01" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> January 2025 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 7 </span> </a><a href="/archives/2024/12" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch> <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> December 2024 </span> <span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full" data-astro-cid-mkqzmhch> 14 </span> </a> </div> </section>  <section data-astro-cid-mkqzmhch> <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4 border-b border-slate-200 dark:border-slate-700 pb-2" data-astro-cid-mkqzmhch> Friend Links </h3> <div class="space-y-2" data-astro-cid-mkqzmhch> <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch>  <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> Astro 官网 </span> </a><a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch>  <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> Tailwind CSS </span> </a><a href="https://vuejs.org" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" data-astro-cid-mkqzmhch>  <span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary-500" data-astro-cid-mkqzmhch> Vue.js </span> </a> </div> </section> </div>   </div> </aside> <div class="flex-1 transition-all duration-300 lg:px-8  relative" data-main-content data-astro-cid-itptdd6o> <div class="hidden lg:block fixed top-20 left-1 z-40 transition-all duration-300" data-sidebar-toggle data-astro-cid-itptdd6o> <astro-island uid="QK3WN" prefix="s1" component-url="/assets/SidebarToggle.CI_vXnEy.js" component-export="default" renderer-url="/assets/client.Dd1xdfK6.js" props="{&quot;data-astro-cid-itptdd6o&quot;:[0,true]}" ssr client="load" opts="{&quot;name&quot;:&quot;SidebarToggle&quot;,&quot;value&quot;:true}" await-children><button title="隐藏侧边栏" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-600 hover:text-primary-500 dark:text-slate-400 dark:hover:text-primary-400" data-astro-cid-itptdd6o="true"><svg class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7"></path></svg></button><!--astro:end--></astro-island> </div> <button class="lg:hidden fixed bottom-20 left-4 z-40 p-3 bg-primary-500 hover:bg-primary-600 text-white rounded-full shadow-lg transition-colors" data-mobile-sidebar-toggle aria-label="Document Tree" onclick="document.querySelector('[data-sidebar-overlay]').classList.remove('hidden'); document.querySelector('[data-mobile-sidebar]').classList.remove('-translate-x-full');" data-astro-cid-itptdd6o> <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-itptdd6o> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" data-astro-cid-itptdd6o></path> </svg> </button> <div class="container mx-auto px-4 py-8 max-w-4xl" data-astro-cid-itptdd6o> <nav class="flex items-center flex-wrap gap-y-1 text-sm text-slate-600 dark:text-slate-400 mb-8"><a href="/" class="hover:text-primary-500 transition-colors">Home</a><svg class="w-4 h-4 mx-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg><a href="/posts/blog_docs_en" class="hover:text-primary-500 transition-colors">English</a><svg class="w-4 h-4 mx-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg><a href="/posts/blog_docs_en/tools" class="hover:text-primary-500 transition-colors">Tools</a><svg class="w-4 h-4 mx-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg><a href="/posts/blog_docs_en/tools/blender" class="hover:text-primary-500 transition-colors">Blender</a><svg class="w-4 h-4 mx-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg><span class="text-slate-900 dark:text-slate-100 truncate max-w-xs">Chapter 2 3D Fundamentals and Coordinate Systems</span></nav><astro-island uid="Z1AYjUS" prefix="s0" component-url="/assets/FloatingToc.BMxSzaMf.js" component-export="default" renderer-url="/assets/client.Dd1xdfK6.js" props="{&quot;tocTitle&quot;:[0,&quot;Table of Contents&quot;],&quot;progressTitle&quot;:[0,&quot;Reading Progress&quot;]}" ssr client="load" opts="{&quot;name&quot;:&quot;FloatingToc&quot;,&quot;value&quot;:true}" await-children><div class="fixed top-24 right-4 z-40" data-v-86db9372><div class="relative" data-v-86db9372><button class="p-3 bg-white dark:bg-slate-800 rounded-full shadow-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors" aria-label="Table of Contents" data-v-86db9372><svg class="w-5 h-5 text-slate-600 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-v-86db9372><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" data-v-86db9372></path></svg></button><!----></div></div><!--astro:end--></astro-island><article class="prose prose-slate dark:prose-invert max-w-none"><!-- 标题区域 --><header class="not-prose mb-12"><div class="text-center"><h1 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-6 leading-tight">Chapter 2 3D Fundamentals and Coordinate Systems</h1><p class="text-xl text-slate-600 dark:text-slate-400 mb-8 max-w-3xl mx-auto"></p><!-- 文章元信息 --><div class="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-500 dark:text-slate-400"><div class="flex items-center space-x-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg><span>作者</span></div><div class="flex items-center space-x-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg><time datetime="2024-01-02T00:00:00.000Z">2024年1月2日</time></div><div class="flex items-center space-x-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>13min</span></div></div><!-- 标签 --><div class="flex flex-wrap justify-center gap-2 mt-6"><a href="/tags/coordinate-systems" class="px-3 py-1 text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors">
+#Coordinate Systems</a><a href="/tags/3d-space" class="px-3 py-1 text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors">
+#3D Space</a><a href="/tags/transform-operations" class="px-3 py-1 text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full hover:bg-primary-200 dark:hover:bg-primary-900/50 transition-colors">
+#Transform Operations</a></div></div><!-- 封面图片 --></header><!-- 文章内容 --><div class="prose prose-slate dark:prose-invert max-w-none prose-lg" data-prose-content data-locale-prefix data-base-url="/"><h1 id="chapter-2-3d-fundamentals-and-coordinate-systems">Chapter 2 3D Fundamentals and Coordinate Systems</h1>
+<div class="container-tip custom-container" data-container-type="tip">
+<div class="container-title">Learning Objectives</div>
+<div class="container-content">
+<ul>
+<li>Understand 3D space coordinate systems</li>
+<li>Master object transformation operations (move, rotate, scale)</li>
+<li>Learn object selection and edit modes</li>
+<li>Understand local vs global coordinate systems</li>
+<li>Master precision modeling tools and alignment features</li>
+</ul>
+</div>
+</div>
+<h2 id="detailed-knowledge-points">Detailed Knowledge Points</h2>
+<h3 id="21-3d-space-coordinate-system">2.1 3D Space Coordinate System</h3>
+<h4 id="211-cartesian-coordinate-system">2.1.1 Cartesian Coordinate System</h4>
+<p>In 3D space, we use a three-dimensional Cartesian coordinate system to position objects:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Y axis (green)</span></span>
+<span class="line"><span>↑</span></span>
+<span class="line"><span>│</span></span>
+<span class="line"><span>│</span></span>
+<span class="line"><span>└────→ X axis (red)</span></span>
+<span class="line"><span>/</span></span>
+<span class="line"><span>/</span></span>
+<span class="line"><span>Z axis (blue)</span></span></code></pre>
+<p><strong>Axis Description:</strong></p>
+<ul>
+<li><strong>X axis (red)</strong>: Left-right direction, positive direction to the right</li>
+<li><strong>Y axis (green)</strong>: Front-back direction, positive direction forward</li>
+<li><strong>Z axis (blue)</strong>: Up-down direction, positive direction upward</li>
+</ul>
+<div class="container-note custom-container" data-container-type="note">
+<div class="container-title">Blender Coordinate System Characteristics</div>
+<div class="container-content">
+<ul>
+<li>Blender uses a right-handed coordinate system</li>
+<li>Z axis is the up direction (differs from some software using Y axis as up)</li>
+<li>Origin (0, 0, 0) is located at the scene center</li>
+</ul>
+</div>
+</div>
+<h4 id="212-coordinate-system-types">2.1.2 Coordinate System Types</h4>
+<p><strong>Global Coordinate System:</strong></p>
+<ul>
+<li>Fixed world coordinate system</li>
+<li>All objects are positioned relative to this system</li>
+<li>Axis directions never change</li>
+</ul>
+<p><strong>Local Coordinate System:</strong></p>
+<ul>
+<li>Each object has its own coordinate system</li>
+<li>Changes direction as object rotates</li>
+<li>Convenient for operations relative to the object itself</li>
+</ul>
+<p><strong>View Coordinate System:</strong></p>
+<ul>
+<li>Coordinate system relative to the current view</li>
+<li>Changes as viewport rotates</li>
+<li>Convenient for operations from current viewing angle</li>
+</ul>
+<h3 id="22-basic-transform-operations">2.2 Basic Transform Operations</h3>
+<h4 id="221-move-operation-grabmove">2.2.1 Move Operation (Grab/Move)</h4>
+<p><strong>Basic Move:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#E1E4E8">G         </span><span style="color:#6A737D"># Activate move tool, follows mouse</span></span>
+<span class="line"><span style="color:#E1E4E8">G </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> X     </span><span style="color:#6A737D"># Constrain to X axis movement</span></span>
+<span class="line"><span style="color:#E1E4E8">G </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> Y     </span><span style="color:#6A737D"># Constrain to Y axis movement</span></span>
+<span class="line"><span style="color:#E1E4E8">G </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> Z     </span><span style="color:#6A737D"># Constrain to Z axis movement</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Precise movement</span></span>
+<span class="line"><span style="color:#E1E4E8">G </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> X </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 2</span><span style="color:#6A737D">   # Move 2 units along X axis</span></span>
+<span class="line"><span style="color:#E1E4E8">G </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> Y </span><span style="color:#F97583">+</span><span style="color:#F97583"> -</span><span style="color:#79B8FF">1</span><span style="color:#6A737D">  # Move 1 unit in negative Y direction</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Planar movement (exclude an axis)</span></span>
+<span class="line"><span style="color:#E1E4E8">G </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> Shift </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> Z  </span><span style="color:#6A737D"># Move in XY plane (exclude Z axis)</span></span>
+<span class="line"><span style="color:#E1E4E8">G </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> Shift </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> X  </span><span style="color:#6A737D"># Move in YZ plane (exclude X axis)</span></span></code></pre>
+<p><strong>Move Practice Example:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Create a simple scene layout</span></span>
+<span class="line"><span style="color:#6A737D"># 1. Keep default cube at origin</span></span>
+<span class="line"><span style="color:#6A737D"># 2. Add sphere: Shift + A → Mesh → UV Sphere</span></span>
+<span class="line"><span style="color:#6A737D"># 3. Move sphere: G + X + 3 (move 3 units to the right)</span></span>
+<span class="line"><span style="color:#6A737D"># 4. Add cylinder: Shift + A → Mesh → Cylinder</span></span>
+<span class="line"><span style="color:#6A737D"># 5. Move cylinder: G + Y + 3 (move 3 units forward)</span></span></code></pre>
+<h4 id="222-rotate-operation">2.2.2 Rotate Operation</h4>
+<p><strong>Basic Rotation:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#E1E4E8">R         </span><span style="color:#6A737D"># Activate rotation tool</span></span>
+<span class="line"><span style="color:#E1E4E8">R </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> X     </span><span style="color:#6A737D"># Rotate around X axis</span></span>
+<span class="line"><span style="color:#E1E4E8">R </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> Y     </span><span style="color:#6A737D"># Rotate around Y axis</span></span>
+<span class="line"><span style="color:#E1E4E8">R </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> Z     </span><span style="color:#6A737D"># Rotate around Z axis</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Precise rotation</span></span>
+<span class="line"><span style="color:#E1E4E8">R </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> Z </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 45</span><span style="color:#6A737D">  # Rotate 45 degrees around Z axis</span></span>
+<span class="line"><span style="color:#E1E4E8">R </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> X </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 90</span><span style="color:#6A737D">  # Rotate 90 degrees around X axis</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Incremental rotation</span></span>
+<span class="line"><span style="color:#E1E4E8">R </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> R       </span><span style="color:#6A737D"># Repeat rotation by previous angle</span></span></code></pre>
+<p><strong>Rotation Pivot:</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Pivot Point</th><th>Shortcut</th><th>Description</th></tr></thead><tbody><tr><td>Bounding Box Center</td><td>. (period)</td><td>Geometric center of selected object</td></tr><tr><td>3D Cursor</td><td>Shift + .</td><td>Use 3D cursor as rotation center</td></tr><tr><td>Individual Origins</td><td>Ctrl + .</td><td>Each rotates around own origin when multiple selected</td></tr><tr><td>Active Element</td><td>Alt + .</td><td>Use last selected object as center</td></tr></tbody></table>
+<h4 id="223-scale-operation">2.2.3 Scale Operation</h4>
+<p><strong>Basic Scale:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#E1E4E8">S         </span><span style="color:#6A737D"># Uniform scale</span></span>
+<span class="line"><span style="color:#E1E4E8">S </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> X     </span><span style="color:#6A737D"># Scale along X axis</span></span>
+<span class="line"><span style="color:#E1E4E8">S </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> Y     </span><span style="color:#6A737D"># Scale along Y axis</span></span>
+<span class="line"><span style="color:#E1E4E8">S </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> Z     </span><span style="color:#6A737D"># Scale along Z axis</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Precise scale</span></span>
+<span class="line"><span style="color:#E1E4E8">S </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 2</span><span style="color:#6A737D">     # Scale 2x larger</span></span>
+<span class="line"><span style="color:#E1E4E8">S </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 0.5</span><span style="color:#6A737D">   # Scale to half size</span></span>
+<span class="line"><span style="color:#E1E4E8">S </span><span style="color:#F97583">+</span><span style="color:#F97583"> -</span><span style="color:#79B8FF">1</span><span style="color:#6A737D">    # Mirror flip</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Non-uniform scale</span></span>
+<span class="line"><span style="color:#E1E4E8">S </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> Shift </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> Z  </span><span style="color:#6A737D"># Scale in XY plane (doesn't affect Z)</span></span></code></pre>
+<h3 id="23-transform-tools-and-gizmos">2.3 Transform Tools and Gizmos</h3>
+<h4 id="231-transform-toolbar">2.3.1 Transform Toolbar</h4>
+<p>In the toolbar on the left side of the 3D viewport:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>┌─────────┐</span></span>
+<span class="line"><span>│    ↗    │  Select tool (W)</span></span>
+<span class="line"><span>├─────────┤</span></span>
+<span class="line"><span>│    ✋   │  3D Cursor tool (Shift + Right-click)</span></span>
+<span class="line"><span>├─────────┤</span></span>
+<span class="line"><span>│    ↔    │  Move tool (G)</span></span>
+<span class="line"><span>├─────────┤</span></span>
+<span class="line"><span>│    ↻    │  Rotate tool (R)</span></span>
+<span class="line"><span>├─────────┤</span></span>
+<span class="line"><span>│    ⊞    │  Scale tool (S)</span></span>
+<span class="line"><span>├─────────┤</span></span>
+<span class="line"><span>│    ⚒    │  Transform tool (T)</span></span>
+<span class="line"><span>└─────────┘</span></span></code></pre>
+<h4 id="232-gizmos">2.3.2 Gizmos</h4>
+<p>Gizmos are visual transformation tools in the viewport:</p>
+<p><strong>Move Gizmo:</strong></p>
+<ul>
+<li>Red arrow: X axis movement</li>
+<li>Green arrow: Y axis movement</li>
+<li>Blue arrow: Z axis movement</li>
+<li>Colored squares: Planar movement</li>
+</ul>
+<p><strong>Rotate Gizmo:</strong></p>
+<ul>
+<li>Red ring: Rotate around X axis</li>
+<li>Green ring: Rotate around Y axis</li>
+<li>Blue ring: Rotate around Z axis</li>
+<li>White outer ring: Free rotation</li>
+</ul>
+<p><strong>Scale Gizmo:</strong></p>
+<ul>
+<li>Colored squares: Uniform scale</li>
+<li>Colored lines: Single axis scale</li>
+</ul>
+<h3 id="24-precision-modeling-tools">2.4 Precision Modeling Tools</h3>
+<h4 id="241-numeric-input">2.4.1 Numeric Input</h4>
+<p><strong>Precise Transform Input:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Direct numeric input during transform operations</span></span>
+<span class="line"><span style="color:#E1E4E8">G </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> X </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> Tab  </span><span style="color:#6A737D"># Switch to numeric input mode</span></span>
+<span class="line"><span style="color:#6A737D"># Then input specific value, e.g.: 2.5</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Using expressions</span></span>
+<span class="line"><span style="color:#E1E4E8">S </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> Tab  </span><span style="color:#6A737D"># Enter numeric input</span></span>
+<span class="line"><span style="color:#6A737D"># Can input: *2 (multiply by 2) or /3 (divide by 3) or +1.5 (add 1.5)</span></span></code></pre>
+<h4 id="242-snapping-tool">2.4.2 Snapping Tool</h4>
+<p><strong>Snap Settings:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Enable/disable snapping</span></span>
+<span class="line"><span style="color:#E1E4E8">Shift </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> Tab  </span><span style="color:#6A737D"># Toggle snapping on/off</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Snap types (set in header bar)</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Increment: Grid snapping</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Vertex: Vertex snapping</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Edge: Edge snapping</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Face: Face snapping</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Volume: Volume snapping</span></span></code></pre>
+<p><strong>Snap Options:</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Option</th><th>Description</th><th>Use Case</th></tr></thead><tbody><tr><td>Closest</td><td>Snap to closest target</td><td>General purpose</td></tr><tr><td>Center</td><td>Snap to target center</td><td>Alignment operations</td></tr><tr><td>Median</td><td>Snap to median of selection</td><td>When multiple selected</td></tr><tr><td>Active</td><td>Snap to active element</td><td>Precise alignment</td></tr></tbody></table>
+<h4 id="243-proportional-editing">2.4.3 Proportional Editing</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#E1E4E8">O  </span><span style="color:#6A737D"># Enable/disable proportional editing</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Proportional editing types</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Smooth: Smooth influence</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Sphere: Spherical influence</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Root: Root influence</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Sharp: Sharp influence</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Linear: Linear influence</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Constant: Constant influence</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Adjust influence range</span></span>
+<span class="line"><span style="color:#E1E4E8">Mouse scroll wheel  </span><span style="color:#6A737D"># Adjust influence radius in proportional edit mode</span></span></code></pre>
+<h3 id="25-coordinate-system-switching">2.5 Coordinate System Switching</h3>
+<h4 id="251-transform-orientation">2.5.1 Transform Orientation</h4>
+<p>In the 3D viewport header bar, you can switch transform orientation:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Global              # Use world coordinate system</span></span>
+<span class="line"><span>Local               # Use object local coordinate system</span></span>
+<span class="line"><span>Normal              # Use face normal coordinate system</span></span>
+<span class="line"><span>Gimbal              # Use gimbal coordinate system</span></span>
+<span class="line"><span>View                # Use view coordinate system</span></span>
+<span class="line"><span>Cursor              # Use 3D cursor coordinate system</span></span></code></pre>
+<h4 id="252-transform-pivot-point">2.5.2 Transform Pivot Point</h4>
+<p>Transform pivot point determines the center of transformation:</p>
+<p><strong>Pivot Point Types:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Bounding Box Center</span></span>
+<span class="line"><span style="color:#E1E4E8">Use </span><span style="color:#F97583">for</span><span style="color:#E1E4E8">: General transform operations</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 3D Cursor</span></span>
+<span class="line"><span style="color:#E1E4E8">Use </span><span style="color:#F97583">for</span><span style="color:#E1E4E8">: Rotation around specific point</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Individual Origins</span></span>
+<span class="line"><span style="color:#E1E4E8">Use </span><span style="color:#F97583">for</span><span style="color:#E1E4E8">: Transform multiple objects individually</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Median Point</span></span>
+<span class="line"><span style="color:#E1E4E8">Use </span><span style="color:#F97583">for</span><span style="color:#E1E4E8">: Center point of multiple selected objects</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Active Element</span></span>
+<span class="line"><span style="color:#E1E4E8">Use </span><span style="color:#F97583">for</span><span style="color:#E1E4E8">: Use last selected </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> reference</span></span></code></pre>
+<h3 id="26-advanced-selection-tools">2.6 Advanced Selection Tools</h3>
+<h4 id="261-selection-tools">2.6.1 Selection Tools</h4>
+<p><strong>Basic Selection:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#E1E4E8">A          </span><span style="color:#6A737D"># Select all</span></span>
+<span class="line"><span style="color:#E1E4E8">Alt </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> A    </span><span style="color:#6A737D"># Deselect all</span></span>
+<span class="line"><span style="color:#E1E4E8">Ctrl </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> I   </span><span style="color:#6A737D"># Invert selection</span></span>
+<span class="line"><span style="color:#E1E4E8">H          </span><span style="color:#6A737D"># Hide selected</span></span>
+<span class="line"><span style="color:#E1E4E8">Alt </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> H    </span><span style="color:#6A737D"># Show all</span></span>
+<span class="line"><span style="color:#E1E4E8">Shift </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> H  </span><span style="color:#6A737D"># Hide unselected</span></span></code></pre>
+<p><strong>Box and Circle Select:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#E1E4E8">B          </span><span style="color:#6A737D"># Box select tool</span></span>
+<span class="line"><span style="color:#E1E4E8">C          </span><span style="color:#6A737D"># Circle select tool (scroll wheel adjusts size)</span></span>
+<span class="line"><span style="color:#E1E4E8">Alt </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> B    </span><span style="color:#6A737D"># Box select view clipping</span></span></code></pre>
+<h4 id="262-select-similar">2.6.2 Select Similar</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#E1E4E8">Shift </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> G  </span><span style="color:#6A737D"># Select similar</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Type: Select by </span><span style="color:#79B8FF">type</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Material: Select by material</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Color: Select by color</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Dimensions: Select by dimensions</span></span></code></pre>
+<h3 id="27-3d-cursor-and-origin">2.7 3D Cursor and Origin</h3>
+<h4 id="271-3d-cursor">2.7.1 3D Cursor</h4>
+<p>The 3D cursor is a positioning tool in the scene:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#E1E4E8">Shift </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> Right</span><span style="color:#F97583">-</span><span style="color:#E1E4E8">click  </span><span style="color:#6A737D"># Place 3D cursor</span></span>
+<span class="line"><span style="color:#E1E4E8">Shift </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> S            </span><span style="color:#6A737D"># Snap menu</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Cursor to Selected: Cursor to selected</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Selection to Cursor: Selected to cursor</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Cursor to Center: Cursor to center</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Cursor to Grid: Cursor to grid</span></span></code></pre>
+<h4 id="272-origin-operations">2.7.2 Origin Operations</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Set origin location</span></span>
+<span class="line"><span style="color:#E1E4E8">Ctrl </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> Alt </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> Shift </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> C  </span><span style="color:#6A737D"># Origin menu</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Geometry to Origin: Geometry to origin</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Origin to Geometry: Origin to geometry center</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Origin to </span><span style="color:#FDAEB7;font-style:italic">3D</span><span style="color:#E1E4E8"> Cursor: Origin to cursor</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Origin to Center of Mass: Origin to center of mass</span></span></code></pre>
+<h3 id="28-practical-exercises">2.8 Practical Exercises</h3>
+<h4 id="exercise-1-understanding-coordinate-systems">Exercise 1: Understanding Coordinate Systems</h4>
+<div class="container-note custom-container" data-container-type="note">
+<div class="container-title">Exercise Objective</div>
+<div class="container-content">
+<p>Understand the differences and application scenarios of different coordinate systems</p>
+</div>
+</div>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># 1. Create three cubes</span></span>
+<span class="line"><span style="color:#6A737D"># 2. Arrange them in an L shape</span></span>
+<span class="line"><span style="color:#6A737D"># 3. Rotate the middle cube 45 degrees</span></span>
+<span class="line"><span style="color:#6A737D"># 4. Move the rotated cube in both global and local coordinate systems</span></span>
+<span class="line"><span style="color:#6A737D"># 5. Observe the operational differences</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">Steps:</span></span>
+<span class="line"><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">. Delete default cube</span></span>
+<span class="line"><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">. Shift </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> A add cube, position (</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">. Shift </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> D duplicate, move to (</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">. Shift </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> D duplicate again, move to (</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#79B8FF">5</span><span style="color:#E1E4E8">. Select cube at position (</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#79B8FF">6</span><span style="color:#E1E4E8">. R </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> Z </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 45</span><span style="color:#E1E4E8"> rotate </span><span style="color:#79B8FF">45</span><span style="color:#E1E4E8"> degrees</span></span>
+<span class="line"><span style="color:#79B8FF">7</span><span style="color:#E1E4E8">. Switch coordinate system </span><span style="color:#F97583">in</span><span style="color:#E1E4E8"> header bar, observe gizmo changes</span></span>
+<span class="line"><span style="color:#79B8FF">8</span><span style="color:#E1E4E8">. Move this cube using both </span><span style="color:#F97583">global</span><span style="color:#F97583"> and</span><span style="color:#E1E4E8"> local coordinate systems</span></span></code></pre>
+<h4 id="exercise-2-precision-modeling-practice">Exercise 2: Precision Modeling Practice</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Create a simple table model</span></span>
+<span class="line"><span style="color:#6A737D"># Requirements: Table top 2x1x0.1, legs height 0.8</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Table top creation</span></span>
+<span class="line"><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">. Add cube</span></span>
+<span class="line"><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">. S </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> X </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8"> (scale to </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8"> along X axis)</span></span>
+<span class="line"><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">. S </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> Y </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 0.5</span><span style="color:#E1E4E8"> (scale to </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8"> along Y axis)</span></span>
+<span class="line"><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">. S </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> Z </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 0.05</span><span style="color:#E1E4E8"> (scale to </span><span style="color:#79B8FF">0.1</span><span style="color:#E1E4E8"> along Z axis)</span></span>
+<span class="line"><span style="color:#79B8FF">5</span><span style="color:#E1E4E8">. G </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> Z </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 0.45</span><span style="color:#E1E4E8"> (move up to appropriate position)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Table leg creation</span></span>
+<span class="line"><span style="color:#79B8FF">6</span><span style="color:#E1E4E8">. Add cube </span><span style="color:#F97583">for</span><span style="color:#E1E4E8"> table leg</span></span>
+<span class="line"><span style="color:#79B8FF">7</span><span style="color:#E1E4E8">. S </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> X </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 0.05</span><span style="color:#E1E4E8">, S </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> Y </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 0.05</span><span style="color:#E1E4E8"> (shrink X, Y)</span></span>
+<span class="line"><span style="color:#79B8FF">8</span><span style="color:#E1E4E8">. S </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> Z </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 0.4</span><span style="color:#E1E4E8"> (scale Z to </span><span style="color:#79B8FF">0.8</span><span style="color:#E1E4E8"> height)</span></span>
+<span class="line"><span style="color:#79B8FF">9</span><span style="color:#E1E4E8">. G </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> X </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 0.8</span><span style="color:#E1E4E8">, G </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> Y </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 0.4</span><span style="color:#E1E4E8"> (move to table corner)</span></span>
+<span class="line"><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">. Shift </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> D duplicate other three legs</span></span></code></pre>
+<h4 id="exercise-3-comprehensive-transform-tool-application">Exercise 3: Comprehensive Transform Tool Application</h4>
+<div class="container-warning custom-container" data-container-type="warning">
+<div class="container-title">Notes</div>
+<div class="container-content">
+<ul>
+<li>Ensure understanding of global vs local coordinate system differences</li>
+<li>Proficiently use numeric input for precise transforms</li>
+<li>Properly use pivot point settings</li>
+</ul>
+</div>
+</div>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Create a windmill model</span></span>
+<span class="line"><span style="color:#6A737D"># 1. Create windmill blade (using plane)</span></span>
+<span class="line"><span style="color:#6A737D"># 2. Duplicate and rotate to create multiple blades</span></span>
+<span class="line"><span style="color:#6A737D"># 3. Create support post</span></span>
+<span class="line"><span style="color:#6A737D"># 4. Combine into complete model</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">Detailed steps:</span></span>
+<span class="line"><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">. Delete default cube</span></span>
+<span class="line"><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">. Shift </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> A → Mesh → Plane</span></span>
+<span class="line"><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">. S </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> Y </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8"> (stretch plane </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> blade)</span></span>
+<span class="line"><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">. Set pivot point to </span><span style="color:#FDAEB7;font-style:italic">3D</span><span style="color:#E1E4E8"> cursor</span></span>
+<span class="line"><span style="color:#79B8FF">5</span><span style="color:#E1E4E8">. Shift </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> S → Cursor to Center (cursor to center)</span></span>
+<span class="line"><span style="color:#79B8FF">6</span><span style="color:#E1E4E8">. Shift </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> D duplicate blade</span></span>
+<span class="line"><span style="color:#79B8FF">7</span><span style="color:#E1E4E8">. R </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> Z </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 90</span><span style="color:#E1E4E8"> (rotate </span><span style="color:#79B8FF">90</span><span style="color:#E1E4E8"> degrees)</span></span>
+<span class="line"><span style="color:#79B8FF">8</span><span style="color:#E1E4E8">. Repeat steps </span><span style="color:#79B8FF">6</span><span style="color:#F97583">-</span><span style="color:#79B8FF">7</span><span style="color:#E1E4E8"> to create </span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8"> blades</span></span>
+<span class="line"><span style="color:#79B8FF">9</span><span style="color:#E1E4E8">. Add cylinder </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> support post</span></span>
+<span class="line"><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">. G </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> Z </span><span style="color:#F97583">+</span><span style="color:#F97583"> -</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8"> (move down)</span></span>
+<span class="line"><span style="color:#79B8FF">11</span><span style="color:#E1E4E8">. S </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> Z </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8"> (stretch post)</span></span></code></pre>
+<h2 id="common-transform-shortcut-keys-summary">Common Transform Shortcut Keys Summary</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Operation</th><th>Shortcut</th><th>Description</th></tr></thead><tbody><tr><td>Move</td><td>G</td><td>Free move</td></tr><tr><td>Constrained Move</td><td>G + X/Y/Z</td><td>Move along axis</td></tr><tr><td>Planar Move</td><td>G + Shift + X/Y/Z</td><td>Move excluding axis</td></tr><tr><td>Rotate</td><td>R</td><td>Free rotate</td></tr><tr><td>Constrained Rotate</td><td>R + X/Y/Z</td><td>Rotate around axis</td></tr><tr><td>Scale</td><td>S</td><td>Uniform scale</td></tr><tr><td>Constrained Scale</td><td>S + X/Y/Z</td><td>Scale along axis</td></tr><tr><td>Toggle Snapping</td><td>Shift + Tab</td><td>Toggle snapping</td></tr><tr><td>Proportional Edit</td><td>O</td><td>Toggle proportional edit</td></tr><tr><td>3D Cursor</td><td>Shift + Right-click</td><td>Place cursor</td></tr></tbody></table>
+<h2 id="transform-tool-settings">Transform Tool Settings</h2>
+<h3 id="29-transform-settings-panel">2.9 Transform Settings Panel</h3>
+<p>In the transform tab of the properties panel:</p>
+<p><strong>Location:</strong></p>
+<ul>
+<li>X, Y, Z coordinate values</li>
+<li>Can directly input precise values</li>
+</ul>
+<p><strong>Rotation:</strong></p>
+<ul>
+<li>Euler angles: X, Y, Z axis rotation angles</li>
+<li>Axis-angle: Rotation axis and angle</li>
+<li>Quaternion: Four-dimensional rotation representation</li>
+</ul>
+<p><strong>Scale:</strong></p>
+<ul>
+<li>X, Y, Z axis scale factors</li>
+<li>Link icon: Maintain proportional scaling</li>
+</ul>
+<h3 id="210-object-relationships-and-hierarchy">2.10 Object Relationships and Hierarchy</h3>
+<h4 id="2101-parent-child-relationships">2.10.1 Parent-Child Relationships</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Establish parent-child relationship</span></span>
+<span class="line"><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">. First select child </span><span style="color:#79B8FF">object</span></span>
+<span class="line"><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">. Then select parent </span><span style="color:#79B8FF">object</span><span style="color:#E1E4E8"> (Shift </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> left</span><span style="color:#F97583">-</span><span style="color:#E1E4E8">click)</span></span>
+<span class="line"><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">. Ctrl </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> P → Object (keep transform)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Clear parent-child relationship</span></span>
+<span class="line"><span style="color:#E1E4E8">Alt </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> P → Clear Parent</span></span></code></pre>
+<p><strong>Parent-Child Relationship Characteristics:</strong></p>
+<ul>
+<li>Child objects follow parent transformations</li>
+<li>Child object coordinates are relative to parent</li>
+<li>Forms hierarchical structure for easy management</li>
+</ul>
+<h4 id="2102-collection-management">2.10.2 Collection Management</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Create collection</span></span>
+<span class="line"><span style="color:#E1E4E8">M  </span><span style="color:#6A737D"># Move to collection menu</span></span>
+<span class="line"><span style="color:#E1E4E8">Shift </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> A  </span><span style="color:#6A737D"># Create new collection</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Collection operations</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Hide</span><span style="color:#F97583">/</span><span style="color:#E1E4E8">show collection</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Enable</span><span style="color:#F97583">/</span><span style="color:#E1E4E8">disable collection selection</span></span>
+<span class="line"><span style="color:#F97583">-</span><span style="color:#E1E4E8"> Collection instancing</span></span></code></pre>
+<div class="container-tip custom-container" data-container-type="tip">
+<div class="container-title">Learning Suggestions</div>
+<div class="container-content">
+<ol>
+<li><strong>Understand Coordinate Systems</strong>: Difference between global and local coordinate systems is fundamental to 3D work</li>
+<li><strong>Master Transform Operations</strong>: G, R, S three basic operations must be very proficient</li>
+<li><strong>Master Precise Control</strong>: Learn to use numeric input and snapping tools</li>
+<li><strong>Develop Spatial Thinking</strong>: Observe and operate objects from different angles</li>
+<li><strong>Use Helper Tools</strong>: 3D cursor, proportional editing can greatly improve efficiency</li>
+</ol>
+</div>
+</div>
+<p>Through this chapter, you should be able to:</p>
+<ul>
+<li>Understand basic 3D space concepts</li>
+<li>Proficiently use various transform tools</li>
+<li>Precisely control object position, rotation, and scale</li>
+<li>Understand application scenarios for different coordinate systems</li>
+</ul>
+<p>These skills are the foundation for all subsequent 3D operations and must be mastered proficiently.</p></div><!-- 修复文章内容中的链接，添加当前语言前缀 --><script>
+      (function() {
+        function fixProseLinks() {
+          const proseContent = document.querySelector('[data-prose-content]');
+          if (!proseContent) return;
+
+          const localePrefix = proseContent.getAttribute('data-locale-prefix') || '';
+          const baseUrl = proseContent.getAttribute('data-base-url') || '';
+
+          // 如果没有 locale prefix 或 locale prefix 等于 base url，则不需要修复
+          // 这意味着当前是默认语言
+          if (!localePrefix || localePrefix === baseUrl) return;
+
+          // 获取 locale 部分 (从 localePrefix 中提取，例如 /base/zh-CN -> zh-CN)
+          const localePart = localePrefix.replace(baseUrl, '').replace(/^\//, '');
+          if (!localePart) return;
+
+          // 修复所有内部链接
+          proseContent.querySelectorAll('a[href]').forEach(function(link) {
+            const href = link.getAttribute('href');
+            if (!href) return;
+
+            // 跳过外部链接、锚点链接、mailto、tel 等
+            if (href.startsWith('http://') ||
+                href.startsWith('https://') ||
+                href.startsWith('//') ||
+                href.startsWith('#') ||
+                href.startsWith('mailto:') ||
+                href.startsWith('tel:') ||
+                href.startsWith('data:')) {
+              return;
+            }
+
+            // 跳过已经包含 locale 前缀的链接
+            if (href.startsWith(localePrefix + '/') || href === localePrefix) {
+              return;
+            }
+
+            // 对于以 baseUrl 开头但没有 locale 的链接，添加 locale
+            if (baseUrl && href.startsWith(baseUrl + '/')) {
+              const pathAfterBase = href.slice(baseUrl.length);
+              // 检查是否已经有 locale 前缀
+              if (!pathAfterBase.startsWith('/' + localePart + '/') && pathAfterBase !== '/' + localePart) {
+                link.setAttribute('href', baseUrl + '/' + localePart + pathAfterBase);
+              }
+              return;
+            }
+
+            // 对于绝对路径链接 (以 / 开头)，添加 locale prefix
+            if (href.startsWith('/')) {
+              // 检查是否已经有 locale 前缀
+              if (!href.startsWith('/' + localePart + '/') && href !== '/' + localePart) {
+                link.setAttribute('href', localePrefix + href);
+              }
+            }
+          });
+        }
+
+        // 页面加载后执行
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', fixProseLinks);
+        } else {
+          fixProseLinks();
+        }
+
+        // 支持 Astro 视图过渡
+        document.addEventListener('astro:page-load', fixProseLinks);
+      })();
+    </script><!-- 文章底部 --><footer class="not-prose mt-16 pt-8 border-t border-slate-200 dark:border-slate-700"><!-- 分类信息 --><div class="mb-8"><h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4">Categories</h3><div class="flex flex-wrap gap-2"><a href="/categories/blender" class="px-4 py-2 text-sm font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">Blender</a><a href="/categories/3d-basics" class="px-4 py-2 text-sm font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">3D Basics</a></div></div><!-- 更新时间 --></footer></article><nav class="mt-16 pt-8 border-t border-slate-200 dark:border-slate-700"><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><!-- 上一篇 --><div class="text-center md:text-left"><div class="text-sm text-slate-500 dark:text-slate-400 mb-2">Previous</div><a href="/posts/blog_docs_en/tools/blender/blender-001" class="group inline-flex items-center text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors"><svg class="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg><span class="line-clamp-1">Chapter 1 Getting Started with Blender</span></a></div><!-- 下一篇 --><div class="text-center md:text-right"><div class="text-sm text-slate-500 dark:text-slate-400 mb-2">Next</div><a href="/posts/blog_docs_en/tools/blender/blender-003" class="group inline-flex items-center justify-end text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors"><span class="line-clamp-1">Chapter 3 Basic Modeling Techniques</span><svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></a></div></div></nav> </div> </div>  </main> <footer class="bg-slate-50 dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 mt-auto w-full min-w-0"> <div class="container mx-auto px-4 py-6"> <div class="grid grid-cols-1 md:grid-cols-3 gap-6"> <div> <div class="flex items-center space-x-3 mb-3"> <img src="/images/avatar.svg" alt="My Astro Blog" class="w-8 h-8 rounded-full"> <div> <h3 class="text-base font-semibold text-slate-900 dark:text-slate-100"> My Astro Blog </h3> <p class="text-xs text-slate-600 dark:text-slate-400">  </p> </div> </div> </div> <div> <h4 class="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-3"> Quick Links </h4> <div class="flex flex-wrap gap-x-4 gap-y-1"> <a href="/" class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary-500 transition-colors"> Home </a><a href="/posts" class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary-500 transition-colors"> Posts </a><a href="/tags" class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary-500 transition-colors"> Tags </a><a href="/archives" class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary-500 transition-colors"> Archives </a><a href="/about" class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary-500 transition-colors"> About </a> </div> </div> <div> <h4 class="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-3"> Contact </h4> <div class="flex space-x-4">  <a href="/rss.xml" class="text-slate-600 dark:text-slate-400 hover:text-primary-500 transition-colors" aria-label="RSS Feed"> <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"> <path d="M3.429 2.486c9.36 0 16.943 7.583 16.943 16.943h-3.257c0-7.563-6.123-13.686-13.686-13.686V2.486zM3.429 9.114c5.647 0 10.229 4.581 10.229 10.229h-3.257c0-3.844-3.128-6.972-6.972-6.972V9.114zM6.686 16.486c0 1.8-1.457 3.257-3.257 3.257S0.172 18.286 0.172 16.486s1.457-3.257 3.257-3.257 3.257 1.457 3.257 3.257z"></path> </svg> </a> </div> </div> </div> <div class="border-t border-slate-200 dark:border-slate-700 pt-4 mt-6"> <div class="flex flex-col sm:flex-row justify-between items-center text-sm text-slate-600 dark:text-slate-400"> <p>© 2026 Author. All rights reserved.</p> <p class="mt-2 sm:mt-0">
+Powered by <a href="https://astro.build" class="link" target="_blank" rel="noopener noreferrer">Astro</a> </p> </div> </div> </div> </footer> <button class="back-to-top" aria-label="Back to Top" data-astro-cid-itptdd6o> <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-itptdd6o> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" data-astro-cid-itptdd6o></path> </svg> </button>  </div> <!-- Mermaid --> <script src="/js/mermaid-container.js"></script> <!-- Tabs --> <script src="/js/tabs-init.js"></script> <!-- Store i18n data for client-side scripts --> <script>(function(){const locale = "en";
+const uiTranslations = {"home":"Home","blog":"Blog","about":"About","search":"Search","posts":"Posts","postList":"All Posts","noPostsFound":"No posts found","readMore":"Read more","readingTime":"Reading time","minuteRead":"min","tags":"Tags","categories":"Categories","allTags":"All Tags","allCategories":"All Categories","taggedWith":"Tagged with","inCategory":"In category","archives":"Archives","postsInArchive":"posts","recentPosts":"Recent Posts","popularTags":"Popular Tags","friendLinks":"Friend Links","documentTree":"Document Tree","quickLinks":"Quick Links","contact":"Contact","searchPlaceholder":"Search posts, tags, content...","searchResults":"Search Results","noResults":"No results found","searching":"Searching...","searchArticles":"Search Articles","searchInAllArticles":"Find content that interests you in all articles","searchTips":"Search Tips","basicSearch":"Basic Search","advancedFeatures":"Advanced Features","searchTipKeyword":"Enter keywords to search titles and content","searchTipMixedLang":"Supports mixed language search","searchTipCaseInsensitive":"Case insensitive","searchTipRealtime":"Real-time search suggestions","searchTipFilter":"Filter by tags and categories","searchTipFuzzy":"Supports fuzzy matching","browsePosts":"Browse Posts","aboutMe":"About Me","previousPage":"Previous","nextPage":"Next","page":"Page","of":"of","publishedOn":"Published on","updatedOn":"Updated on","author":"Author","tableOfContents":"Table of Contents","readingProgress":"Reading Progress","relatedPosts":"Related Posts","sharePost":"Share","previousPost":"Previous","nextPost":"Next","backToTop":"Back to Top","copyCode":"Copy","copied":"Copied","expand":"Expand","collapse":"Collapse","expandCode":"Expand code","collapseCode":"Collapse code","lines":"lines","viewMode":"View Mode","cardView":"Card View","listView":"List View","sortBy":"Sort by","sortByDate":"Date","sortByTitle":"Title","filterByTag":"Filter by tag","filterByCategory":"Filter by category","clearFilter":"Clear filter","allPosts":"All Posts","draft":"Draft","slides":"Slides","slidesList":"All Slides","rssFeed":"RSS Feed","quickNavigation":"Quick Navigation","timeline":"Timeline","viewAllTimeline":"View all timeline","postsCount":"posts"};
+
+      window.__i18n = {
+        locale: locale,
+        ui: uiTranslations
+      };
+    })();</script> <script type="module" src="/assets/BaseLayout.astro_astro_type_script_index_0_lang.DBRPz_YQ.js"></script> </body> </html> <script type="module">function c(){const e=document.querySelector("[data-sidebar]"),o=document.querySelector("[data-sidebar-resizer]");if(!e||!o)return;const n=localStorage.getItem("sidebar-width");n&&e.style.setProperty("--sidebar-width",n);let s=!1,r=0,d=0;const u=t=>{s=!0,r=t.clientX,d=e.offsetWidth,e.style.transition="none",document.body.style.cursor="col-resize",document.body.style.userSelect="none",document.addEventListener("mousemove",i),document.addEventListener("mouseup",a)},i=t=>{if(!s)return;const l=t.clientX-r,m=Math.min(Math.max(d+l,200),500);e.style.setProperty("--sidebar-width",`${m}px`)},a=()=>{if(!s)return;s=!1,e.style.transition="",document.body.style.cursor="",document.body.style.userSelect="";const t=getComputedStyle(e).getPropertyValue("--sidebar-width");t&&localStorage.setItem("sidebar-width",t.trim()),document.removeEventListener("mousemove",i),document.removeEventListener("mouseup",a)};o.addEventListener("mousedown",u)}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",c):c();</script> 
