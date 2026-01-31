@@ -35,7 +35,7 @@
 <h2 id="知识点">知识点</h2>
 <h3 id="为什么需要配置管理">为什么需要配置管理</h3>
 <p>在容器化应用中，将配置与代码分离是最佳实践。Kubernetes提供了ConfigMap和Secret来管理配置数据。</p>
-<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IExSCiAgICBzdWJncmFwaCBUcmFkaXRpb25hbFsi5Lyg57uf5pa55byPIl0KICAgICAgICBDb2RlMVvku6PnoIFdIC0tPiBDb25maWcxW+ehrOe8lueggemFjee9rl0KICAgICAgICBDb25maWcxIC0tPiBJbWFnZTFb6ZWc5YOPXQogICAgICAgIE5vdGUxW+avj+asoemFjee9ruWPmOabtDxici8+6ZyA6KaB6YeN5paw5p6E5bu66ZWc5YOPXQogICAgZW5kCgogICAgc3ViZ3JhcGggS3ViZXJuZXRlc1siS3ViZXJuZXRlc+aWueW8jyJdCiAgICAgICAgQ29kZTJb5Luj56CBXSAtLT4gSW1hZ2UyW+mVnOWDj10KICAgICAgICBDb25maWcyW0NvbmZpZ01hcC9TZWNyZXRdCiAgICAgICAgSW1hZ2UyIC0tPiBQb2RbUG9kXQogICAgICAgIENvbmZpZzIgLS0+IFBvZAogICAgICAgIE5vdGUyW+mFjee9ruS4jumVnOWDj+WIhuemuzxici8+5Yqo5oCB5pu05paw6YWN572uXQogICAgZW5k" data-id="mermaid-y1lobux29">
+<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IExSCiAgICBzdWJncmFwaCBUcmFkaXRpb25hbFsi5Lyg57uf5pa55byPIl0KICAgICAgICBDb2RlMVvku6PnoIFdIC0tPiBDb25maWcxW+ehrOe8lueggemFjee9rl0KICAgICAgICBDb25maWcxIC0tPiBJbWFnZTFb6ZWc5YOPXQogICAgICAgIE5vdGUxW+avj+asoemFjee9ruWPmOabtDxici8+6ZyA6KaB6YeN5paw5p6E5bu66ZWc5YOPXQogICAgZW5kCgogICAgc3ViZ3JhcGggS3ViZXJuZXRlc1siS3ViZXJuZXRlc+aWueW8jyJdCiAgICAgICAgQ29kZTJb5Luj56CBXSAtLT4gSW1hZ2UyW+mVnOWDj10KICAgICAgICBDb25maWcyW0NvbmZpZ01hcC9TZWNyZXRdCiAgICAgICAgSW1hZ2UyIC0tPiBQb2RbUG9kXQogICAgICAgIENvbmZpZzIgLS0+IFBvZAogICAgICAgIE5vdGUyW+mFjee9ruS4jumVnOWDj+WIhuemuzxici8+5Yqo5oCB5pu05paw6YWN572uXQogICAgZW5k" data-id="mermaid-fala5su7c">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">flowchart LR
     subgraph Traditional["传统方式"]
@@ -53,7 +53,7 @@
     end</code></pre>
 </div>
 <h3 id="存储系统概览">存储系统概览</h3>
-<div class="mermaid-container" data-mermaid-source="bWluZG1hcAogIHJvb3QoKEt1YmVybmV0ZXPlrZjlgqgpKQogICAg6YWN572u5pWw5o2uCiAgICAgIENvbmZpZ01hcAogICAgICAgIOW6lOeUqOmFjee9rgogICAgICAgIOeOr+Wig+WPmOmHjwogICAgICAgIOmFjee9ruaWh+S7tgogICAgICBTZWNyZXQKICAgICAgICDlr4bnoIEKICAgICAgICDor4HkuaYKICAgICAgICBBUEnlr4bpkqUKICAgIOaMgeS5heWMluWtmOWCqAogICAgICBQZXJzaXN0ZW50Vm9sdW1lCiAgICAgICAg6Z2Z5oCB5L6b5bqUCiAgICAgICAg5Yqo5oCB5L6b5bqUCiAgICAgIFBlcnNpc3RlbnRWb2x1bWVDbGFpbQogICAgICAgIOeUqOaIt+eUs+ivtwogICAgICAgIOe7keWumlBWCiAgICAgIFN0b3JhZ2VDbGFzcwogICAgICAgIOWtmOWCqOexu+WeiwogICAgICAgIOWKqOaAgeWIm+W7ugogICAg5Li05pe25a2Y5YKoCiAgICAgIGVtcHR5RGlyCiAgICAgIGhvc3RQYXRo" data-id="mermaid-zj170lnjt">
+<div class="mermaid-container" data-mermaid-source="bWluZG1hcAogIHJvb3QoKEt1YmVybmV0ZXPlrZjlgqgpKQogICAg6YWN572u5pWw5o2uCiAgICAgIENvbmZpZ01hcAogICAgICAgIOW6lOeUqOmFjee9rgogICAgICAgIOeOr+Wig+WPmOmHjwogICAgICAgIOmFjee9ruaWh+S7tgogICAgICBTZWNyZXQKICAgICAgICDlr4bnoIEKICAgICAgICDor4HkuaYKICAgICAgICBBUEnlr4bpkqUKICAgIOaMgeS5heWMluWtmOWCqAogICAgICBQZXJzaXN0ZW50Vm9sdW1lCiAgICAgICAg6Z2Z5oCB5L6b5bqUCiAgICAgICAg5Yqo5oCB5L6b5bqUCiAgICAgIFBlcnNpc3RlbnRWb2x1bWVDbGFpbQogICAgICAgIOeUqOaIt+eUs+ivtwogICAgICAgIOe7keWumlBWCiAgICAgIFN0b3JhZ2VDbGFzcwogICAgICAgIOWtmOWCqOexu+WeiwogICAgICAgIOWKqOaAgeWIm+W7ugogICAg5Li05pe25a2Y5YKoCiAgICAgIGVtcHR5RGlyCiAgICAgIGhvc3RQYXRo" data-id="mermaid-hnm6osrt7">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">mindmap
   root((Kubernetes存储))
@@ -270,7 +270,7 @@
 <h2 id="secret">Secret</h2>
 <p>Secret用于存储敏感数据，如密码、令牌、证书等。</p>
 <h3 id="secret类型">Secret类型</h3>
-<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IFRCCiAgICBzdWJncmFwaCBTZWNyZXRUeXBlc1siU2VjcmV057G75Z6LIl0KICAgICAgICBPcGFxdWVbIk9wYXF1ZTxici8+6YCa55So57G75Z6LIl0KICAgICAgICBUTFNbImt1YmVybmV0ZXMuaW8vdGxzPGJyLz5UTFPor4HkuaYiXQogICAgICAgIERvY2tlckNvbmZpZ1sia3ViZXJuZXRlcy5pby9kb2NrZXJjb25maWdqc29uPGJyLz5Eb2NrZXLku5PlupPorqTor4EiXQogICAgICAgIEJhc2ljQXV0aFsia3ViZXJuZXRlcy5pby9iYXNpYy1hdXRoPGJyLz7ln7rmnKzorqTor4EiXQogICAgICAgIFNTSEF1dGhbImt1YmVybmV0ZXMuaW8vc3NoLWF1dGg8YnIvPlNTSOWvhumSpSJdCiAgICAgICAgVG9rZW5bImt1YmVybmV0ZXMuaW8vc2VydmljZS1hY2NvdW50LXRva2VuPGJyLz5TZXJ2aWNlQWNjb3VudOS7pOeJjCJdCiAgICBlbmQ=" data-id="mermaid-9ws2z0997">
+<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IFRCCiAgICBzdWJncmFwaCBTZWNyZXRUeXBlc1siU2VjcmV057G75Z6LIl0KICAgICAgICBPcGFxdWVbIk9wYXF1ZTxici8+6YCa55So57G75Z6LIl0KICAgICAgICBUTFNbImt1YmVybmV0ZXMuaW8vdGxzPGJyLz5UTFPor4HkuaYiXQogICAgICAgIERvY2tlckNvbmZpZ1sia3ViZXJuZXRlcy5pby9kb2NrZXJjb25maWdqc29uPGJyLz5Eb2NrZXLku5PlupPorqTor4EiXQogICAgICAgIEJhc2ljQXV0aFsia3ViZXJuZXRlcy5pby9iYXNpYy1hdXRoPGJyLz7ln7rmnKzorqTor4EiXQogICAgICAgIFNTSEF1dGhbImt1YmVybmV0ZXMuaW8vc3NoLWF1dGg8YnIvPlNTSOWvhumSpSJdCiAgICAgICAgVG9rZW5bImt1YmVybmV0ZXMuaW8vc2VydmljZS1hY2NvdW50LXRva2VuPGJyLz5TZXJ2aWNlQWNjb3VudOS7pOeJjCJdCiAgICBlbmQ=" data-id="mermaid-srluy6ybq">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">flowchart TB
     subgraph SecretTypes["Secret类型"]
@@ -416,7 +416,7 @@
 </div>
 <h2 id="持久化存储">持久化存储</h2>
 <h3 id="存储架构">存储架构</h3>
-<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IFRCCiAgICBzdWJncmFwaCBVc2VyWyLnlKjmiLfop4bop5IiXQogICAgICAgIFBvZFtQb2RdIC0tPiBQVkNbUGVyc2lzdGVudFZvbHVtZUNsYWltXQogICAgZW5kCgogICAgc3ViZ3JhcGggQWRtaW5bIueuoeeQhuWRmOinhuinkiJdCiAgICAgICAgUFZDIC0tPiBQVltQZXJzaXN0ZW50Vm9sdW1lXQogICAgICAgIFNDW1N0b3JhZ2VDbGFzc10gLS4tPiBQVgogICAgZW5kCgogICAgc3ViZ3JhcGggQmFja2VuZFsi5a2Y5YKo5ZCO56uvIl0KICAgICAgICBQViAtLT4gTkZTW05GU10KICAgICAgICBQViAtLT4gQ2xvdWRbQ2xvdWQgU3RvcmFnZTxici8+QVdTIEVCUy9HQ1AgUEQvQXp1cmUgRGlza10KICAgICAgICBQViAtLT4gTG9jYWxbTG9jYWwgU3RvcmFnZV0KICAgICAgICBQViAtLT4gQ2VwaFtDZXBoL0dsdXN0ZXJGU10KICAgIGVuZA==" data-id="mermaid-jznfrxelv">
+<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IFRCCiAgICBzdWJncmFwaCBVc2VyWyLnlKjmiLfop4bop5IiXQogICAgICAgIFBvZFtQb2RdIC0tPiBQVkNbUGVyc2lzdGVudFZvbHVtZUNsYWltXQogICAgZW5kCgogICAgc3ViZ3JhcGggQWRtaW5bIueuoeeQhuWRmOinhuinkiJdCiAgICAgICAgUFZDIC0tPiBQVltQZXJzaXN0ZW50Vm9sdW1lXQogICAgICAgIFNDW1N0b3JhZ2VDbGFzc10gLS4tPiBQVgogICAgZW5kCgogICAgc3ViZ3JhcGggQmFja2VuZFsi5a2Y5YKo5ZCO56uvIl0KICAgICAgICBQViAtLT4gTkZTW05GU10KICAgICAgICBQViAtLT4gQ2xvdWRbQ2xvdWQgU3RvcmFnZTxici8+QVdTIEVCUy9HQ1AgUEQvQXp1cmUgRGlza10KICAgICAgICBQViAtLT4gTG9jYWxbTG9jYWwgU3RvcmFnZV0KICAgICAgICBQViAtLT4gQ2VwaFtDZXBoL0dsdXN0ZXJGU10KICAgIGVuZA==" data-id="mermaid-epzg9hy8m">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">flowchart TB
     subgraph User["用户视角"]
@@ -610,7 +610,7 @@
 
 <table><thead><tr><th>访问模式</th><th>简写</th><th>说明</th></tr></thead><tbody><tr><td>ReadWriteOnce</td><td>RWO</td><td>单节点读写</td></tr><tr><td>ReadOnlyMany</td><td>ROX</td><td>多节点只读</td></tr><tr><td>ReadWriteMany</td><td>RWX</td><td>多节点读写</td></tr><tr><td>ReadWriteOncePod</td><td>RWOP</td><td>单Pod读写（K8s 1.22+）</td></tr></tbody></table>
 <h3 id="回收策略">回收策略</h3>
-<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IExSCiAgICBQVkNbUFZD6KKr5Yig6ZmkXSAtLT4gUG9saWN5e+WbnuaUtuetlueVpX0KICAgIFBvbGljeSAtLT58UmV0YWlufCBSZXRhaW5b5L+d55WZ5pWw5o2uPGJyLz7miYvliqjmuIXnkIZdCiAgICBQb2xpY3kgLS0+fERlbGV0ZXwgRGVsZXRlW+iHquWKqOWIoOmZpFBW5ZKM5a2Y5YKoXQogICAgUG9saWN5IC0tPnxSZWN5Y2xlfCBSZWN5Y2xlW+a4heepuuaVsOaNrjxici8+UFblj6/ph43nlKg8YnIvPuW3suW6n+W8g10=" data-id="mermaid-tym02528h">
+<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IExSCiAgICBQVkNbUFZD6KKr5Yig6ZmkXSAtLT4gUG9saWN5e+WbnuaUtuetlueVpX0KICAgIFBvbGljeSAtLT58UmV0YWlufCBSZXRhaW5b5L+d55WZ5pWw5o2uPGJyLz7miYvliqjmuIXnkIZdCiAgICBQb2xpY3kgLS0+fERlbGV0ZXwgRGVsZXRlW+iHquWKqOWIoOmZpFBW5ZKM5a2Y5YKoXQogICAgUG9saWN5IC0tPnxSZWN5Y2xlfCBSZWN5Y2xlW+a4heepuuaVsOaNrjxici8+UFblj6/ph43nlKg8YnIvPuW3suW6n+W8g10=" data-id="mermaid-wh03eztgn">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">flowchart LR
     PVC[PVC被删除] --> Policy{回收策略}

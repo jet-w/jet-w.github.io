@@ -35,7 +35,7 @@
 <h2 id="knowledge-points">Knowledge Points</h2>
 <h3 id="what-is-argo-workflows">What is Argo Workflows</h3>
 <p>Argo Workflows is a Kubernetes-native workflow engine for orchestrating parallel tasks. Each step runs in an independent container, providing powerful dependency management, parallel execution, and error handling capabilities.</p>
-<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IFRCCiAgICBzdWJncmFwaCBUcmFkaXRpb25hbFsiVHJhZGl0aW9uYWwgQ0kvQ0QiXQogICAgICAgIEFnZW50W0J1aWxkIEFnZW50XQogICAgICAgIEFnZW50IC0tPiBTdGVwMVtTdGVwIDFdCiAgICAgICAgU3RlcDEgLS0+IFN0ZXAyW1N0ZXAgMl0KICAgICAgICBTdGVwMiAtLT4gU3RlcDNbU3RlcCAzXQogICAgICAgIE5vdGUxW1NoYXJlZCBlbnZpcm9ubWVudDxici8+UmVzb3VyY2UgY29udGVudGlvbjxici8+UG9vciBpc29sYXRpb25dCiAgICBlbmQKCiAgICBzdWJncmFwaCBBcmdvV29ya2Zsb3dzWyJBcmdvIFdvcmtmbG93cyJdCiAgICAgICAgQ29udHJvbGxlcltXb3JrZmxvdyBDb250cm9sbGVyXQogICAgICAgIENvbnRyb2xsZXIgLS0+IFBvZDFbUG9kOiBTdGVwIDFdCiAgICAgICAgQ29udHJvbGxlciAtLT4gUG9kMltQb2Q6IFN0ZXAgMl0KICAgICAgICBDb250cm9sbGVyIC0tPiBQb2QzW1BvZDogU3RlcCAzXQogICAgICAgIE5vdGUyW0NvbnRhaW5lciBpc29sYXRpb248YnIvPlBhcmFsbGVsaXphYmxlPGJyLz5TY2FsYWJsZV0KICAgIGVuZA==" data-id="mermaid-isbqt3c3l">
+<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IFRCCiAgICBzdWJncmFwaCBUcmFkaXRpb25hbFsiVHJhZGl0aW9uYWwgQ0kvQ0QiXQogICAgICAgIEFnZW50W0J1aWxkIEFnZW50XQogICAgICAgIEFnZW50IC0tPiBTdGVwMVtTdGVwIDFdCiAgICAgICAgU3RlcDEgLS0+IFN0ZXAyW1N0ZXAgMl0KICAgICAgICBTdGVwMiAtLT4gU3RlcDNbU3RlcCAzXQogICAgICAgIE5vdGUxW1NoYXJlZCBlbnZpcm9ubWVudDxici8+UmVzb3VyY2UgY29udGVudGlvbjxici8+UG9vciBpc29sYXRpb25dCiAgICBlbmQKCiAgICBzdWJncmFwaCBBcmdvV29ya2Zsb3dzWyJBcmdvIFdvcmtmbG93cyJdCiAgICAgICAgQ29udHJvbGxlcltXb3JrZmxvdyBDb250cm9sbGVyXQogICAgICAgIENvbnRyb2xsZXIgLS0+IFBvZDFbUG9kOiBTdGVwIDFdCiAgICAgICAgQ29udHJvbGxlciAtLT4gUG9kMltQb2Q6IFN0ZXAgMl0KICAgICAgICBDb250cm9sbGVyIC0tPiBQb2QzW1BvZDogU3RlcCAzXQogICAgICAgIE5vdGUyW0NvbnRhaW5lciBpc29sYXRpb248YnIvPlBhcmFsbGVsaXphYmxlPGJyLz5TY2FsYWJsZV0KICAgIGVuZA==" data-id="mermaid-8nn7ttw8g">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">flowchart TB
     subgraph Traditional["Traditional CI/CD"]
@@ -55,7 +55,7 @@
     end</code></pre>
 </div>
 <h3 id="architecture-components">Architecture Components</h3>
-<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IFRCCiAgICBzdWJncmFwaCBBcmdvV29ya2Zsb3dzWyJBcmdvIFdvcmtmbG93cyBDb21wb25lbnRzIl0KICAgICAgICBDb250cm9sbGVyW1dvcmtmbG93IENvbnRyb2xsZXI8YnIvPldvcmtmbG93IFNjaGVkdWxpbmddCiAgICAgICAgU2VydmVyW0FyZ28gU2VydmVyPGJyLz5BUEkvVUldCiAgICAgICAgRXhlY3V0b3JbRXhlY3V0b3I8YnIvPkNvbnRhaW5lciBFeGVjdXRpb25dCiAgICBlbmQKCiAgICBzdWJncmFwaCBTdG9yYWdlWyJTdG9yYWdlIl0KICAgICAgICBQR1soUG9zdGdyZVNRTC9NeVNRTCldCiAgICAgICAgUzNbUzMvTWluSU8vR0NTPGJyLz5BcnRpZmFjdCBTdG9yYWdlXQogICAgZW5kCgogICAgc3ViZ3JhcGggSzhzWyJLdWJlcm5ldGVzIl0KICAgICAgICBQb2RzW1dvcmtmbG93IFBvZHNdCiAgICAgICAgQ1JEW1dvcmtmbG93IENSRHNdCiAgICBlbmQKCiAgICBVc2VyW1VzZXJdIC0tPiBTZXJ2ZXIKICAgIFNlcnZlciAtLT4gQ29udHJvbGxlcgogICAgQ29udHJvbGxlciAtLT4gUG9kcwogICAgQ29udHJvbGxlciAtLT4gQ1JECiAgICBQb2RzIC0tPiBFeGVjdXRvcgogICAgRXhlY3V0b3IgLS0+IFMzCiAgICBTZXJ2ZXIgLS0+IFBH" data-id="mermaid-aor3x7ep6">
+<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IFRCCiAgICBzdWJncmFwaCBBcmdvV29ya2Zsb3dzWyJBcmdvIFdvcmtmbG93cyBDb21wb25lbnRzIl0KICAgICAgICBDb250cm9sbGVyW1dvcmtmbG93IENvbnRyb2xsZXI8YnIvPldvcmtmbG93IFNjaGVkdWxpbmddCiAgICAgICAgU2VydmVyW0FyZ28gU2VydmVyPGJyLz5BUEkvVUldCiAgICAgICAgRXhlY3V0b3JbRXhlY3V0b3I8YnIvPkNvbnRhaW5lciBFeGVjdXRpb25dCiAgICBlbmQKCiAgICBzdWJncmFwaCBTdG9yYWdlWyJTdG9yYWdlIl0KICAgICAgICBQR1soUG9zdGdyZVNRTC9NeVNRTCldCiAgICAgICAgUzNbUzMvTWluSU8vR0NTPGJyLz5BcnRpZmFjdCBTdG9yYWdlXQogICAgZW5kCgogICAgc3ViZ3JhcGggSzhzWyJLdWJlcm5ldGVzIl0KICAgICAgICBQb2RzW1dvcmtmbG93IFBvZHNdCiAgICAgICAgQ1JEW1dvcmtmbG93IENSRHNdCiAgICBlbmQKCiAgICBVc2VyW1VzZXJdIC0tPiBTZXJ2ZXIKICAgIFNlcnZlciAtLT4gQ29udHJvbGxlcgogICAgQ29udHJvbGxlciAtLT4gUG9kcwogICAgQ29udHJvbGxlciAtLT4gQ1JECiAgICBQb2RzIC0tPiBFeGVjdXRvcgogICAgRXhlY3V0b3IgLS0+IFMzCiAgICBTZXJ2ZXIgLS0+IFBH" data-id="mermaid-fbwfgx2kj">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">flowchart TB
     subgraph ArgoWorkflows["Argo Workflows Components"]
@@ -379,7 +379,7 @@
 <span class="line"><span style="color:#85E89D">      image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">busybox</span></span>
 <span class="line"><span style="color:#85E89D">      command</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">echo</span><span style="color:#E1E4E8">]</span></span>
 <span class="line"><span style="color:#85E89D">      args</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">"{{inputs.parameters.message}}"</span><span style="color:#E1E4E8">]</span></span></code></pre>
-<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IExSCiAgICBTMVtTdGVwIDFdIC0tPiBTMltTdGVwIDJdIC0tPiBTM1tTdGVwIDNd" data-id="mermaid-7gb7soewr">
+<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IExSCiAgICBTMVtTdGVwIDFdIC0tPiBTMltTdGVwIDJdIC0tPiBTM1tTdGVwIDNd" data-id="mermaid-8n6q5mw4o">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">flowchart LR
     S1[Step 1] --> S2[Step 2] --> S3[Step 3]</code></pre>
@@ -436,7 +436,7 @@
 <span class="line"><span style="color:#85E89D">      image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">busybox</span></span>
 <span class="line"><span style="color:#85E89D">      command</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">echo</span><span style="color:#E1E4E8">]</span></span>
 <span class="line"><span style="color:#85E89D">      args</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">"{{inputs.parameters.message}}"</span><span style="color:#E1E4E8">]</span></span></code></pre>
-<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IExSCiAgICBJbml0W0luaXRdIC0tPiBQQVtQYXJhbGxlbCBBXQogICAgSW5pdCAtLT4gUEJbUGFyYWxsZWwgQl0KICAgIEluaXQgLS0+IFBDW1BhcmFsbGVsIENdCiAgICBQQSAtLT4gRmluaXNoW0ZpbmlzaF0KICAgIFBCIC0tPiBGaW5pc2gKICAgIFBDIC0tPiBGaW5pc2g=" data-id="mermaid-8edz9fqpu">
+<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IExSCiAgICBJbml0W0luaXRdIC0tPiBQQVtQYXJhbGxlbCBBXQogICAgSW5pdCAtLT4gUEJbUGFyYWxsZWwgQl0KICAgIEluaXQgLS0+IFBDW1BhcmFsbGVsIENdCiAgICBQQSAtLT4gRmluaXNoW0ZpbmlzaF0KICAgIFBCIC0tPiBGaW5pc2gKICAgIFBDIC0tPiBGaW5pc2g=" data-id="mermaid-e2iq8hum3">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">flowchart LR
     Init[Init] --> PA[Parallel A]
@@ -497,7 +497,7 @@
 <span class="line"><span style="color:#85E89D">      image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">busybox</span></span>
 <span class="line"><span style="color:#85E89D">      command</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">echo</span><span style="color:#E1E4E8">]</span></span>
 <span class="line"><span style="color:#85E89D">      args</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">"{{inputs.parameters.message}}"</span><span style="color:#E1E4E8">]</span></span></code></pre>
-<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IFRCCiAgICBBW1Rhc2sgQV0gLS0+IEJbVGFzayBCXQogICAgQSAtLT4gQ1tUYXNrIENdCiAgICBCIC0tPiBEW1Rhc2sgRF0KICAgIEMgLS0+IEQ=" data-id="mermaid-4ox8r80hf">
+<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IFRCCiAgICBBW1Rhc2sgQV0gLS0+IEJbVGFzayBCXQogICAgQSAtLT4gQ1tUYXNrIENdCiAgICBCIC0tPiBEW1Rhc2sgRF0KICAgIEMgLS0+IEQ=" data-id="mermaid-m0yb1b6ul">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">flowchart TB
     A[Task A] --> B[Task B]
@@ -589,7 +589,7 @@
 <span class="line"><span style="color:#85E89D">      image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">curlimages/curl</span></span>
 <span class="line"><span style="color:#85E89D">      command</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">sh</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">-c</span><span style="color:#E1E4E8">]</span></span>
 <span class="line"><span style="color:#85E89D">      args</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">"echo 'Running integration tests...' &#x26;&#x26; sleep 3"</span><span style="color:#E1E4E8">]</span></span></code></pre>
-<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IFRCCiAgICBDaGVja291dFtDaGVja291dF0gLS0+IExpbnRbTGludF0KICAgIENoZWNrb3V0IC0tPiBUZXN0W1VuaXQgVGVzdF0KICAgIENoZWNrb3V0IC0tPiBTZWN1cml0eVtTZWN1cml0eSBTY2FuXQogICAgTGludCAtLT4gQnVpbGRbQnVpbGRdCiAgICBUZXN0IC0tPiBCdWlsZAogICAgU2VjdXJpdHkgLS0+IEJ1aWxkCiAgICBCdWlsZCAtLT4gUHVzaFtQdXNoIEltYWdlXQogICAgUHVzaCAtLT4gSW50ZWdyYXRpb25bSW50ZWdyYXRpb24gVGVzdF0=" data-id="mermaid-7obaxi7zg">
+<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IFRCCiAgICBDaGVja291dFtDaGVja291dF0gLS0+IExpbnRbTGludF0KICAgIENoZWNrb3V0IC0tPiBUZXN0W1VuaXQgVGVzdF0KICAgIENoZWNrb3V0IC0tPiBTZWN1cml0eVtTZWN1cml0eSBTY2FuXQogICAgTGludCAtLT4gQnVpbGRbQnVpbGRdCiAgICBUZXN0IC0tPiBCdWlsZAogICAgU2VjdXJpdHkgLS0+IEJ1aWxkCiAgICBCdWlsZCAtLT4gUHVzaFtQdXNoIEltYWdlXQogICAgUHVzaCAtLT4gSW50ZWdyYXRpb25bSW50ZWdyYXRpb24gVGVzdF0=" data-id="mermaid-8y3arkw78">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">flowchart TB
     Checkout[Checkout] --> Lint[Lint]

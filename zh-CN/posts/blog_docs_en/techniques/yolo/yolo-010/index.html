@@ -32,7 +32,7 @@
 <h3 id="1011-basic-evaluation-metrics">10.1.1 Basic Evaluation Metrics</h3>
 <h4 id="iou-intersection-over-union">IoU (Intersection over Union)</h4>
 <p>IoU is the most fundamental evaluation metric in object detection, used to measure the overlap between predicted boxes and ground truth boxes.</p>
-<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbUHJlZGljdGVkIEJveF0gLS0+IENbQ2FsY3VsYXRlIE92ZXJsYXAgQXJlYV0KICAgIEJbR3JvdW5kIFRydXRoIEJveF0gLS0+IEMKICAgIEMgLS0+IERbSW9VID0gSW50ZXJzZWN0aW9uIEFyZWEgLyBVbmlvbiBBcmVhXQogICAgRCAtLT4gRXtJb1UgPj0gVGhyZXNob2xkP30KICAgIEUgLS0+fFllc3wgRltDb3JyZWN0IERldGVjdGlvbl0KICAgIEUgLS0+fE5vfCBHW1dyb25nIERldGVjdGlvbl0=" data-id="mermaid-vd4fp9cda">
+<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbUHJlZGljdGVkIEJveF0gLS0+IENbQ2FsY3VsYXRlIE92ZXJsYXAgQXJlYV0KICAgIEJbR3JvdW5kIFRydXRoIEJveF0gLS0+IEMKICAgIEMgLS0+IERbSW9VID0gSW50ZXJzZWN0aW9uIEFyZWEgLyBVbmlvbiBBcmVhXQogICAgRCAtLT4gRXtJb1UgPj0gVGhyZXNob2xkP30KICAgIEUgLS0+fFllc3wgRltDb3JyZWN0IERldGVjdGlvbl0KICAgIEUgLS0+fE5vfCBHW1dyb25nIERldGVjdGlvbl0=" data-id="mermaid-w0pfuh6l4">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">graph TB
     A[Predicted Box] --> C[Calculate Overlap Area]
@@ -56,7 +56,7 @@
 <p><strong>Recall:</strong> Among all truly positive samples, the proportion correctly identified</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Recall = TP / (TP + FN)</span></span></code></pre>
 <p><strong>Confusion Matrix:</strong></p>
-<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbQ29uZnVzaW9uIE1hdHJpeF0gLS0+IEJbVFA6IFRydWUgUG9zaXRpdmU8YnIvPkNvcnJlY3RseSBkZXRlY3RlZCB0YXJnZXRzXQogICAgQSAtLT4gQ1tGUDogRmFsc2UgUG9zaXRpdmU8YnIvPkluY29ycmVjdGx5IGRldGVjdGVkIGJhY2tncm91bmRdCiAgICBBIC0tPiBEW0ZOOiBGYWxzZSBOZWdhdGl2ZTxici8+TWlzc2VkIHRhcmdldHNdCiAgICBBIC0tPiBFW1ROOiBUcnVlIE5lZ2F0aXZlPGJyLz5Db3JyZWN0bHkgaWRlbnRpZmllZCBiYWNrZ3JvdW5kXQ==" data-id="mermaid-izo962q6a">
+<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbQ29uZnVzaW9uIE1hdHJpeF0gLS0+IEJbVFA6IFRydWUgUG9zaXRpdmU8YnIvPkNvcnJlY3RseSBkZXRlY3RlZCB0YXJnZXRzXQogICAgQSAtLT4gQ1tGUDogRmFsc2UgUG9zaXRpdmU8YnIvPkluY29ycmVjdGx5IGRldGVjdGVkIGJhY2tncm91bmRdCiAgICBBIC0tPiBEW0ZOOiBGYWxzZSBOZWdhdGl2ZTxici8+TWlzc2VkIHRhcmdldHNdCiAgICBBIC0tPiBFW1ROOiBUcnVlIE5lZ2F0aXZlPGJyLz5Db3JyZWN0bHkgaWRlbnRpZmllZCBiYWNrZ3JvdW5kXQ==" data-id="mermaid-gvs256lbu">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">graph TB
     A[Confusion Matrix] --> B[TP: True Positive&#x3C;br/>Correctly detected targets]
@@ -74,7 +74,7 @@
 <li>Plot P-R curve</li>
 <li>Calculate area under curve</li>
 </ol>
-<div class="mermaid-container" data-mermaid-source="Z3JhcGggTFIKICAgIEFbRGV0ZWN0aW9uIFJlc3VsdHNdIC0tPiBCW1NvcnQgYnkgQ29uZmlkZW5jZV0KICAgIEIgLS0+IENbQ2FsY3VsYXRlIFAtUiBQb2ludHNdCiAgICBDIC0tPiBEW1Bsb3QgUC1SIEN1cnZlXQogICAgRCAtLT4gRVtDYWxjdWxhdGUgQVVDXQogICAgRSAtLT4gRltBUCBWYWx1ZV0=" data-id="mermaid-wz1gvcdu8">
+<div class="mermaid-container" data-mermaid-source="Z3JhcGggTFIKICAgIEFbRGV0ZWN0aW9uIFJlc3VsdHNdIC0tPiBCW1NvcnQgYnkgQ29uZmlkZW5jZV0KICAgIEIgLS0+IENbQ2FsY3VsYXRlIFAtUiBQb2ludHNdCiAgICBDIC0tPiBEW1Bsb3QgUC1SIEN1cnZlXQogICAgRCAtLT4gRVtDYWxjdWxhdGUgQVVDXQogICAgRSAtLT4gRltBUCBWYWx1ZV0=" data-id="mermaid-zwxyt74sy">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">graph LR
     A[Detection Results] --> B[Sort by Confidence]
@@ -104,7 +104,7 @@
 <h2 id="102-model-performance-analysis">10.2 Model Performance Analysis</h2>
 <h3 id="1021-detailed-performance-analysis">10.2.1 Detailed Performance Analysis</h3>
 <h4 id="analysis-by-category">Analysis by Category</h4>
-<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbT3ZlcmFsbCBtQVBdIC0tPiBCW0FQIEFuYWx5c2lzIGJ5IENhdGVnb3J5XQogICAgQiAtLT4gQ1tIaWdoIFBlcmZvcm1hbmNlIENhdGVnb3JpZXNdCiAgICBCIC0tPiBEW0xvdyBQZXJmb3JtYW5jZSBDYXRlZ29yaWVzXQogICAgQyAtLT4gRVtBbmFseXplIFN1Y2Nlc3MgRmFjdG9yc10KICAgIEQgLS0+IEZbQW5hbHl6ZSBGYWlsdXJlIFJlYXNvbnNdCiAgICBGIC0tPiBHW0luc3VmZmljaWVudCBEYXRhXQogICAgRiAtLT4gSFtDbGFzcyBTaW1pbGFyaXR5XQogICAgRiAtLT4gSVtBbm5vdGF0aW9uIFF1YWxpdHld" data-id="mermaid-bbw82vzg5">
+<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbT3ZlcmFsbCBtQVBdIC0tPiBCW0FQIEFuYWx5c2lzIGJ5IENhdGVnb3J5XQogICAgQiAtLT4gQ1tIaWdoIFBlcmZvcm1hbmNlIENhdGVnb3JpZXNdCiAgICBCIC0tPiBEW0xvdyBQZXJmb3JtYW5jZSBDYXRlZ29yaWVzXQogICAgQyAtLT4gRVtBbmFseXplIFN1Y2Nlc3MgRmFjdG9yc10KICAgIEQgLS0+IEZbQW5hbHl6ZSBGYWlsdXJlIFJlYXNvbnNdCiAgICBGIC0tPiBHW0luc3VmZmljaWVudCBEYXRhXQogICAgRiAtLT4gSFtDbGFzcyBTaW1pbGFyaXR5XQogICAgRiAtLT4gSVtBbm5vdGF0aW9uIFF1YWxpdHld" data-id="mermaid-jka6ohedy">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">graph TB
     A[Overall mAP] --> B[AP Analysis by Category]
@@ -124,7 +124,7 @@
 </ul>
 <h3 id="1022-error-analysis-framework">10.2.2 Error Analysis Framework</h3>
 <h4 id="classification-of-detection-errors">Classification of Detection Errors</h4>
-<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IFRECiAgICBBW0RldGVjdGlvbiBFcnJvcnNdIC0tPiBCW0xvY2FsaXphdGlvbiBFcnJvcl0KICAgIEEgLS0+IENbQ2xhc3NpZmljYXRpb24gRXJyb3JdCiAgICBBIC0tPiBEW0JhY2tncm91bmQgRXJyb3JdCiAgICBBIC0tPiBFW0R1cGxpY2F0ZSBEZXRlY3Rpb25dCgogICAgQiAtLT4gQjFbSW5zdWZmaWNpZW50IElvVV0KICAgIEMgLS0+IEMxW0NsYXNzIENvbmZ1c2lvbl0KICAgIEQgLS0+IEQxW0JhY2tncm91bmQgRmFsc2UgUG9zaXRpdmVdCiAgICBFIC0tPiBFMVtOTVMgRmFpbHVyZV0=" data-id="mermaid-an4im3l3a">
+<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IFRECiAgICBBW0RldGVjdGlvbiBFcnJvcnNdIC0tPiBCW0xvY2FsaXphdGlvbiBFcnJvcl0KICAgIEEgLS0+IENbQ2xhc3NpZmljYXRpb24gRXJyb3JdCiAgICBBIC0tPiBEW0JhY2tncm91bmQgRXJyb3JdCiAgICBBIC0tPiBFW0R1cGxpY2F0ZSBEZXRlY3Rpb25dCgogICAgQiAtLT4gQjFbSW5zdWZmaWNpZW50IElvVV0KICAgIEMgLS0+IEMxW0NsYXNzIENvbmZ1c2lvbl0KICAgIEQgLS0+IEQxW0JhY2tncm91bmQgRmFsc2UgUG9zaXRpdmVdCiAgICBFIC0tPiBFMVtOTVMgRmFpbHVyZV0=" data-id="mermaid-qq2surlea">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">flowchart TD
     A[Detection Errors] --> B[Localization Error]
@@ -146,7 +146,7 @@
 </ol>
 <h3 id="1023-performance-bottleneck-analysis">10.2.3 Performance Bottleneck Analysis</h3>
 <h4 id="inference-time-breakdown">Inference Time Breakdown</h4>
-<div class="mermaid-container" data-mermaid-source="Z3JhcGggTFIKICAgIEFbVG90YWwgSW5mZXJlbmNlIFRpbWVdIC0tPiBCW0RhdGEgUHJlcHJvY2Vzc2luZ10KICAgIEEgLS0+IENbTmV0d29yayBGb3J3YXJkIFBhc3NdCiAgICBBIC0tPiBEW1Bvc3QtcHJvY2Vzc2luZ10KCiAgICBCIC0tPiBCMVtJbWFnZSBTY2FsaW5nXQogICAgQiAtLT4gQjJbTm9ybWFsaXphdGlvbl0KICAgIEMgLS0+IEMxW0ZlYXR1cmUgRXh0cmFjdGlvbl0KICAgIEMgLS0+IEMyW0RldGVjdGlvbiBIZWFkIENvbXB1dGF0aW9uXQogICAgRCAtLT4gRDFbTk1TXQogICAgRCAtLT4gRDJbUmVzdWx0IFBhcnNpbmdd" data-id="mermaid-4atfi7908">
+<div class="mermaid-container" data-mermaid-source="Z3JhcGggTFIKICAgIEFbVG90YWwgSW5mZXJlbmNlIFRpbWVdIC0tPiBCW0RhdGEgUHJlcHJvY2Vzc2luZ10KICAgIEEgLS0+IENbTmV0d29yayBGb3J3YXJkIFBhc3NdCiAgICBBIC0tPiBEW1Bvc3QtcHJvY2Vzc2luZ10KCiAgICBCIC0tPiBCMVtJbWFnZSBTY2FsaW5nXQogICAgQiAtLT4gQjJbTm9ybWFsaXphdGlvbl0KICAgIEMgLS0+IEMxW0ZlYXR1cmUgRXh0cmFjdGlvbl0KICAgIEMgLS0+IEMyW0RldGVjdGlvbiBIZWFkIENvbXB1dGF0aW9uXQogICAgRCAtLT4gRDFbTk1TXQogICAgRCAtLT4gRDJbUmVzdWx0IFBhcnNpbmdd" data-id="mermaid-4iyltkv01">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">graph LR
     A[Total Inference Time] --> B[Data Preprocessing]
@@ -180,7 +180,7 @@
 <span class="line"></span>
 <span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> heatmap</span></span></code></pre>
 <h4 id="feature-map-visualization">Feature Map Visualization</h4>
-<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbSW5wdXQgSW1hZ2VdIC0tPiBCW0NvbnYgTGF5ZXIgMV0KICAgIEIgLS0+IENbQ29udiBMYXllciAyXQogICAgQyAtLT4gRFtDb252IExheWVyIDNdCgogICAgQiAtLT4gQjFbRmVhdHVyZSBNYXAgVmlzdWFsaXphdGlvbl0KICAgIEMgLS0+IEMxW0ZlYXR1cmUgTWFwIFZpc3VhbGl6YXRpb25dCiAgICBEIC0tPiBEMVtGZWF0dXJlIE1hcCBWaXN1YWxpemF0aW9uXQoKICAgIEIxIC0tPiBFW0xvdy1sZXZlbCBGZWF0dXJlczxici8+RWRnZXMsIFRleHR1cmVzXQogICAgQzEgLS0+IEZbTWlkLWxldmVsIEZlYXR1cmVzPGJyLz5TaGFwZXMsIFBhcnRzXQogICAgRDEgLS0+IEdbSGlnaC1sZXZlbCBGZWF0dXJlczxici8+U2VtYW50aWMgSW5mb3JtYXRpb25d" data-id="mermaid-oxya52fnf">
+<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbSW5wdXQgSW1hZ2VdIC0tPiBCW0NvbnYgTGF5ZXIgMV0KICAgIEIgLS0+IENbQ29udiBMYXllciAyXQogICAgQyAtLT4gRFtDb252IExheWVyIDNdCgogICAgQiAtLT4gQjFbRmVhdHVyZSBNYXAgVmlzdWFsaXphdGlvbl0KICAgIEMgLS0+IEMxW0ZlYXR1cmUgTWFwIFZpc3VhbGl6YXRpb25dCiAgICBEIC0tPiBEMVtGZWF0dXJlIE1hcCBWaXN1YWxpemF0aW9uXQoKICAgIEIxIC0tPiBFW0xvdy1sZXZlbCBGZWF0dXJlczxici8+RWRnZXMsIFRleHR1cmVzXQogICAgQzEgLS0+IEZbTWlkLWxldmVsIEZlYXR1cmVzPGJyLz5TaGFwZXMsIFBhcnRzXQogICAgRDEgLS0+IEdbSGlnaC1sZXZlbCBGZWF0dXJlczxici8+U2VtYW50aWMgSW5mb3JtYXRpb25d" data-id="mermaid-cedyup74m">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">graph TB
     A[Input Image] --> B[Conv Layer 1]
@@ -223,7 +223,7 @@
 <span class="line"><span style="color:#E1E4E8">    plt.show()</span></span></code></pre>
 <h3 id="1033-error-sample-analysis">10.3.3 Error Sample Analysis</h3>
 <h4 id="failure-case-visualization">Failure Case Visualization</h4>
-<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbQ29sbGVjdCBGYWlsdXJlIENhc2VzXSAtLT4gQltDbGFzc2lmeSBGYWlsdXJlIFJlYXNvbnNdCiAgICBCIC0tPiBDW0hlYXZ5IE9jY2x1c2lvbl0KICAgIEIgLS0+IERbUG9vciBMaWdodGluZ10KICAgIEIgLS0+IEVbVG9vIFNtYWxsIFRhcmdldF0KICAgIEIgLS0+IEZbQW5ub3RhdGlvbiBFcnJvcl0KCiAgICBDIC0tPiBHW09jY2x1c2lvbiBRdWFudGlmaWNhdGlvbl0KICAgIEQgLS0+IEhbQnJpZ2h0bmVzcyBTdGF0aXN0aWNzXQogICAgRSAtLT4gSVtTaXplIERpc3RyaWJ1dGlvbl0KICAgIEYgLS0+IEpbQW5ub3RhdGlvbiBRdWFsaXR5IENoZWNrXQ==" data-id="mermaid-apljtgrmc">
+<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbQ29sbGVjdCBGYWlsdXJlIENhc2VzXSAtLT4gQltDbGFzc2lmeSBGYWlsdXJlIFJlYXNvbnNdCiAgICBCIC0tPiBDW0hlYXZ5IE9jY2x1c2lvbl0KICAgIEIgLS0+IERbUG9vciBMaWdodGluZ10KICAgIEIgLS0+IEVbVG9vIFNtYWxsIFRhcmdldF0KICAgIEIgLS0+IEZbQW5ub3RhdGlvbiBFcnJvcl0KCiAgICBDIC0tPiBHW09jY2x1c2lvbiBRdWFudGlmaWNhdGlvbl0KICAgIEQgLS0+IEhbQnJpZ2h0bmVzcyBTdGF0aXN0aWNzXQogICAgRSAtLT4gSVtTaXplIERpc3RyaWJ1dGlvbl0KICAgIEYgLS0+IEpbQW5ub3RhdGlvbiBRdWFsaXR5IENoZWNrXQ==" data-id="mermaid-0m4682zyn">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">graph TB
     A[Collect Failure Cases] --> B[Classify Failure Reasons]
@@ -240,7 +240,7 @@
 <h2 id="104-ab-testing-and-model-comparison">10.4 A/B Testing and Model Comparison</h2>
 <h3 id="1041-experimental-design-principles">10.4.1 Experimental Design Principles</h3>
 <h4 id="controlled-experiment-design">Controlled Experiment Design</h4>
-<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbRXhwZXJpbWVudCBEZXNpZ25dIC0tPiBCW0NvbnRyb2wgVmFyaWFibGVzXQogICAgQSAtLT4gQ1tSYW5kb21pemF0aW9uXQogICAgQSAtLT4gRFtTYW1wbGUgU2l6ZV0KCiAgICBCIC0tPiBCMVtTYW1lIERhdGFzZXRdCiAgICBCIC0tPiBCMltDb25zaXN0ZW50IEV2YWx1YXRpb24gTWV0cmljc10KICAgIEIgLS0+IEIzW1VuaWZpZWQgSGFyZHdhcmUgRW52aXJvbm1lbnRdCgogICAgQyAtLT4gQzFbUmFuZG9tIFNhbXBsaW5nXQogICAgQyAtLT4gQzJbUmFuZG9tIEdyb3VwaW5nXQoKICAgIEQgLS0+IEQxW1N0YXRpc3RpY2FsIFBvd2VyIEFuYWx5c2lzXQogICAgRCAtLT4gRDJbQ29uZmlkZW5jZSBJbnRlcnZhbHNd" data-id="mermaid-cgfzmskpy">
+<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbRXhwZXJpbWVudCBEZXNpZ25dIC0tPiBCW0NvbnRyb2wgVmFyaWFibGVzXQogICAgQSAtLT4gQ1tSYW5kb21pemF0aW9uXQogICAgQSAtLT4gRFtTYW1wbGUgU2l6ZV0KCiAgICBCIC0tPiBCMVtTYW1lIERhdGFzZXRdCiAgICBCIC0tPiBCMltDb25zaXN0ZW50IEV2YWx1YXRpb24gTWV0cmljc10KICAgIEIgLS0+IEIzW1VuaWZpZWQgSGFyZHdhcmUgRW52aXJvbm1lbnRdCgogICAgQyAtLT4gQzFbUmFuZG9tIFNhbXBsaW5nXQogICAgQyAtLT4gQzJbUmFuZG9tIEdyb3VwaW5nXQoKICAgIEQgLS0+IEQxW1N0YXRpc3RpY2FsIFBvd2VyIEFuYWx5c2lzXQogICAgRCAtLT4gRDJbQ29uZmlkZW5jZSBJbnRlcnZhbHNd" data-id="mermaid-zeyssalgw">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">graph TB
     A[Experiment Design] --> B[Control Variables]
@@ -328,7 +328,7 @@
 
 <table><thead><tr><th>Model</th><th>mAP@0.5</th><th>mAP@0.75</th><th>FPS</th><th>Parameters(M)</th><th>Model Size(MB)</th></tr></thead><tbody><tr><td>YOLOv5s</td><td>37.2</td><td>56.0</td><td>140</td><td>7.2</td><td>14.1</td></tr><tr><td>YOLOv8s</td><td>44.9</td><td>61.8</td><td>120</td><td>11.2</td><td>21.5</td></tr><tr><td>YOLOv9s</td><td>46.8</td><td>63.4</td><td>110</td><td>13.8</td><td>26.7</td></tr></tbody></table>
 <h4 id="performance-efficiency-tradeoff-chart">Performance-Efficiency Tradeoff Chart</h4>
-<div class="mermaid-container" data-mermaid-source="Z3JhcGggTFIKICAgIEFbSGlnaCBBY2N1cmFjeV0gLS0+IEJbWU9MT3Y5XQogICAgQ1tIaWdoIFNwZWVkXSAtLT4gRFtZT0xPdjVdCiAgICBFW0JhbGFuY2UgUG9pbnRdIC0tPiBGW1lPTE92OF0KCiAgICBzdWJncmFwaCAiUGVyZm9ybWFuY2UtRWZmaWNpZW5jeSBTcGFjZSIKICAgICAgICBCCiAgICAgICAgRAogICAgICAgIEYKICAgIGVuZA==" data-id="mermaid-u5usdlcex">
+<div class="mermaid-container" data-mermaid-source="Z3JhcGggTFIKICAgIEFbSGlnaCBBY2N1cmFjeV0gLS0+IEJbWU9MT3Y5XQogICAgQ1tIaWdoIFNwZWVkXSAtLT4gRFtZT0xPdjVdCiAgICBFW0JhbGFuY2UgUG9pbnRdIC0tPiBGW1lPTE92OF0KCiAgICBzdWJncmFwaCAiUGVyZm9ybWFuY2UtRWZmaWNpZW5jeSBTcGFjZSIKICAgICAgICBCCiAgICAgICAgRAogICAgICAgIEYKICAgIGVuZA==" data-id="mermaid-1qibymsxe">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">graph LR
     A[High Accuracy] --> B[YOLOv9]
@@ -351,7 +351,7 @@
 <li><strong>Appropriate Scale:</strong> Sufficient statistical significance</li>
 </ol>
 <h4 id="dataset-split-strategy">Dataset Split Strategy</h4>
-<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbQ29tcGxldGUgRGF0YXNldF0gLS0+IEJbVHJhaW5pbmcgU2V0IDcwJV0KICAgIEEgLS0+IENbVmFsaWRhdGlvbiBTZXQgMTUlXQogICAgQSAtLT4gRFtUZXN0IFNldCAxNSVdCgogICAgQiAtLT4gQjFbTW9kZWwgVHJhaW5pbmddCiAgICBDIC0tPiBDMVtIeXBlcnBhcmFtZXRlciBUdW5pbmddCiAgICBDIC0tPiBDMltNb2RlbCBTZWxlY3Rpb25dCiAgICBEIC0tPiBEMVtGaW5hbCBFdmFsdWF0aW9uXQogICAgRCAtLT4gRDJbUGVyZm9ybWFuY2UgUmVwb3J0XQ==" data-id="mermaid-91iozcy12">
+<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbQ29tcGxldGUgRGF0YXNldF0gLS0+IEJbVHJhaW5pbmcgU2V0IDcwJV0KICAgIEEgLS0+IENbVmFsaWRhdGlvbiBTZXQgMTUlXQogICAgQSAtLT4gRFtUZXN0IFNldCAxNSVdCgogICAgQiAtLT4gQjFbTW9kZWwgVHJhaW5pbmddCiAgICBDIC0tPiBDMVtIeXBlcnBhcmFtZXRlciBUdW5pbmddCiAgICBDIC0tPiBDMltNb2RlbCBTZWxlY3Rpb25dCiAgICBEIC0tPiBEMVtGaW5hbCBFdmFsdWF0aW9uXQogICAgRCAtLT4gRDJbUGVyZm9ybWFuY2UgUmVwb3J0XQ==" data-id="mermaid-q6na5jtpn">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">graph TB
     A[Complete Dataset] --> B[Training Set 70%]
@@ -412,7 +412,7 @@
 <li><strong>Reproducibility:</strong> Detailed recording of evaluation conditions</li>
 </ol>
 <h4 id="common-pitfalls-and-avoidance-methods">Common Pitfalls and Avoidance Methods</h4>
-<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbRXZhbHVhdGlvbiBQaXRmYWxsc10gLS0+IEJbRGF0YSBMZWFrYWdlXQogICAgQSAtLT4gQ1tPdmVyZml0dGluZyBUZXN0IFNldF0KICAgIEEgLS0+IERbRXZhbHVhdGlvbiBCaWFzXQogICAgQSAtLT4gRVtJbmNvbnNpc3RlbnQgRW52aXJvbm1lbnRdCgogICAgQiAtLT4gQjFbU3RyaWN0IERhdGEgUGFydGl0aW9uaW5nXQogICAgQyAtLT4gQzFbTGltaXQgVGVzdCBGcmVxdWVuY3ldCiAgICBEIC0tPiBEMVtNdWx0aS1kaW1lbnNpb25hbCBFdmFsdWF0aW9uXQogICAgRSAtLT4gRTFbU3RhbmRhcmRpemVkIEVudmlyb25tZW50XQ==" data-id="mermaid-jgbsplkmw">
+<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbRXZhbHVhdGlvbiBQaXRmYWxsc10gLS0+IEJbRGF0YSBMZWFrYWdlXQogICAgQSAtLT4gQ1tPdmVyZml0dGluZyBUZXN0IFNldF0KICAgIEEgLS0+IERbRXZhbHVhdGlvbiBCaWFzXQogICAgQSAtLT4gRVtJbmNvbnNpc3RlbnQgRW52aXJvbm1lbnRdCgogICAgQiAtLT4gQjFbU3RyaWN0IERhdGEgUGFydGl0aW9uaW5nXQogICAgQyAtLT4gQzFbTGltaXQgVGVzdCBGcmVxdWVuY3ldCiAgICBEIC0tPiBEMVtNdWx0aS1kaW1lbnNpb25hbCBFdmFsdWF0aW9uXQogICAgRSAtLT4gRTFbU3RhbmRhcmRpemVkIEVudmlyb25tZW50XQ==" data-id="mermaid-ywnjqxo9y">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">graph TB
     A[Evaluation Pitfalls] --> B[Data Leakage]

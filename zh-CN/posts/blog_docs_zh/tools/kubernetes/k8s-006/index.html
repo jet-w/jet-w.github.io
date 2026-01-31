@@ -35,7 +35,7 @@
 <h2 id="知识点">知识点</h2>
 <h3 id="什么是helm">什么是Helm</h3>
 <p>Helm是Kubernetes的包管理器，类似于Linux的apt/yum或Node.js的npm。它简化了Kubernetes应用的部署和管理。</p>
-<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IExSCiAgICBzdWJncmFwaCBXaXRob3V0WyLkuI3kvb/nlKhIZWxtIl0KICAgICAgICBNMVtkZXBsb3ltZW50LnlhbWxdCiAgICAgICAgTTJbc2VydmljZS55YW1sXQogICAgICAgIE0zW2NvbmZpZ21hcC55YW1sXQogICAgICAgIE00W3NlY3JldC55YW1sXQogICAgICAgIE01W2luZ3Jlc3MueWFtbF0KICAgICAgICBNMSAtLT4gSzFba3ViZWN0bCBhcHBseV0KICAgICAgICBNMiAtLT4gSzEKICAgICAgICBNMyAtLT4gSzEKICAgICAgICBNNCAtLT4gSzEKICAgICAgICBNNSAtLT4gSzEKICAgIGVuZAoKICAgIHN1YmdyYXBoIFdpdGhbIuS9v+eUqEhlbG0iXQogICAgICAgIENoYXJ0W0hlbG0gQ2hhcnQ8YnIvPuWMheWQq+aJgOaciei1hOa6kF0KICAgICAgICBDaGFydCAtLT4gSDFbaGVsbSBpbnN0YWxsXQogICAgZW5k" data-id="mermaid-zracj6qky">
+<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IExSCiAgICBzdWJncmFwaCBXaXRob3V0WyLkuI3kvb/nlKhIZWxtIl0KICAgICAgICBNMVtkZXBsb3ltZW50LnlhbWxdCiAgICAgICAgTTJbc2VydmljZS55YW1sXQogICAgICAgIE0zW2NvbmZpZ21hcC55YW1sXQogICAgICAgIE00W3NlY3JldC55YW1sXQogICAgICAgIE01W2luZ3Jlc3MueWFtbF0KICAgICAgICBNMSAtLT4gSzFba3ViZWN0bCBhcHBseV0KICAgICAgICBNMiAtLT4gSzEKICAgICAgICBNMyAtLT4gSzEKICAgICAgICBNNCAtLT4gSzEKICAgICAgICBNNSAtLT4gSzEKICAgIGVuZAoKICAgIHN1YmdyYXBoIFdpdGhbIuS9v+eUqEhlbG0iXQogICAgICAgIENoYXJ0W0hlbG0gQ2hhcnQ8YnIvPuWMheWQq+aJgOaciei1hOa6kF0KICAgICAgICBDaGFydCAtLT4gSDFbaGVsbSBpbnN0YWxsXQogICAgZW5k" data-id="mermaid-2utx8c8ae">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">flowchart LR
     subgraph Without["不使用Helm"]
@@ -57,7 +57,7 @@
     end</code></pre>
 </div>
 <h3 id="helm核心概念">Helm核心概念</h3>
-<div class="mermaid-container" data-mermaid-source="bWluZG1hcAogIHJvb3QoKEhlbG0pKQogICAgQ2hhcnQKICAgICAg5bqU55So5YyFCiAgICAgIOWMheWQq+aooeadv+WSjOmFjee9rgogICAgICDlj6/lpI3nlKjlkozlhbHkuqsKICAgIFJlbGVhc2UKICAgICAgQ2hhcnTnmoTov5DooYzlrp7kvosKICAgICAg5Y+v5Lul5pyJ5aSa5LiqUmVsZWFzZQogICAgICDni6znq4vnrqHnkIYKICAgIFJlcG9zaXRvcnkKICAgICAgQ2hhcnTku5PlupMKICAgICAg5YWs5YWx5oiW56eB5pyJCiAgICAgIOeJiOacrOeuoeeQhgogICAgVmFsdWVzCiAgICAgIOmFjee9ruWPguaVsAogICAgICDopobnm5bpu5jorqTlgLwKICAgICAg5pSv5oyB5aSa546v5aKD" data-id="mermaid-9tsibzlsk">
+<div class="mermaid-container" data-mermaid-source="bWluZG1hcAogIHJvb3QoKEhlbG0pKQogICAgQ2hhcnQKICAgICAg5bqU55So5YyFCiAgICAgIOWMheWQq+aooeadv+WSjOmFjee9rgogICAgICDlj6/lpI3nlKjlkozlhbHkuqsKICAgIFJlbGVhc2UKICAgICAgQ2hhcnTnmoTov5DooYzlrp7kvosKICAgICAg5Y+v5Lul5pyJ5aSa5LiqUmVsZWFzZQogICAgICDni6znq4vnrqHnkIYKICAgIFJlcG9zaXRvcnkKICAgICAgQ2hhcnTku5PlupMKICAgICAg5YWs5YWx5oiW56eB5pyJCiAgICAgIOeJiOacrOeuoeeQhgogICAgVmFsdWVzCiAgICAgIOmFjee9ruWPguaVsAogICAgICDopobnm5bpu5jorqTlgLwKICAgICAg5pSv5oyB5aSa546v5aKD" data-id="mermaid-u9p09m0n4">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">mindmap
   root((Helm))
@@ -79,7 +79,7 @@
       支持多环境</code></pre>
 </div>
 <h3 id="helm架构">Helm架构</h3>
-<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IFRCCiAgICBVc2VyW+eUqOaIt10gLS0+IENMSVtIZWxtIENMSV0KCiAgICBDTEkgLS0+fOivu+WPlnwgQ2hhcnRbQ2hhcnTljIVdCiAgICBDTEkgLS0+fOivu+WPlnwgVmFsdWVzW3ZhbHVlcy55YW1sXQogICAgQ0xJIC0tPnzmn6Xor6J8IFJlcG9bQ2hhcnTku5PlupNdCgogICAgQ0xJIC0tPnzmuLLmn5PmqKHmnb98IFRlbXBsYXRlc1tLdWJlcm5ldGVz5riF5Y2VXQogICAgVGVtcGxhdGVzIC0tPnzpg6jnvbJ8IEFQSVtLdWJlcm5ldGVzIEFQSV0KCiAgICBBUEkgLS0+IFJlbGVhc2VbUmVsZWFzZeWunuS+i10KCiAgICBzdWJncmFwaCBTdG9yYWdlWyJSZWxlYXNl5a2Y5YKoIl0KICAgICAgICBTZWNyZXRbS3ViZXJuZXRlcyBTZWNyZXRdCiAgICBlbmQKCiAgICBSZWxlYXNlIC0tPiBTdG9yYWdl" data-id="mermaid-l5c4pbw13">
+<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IFRCCiAgICBVc2VyW+eUqOaIt10gLS0+IENMSVtIZWxtIENMSV0KCiAgICBDTEkgLS0+fOivu+WPlnwgQ2hhcnRbQ2hhcnTljIVdCiAgICBDTEkgLS0+fOivu+WPlnwgVmFsdWVzW3ZhbHVlcy55YW1sXQogICAgQ0xJIC0tPnzmn6Xor6J8IFJlcG9bQ2hhcnTku5PlupNdCgogICAgQ0xJIC0tPnzmuLLmn5PmqKHmnb98IFRlbXBsYXRlc1tLdWJlcm5ldGVz5riF5Y2VXQogICAgVGVtcGxhdGVzIC0tPnzpg6jnvbJ8IEFQSVtLdWJlcm5ldGVzIEFQSV0KCiAgICBBUEkgLS0+IFJlbGVhc2VbUmVsZWFzZeWunuS+i10KCiAgICBzdWJncmFwaCBTdG9yYWdlWyJSZWxlYXNl5a2Y5YKoIl0KICAgICAgICBTZWNyZXRbS3ViZXJuZXRlcyBTZWNyZXRdCiAgICBlbmQKCiAgICBSZWxlYXNlIC0tPiBTdG9yYWdl" data-id="mermaid-3jwcx9bxd">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">flowchart TB
     User[用户] --> CLI[Helm CLI]
