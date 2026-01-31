@@ -32,7 +32,7 @@
 <p>Argo Rollouts 是一个 Kubernetes 控制器，提供高级部署能力，如蓝绿部署、金丝雀部署、金丝雀分析、实验和渐进式交付功能。</p>
 <h2 id="61-argo-rollouts-概述">6.1 Argo Rollouts 概述</h2>
 <h3 id="611-为什么需要渐进式交付">6.1.1 为什么需要渐进式交付</h3>
-<div class="mermaid-container" data-mermaid-source="Z3JhcGggTFIKICAgIHN1YmdyYXBoICLkvKDnu5/pg6jnvbLpo47pmakiCiAgICAgICAgQVvmlrDniYjmnKxdIC0tPnzlhajph4/lj5HluIN8IEJb5omA5pyJ55So5oi3XQogICAgICAgIEIgLS0+fOWHuumXrumimHwgQ1vlhajpg6jlj5flvbHlk41dCiAgICBlbmQKCiAgICBzdWJncmFwaCAi5riQ6L+b5byP5Lqk5LuYIgogICAgICAgIERb5paw54mI5pysXSAtLT58NSXmtYHph498IEVb5bCR6YeP55So5oi3XQogICAgICAgIEUgLS0+fOmqjOivgeaIkOWKn3wgRlvpgJDmraXlop7liqBdCiAgICAgICAgRiAtLT585pyA57uIfCBHW+WFqOmHj+WPkeW4g10KICAgIGVuZAoKICAgIHN0eWxlIEMgZmlsbDojZmY2YjZiCiAgICBzdHlsZSBHIGZpbGw6IzUxY2Y2Ng==" data-id="mermaid-glf8te5df">
+<div class="mermaid-container" data-mermaid-source="Z3JhcGggTFIKICAgIHN1YmdyYXBoICLkvKDnu5/pg6jnvbLpo47pmakiCiAgICAgICAgQVvmlrDniYjmnKxdIC0tPnzlhajph4/lj5HluIN8IEJb5omA5pyJ55So5oi3XQogICAgICAgIEIgLS0+fOWHuumXrumimHwgQ1vlhajpg6jlj5flvbHlk41dCiAgICBlbmQKCiAgICBzdWJncmFwaCAi5riQ6L+b5byP5Lqk5LuYIgogICAgICAgIERb5paw54mI5pysXSAtLT58NSXmtYHph498IEVb5bCR6YeP55So5oi3XQogICAgICAgIEUgLS0+fOmqjOivgeaIkOWKn3wgRlvpgJDmraXlop7liqBdCiAgICAgICAgRiAtLT585pyA57uIfCBHW+WFqOmHj+WPkeW4g10KICAgIGVuZAoKICAgIHN0eWxlIEMgZmlsbDojZmY2YjZiCiAgICBzdHlsZSBHIGZpbGw6IzUxY2Y2Ng==" data-id="mermaid-pmfoku61z">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">graph LR
     subgraph "传统部署风险"
@@ -50,7 +50,7 @@
     style G fill:#51cf66</code></pre>
 </div>
 <h3 id="612-argo-rollouts-核心概念">6.1.2 Argo Rollouts 核心概念</h3>
-<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIHN1YmdyYXBoICJBcmdvIFJvbGxvdXRzIOaetuaehCIKICAgICAgICBSW1JvbGxvdXRdIC0tPiBSUzFbUmVwbGljYVNldCDnqLPlrprniYhdCiAgICAgICAgUiAtLT4gUlMyW1JlcGxpY2FTZXQg6YeR5Lid6ZuA54mIXQoKICAgICAgICBSIC0tPiBTW1N0cmF0ZWd5XQogICAgICAgIFMgLS0+IENbQ2FuYXJ5IOmHkeS4nembgF0KICAgICAgICBTIC0tPiBCR1tCbHVlR3JlZW4g6JOd57u/XQoKICAgICAgICBSIC0tPiBBW0FuYWx5c2lzXQogICAgICAgIEEgLS0+IEFSW0FuYWx5c2lzUnVuXQogICAgICAgIEFSIC0tPiBNW01ldHJpY3Mg5oyH5qCHXQoKICAgICAgICBSIC0tPiBFW0V4cGVyaW1lbnRzXQogICAgICAgIEUgLS0+IFQxW1RlbXBsYXRlIEFdCiAgICAgICAgRSAtLT4gVDJbVGVtcGxhdGUgQl0KICAgIGVuZA==" data-id="mermaid-ljwqsvmgs">
+<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIHN1YmdyYXBoICJBcmdvIFJvbGxvdXRzIOaetuaehCIKICAgICAgICBSW1JvbGxvdXRdIC0tPiBSUzFbUmVwbGljYVNldCDnqLPlrprniYhdCiAgICAgICAgUiAtLT4gUlMyW1JlcGxpY2FTZXQg6YeR5Lid6ZuA54mIXQoKICAgICAgICBSIC0tPiBTW1N0cmF0ZWd5XQogICAgICAgIFMgLS0+IENbQ2FuYXJ5IOmHkeS4nembgF0KICAgICAgICBTIC0tPiBCR1tCbHVlR3JlZW4g6JOd57u/XQoKICAgICAgICBSIC0tPiBBW0FuYWx5c2lzXQogICAgICAgIEEgLS0+IEFSW0FuYWx5c2lzUnVuXQogICAgICAgIEFSIC0tPiBNW01ldHJpY3Mg5oyH5qCHXQoKICAgICAgICBSIC0tPiBFW0V4cGVyaW1lbnRzXQogICAgICAgIEUgLS0+IFQxW1RlbXBsYXRlIEFdCiAgICAgICAgRSAtLT4gVDJbVGVtcGxhdGUgQl0KICAgIGVuZA==" data-id="mermaid-huqzl7p9w">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">graph TB
     subgraph "Argo Rollouts 架构"
@@ -88,7 +88,7 @@
 <span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> argo</span><span style="color:#9ECBFF"> rollouts</span><span style="color:#9ECBFF"> version</span></span></code></pre>
 <h2 id="62-蓝绿部署">6.2 蓝绿部署</h2>
 <h3 id="621-蓝绿部署原理">6.2.1 蓝绿部署原理</h3>
-<div class="mermaid-container" data-mermaid-source="c2VxdWVuY2VEaWFncmFtCiAgICBwYXJ0aWNpcGFudCBVIGFzIOeUqOaItwogICAgcGFydGljaXBhbnQgQVMgYXMgQWN0aXZlIFNlcnZpY2UKICAgIHBhcnRpY2lwYW50IFBTIGFzIFByZXZpZXcgU2VydmljZQogICAgcGFydGljaXBhbnQgQiBhcyBCbHVlICjlvZPliY3niYjmnKwpCiAgICBwYXJ0aWNpcGFudCBHIGFzIEdyZWVuICjmlrDniYjmnKwpCgogICAgTm90ZSBvdmVyIEIsRzog5Yid5aeL54q25oCB77yaQmx1ZSDnlJ/kuqfov5DooYwKICAgIFUtPj5BUzog6K+35rGCCiAgICBBUy0+PkI6IOi3r+eUseWIsCBCbHVlCgogICAgTm90ZSBvdmVyIEIsRzog6YOo572yIEdyZWVuIOeJiOacrAogICAgcmVjdCByZ2IoMjAwLCAyNTUsIDIwMCkKICAgICAgICBQUy0+Pkc6IOmihOiniOa1gemHjwogICAgICAgIE5vdGUgb3ZlciBHOiDpqozor4HmlrDniYjmnKwKICAgIGVuZAoKICAgIE5vdGUgb3ZlciBCLEc6IOWIh+aNoua1gemHjwogICAgVS0+PkFTOiDor7fmsYIKICAgIEFTLT4+Rzog6Lev55Sx5YiwIEdyZWVuCgogICAgTm90ZSBvdmVyIEI6IOS/neeVmeeUqOS6juWbnua7mg==" data-id="mermaid-phqbcdhnx">
+<div class="mermaid-container" data-mermaid-source="c2VxdWVuY2VEaWFncmFtCiAgICBwYXJ0aWNpcGFudCBVIGFzIOeUqOaItwogICAgcGFydGljaXBhbnQgQVMgYXMgQWN0aXZlIFNlcnZpY2UKICAgIHBhcnRpY2lwYW50IFBTIGFzIFByZXZpZXcgU2VydmljZQogICAgcGFydGljaXBhbnQgQiBhcyBCbHVlICjlvZPliY3niYjmnKwpCiAgICBwYXJ0aWNpcGFudCBHIGFzIEdyZWVuICjmlrDniYjmnKwpCgogICAgTm90ZSBvdmVyIEIsRzog5Yid5aeL54q25oCB77yaQmx1ZSDnlJ/kuqfov5DooYwKICAgIFUtPj5BUzog6K+35rGCCiAgICBBUy0+PkI6IOi3r+eUseWIsCBCbHVlCgogICAgTm90ZSBvdmVyIEIsRzog6YOo572yIEdyZWVuIOeJiOacrAogICAgcmVjdCByZ2IoMjAwLCAyNTUsIDIwMCkKICAgICAgICBQUy0+Pkc6IOmihOiniOa1gemHjwogICAgICAgIE5vdGUgb3ZlciBHOiDpqozor4HmlrDniYjmnKwKICAgIGVuZAoKICAgIE5vdGUgb3ZlciBCLEc6IOWIh+aNoua1gemHjwogICAgVS0+PkFTOiDor7fmsYIKICAgIEFTLT4+Rzog6Lev55Sx5YiwIEdyZWVuCgogICAgTm90ZSBvdmVyIEI6IOS/neeVmeeUqOS6juWbnua7mg==" data-id="mermaid-el98ioukz">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">sequenceDiagram
     participant U as 用户
@@ -255,7 +255,7 @@
 <span class="line"><span style="color:#85E89D">          value</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">bg-active-svc</span></span></code></pre>
 <h2 id="63-金丝雀部署">6.3 金丝雀部署</h2>
 <h3 id="631-金丝雀部署原理">6.3.1 金丝雀部署原理</h3>
-<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIHN1YmdyYXBoICLph5HkuJ3pm4Dpg6jnvbLmtYHnqIsiCiAgICAgICAgVVvnlKjmiLfmtYHph48gMTAwJV0gLS0+IExCW+i0n+i9veWdh+ihoeWZqF0KCiAgICAgICAgc3ViZ3JhcGggIumYtuautTE6IDUl6YeR5Lid6ZuAIgogICAgICAgICAgICBMQiAtLT58OTUlfCBTMVvnqLPlrprniYggdjFdCiAgICAgICAgICAgIExCIC0tPnw1JXwgQzFb6YeR5Lid6ZuAIHYyXQogICAgICAgIGVuZAogICAgZW5kCgogICAgc3ViZ3JhcGggIumAkOatpeWinuWKoCIKICAgICAgICBkaXJlY3Rpb24gTFIKICAgICAgICBQMVs1JV0gLS0+IFAyWzIwJV0KICAgICAgICBQMiAtLT4gUDNbNTAlXQogICAgICAgIFAzIC0tPiBQNFs4MCVdCiAgICAgICAgUDQgLS0+IFA1WzEwMCVdCiAgICBlbmQKCiAgICBzdWJncmFwaCAi5oyB57ut6aqM6K+BIgogICAgICAgIE0xW+W7tui/n+ebkeaOp10KICAgICAgICBNMlvplJnor6/njoddCiAgICAgICAgTTNb5Lia5Yqh5oyH5qCHXQogICAgZW5k" data-id="mermaid-ot04nfjzn">
+<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIHN1YmdyYXBoICLph5HkuJ3pm4Dpg6jnvbLmtYHnqIsiCiAgICAgICAgVVvnlKjmiLfmtYHph48gMTAwJV0gLS0+IExCW+i0n+i9veWdh+ihoeWZqF0KCiAgICAgICAgc3ViZ3JhcGggIumYtuautTE6IDUl6YeR5Lid6ZuAIgogICAgICAgICAgICBMQiAtLT58OTUlfCBTMVvnqLPlrprniYggdjFdCiAgICAgICAgICAgIExCIC0tPnw1JXwgQzFb6YeR5Lid6ZuAIHYyXQogICAgICAgIGVuZAogICAgZW5kCgogICAgc3ViZ3JhcGggIumAkOatpeWinuWKoCIKICAgICAgICBkaXJlY3Rpb24gTFIKICAgICAgICBQMVs1JV0gLS0+IFAyWzIwJV0KICAgICAgICBQMiAtLT4gUDNbNTAlXQogICAgICAgIFAzIC0tPiBQNFs4MCVdCiAgICAgICAgUDQgLS0+IFA1WzEwMCVdCiAgICBlbmQKCiAgICBzdWJncmFwaCAi5oyB57ut6aqM6K+BIgogICAgICAgIE0xW+W7tui/n+ebkeaOp10KICAgICAgICBNMlvplJnor6/njoddCiAgICAgICAgTTNb5Lia5Yqh5oyH5qCHXQogICAgZW5k" data-id="mermaid-dtku7z98e">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">graph TB
     subgraph "金丝雀部署流程"
@@ -481,7 +481,7 @@
 <span class="line"><span style="color:#85E89D">      app</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">canary-istio-demo</span></span></code></pre>
 <h2 id="64-分析与自动化回滚">6.4 分析与自动化回滚</h2>
 <h3 id="641-analysistemplate-概念">6.4.1 AnalysisTemplate 概念</h3>
-<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIHN1YmdyYXBoICLoh6rliqjljJbliIbmnpDmtYHnqIsiCiAgICAgICAgUltSb2xsb3V0XSAtLT586Kem5Y+RfCBBUltBbmFseXNpc1J1bl0KICAgICAgICBBUiAtLT4gQVRbQW5hbHlzaXNUZW1wbGF0ZV0KCiAgICAgICAgQVQgLS0+IE0xW1Byb21ldGhldXMg5oyH5qCHXQogICAgICAgIEFUIC0tPiBNMltEYXRhZG9nIOaMh+agh10KICAgICAgICBBVCAtLT4gTTNb6Ieq5a6a5LmJIEpvYl0KICAgICAgICBBVCAtLT4gTTRbV2ViIOaOoumSiF0KCiAgICAgICAgQVIgLS0+fOaIkOWKn3wgUFvnu6fnu63lj5HluINdCiAgICAgICAgQVIgLS0+fOWksei0pXwgUkJb6Ieq5Yqo5Zue5ruaXQogICAgZW5kCgogICAgc3R5bGUgUCBmaWxsOiM1MWNmNjYKICAgIHN0eWxlIFJCIGZpbGw6I2ZmNmI2Yg==" data-id="mermaid-a9hm5jejb">
+<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIHN1YmdyYXBoICLoh6rliqjljJbliIbmnpDmtYHnqIsiCiAgICAgICAgUltSb2xsb3V0XSAtLT586Kem5Y+RfCBBUltBbmFseXNpc1J1bl0KICAgICAgICBBUiAtLT4gQVRbQW5hbHlzaXNUZW1wbGF0ZV0KCiAgICAgICAgQVQgLS0+IE0xW1Byb21ldGhldXMg5oyH5qCHXQogICAgICAgIEFUIC0tPiBNMltEYXRhZG9nIOaMh+agh10KICAgICAgICBBVCAtLT4gTTNb6Ieq5a6a5LmJIEpvYl0KICAgICAgICBBVCAtLT4gTTRbV2ViIOaOoumSiF0KCiAgICAgICAgQVIgLS0+fOaIkOWKn3wgUFvnu6fnu63lj5HluINdCiAgICAgICAgQVIgLS0+fOWksei0pXwgUkJb6Ieq5Yqo5Zue5ruaXQogICAgZW5kCgogICAgc3R5bGUgUCBmaWxsOiM1MWNmNjYKICAgIHN0eWxlIFJCIGZpbGw6I2ZmNmI2Yg==" data-id="mermaid-byzz2epiu">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">graph TB
     subgraph "自动化分析流程"
@@ -774,7 +774,7 @@
 <span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#85E89D">setWeight</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">100</span></span></code></pre>
 <h2 id="65-实验功能">6.5 实验功能</h2>
 <h3 id="651-实验概念">6.5.1 实验概念</h3>
-<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIHN1YmdyYXBoICLlrp7pqozmnrbmnoQiCiAgICAgICAgRVtFeHBlcmltZW50XSAtLT4gVDFbVGVtcGxhdGUgQTxici8+5Z+65YeG54mI5pysXQogICAgICAgIEUgLS0+IFQyW1RlbXBsYXRlIEI8YnIvPuWAmemAieeJiOacrF0KICAgICAgICBFIC0tPiBUM1tUZW1wbGF0ZSBDPGJyLz7lj6bkuIDlgJnpgIldCgogICAgICAgIFQxIC0tPiBSUzFbUmVwbGljYVNldCBBXQogICAgICAgIFQyIC0tPiBSUzJbUmVwbGljYVNldCBCXQogICAgICAgIFQzIC0tPiBSUzNbUmVwbGljYVNldCBDXQoKICAgICAgICBFIC0tPiBBW0FuYWx5c2lzXQogICAgICAgIEEgLS0+fOavlOi+g3wgUlvlrp7pqoznu5PmnpxdCiAgICAgICAgUiAtLT585pyA5LyYfCBXW+iOt+iDnOeJiOacrF0KICAgIGVuZA==" data-id="mermaid-dfd6oj1k2">
+<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIHN1YmdyYXBoICLlrp7pqozmnrbmnoQiCiAgICAgICAgRVtFeHBlcmltZW50XSAtLT4gVDFbVGVtcGxhdGUgQTxici8+5Z+65YeG54mI5pysXQogICAgICAgIEUgLS0+IFQyW1RlbXBsYXRlIEI8YnIvPuWAmemAieeJiOacrF0KICAgICAgICBFIC0tPiBUM1tUZW1wbGF0ZSBDPGJyLz7lj6bkuIDlgJnpgIldCgogICAgICAgIFQxIC0tPiBSUzFbUmVwbGljYVNldCBBXQogICAgICAgIFQyIC0tPiBSUzJbUmVwbGljYVNldCBCXQogICAgICAgIFQzIC0tPiBSUzNbUmVwbGljYVNldCBDXQoKICAgICAgICBFIC0tPiBBW0FuYWx5c2lzXQogICAgICAgIEEgLS0+fOavlOi+g3wgUlvlrp7pqoznu5PmnpxdCiAgICAgICAgUiAtLT585pyA5LyYfCBXW+iOt+iDnOeJiOacrF0KICAgIGVuZA==" data-id="mermaid-nh9i9dbkp">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">graph TB
     subgraph "实验架构"
@@ -1407,7 +1407,7 @@
 <span class="line"><span style="color:#B392F0">kubectl</span><span style="color:#9ECBFF"> argo</span><span style="color:#9ECBFF"> rollouts</span><span style="color:#9ECBFF"> dashboard</span></span></code></pre>
 <h2 id="68-本章小结">6.8 本章小结</h2>
 <p>本章详细介绍了 Argo Rollouts 的渐进式交付能力：</p>
-<div class="mermaid-container" data-mermaid-source="bWluZG1hcAogIHJvb3QoKEFyZ28gUm9sbG91dHMpKQogICAg6JOd57u/6YOo572yCiAgICAgIOmbtuWBnOacuuWIh+aNogogICAgICDlv6vpgJ/lm57mu5oKICAgICAg6aKE6KeI546v5aKDCiAgICDph5HkuJ3pm4Dpg6jnvbIKICAgICAg5rWB6YeP5o6n5Yi2CiAgICAgIOWIhuatpeWPkeW4gwogICAgICDoh6rliqjljJbliIbmnpAKICAgIOa1gemHj+euoeeQhgogICAgICBOZ2lueCBJbmdyZXNzCiAgICAgIElzdGlvCiAgICAgIEFXUyBBTEIKICAgIOWIhuaekAogICAgICBQcm9tZXRoZXVzCiAgICAgIERhdGFkb2cKICAgICAgSm9iCiAgICAgIFdlYgogICAg5a6e6aqMCiAgICAgIEEvQua1i+ivlQogICAgICDlpJrniYjmnKzmr5TovoMKICAgICAg5oCn6IO95a+55q+U" data-id="mermaid-kntts29e6">
+<div class="mermaid-container" data-mermaid-source="bWluZG1hcAogIHJvb3QoKEFyZ28gUm9sbG91dHMpKQogICAg6JOd57u/6YOo572yCiAgICAgIOmbtuWBnOacuuWIh+aNogogICAgICDlv6vpgJ/lm57mu5oKICAgICAg6aKE6KeI546v5aKDCiAgICDph5HkuJ3pm4Dpg6jnvbIKICAgICAg5rWB6YeP5o6n5Yi2CiAgICAgIOWIhuatpeWPkeW4gwogICAgICDoh6rliqjljJbliIbmnpAKICAgIOa1gemHj+euoeeQhgogICAgICBOZ2lueCBJbmdyZXNzCiAgICAgIElzdGlvCiAgICAgIEFXUyBBTEIKICAgIOWIhuaekAogICAgICBQcm9tZXRoZXVzCiAgICAgIERhdGFkb2cKICAgICAgSm9iCiAgICAgIFdlYgogICAg5a6e6aqMCiAgICAgIEEvQua1i+ivlQogICAgICDlpJrniYjmnKzmr5TovoMKICAgICAg5oCn6IO95a+55q+U" data-id="mermaid-rm425zhui">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">mindmap
   root((Argo Rollouts))
