@@ -31,7 +31,7 @@
 <h2 id="111-overview-of-model-compression-techniques">11.1 Overview of Model Compression Techniques</h2>
 <h3 id="1111-necessity-of-model-compression">11.1.1 Necessity of Model Compression</h3>
 <p>The core objective of model compression techniques is to reduce computational complexity and storage requirements while maintaining model performance.</p>
-<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbTW9kZWwgQ29tcHJlc3Npb24gTW90aXZhdGlvbl0gLS0+IEJbU3RvcmFnZSBMaW1pdGF0aW9uc10KICAgIEEgLS0+IENbQ29tcHV0aW5nIFJlc291cmNlIExpbWl0YXRpb25zXQogICAgQSAtLT4gRFtFbmVyZ3kgQ29uc2lkZXJhdGlvbnNdCiAgICBBIC0tPiBFW1JlYWwtdGltZSBSZXF1aXJlbWVudHNdCgogICAgQiAtLT4gQjFbTGltaXRlZCBzdG9yYWdlIG9uIG1vYmlsZSBkZXZpY2VzXQogICAgQyAtLT4gQzFbSW5zdWZmaWNpZW50IGNvbXB1dGluZyBwb3dlciBvbiBlZGdlIGRldmljZXNdCiAgICBEIC0tPiBEMVtCYXR0ZXJ5IGxpZmUgY29uc2lkZXJhdGlvbnNdCiAgICBFIC0tPiBFMVtSZWFsLXRpbWUgZGV0ZWN0aW9uIG5lZWRzXQ==" data-id="mermaid-b7aah07uv">
+<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbTW9kZWwgQ29tcHJlc3Npb24gTW90aXZhdGlvbl0gLS0+IEJbU3RvcmFnZSBMaW1pdGF0aW9uc10KICAgIEEgLS0+IENbQ29tcHV0aW5nIFJlc291cmNlIExpbWl0YXRpb25zXQogICAgQSAtLT4gRFtFbmVyZ3kgQ29uc2lkZXJhdGlvbnNdCiAgICBBIC0tPiBFW1JlYWwtdGltZSBSZXF1aXJlbWVudHNdCgogICAgQiAtLT4gQjFbTGltaXRlZCBzdG9yYWdlIG9uIG1vYmlsZSBkZXZpY2VzXQogICAgQyAtLT4gQzFbSW5zdWZmaWNpZW50IGNvbXB1dGluZyBwb3dlciBvbiBlZGdlIGRldmljZXNdCiAgICBEIC0tPiBEMVtCYXR0ZXJ5IGxpZmUgY29uc2lkZXJhdGlvbnNdCiAgICBFIC0tPiBFMVtSZWFsLXRpbWUgZGV0ZWN0aW9uIG5lZWRzXQ==" data-id="mermaid-z1tfvhu3x">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">graph TB
     A[Model Compression Motivation] --> B[Storage Limitations]
@@ -45,7 +45,7 @@
     E --> E1[Real-time detection needs]</code></pre>
 </div>
 <h3 id="1112-classification-of-compression-techniques">11.1.2 Classification of Compression Techniques</h3>
-<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbTW9kZWwgQ29tcHJlc3Npb24gVGVjaG5pcXVlc10gLS0+IEJbU3RydWN0dXJlZCBDb21wcmVzc2lvbl0KICAgIEEgLS0+IENbVW5zdHJ1Y3R1cmVkIENvbXByZXNzaW9uXQoKICAgIEIgLS0+IEIxW0NoYW5uZWwgUHJ1bmluZ10KICAgIEIgLS0+IEIyW0xheWVyIFBydW5pbmddCiAgICBCIC0tPiBCM1tCbG9jayBQcnVuaW5nXQoKICAgIEMgLS0+IEMxW1dlaWdodCBQcnVuaW5nXQogICAgQyAtLT4gQzJbQWN0aXZhdGlvbiBQcnVuaW5nXQoKICAgIEEgLS0+IERbUXVhbnRpemF0aW9uIFRlY2huaXF1ZXNdCiAgICBEIC0tPiBEMVtQb3N0LXRyYWluaW5nIFF1YW50aXphdGlvbl0KICAgIEQgLS0+IEQyW1F1YW50aXphdGlvbi1hd2FyZSBUcmFpbmluZ10KCiAgICBBIC0tPiBFW0tub3dsZWRnZSBEaXN0aWxsYXRpb25dCiAgICBFIC0tPiBFMVtUZWFjaGVyLVN0dWRlbnQgTmV0d29ya10KICAgIEUgLS0+IEUyW0ZlYXR1cmUgRGlzdGlsbGF0aW9uXQ==" data-id="mermaid-gaeqj6dtr">
+<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbTW9kZWwgQ29tcHJlc3Npb24gVGVjaG5pcXVlc10gLS0+IEJbU3RydWN0dXJlZCBDb21wcmVzc2lvbl0KICAgIEEgLS0+IENbVW5zdHJ1Y3R1cmVkIENvbXByZXNzaW9uXQoKICAgIEIgLS0+IEIxW0NoYW5uZWwgUHJ1bmluZ10KICAgIEIgLS0+IEIyW0xheWVyIFBydW5pbmddCiAgICBCIC0tPiBCM1tCbG9jayBQcnVuaW5nXQoKICAgIEMgLS0+IEMxW1dlaWdodCBQcnVuaW5nXQogICAgQyAtLT4gQzJbQWN0aXZhdGlvbiBQcnVuaW5nXQoKICAgIEEgLS0+IERbUXVhbnRpemF0aW9uIFRlY2huaXF1ZXNdCiAgICBEIC0tPiBEMVtQb3N0LXRyYWluaW5nIFF1YW50aXphdGlvbl0KICAgIEQgLS0+IEQyW1F1YW50aXphdGlvbi1hd2FyZSBUcmFpbmluZ10KCiAgICBBIC0tPiBFW0tub3dsZWRnZSBEaXN0aWxsYXRpb25dCiAgICBFIC0tPiBFMVtUZWFjaGVyLVN0dWRlbnQgTmV0d29ya10KICAgIEUgLS0+IEUyW0ZlYXR1cmUgRGlzdGlsbGF0aW9uXQ==" data-id="mermaid-bhbvsxd6a">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">graph TB
     A[Model Compression Techniques] --> B[Structured Compression]
@@ -96,7 +96,7 @@
 <span class="line"></span>
 <span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> model</span></span></code></pre>
 <h4 id="structured-pruning">Structured Pruning</h4>
-<div class="mermaid-container" data-mermaid-source="Z3JhcGggTFIKICAgIEFbT3JpZ2luYWwgTmV0d29ya10gLS0+IEJbQ2hhbm5lbCBJbXBvcnRhbmNlIEV2YWx1YXRpb25dCiAgICBCIC0tPiBDW1NlbGVjdCBDaGFubmVscyB0byBQcnVuZV0KICAgIEMgLS0+IERbUmVtb3ZlIEVudGlyZSBDaGFubmVsc10KICAgIEQgLS0+IEVbRmluZS10dW5lIFJlbWFpbmluZyBOZXR3b3JrXQoKICAgIHN1YmdyYXBoICJDaGFubmVsIFBydW5pbmcgUHJvY2VzcyIKICAgICAgICBGW0NvbnYgTGF5ZXIgMTI4IENoYW5uZWxzXSAtLT4gR1tBZnRlciBQcnVuaW5nIDk2IENoYW5uZWxzXQogICAgZW5k" data-id="mermaid-a54sm6xla">
+<div class="mermaid-container" data-mermaid-source="Z3JhcGggTFIKICAgIEFbT3JpZ2luYWwgTmV0d29ya10gLS0+IEJbQ2hhbm5lbCBJbXBvcnRhbmNlIEV2YWx1YXRpb25dCiAgICBCIC0tPiBDW1NlbGVjdCBDaGFubmVscyB0byBQcnVuZV0KICAgIEMgLS0+IERbUmVtb3ZlIEVudGlyZSBDaGFubmVsc10KICAgIEQgLS0+IEVbRmluZS10dW5lIFJlbWFpbmluZyBOZXR3b3JrXQoKICAgIHN1YmdyYXBoICJDaGFubmVsIFBydW5pbmcgUHJvY2VzcyIKICAgICAgICBGW0NvbnYgTGF5ZXIgMTI4IENoYW5uZWxzXSAtLT4gR1tBZnRlciBQcnVuaW5nIDk2IENoYW5uZWxzXQogICAgZW5k" data-id="mermaid-q0lduycqc">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">graph LR
     A[Original Network] --> B[Channel Importance Evaluation]
@@ -142,7 +142,7 @@
 <span class="line"><span style="color:#E1E4E8">                importance_scores[name] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> module.weight.data.abs()</span></span>
 <span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> importance_scores</span></span></code></pre>
 <h3 id="1123-fine-tuning-strategy-after-pruning">11.2.3 Fine-tuning Strategy After Pruning</h3>
-<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbUHJ1bmVkIE1vZGVsXSAtLT4gQltMb3cgTGVhcm5pbmcgUmF0ZSBGaW5lLXR1bmluZ10KICAgIEIgLS0+IENbR3JhZHVhbGx5IFJlY292ZXIgUGVyZm9ybWFuY2VdCiAgICBDIC0tPiBEW01vbml0b3IgVmFsaWRhdGlvbiBTZXRdCiAgICBEIC0tPiBFe1BlcmZvcm1hbmNlIFJlY292ZXJ5IFNhdGlzZmFjdG9yeT99CiAgICBFIC0tPnxOb3wgRltBZGp1c3QgRmluZS10dW5pbmcgU3RyYXRlZ3ldCiAgICBFIC0tPnxZZXN8IEdbQ29tcGxldGUgUHJ1bmluZ10KICAgIEYgLS0+IEI=" data-id="mermaid-1if4dw1uv">
+<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbUHJ1bmVkIE1vZGVsXSAtLT4gQltMb3cgTGVhcm5pbmcgUmF0ZSBGaW5lLXR1bmluZ10KICAgIEIgLS0+IENbR3JhZHVhbGx5IFJlY292ZXIgUGVyZm9ybWFuY2VdCiAgICBDIC0tPiBEW01vbml0b3IgVmFsaWRhdGlvbiBTZXRdCiAgICBEIC0tPiBFe1BlcmZvcm1hbmNlIFJlY292ZXJ5IFNhdGlzZmFjdG9yeT99CiAgICBFIC0tPnxOb3wgRltBZGp1c3QgRmluZS10dW5pbmcgU3RyYXRlZ3ldCiAgICBFIC0tPnxZZXN8IEdbQ29tcGxldGUgUHJ1bmluZ10KICAgIEYgLS0+IEI=" data-id="mermaid-tosujky6q">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">graph TB
     A[Pruned Model] --> B[Low Learning Rate Fine-tuning]
@@ -156,7 +156,7 @@
 <h2 id="113-model-quantization-techniques">11.3 Model Quantization Techniques</h2>
 <h3 id="1131-quantization-fundamentals">11.3.1 Quantization Fundamentals</h3>
 <h4 id="numerical-precision-comparison">Numerical Precision Comparison</h4>
-<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbTnVtZXJpY2FsIFByZWNpc2lvbl0gLS0+IEJbRlAzMiAzMi1iaXQgRmxvYXRdCiAgICBBIC0tPiBDW0ZQMTYgMTYtYml0IEZsb2F0XQogICAgQSAtLT4gRFtJTlQ4IDgtYml0IEludGVnZXJdCiAgICBBIC0tPiBFW0lOVDQgNC1iaXQgSW50ZWdlcl0KCiAgICBCIC0tPiBCMVtQcmVjaXNpb246IEhpZ2hlc3Q8YnIvPlNwZWVkOiBTbG93ZXN0PGJyLz5TdG9yYWdlOiBMYXJnZXN0XQogICAgQyAtLT4gQzFbUHJlY2lzaW9uOiBIaWdoPGJyLz5TcGVlZDogTWVkaXVtPGJyLz5TdG9yYWdlOiBNZWRpdW1dCiAgICBEIC0tPiBEMVtQcmVjaXNpb246IE1lZGl1bTxici8+U3BlZWQ6IEZhc3Q8YnIvPlN0b3JhZ2U6IFNtYWxsXQogICAgRSAtLT4gRTFbUHJlY2lzaW9uOiBMb3c8YnIvPlNwZWVkOiBGYXN0ZXN0PGJyLz5TdG9yYWdlOiBTbWFsbGVzdF0=" data-id="mermaid-zh0de2zf6">
+<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbTnVtZXJpY2FsIFByZWNpc2lvbl0gLS0+IEJbRlAzMiAzMi1iaXQgRmxvYXRdCiAgICBBIC0tPiBDW0ZQMTYgMTYtYml0IEZsb2F0XQogICAgQSAtLT4gRFtJTlQ4IDgtYml0IEludGVnZXJdCiAgICBBIC0tPiBFW0lOVDQgNC1iaXQgSW50ZWdlcl0KCiAgICBCIC0tPiBCMVtQcmVjaXNpb246IEhpZ2hlc3Q8YnIvPlNwZWVkOiBTbG93ZXN0PGJyLz5TdG9yYWdlOiBMYXJnZXN0XQogICAgQyAtLT4gQzFbUHJlY2lzaW9uOiBIaWdoPGJyLz5TcGVlZDogTWVkaXVtPGJyLz5TdG9yYWdlOiBNZWRpdW1dCiAgICBEIC0tPiBEMVtQcmVjaXNpb246IE1lZGl1bTxici8+U3BlZWQ6IEZhc3Q8YnIvPlN0b3JhZ2U6IFNtYWxsXQogICAgRSAtLT4gRTFbUHJlY2lzaW9uOiBMb3c8YnIvPlNwZWVkOiBGYXN0ZXN0PGJyLz5TdG9yYWdlOiBTbWFsbGVzdF0=" data-id="mermaid-lobgefnu3">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">graph TB
     A[Numerical Precision] --> B[FP32 32-bit Float]
@@ -210,7 +210,7 @@
 <span class="line"><span style="color:#E1E4E8">    )</span></span>
 <span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> quantized_model</span></span></code></pre>
 <h3 id="1133-quantization-aware-training-qat">11.3.3 Quantization-aware Training (QAT)</h3>
-<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbT3JpZ2luYWwgRlAzMiBNb2RlbF0gLS0+IEJbSW5zZXJ0IEZha2UgUXVhbnRpemF0aW9uIE5vZGVzXQogICAgQiAtLT4gQ1tRQVQgVHJhaW5pbmddCiAgICBDIC0tPiBEW1NpbXVsYXRlIFF1YW50aXphdGlvbiBFZmZlY3RzXQogICAgRCAtLT4gRVtOb3JtYWwgR3JhZGllbnQgQmFja3Byb3BhZ2F0aW9uXQogICAgRSAtLT4gRltGaW5hbCBRdWFudGl6ZWQgTW9kZWxdCgogICAgc3ViZ3JhcGggIlFBVCBQcm9jZXNzIgogICAgICAgIEdbRm9yd2FyZCBQYXNzXSAtLT4gSFtGYWtlIFF1YW50aXphdGlvbl0KICAgICAgICBIIC0tPiBJW0NvbXB1dGUgTG9zc10KICAgICAgICBJIC0tPiBKW0JhY2t3YXJkIFBhc3NdCiAgICAgICAgSiAtLT4gRwogICAgZW5k" data-id="mermaid-af5w4una7">
+<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbT3JpZ2luYWwgRlAzMiBNb2RlbF0gLS0+IEJbSW5zZXJ0IEZha2UgUXVhbnRpemF0aW9uIE5vZGVzXQogICAgQiAtLT4gQ1tRQVQgVHJhaW5pbmddCiAgICBDIC0tPiBEW1NpbXVsYXRlIFF1YW50aXphdGlvbiBFZmZlY3RzXQogICAgRCAtLT4gRVtOb3JtYWwgR3JhZGllbnQgQmFja3Byb3BhZ2F0aW9uXQogICAgRSAtLT4gRltGaW5hbCBRdWFudGl6ZWQgTW9kZWxdCgogICAgc3ViZ3JhcGggIlFBVCBQcm9jZXNzIgogICAgICAgIEdbRm9yd2FyZCBQYXNzXSAtLT4gSFtGYWtlIFF1YW50aXphdGlvbl0KICAgICAgICBIIC0tPiBJW0NvbXB1dGUgTG9zc10KICAgICAgICBJIC0tPiBKW0JhY2t3YXJkIFBhc3NdCiAgICAgICAgSiAtLT4gRwogICAgZW5k" data-id="mermaid-ih8y65dti">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">graph TB
     A[Original FP32 Model] --> B[Insert Fake Quantization Nodes]
@@ -254,7 +254,7 @@
 <h2 id="114-knowledge-distillation-techniques">11.4 Knowledge Distillation Techniques</h2>
 <h3 id="1141-basic-knowledge-distillation">11.4.1 Basic Knowledge Distillation</h3>
 <h4 id="teacher-student-network-architecture">Teacher-Student Network Architecture</h4>
-<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbVGVhY2hlciBNb2RlbDxici8+TGFyZ2UgbW9kZWwsIGhpZ2ggYWNjdXJhY3ldIC0tPiBDW0tub3dsZWRnZSBUcmFuc2Zlcl0KICAgIEJbU3R1ZGVudCBNb2RlbDxici8+U21hbGwgbW9kZWwsIHRvIGJlIHRyYWluZWRdIC0tPiBDCiAgICBDIC0tPiBEW0Rpc3RpbGxhdGlvbiBMb3NzXQoKICAgIHN1YmdyYXBoICJUeXBlcyBvZiBLbm93bGVkZ2UiCiAgICAgICAgRVtTb2Z0IExhYmVsIEtub3dsZWRnZV0KICAgICAgICBGW0ZlYXR1cmUgS25vd2xlZGdlXQogICAgICAgIEdbQXR0ZW50aW9uIEtub3dsZWRnZV0KICAgIGVuZAoKICAgIEMgLS0+IEUKICAgIEMgLS0+IEYKICAgIEMgLS0+IEc=" data-id="mermaid-mr0ismuxh">
+<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbVGVhY2hlciBNb2RlbDxici8+TGFyZ2UgbW9kZWwsIGhpZ2ggYWNjdXJhY3ldIC0tPiBDW0tub3dsZWRnZSBUcmFuc2Zlcl0KICAgIEJbU3R1ZGVudCBNb2RlbDxici8+U21hbGwgbW9kZWwsIHRvIGJlIHRyYWluZWRdIC0tPiBDCiAgICBDIC0tPiBEW0Rpc3RpbGxhdGlvbiBMb3NzXQoKICAgIHN1YmdyYXBoICJUeXBlcyBvZiBLbm93bGVkZ2UiCiAgICAgICAgRVtTb2Z0IExhYmVsIEtub3dsZWRnZV0KICAgICAgICBGW0ZlYXR1cmUgS25vd2xlZGdlXQogICAgICAgIEdbQXR0ZW50aW9uIEtub3dsZWRnZV0KICAgIGVuZAoKICAgIEMgLS0+IEUKICAgIEMgLS0+IEYKICAgIEMgLS0+IEc=" data-id="mermaid-t9ngics6m">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">graph TB
     A[Teacher Model&#x3C;br/>Large model, high accuracy] --> C[Knowledge Transfer]
@@ -294,7 +294,7 @@
 <span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> total_loss</span></span></code></pre>
 <h3 id="1142-yolo-knowledge-distillation">11.4.2 YOLO Knowledge Distillation</h3>
 <h4 id="feature-level-distillation">Feature-level Distillation</h4>
-<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbVGVhY2hlciBZT0xPXSAtLT4gQltCYWNrYm9uZSBGZWF0dXJlc10KICAgIEEgLS0+IENbRlBOIEZlYXR1cmVzXQogICAgQSAtLT4gRFtEZXRlY3Rpb24gSGVhZCBGZWF0dXJlc10KCiAgICBFW1N0dWRlbnQgWU9MT10gLS0+IEZbQ29ycmVzcG9uZGluZyBCYWNrYm9uZSBGZWF0dXJlc10KICAgIEUgLS0+IEdbQ29ycmVzcG9uZGluZyBGUE4gRmVhdHVyZXNdCiAgICBFIC0tPiBIW0NvcnJlc3BvbmRpbmcgRGV0ZWN0aW9uIEZlYXR1cmVzXQoKICAgIEIgLS0+IElbRmVhdHVyZSBEaXN0aWxsYXRpb24gTG9zcyAxXQogICAgQyAtLT4gSltGZWF0dXJlIERpc3RpbGxhdGlvbiBMb3NzIDJdCiAgICBEIC0tPiBLW0ZlYXR1cmUgRGlzdGlsbGF0aW9uIExvc3MgM10KCiAgICBGIC0tPiBJCiAgICBHIC0tPiBKCiAgICBIIC0tPiBL" data-id="mermaid-4nugi53x5">
+<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbVGVhY2hlciBZT0xPXSAtLT4gQltCYWNrYm9uZSBGZWF0dXJlc10KICAgIEEgLS0+IENbRlBOIEZlYXR1cmVzXQogICAgQSAtLT4gRFtEZXRlY3Rpb24gSGVhZCBGZWF0dXJlc10KCiAgICBFW1N0dWRlbnQgWU9MT10gLS0+IEZbQ29ycmVzcG9uZGluZyBCYWNrYm9uZSBGZWF0dXJlc10KICAgIEUgLS0+IEdbQ29ycmVzcG9uZGluZyBGUE4gRmVhdHVyZXNdCiAgICBFIC0tPiBIW0NvcnJlc3BvbmRpbmcgRGV0ZWN0aW9uIEZlYXR1cmVzXQoKICAgIEIgLS0+IElbRmVhdHVyZSBEaXN0aWxsYXRpb24gTG9zcyAxXQogICAgQyAtLT4gSltGZWF0dXJlIERpc3RpbGxhdGlvbiBMb3NzIDJdCiAgICBEIC0tPiBLW0ZlYXR1cmUgRGlzdGlsbGF0aW9uIExvc3MgM10KCiAgICBGIC0tPiBJCiAgICBHIC0tPiBKCiAgICBIIC0tPiBL" data-id="mermaid-jwqa8ll4s">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">graph TB
     A[Teacher YOLO] --> B[Backbone Features]
@@ -355,7 +355,7 @@
 <h2 id="115-inference-acceleration-techniques">11.5 Inference Acceleration Techniques</h2>
 <h3 id="1151-tensorrt-optimization">11.5.1 TensorRT Optimization</h3>
 <h4 id="tensorrt-workflow">TensorRT Workflow</h4>
-<div class="mermaid-container" data-mermaid-source="Z3JhcGggTFIKICAgIEFbT3JpZ2luYWwgTW9kZWxdIC0tPiBCW01vZGVsIFBhcnNpbmddCiAgICBCIC0tPiBDW0dyYXBoIE9wdGltaXphdGlvbl0KICAgIEMgLS0+IERbUHJlY2lzaW9uIENhbGlicmF0aW9uXQogICAgRCAtLT4gRVtFbmdpbmUgQnVpbGRpbmddCiAgICBFIC0tPiBGW0FjY2VsZXJhdGVkIEluZmVyZW5jZV0KCiAgICBzdWJncmFwaCAiT3B0aW1pemF0aW9uIFRlY2huaXF1ZXMiCiAgICAgICAgR1tMYXllciBGdXNpb25dCiAgICAgICAgSFtQcmVjaXNpb24gT3B0aW1pemF0aW9uXQogICAgICAgIElbS2VybmVsIEF1dG8tdHVuaW5nXQogICAgICAgIEpbRHluYW1pYyBTaGFwZSBPcHRpbWl6YXRpb25dCiAgICBlbmQKCiAgICBDIC0tPiBHCiAgICBDIC0tPiBICiAgICBDIC0tPiBJCiAgICBDIC0tPiBK" data-id="mermaid-r4te3948x">
+<div class="mermaid-container" data-mermaid-source="Z3JhcGggTFIKICAgIEFbT3JpZ2luYWwgTW9kZWxdIC0tPiBCW01vZGVsIFBhcnNpbmddCiAgICBCIC0tPiBDW0dyYXBoIE9wdGltaXphdGlvbl0KICAgIEMgLS0+IERbUHJlY2lzaW9uIENhbGlicmF0aW9uXQogICAgRCAtLT4gRVtFbmdpbmUgQnVpbGRpbmddCiAgICBFIC0tPiBGW0FjY2VsZXJhdGVkIEluZmVyZW5jZV0KCiAgICBzdWJncmFwaCAiT3B0aW1pemF0aW9uIFRlY2huaXF1ZXMiCiAgICAgICAgR1tMYXllciBGdXNpb25dCiAgICAgICAgSFtQcmVjaXNpb24gT3B0aW1pemF0aW9uXQogICAgICAgIElbS2VybmVsIEF1dG8tdHVuaW5nXQogICAgICAgIEpbRHluYW1pYyBTaGFwZSBPcHRpbWl6YXRpb25dCiAgICBlbmQKCiAgICBDIC0tPiBHCiAgICBDIC0tPiBICiAgICBDIC0tPiBJCiAgICBDIC0tPiBK" data-id="mermaid-qm2lezwne">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">graph LR
     A[Original Model] --> B[Model Parsing]
@@ -451,7 +451,7 @@
 <span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> optimized_model</span></span></code></pre>
 <h3 id="1153-openvino-optimization">11.5.3 OpenVINO Optimization</h3>
 <h4 id="openvino-workflow">OpenVINO Workflow</h4>
-<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbT3JpZ2luYWwgTW9kZWxdIC0tPiBCW01vZGVsIE9wdGltaXplcl0KICAgIEIgLS0+IENbSW50ZXJtZWRpYXRlIFJlcHJlc2VudGF0aW9uIElSXQogICAgQyAtLT4gRFtJbmZlcmVuY2UgRW5naW5lXQogICAgRCAtLT4gRVtIYXJkd2FyZSBBZGFwdGF0aW9uXQoKICAgIHN1YmdyYXBoICJTdXBwb3J0ZWQgSGFyZHdhcmUiCiAgICAgICAgRltDUFVdCiAgICAgICAgR1tHUFVdCiAgICAgICAgSFtWUFVdCiAgICAgICAgSVtGUEdBXQogICAgZW5kCgogICAgRSAtLT4gRgogICAgRSAtLT4gRwogICAgRSAtLT4gSAogICAgRSAtLT4gSQ==" data-id="mermaid-3v3p314b7">
+<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbT3JpZ2luYWwgTW9kZWxdIC0tPiBCW01vZGVsIE9wdGltaXplcl0KICAgIEIgLS0+IENbSW50ZXJtZWRpYXRlIFJlcHJlc2VudGF0aW9uIElSXQogICAgQyAtLT4gRFtJbmZlcmVuY2UgRW5naW5lXQogICAgRCAtLT4gRVtIYXJkd2FyZSBBZGFwdGF0aW9uXQoKICAgIHN1YmdyYXBoICJTdXBwb3J0ZWQgSGFyZHdhcmUiCiAgICAgICAgRltDUFVdCiAgICAgICAgR1tHUFVdCiAgICAgICAgSFtWUFVdCiAgICAgICAgSVtGUEdBXQogICAgZW5kCgogICAgRSAtLT4gRgogICAgRSAtLT4gRwogICAgRSAtLT4gSAogICAgRSAtLT4gSQ==" data-id="mermaid-67o22qake">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">graph TB
     A[Original Model] --> B[Model Optimizer]
@@ -473,7 +473,7 @@
 </div>
 <h2 id="116-mobile-deployment-optimization-techniques">11.6 Mobile Deployment Optimization Techniques</h2>
 <h3 id="1161-mobile-deployment-challenges">11.6.1 Mobile Deployment Challenges</h3>
-<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbTW9iaWxlIENoYWxsZW5nZXNdIC0tPiBCW0NvbXB1dGluZyBSZXNvdXJjZSBMaW1pdGF0aW9uc10KICAgIEEgLS0+IENbU3RvcmFnZSBTcGFjZSBMaW1pdGF0aW9uc10KICAgIEEgLS0+IERbUG93ZXIgQ29uc3RyYWludHNdCiAgICBBIC0tPiBFW1JlYWwtdGltZSBSZXF1aXJlbWVudHNdCgogICAgQiAtLT4gQjFbTGltaXRlZCBDUFUgUGVyZm9ybWFuY2VdCiAgICBCIC0tPiBCMltTbWFsbCBNZW1vcnkgQ2FwYWNpdHldCiAgICBDIC0tPiBDMVtBcHAgUGFja2FnZSBTaXplIExpbWl0XQogICAgRCAtLT4gRDFbQmF0dGVyeSBMaWZlIENvbnNpZGVyYXRpb25zXQogICAgRSAtLT4gRTFbVXNlciBFeHBlcmllbmNlIFJlcXVpcmVtZW50c10=" data-id="mermaid-fvx3gfjk7">
+<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbTW9iaWxlIENoYWxsZW5nZXNdIC0tPiBCW0NvbXB1dGluZyBSZXNvdXJjZSBMaW1pdGF0aW9uc10KICAgIEEgLS0+IENbU3RvcmFnZSBTcGFjZSBMaW1pdGF0aW9uc10KICAgIEEgLS0+IERbUG93ZXIgQ29uc3RyYWludHNdCiAgICBBIC0tPiBFW1JlYWwtdGltZSBSZXF1aXJlbWVudHNdCgogICAgQiAtLT4gQjFbTGltaXRlZCBDUFUgUGVyZm9ybWFuY2VdCiAgICBCIC0tPiBCMltTbWFsbCBNZW1vcnkgQ2FwYWNpdHldCiAgICBDIC0tPiBDMVtBcHAgUGFja2FnZSBTaXplIExpbWl0XQogICAgRCAtLT4gRDFbQmF0dGVyeSBMaWZlIENvbnNpZGVyYXRpb25zXQogICAgRSAtLT4gRTFbVXNlciBFeHBlcmllbmNlIFJlcXVpcmVtZW50c10=" data-id="mermaid-9tqrcs59x">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">graph TB
     A[Mobile Challenges] --> B[Computing Resource Limitations]
@@ -576,7 +576,7 @@
 <h2 id="117-hardware-acceleration-techniques">11.7 Hardware Acceleration Techniques</h2>
 <h3 id="1171-gpu-acceleration-optimization">11.7.1 GPU Acceleration Optimization</h3>
 <h4 id="cuda-optimization-techniques">CUDA Optimization Techniques</h4>
-<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbQ1VEQSBPcHRpbWl6YXRpb25dIC0tPiBCW01lbW9yeSBBY2Nlc3MgT3B0aW1pemF0aW9uXQogICAgQSAtLT4gQ1tDb21wdXRlIERlbnNpdHkgT3B0aW1pemF0aW9uXQogICAgQSAtLT4gRFtQYXJhbGxlbGlzbSBPcHRpbWl6YXRpb25dCgogICAgQiAtLT4gQjFbQ29hbGVzY2VkIE1lbW9yeSBBY2Nlc3NdCiAgICBCIC0tPiBCMltSZWR1Y2UgTWVtb3J5IENvcGllc10KICAgIEMgLS0+IEMxW0luY3JlYXNlIEFyaXRobWV0aWMgSW50ZW5zaXR5XQogICAgQyAtLT4gQzJbUmVkdWNlIEJyYW5jaCBEaXZlcmdlbmNlXQogICAgRCAtLT4gRDFbTWF4aW1pemUgT2NjdXBhbmN5XQogICAgRCAtLT4gRDJbTG9hZCBCYWxhbmNpbmdd" data-id="mermaid-kk5ehribw">
+<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbQ1VEQSBPcHRpbWl6YXRpb25dIC0tPiBCW01lbW9yeSBBY2Nlc3MgT3B0aW1pemF0aW9uXQogICAgQSAtLT4gQ1tDb21wdXRlIERlbnNpdHkgT3B0aW1pemF0aW9uXQogICAgQSAtLT4gRFtQYXJhbGxlbGlzbSBPcHRpbWl6YXRpb25dCgogICAgQiAtLT4gQjFbQ29hbGVzY2VkIE1lbW9yeSBBY2Nlc3NdCiAgICBCIC0tPiBCMltSZWR1Y2UgTWVtb3J5IENvcGllc10KICAgIEMgLS0+IEMxW0luY3JlYXNlIEFyaXRobWV0aWMgSW50ZW5zaXR5XQogICAgQyAtLT4gQzJbUmVkdWNlIEJyYW5jaCBEaXZlcmdlbmNlXQogICAgRCAtLT4gRDFbTWF4aW1pemUgT2NjdXBhbmN5XQogICAgRCAtLT4gRDJbTG9hZCBCYWxhbmNpbmdd" data-id="mermaid-6g85wlq90">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">graph TB
     A[CUDA Optimization] --> B[Memory Access Optimization]
@@ -614,7 +614,7 @@
 <span class="line"><span style="color:#E1E4E8">        scaler.update()</span></span></code></pre>
 <h3 id="1172-multi-core-cpu-optimization">11.7.2 Multi-core CPU Optimization</h3>
 <h4 id="parallel-inference-strategy">Parallel Inference Strategy</h4>
-<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbQmF0Y2ggSW5mZXJlbmNlXSAtLT4gQltEYXRhIFBhcmFsbGVsaXNtXQogICAgQSAtLT4gQ1tNb2RlbCBQYXJhbGxlbGlzbV0KCiAgICBCIC0tPiBCMVtQcm9jZXNzIE11bHRpcGxlIElucHV0cyBTaW11bHRhbmVvdXNseV0KICAgIEMgLS0+IEMxW1NwbGl0IE1vZGVsIEFjcm9zcyBNdWx0aXBsZSBDb3Jlc10KCiAgICBEW1NpbmdsZSBJbWFnZSBJbmZlcmVuY2VdIC0tPiBFW1BpcGVsaW5lIFBhcmFsbGVsaXNtXQogICAgRSAtLT4gRTFbUHJlcHJvY2Vzc2luZ10KICAgIEUgLS0+IEUyW05ldHdvcmsgSW5mZXJlbmNlXQogICAgRSAtLT4gRTNbUG9zdC1wcm9jZXNzaW5nXQ==" data-id="mermaid-chtn9jnan">
+<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbQmF0Y2ggSW5mZXJlbmNlXSAtLT4gQltEYXRhIFBhcmFsbGVsaXNtXQogICAgQSAtLT4gQ1tNb2RlbCBQYXJhbGxlbGlzbV0KCiAgICBCIC0tPiBCMVtQcm9jZXNzIE11bHRpcGxlIElucHV0cyBTaW11bHRhbmVvdXNseV0KICAgIEMgLS0+IEMxW1NwbGl0IE1vZGVsIEFjcm9zcyBNdWx0aXBsZSBDb3Jlc10KCiAgICBEW1NpbmdsZSBJbWFnZSBJbmZlcmVuY2VdIC0tPiBFW1BpcGVsaW5lIFBhcmFsbGVsaXNtXQogICAgRSAtLT4gRTFbUHJlcHJvY2Vzc2luZ10KICAgIEUgLS0+IEUyW05ldHdvcmsgSW5mZXJlbmNlXQogICAgRSAtLT4gRTNbUG9zdC1wcm9jZXNzaW5nXQ==" data-id="mermaid-dr19m4rp4">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">graph TB
     A[Batch Inference] --> B[Data Parallelism]
@@ -659,7 +659,7 @@
 <h2 id="118-performance-benchmarking">11.8 Performance Benchmarking</h2>
 <h3 id="1181-benchmarking-framework">11.8.1 Benchmarking Framework</h3>
 <h4 id="performance-evaluation-dimensions">Performance Evaluation Dimensions</h4>
-<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbUGVyZm9ybWFuY2UgRXZhbHVhdGlvbl0gLS0+IEJbQWNjdXJhY3kgTWV0cmljc10KICAgIEEgLS0+IENbU3BlZWQgTWV0cmljc10KICAgIEEgLS0+IERbUmVzb3VyY2UgTWV0cmljc10KICAgIEEgLS0+IEVbU3RhYmlsaXR5IE1ldHJpY3NdCgogICAgQiAtLT4gQjFbbUFQXQogICAgQiAtLT4gQjJbRlBTXQogICAgQyAtLT4gQzFbTGF0ZW5jeV0KICAgIEMgLS0+IEMyW1Rocm91Z2hwdXRdCiAgICBEIC0tPiBEMVtNZW1vcnkgVXNhZ2VdCiAgICBEIC0tPiBEMltDUFUgVXRpbGl6YXRpb25dCiAgICBFIC0tPiBFMVtUZW1wZXJhdHVyZSBTdGFiaWxpdHldCiAgICBFIC0tPiBFMltMb25nLXRlcm0gT3BlcmF0aW9uXQ==" data-id="mermaid-mk1b25hdp">
+<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbUGVyZm9ybWFuY2UgRXZhbHVhdGlvbl0gLS0+IEJbQWNjdXJhY3kgTWV0cmljc10KICAgIEEgLS0+IENbU3BlZWQgTWV0cmljc10KICAgIEEgLS0+IERbUmVzb3VyY2UgTWV0cmljc10KICAgIEEgLS0+IEVbU3RhYmlsaXR5IE1ldHJpY3NdCgogICAgQiAtLT4gQjFbbUFQXQogICAgQiAtLT4gQjJbRlBTXQogICAgQyAtLT4gQzFbTGF0ZW5jeV0KICAgIEMgLS0+IEMyW1Rocm91Z2hwdXRdCiAgICBEIC0tPiBEMVtNZW1vcnkgVXNhZ2VdCiAgICBEIC0tPiBEMltDUFUgVXRpbGl6YXRpb25dCiAgICBFIC0tPiBFMVtUZW1wZXJhdHVyZSBTdGFiaWxpdHldCiAgICBFIC0tPiBFMltMb25nLXRlcm0gT3BlcmF0aW9uXQ==" data-id="mermaid-korsmmvjq">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">graph TB
     A[Performance Evaluation] --> B[Accuracy Metrics]
@@ -725,7 +725,7 @@
 <span class="line"><span style="color:#E1E4E8">        }</span></span></code></pre>
 <h3 id="1182-optimization-effect-evaluation">11.8.2 Optimization Effect Evaluation</h3>
 <h4 id="compression-ratio-vs-accuracy-tradeoff">Compression Ratio vs Accuracy Tradeoff</h4>
-<div class="mermaid-container" data-mermaid-source="Z3JhcGggTFIKICAgIEFbT3JpZ2luYWwgTW9kZWxdIC0tPiBCW0NvbXByZXNzZWQgTW9kZWxdCgogICAgQSAtLT4gQTFbbUFQOiA3NC4yJTxici8+U2l6ZTogMjhNQjxici8+RlBTOiA0NV0KICAgIEIgLS0+IEIxW21BUDogNzIuOCU8YnIvPlNpemU6IDhNQjxici8+RlBTOiAxMjBdCgogICAgQjEgLS0+IENbQ29tcHJlc3Npb24gUmF0aW86IDMuNXg8YnIvPlNwZWVkIEltcHJvdmVtZW50OiAyLjd4PGJyLz5BY2N1cmFjeSBMb3NzOiAxLjQlXQ==" data-id="mermaid-ccauduq6r">
+<div class="mermaid-container" data-mermaid-source="Z3JhcGggTFIKICAgIEFbT3JpZ2luYWwgTW9kZWxdIC0tPiBCW0NvbXByZXNzZWQgTW9kZWxdCgogICAgQSAtLT4gQTFbbUFQOiA3NC4yJTxici8+U2l6ZTogMjhNQjxici8+RlBTOiA0NV0KICAgIEIgLS0+IEIxW21BUDogNzIuOCU8YnIvPlNpemU6IDhNQjxici8+RlBTOiAxMjBdCgogICAgQjEgLS0+IENbQ29tcHJlc3Npb24gUmF0aW86IDMuNXg8YnIvPlNwZWVkIEltcHJvdmVtZW50OiAyLjd4PGJyLz5BY2N1cmFjeSBMb3NzOiAxLjQlXQ==" data-id="mermaid-por2znbr8">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">graph LR
     A[Original Model] --> B[Compressed Model]
@@ -737,7 +737,7 @@
 </div>
 <h2 id="119-optimization-practice-guide">11.9 Optimization Practice Guide</h2>
 <h3 id="1191-optimization-process-design">11.9.1 Optimization Process Design</h3>
-<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbRGVmaW5lIE9wdGltaXphdGlvbiBHb2Fsc10gLS0+IEJbQW5hbHl6ZSBQZXJmb3JtYW5jZSBCb3R0bGVuZWNrc10KICAgIEIgLS0+IENbU2VsZWN0IE9wdGltaXphdGlvbiBTdHJhdGVneV0KICAgIEMgLS0+IERbSW1wbGVtZW50IE9wdGltaXphdGlvbl0KICAgIEQgLS0+IEVbUGVyZm9ybWFuY2UgRXZhbHVhdGlvbl0KICAgIEUgLS0+IEZ7R29hbHMgQWNoaWV2ZWQ/fQogICAgRiAtLT58Tm98IEdbQWRqdXN0IFN0cmF0ZWd5XQogICAgRiAtLT58WWVzfCBIW0NvbXBsZXRlIE9wdGltaXphdGlvbl0KICAgIEcgLS0+IEM=" data-id="mermaid-inxjve56v">
+<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbRGVmaW5lIE9wdGltaXphdGlvbiBHb2Fsc10gLS0+IEJbQW5hbHl6ZSBQZXJmb3JtYW5jZSBCb3R0bGVuZWNrc10KICAgIEIgLS0+IENbU2VsZWN0IE9wdGltaXphdGlvbiBTdHJhdGVneV0KICAgIEMgLS0+IERbSW1wbGVtZW50IE9wdGltaXphdGlvbl0KICAgIEQgLS0+IEVbUGVyZm9ybWFuY2UgRXZhbHVhdGlvbl0KICAgIEUgLS0+IEZ7R29hbHMgQWNoaWV2ZWQ/fQogICAgRiAtLT58Tm98IEdbQWRqdXN0IFN0cmF0ZWd5XQogICAgRiAtLT58WWVzfCBIW0NvbXBsZXRlIE9wdGltaXphdGlvbl0KICAgIEcgLS0+IEM=" data-id="mermaid-zt38o55x3">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">graph TB
     A[Define Optimization Goals] --> B[Analyze Performance Bottlenecks]
@@ -763,7 +763,7 @@
 <li><strong>Dynamic Shape Optimization</strong> + <strong>Memory Pool Management</strong></li>
 </ol>
 <h3 id="1193-optimization-pitfalls-and-solutions">11.9.3 Optimization Pitfalls and Solutions</h3>
-<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbQ29tbW9uIE9wdGltaXphdGlvbiBQaXRmYWxsc10gLS0+IEJbT3Zlci1vcHRpbWl6YXRpb24gTGVhZGluZyB0byBBY2N1cmFjeSBMb3NzXQogICAgQSAtLT4gQ1tJZ25vcmluZyBBY3R1YWwgRGVwbG95bWVudCBFbnZpcm9ubWVudF0KICAgIEEgLS0+IERbU2luZ2xlIE1ldHJpYyBPcHRpbWl6YXRpb25dCiAgICBBIC0tPiBFW0xhY2sgb2YgTG9uZy10ZXJtIE1haW50ZW5hbmNlXQoKICAgIEIgLS0+IEIxW1NldCBBY2N1cmFjeSBMb3dlciBUaHJlc2hvbGRdCiAgICBDIC0tPiBDMVtUZXN0IGluIFRhcmdldCBFbnZpcm9ubWVudF0KICAgIEQgLS0+IEQxW011bHRpLWRpbWVuc2lvbmFsIENvbXByZWhlbnNpdmUgRXZhbHVhdGlvbl0KICAgIEUgLS0+IEUxW0VzdGFibGlzaCBDb250aW51b3VzIE1vbml0b3Jpbmdd" data-id="mermaid-fsv0g54wv">
+<div class="mermaid-container" data-mermaid-source="Z3JhcGggVEIKICAgIEFbQ29tbW9uIE9wdGltaXphdGlvbiBQaXRmYWxsc10gLS0+IEJbT3Zlci1vcHRpbWl6YXRpb24gTGVhZGluZyB0byBBY2N1cmFjeSBMb3NzXQogICAgQSAtLT4gQ1tJZ25vcmluZyBBY3R1YWwgRGVwbG95bWVudCBFbnZpcm9ubWVudF0KICAgIEEgLS0+IERbU2luZ2xlIE1ldHJpYyBPcHRpbWl6YXRpb25dCiAgICBBIC0tPiBFW0xhY2sgb2YgTG9uZy10ZXJtIE1haW50ZW5hbmNlXQoKICAgIEIgLS0+IEIxW1NldCBBY2N1cmFjeSBMb3dlciBUaHJlc2hvbGRdCiAgICBDIC0tPiBDMVtUZXN0IGluIFRhcmdldCBFbnZpcm9ubWVudF0KICAgIEQgLS0+IEQxW011bHRpLWRpbWVuc2lvbmFsIENvbXByZWhlbnNpdmUgRXZhbHVhdGlvbl0KICAgIEUgLS0+IEUxW0VzdGFibGlzaCBDb250aW51b3VzIE1vbml0b3Jpbmdd" data-id="mermaid-calu70zs9">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">graph TB
     A[Common Optimization Pitfalls] --> B[Over-optimization Leading to Accuracy Loss]
