@@ -36,7 +36,7 @@
 <h2 id="知识点">知识点</h2>
 <h3 id="applicationset概述">ApplicationSet概述</h3>
 <p>ApplicationSet是Argo CD的扩展，用于自动化生成和管理多个Application。它支持从模板批量创建应用，适用于多环境、多集群、多租户场景。</p>
-<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IFRCCiAgICBzdWJncmFwaCBUcmFkaXRpb25hbFsi5Lyg57uf5pa55byPIl0KICAgICAgICBBcHAxW0FwcGxpY2F0aW9uIDFdCiAgICAgICAgQXBwMltBcHBsaWNhdGlvbiAyXQogICAgICAgIEFwcDNbQXBwbGljYXRpb24gM10KICAgICAgICBBcHBOW0FwcGxpY2F0aW9uIE4uLi5dCiAgICBlbmQKCiAgICBzdWJncmFwaCBBcHBsaWNhdGlvblNldFsiQXBwbGljYXRpb25TZXTmlrnlvI8iXQogICAgICAgIEFTW0FwcGxpY2F0aW9uU2V0PGJyLz7mqKHmnb8gKyDnlJ/miJDlmahdCiAgICAgICAgQVMgLS0+IEExW0FwcCBEZXZdCiAgICAgICAgQVMgLS0+IEEyW0FwcCBTdGFnaW5nXQogICAgICAgIEFTIC0tPiBBM1tBcHAgUHJvZHVjdGlvbl0KICAgIGVuZA==" data-id="mermaid-i8was48b4">
+<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IFRCCiAgICBzdWJncmFwaCBUcmFkaXRpb25hbFsi5Lyg57uf5pa55byPIl0KICAgICAgICBBcHAxW0FwcGxpY2F0aW9uIDFdCiAgICAgICAgQXBwMltBcHBsaWNhdGlvbiAyXQogICAgICAgIEFwcDNbQXBwbGljYXRpb24gM10KICAgICAgICBBcHBOW0FwcGxpY2F0aW9uIE4uLi5dCiAgICBlbmQKCiAgICBzdWJncmFwaCBBcHBsaWNhdGlvblNldFsiQXBwbGljYXRpb25TZXTmlrnlvI8iXQogICAgICAgIEFTW0FwcGxpY2F0aW9uU2V0PGJyLz7mqKHmnb8gKyDnlJ/miJDlmahdCiAgICAgICAgQVMgLS0+IEExW0FwcCBEZXZdCiAgICAgICAgQVMgLS0+IEEyW0FwcCBTdGFnaW5nXQogICAgICAgIEFTIC0tPiBBM1tBcHAgUHJvZHVjdGlvbl0KICAgIGVuZA==" data-id="mermaid-xx1dv00q4">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">flowchart TB
     subgraph Traditional["传统方式"]
@@ -54,7 +54,7 @@
     end</code></pre>
 </div>
 <h3 id="生成器类型">生成器类型</h3>
-<div class="mermaid-container" data-mermaid-source="bWluZG1hcAogIHJvb3QoKEdlbmVyYXRvcnMpKQogICAgTGlzdAogICAgICDpnZnmgIHliJfooagKICAgICAg56Gs57yW56CB5Y+C5pWwCiAgICBDbHVzdGVyCiAgICAgIOmbhue+pOWPkeeOsAogICAgICDoh6rliqjms6jlhowKICAgIEdpdAogICAgICDnm67lvZXnu5PmnoQKICAgICAg5paH5Lu25YaF5a65CiAgICBNYXRyaXgKICAgICAg57uE5ZCI55Sf5oiQCiAgICAgIOWkmue7tOW6pgogICAgTWVyZ2UKICAgICAg5ZCI5bm25Y+C5pWwCiAgICAgIOimhueblumFjee9rgogICAgU0NNIFByb3ZpZGVyCiAgICAgIEdpdEh1Yi9HaXRMYWIKICAgICAg5LuT5bqT5Y+R546wCiAgICBQdWxsIFJlcXVlc3QKICAgICAgUFLpooTop4jnjq/looMKICAgICAg6Ieq5Yqo5riF55CG" data-id="mermaid-q8z87gyrr">
+<div class="mermaid-container" data-mermaid-source="bWluZG1hcAogIHJvb3QoKEdlbmVyYXRvcnMpKQogICAgTGlzdAogICAgICDpnZnmgIHliJfooagKICAgICAg56Gs57yW56CB5Y+C5pWwCiAgICBDbHVzdGVyCiAgICAgIOmbhue+pOWPkeeOsAogICAgICDoh6rliqjms6jlhowKICAgIEdpdAogICAgICDnm67lvZXnu5PmnoQKICAgICAg5paH5Lu25YaF5a65CiAgICBNYXRyaXgKICAgICAg57uE5ZCI55Sf5oiQCiAgICAgIOWkmue7tOW6pgogICAgTWVyZ2UKICAgICAg5ZCI5bm25Y+C5pWwCiAgICAgIOimhueblumFjee9rgogICAgU0NNIFByb3ZpZGVyCiAgICAgIEdpdEh1Yi9HaXRMYWIKICAgICAg5LuT5bqT5Y+R546wCiAgICBQdWxsIFJlcXVlc3QKICAgICAgUFLpooTop4jnjq/looMKICAgICAg6Ieq5Yqo5riF55CG" data-id="mermaid-kcspqjwte">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">mindmap
   root((Generators))
@@ -405,7 +405,7 @@
 <span class="line"><span style="color:#E1E4E8">          - </span><span style="color:#9ECBFF">CreateNamespace=true</span></span></code></pre>
 <h2 id="多集群管理">多集群管理</h2>
 <h3 id="集群架构">集群架构</h3>
-<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IFRCCiAgICBzdWJncmFwaCBNYW5hZ2VtZW50WyLnrqHnkIbpm4bnvqQiXQogICAgICAgIEFyZ29DRFtBcmdvIENEXQogICAgZW5kCgogICAgc3ViZ3JhcGggV29ya2xvYWRbIuW3peS9nOi0n+i9vembhue+pCJdCiAgICAgICAgRGV2W+W8gOWPkembhue+pF0KICAgICAgICBTdGFnaW5nW+mihOWPkeW4g+mbhue+pF0KICAgICAgICBQcm9kMVvnlJ/kuqfpm4bnvqQgMV0KICAgICAgICBQcm9kMlvnlJ/kuqfpm4bnvqQgMl0KICAgIGVuZAoKICAgIEFyZ29DRCAtLT58566h55CGfCBEZXYKICAgIEFyZ29DRCAtLT58566h55CGfCBTdGFnaW5nCiAgICBBcmdvQ0QgLS0+fOeuoeeQhnwgUHJvZDEKICAgIEFyZ29DRCAtLT58566h55CGfCBQcm9kMg==" data-id="mermaid-yxw691r6u">
+<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IFRCCiAgICBzdWJncmFwaCBNYW5hZ2VtZW50WyLnrqHnkIbpm4bnvqQiXQogICAgICAgIEFyZ29DRFtBcmdvIENEXQogICAgZW5kCgogICAgc3ViZ3JhcGggV29ya2xvYWRbIuW3peS9nOi0n+i9vembhue+pCJdCiAgICAgICAgRGV2W+W8gOWPkembhue+pF0KICAgICAgICBTdGFnaW5nW+mihOWPkeW4g+mbhue+pF0KICAgICAgICBQcm9kMVvnlJ/kuqfpm4bnvqQgMV0KICAgICAgICBQcm9kMlvnlJ/kuqfpm4bnvqQgMl0KICAgIGVuZAoKICAgIEFyZ29DRCAtLT58566h55CGfCBEZXYKICAgIEFyZ29DRCAtLT58566h55CGfCBTdGFnaW5nCiAgICBBcmdvQ0QgLS0+fOeuoeeQhnwgUHJvZDEKICAgIEFyZ29DRCAtLT58566h55CGfCBQcm9kMg==" data-id="mermaid-5h9b6zhab">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">flowchart TB
     subgraph Management["管理集群"]
@@ -523,7 +523,7 @@
 <span class="line"><span style="color:#85E89D">        factor</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">2</span></span>
 <span class="line"><span style="color:#85E89D">        maxDuration</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">3m</span></span></code></pre>
 <h3 id="同步阶段和钩子">同步阶段和钩子</h3>
-<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IExSCiAgICBzdWJncmFwaCBQcmVTeW5jWyJQcmVTeW5j6Zi25q61Il0KICAgICAgICBQUzFb5pWw5o2u5bqT6L+B56e7XQogICAgICAgIFBTMlvphY3nva7mo4Dmn6VdCiAgICBlbmQKCiAgICBzdWJncmFwaCBTeW5jWyJTeW5j6Zi25q61Il0KICAgICAgICBTMVvpg6jnvbLotYTmupBdCiAgICBlbmQKCiAgICBzdWJncmFwaCBQb3N0U3luY1siUG9zdFN5bmPpmLbmrrUiXQogICAgICAgIFBPU1QxW+mAmuefpV0KICAgICAgICBQT1NUMlvmtYvor5VdCiAgICBlbmQKCiAgICBzdWJncmFwaCBTeW5jRmFpbFsiU3luY0ZhaWzpmLbmrrUiXQogICAgICAgIEYxW+Wbnua7ml0KICAgICAgICBGMlvlkYroraZdCiAgICBlbmQKCiAgICBQcmVTeW5jIC0tPiBTeW5jCiAgICBTeW5jIC0tPiBQb3N0U3luYwogICAgU3luYyAtLT585aSx6LSlfCBTeW5jRmFpbA==" data-id="mermaid-ilsztu3ee">
+<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IExSCiAgICBzdWJncmFwaCBQcmVTeW5jWyJQcmVTeW5j6Zi25q61Il0KICAgICAgICBQUzFb5pWw5o2u5bqT6L+B56e7XQogICAgICAgIFBTMlvphY3nva7mo4Dmn6VdCiAgICBlbmQKCiAgICBzdWJncmFwaCBTeW5jWyJTeW5j6Zi25q61Il0KICAgICAgICBTMVvpg6jnvbLotYTmupBdCiAgICBlbmQKCiAgICBzdWJncmFwaCBQb3N0U3luY1siUG9zdFN5bmPpmLbmrrUiXQogICAgICAgIFBPU1QxW+mAmuefpV0KICAgICAgICBQT1NUMlvmtYvor5VdCiAgICBlbmQKCiAgICBzdWJncmFwaCBTeW5jRmFpbFsiU3luY0ZhaWzpmLbmrrUiXQogICAgICAgIEYxW+Wbnua7ml0KICAgICAgICBGMlvlkYroraZdCiAgICBlbmQKCiAgICBQcmVTeW5jIC0tPiBTeW5jCiAgICBTeW5jIC0tPiBQb3N0U3luYwogICAgU3luYyAtLT585aSx6LSlfCBTeW5jRmFpbA==" data-id="mermaid-hdcvv3wpl">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">flowchart LR
     subgraph PreSync["PreSync阶段"]
@@ -673,7 +673,7 @@
 <span class="line"><span style="color:#E1E4E8">    - </span><span style="color:#9ECBFF">kube-controller-manager</span></span></code></pre>
 <h2 id="健康检查">健康检查</h2>
 <h3 id="内置健康检查">内置健康检查</h3>
-<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IFRCCiAgICBzdWJncmFwaCBSZXNvdXJjZXNbIui1hOa6kOexu+WeiyJdCiAgICAgICAgRGVwbG95W0RlcGxveW1lbnRdCiAgICAgICAgU1RTW1N0YXRlZnVsU2V0XQogICAgICAgIERTW0RhZW1vblNldF0KICAgICAgICBTVkNbU2VydmljZV0KICAgICAgICBJbmdyZXNzW0luZ3Jlc3NdCiAgICAgICAgUFZDW1BWQ10KICAgICAgICBKb2JbSm9iXQogICAgZW5kCgogICAgc3ViZ3JhcGggSGVhbHRoWyLlgaXlurfnirbmgIEiXQogICAgICAgIEhlYWx0aHlbSGVhbHRoeV0KICAgICAgICBQcm9ncmVzc2luZ1tQcm9ncmVzc2luZ10KICAgICAgICBEZWdyYWRlZFtEZWdyYWRlZF0KICAgICAgICBTdXNwZW5kZWRbU3VzcGVuZGVkXQogICAgZW5kCgogICAgRGVwbG95IC0tPnzmiYDmnIlQb2TlsLHnu6p8IEhlYWx0aHkKICAgIERlcGxveSAtLT586YOo572y5LitfCBQcm9ncmVzc2luZwogICAgRGVwbG95IC0tPnxQb2TlpLHotKV8IERlZ3JhZGVkCgogICAgU1RTIC0tPnzmiYDmnIlQb2TlsLHnu6p8IEhlYWx0aHkKICAgIEpvYiAtLT585a6M5oiQfCBIZWFsdGh5CiAgICBKb2IgLS0+fOi/kOihjOS4rXwgUHJvZ3Jlc3NpbmcKICAgIEpvYiAtLT585aSx6LSlfCBEZWdyYWRlZA==" data-id="mermaid-e51w467be">
+<div class="mermaid-container" data-mermaid-source="Zmxvd2NoYXJ0IFRCCiAgICBzdWJncmFwaCBSZXNvdXJjZXNbIui1hOa6kOexu+WeiyJdCiAgICAgICAgRGVwbG95W0RlcGxveW1lbnRdCiAgICAgICAgU1RTW1N0YXRlZnVsU2V0XQogICAgICAgIERTW0RhZW1vblNldF0KICAgICAgICBTVkNbU2VydmljZV0KICAgICAgICBJbmdyZXNzW0luZ3Jlc3NdCiAgICAgICAgUFZDW1BWQ10KICAgICAgICBKb2JbSm9iXQogICAgZW5kCgogICAgc3ViZ3JhcGggSGVhbHRoWyLlgaXlurfnirbmgIEiXQogICAgICAgIEhlYWx0aHlbSGVhbHRoeV0KICAgICAgICBQcm9ncmVzc2luZ1tQcm9ncmVzc2luZ10KICAgICAgICBEZWdyYWRlZFtEZWdyYWRlZF0KICAgICAgICBTdXNwZW5kZWRbU3VzcGVuZGVkXQogICAgZW5kCgogICAgRGVwbG95IC0tPnzmiYDmnIlQb2TlsLHnu6p8IEhlYWx0aHkKICAgIERlcGxveSAtLT586YOo572y5LitfCBQcm9ncmVzc2luZwogICAgRGVwbG95IC0tPnxQb2TlpLHotKV8IERlZ3JhZGVkCgogICAgU1RTIC0tPnzmiYDmnIlQb2TlsLHnu6p8IEhlYWx0aHkKICAgIEpvYiAtLT585a6M5oiQfCBIZWFsdGh5CiAgICBKb2IgLS0+fOi/kOihjOS4rXwgUHJvZ3Jlc3NpbmcKICAgIEpvYiAtLT585aSx6LSlfCBEZWdyYWRlZA==" data-id="mermaid-gs1vlcnmc">
 <div class="mermaid-loading">🔄 正在渲染 Mermaid 图表...</div>
 <pre class="mermaid-fallback" style="display: none;"><code data-language="mermaid">flowchart TB
     subgraph Resources["资源类型"]
